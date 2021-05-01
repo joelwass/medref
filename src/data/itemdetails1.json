@@ -1,0 +1,81 @@
+      [
+        {   
+            "id" : 1,
+            "name" : "Csv",
+            "hexvalue": "#96c9dc",
+            "selected" : true,
+            "details" : {
+                 "subsection":
+                  [
+                    {
+                        "sec_id" :11,
+                        "name": "Vasopressors/Inotropes",
+                        "details": [
+                            {   
+                                "det_id" : 111,
+                                "det_desc" : "Angiotensin II",
+                                "prescription" : "20 nanogram/kg"
+                            },
+                            {
+                                "det_id" : 112,
+                                "text" : "Dobutamine",
+                                "prescription" : "25mcg/kg/min"
+                            },
+                            {
+                                "det_id" : 113,
+                                "text" : "Dopamine",
+                                "prescription" : "25mcg/kg/min"
+                            }
+                        ]                       
+                    },
+                    {
+                        "id" :2,
+                        "name" : "ACLS",
+                        "details": {
+                            "text" : "",
+                            "prescription" : ""
+                         }
+                    },
+                    {
+                        "id" :3,
+                        "name": "Push Dose Pressor",
+                        "details": {
+                            "text" : "",
+                            "prescription" : ""
+                         }
+                       
+                    },
+                    {
+                        "id" :4,
+                        "name" : "HTN Emergency",
+                        "details": {
+                            "text" : "",
+                            "prescription" : ""
+                         }
+                    },
+                    {
+                        "id" :5,
+                        "name": "Trauma",
+                        "details": {
+                            "text" : "",
+                            "prescription" : ""
+                         }
+                    },
+                    {
+                        "id" :6,
+                        "name" : "Blood",
+                        "details": {
+                            "text" : "",
+                            "prescription" : ""
+                         }
+                    }
+                 ]
+             }
+        },
+        {
+            "Vent" :[
+                {"id" :1,"name":"test1"},{"id":2, "name" :"test2"},{"id":3,"name":"test3"}
+            ]
+        }       
+    ]
+   

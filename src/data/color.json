@@ -1,0 +1,51 @@
+    [
+        {
+            "id" :1,
+            "name": "Csv",
+            "hexvalue": "#96c9dc"
+           
+        },
+        {
+            "id" :2,
+            "name" : "Vent",
+            "hexvalue": "#61a0af"
+        },
+        {
+            "id" :3,
+            "name": "Rbi",
+            "hexvalue": "#f9b9b7"
+           
+        },
+        {
+            "id" :4,
+            "name" : "Antidose",
+            "hexvalue": "#febd38"
+        },
+        {
+            "id" :5,
+            "name": "Trauma",
+            "hexvalue": "#f5d491"
+           
+        },
+        {
+            "id" :6,
+            "name" : "Blood",
+            "hexvalue": "#ff6262"
+        },
+        {
+            "id" :7,
+            "name": "Siezure",
+            "hexvalue": "#96c9dc"
+           
+        },
+        {
+            "id" :8,
+            "name" : "Sedation",
+            "hexvalue": "#b6d377"
+        },
+        {
+            "id" :9,
+            "name" : "More",
+            "hexvalue": "#e5e5e5"
+        }
+    ]
