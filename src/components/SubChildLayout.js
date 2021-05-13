@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Svg, { G, Rect, Polygon } from 'react-native-svg';
 import {View, StyleSheet , TouchableOpacity, Text , Dimensions} from 'react-native';
-import { HexGrid, Layout, Orientation,Point,Hexagon,HexText}  from './index';
 import { ScrollView } from 'react-native-gesture-handler';
-import { AsyncStorage } from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import Svg, { G, Rect, Polygon } from 'react-native-svg';
 import Constants from 'expo-constants';
 import data from '../data/data.json';
+import Orientation from './Orientation';
+import Point from './Point';
+import Hexagon from './Hexagon';
+import HexText from './HexText';
 
-import itemlist from '../data/itemDetails.json';
-
-//https://rossbulat.medium.com/react-native-carousels-with-horizontal-scroll-views-60b0587a670c
 class SubChildLayout extends Component {
     static LAYOUT_FLAT = new Orientation(3.0 / 2.0, 0.0, Math.sqrt(3.0) / 2.0, Math.sqrt(3.0),2.0 / 3.0, 0.0, -1.0 / 3.0, Math.sqrt(3.0) / 3.0, 0.0);
     static LAYOUT_POINTY = new Orientation(Math.sqrt(3.0), Math.sqrt(3.0) / 2.0, 0.0, 3.0 / 2.0, Math.sqrt(3.0) / 3.0, -1.0 / 3.0, 0.0, 2.0 / 3.0, 0.5);
@@ -20,7 +19,7 @@ class SubChildLayout extends Component {
     constructor(props){
         super(props); 
         const {  flat, className, hexname, ...rest } = this.props;
-        const orientation = (flat) ? Layout.LAYOUT_FLAT : Layout.LAYOUT_POINTY;
+        const orientation = (flat) ? SubChildLayout.LAYOUT_FLAT : SubChildLayout.LAYOUT_POINTY;
         const cornerCoords = this.calculateCoordinates(orientation);
         const points1 = cornerCoords.map(point => `${point.x},${point.y}`).join(' ');
         const layout = Object.assign({}, rest, { orientation }); 
@@ -36,12 +35,15 @@ class SubChildLayout extends Component {
             subSelectedValue : this.props.subSelectedValue,
             itemArray : []
         }
+        this.state.itemArray = this.updateData();
     }
 
-    componentDidMount = () =>{
-
+    updateData = () =>{
+        
         const reqArr = [];
         const reqIt = data.find( obj => obj.id === this.props.selectedValue );
+        if(reqIt !== undefined)
+        {
         const detl = reqIt.section;
 
         detl.map( (obj) => {
@@ -53,7 +55,9 @@ class SubChildLayout extends Component {
             ob.multiple_lines = obj.multiple_lines;
             reqArr.push(ob);            
         })
-        this.setState({itemArray : reqArr});
+        }
+        return reqArr;
+        //this.setState({itemArray : reqArr});
 
         //const requiredItemArry = [];
         //const requiredItems = itemlist.find( obj => obj.id === this.props.selectedValue);        
@@ -113,18 +117,18 @@ class SubChildLayout extends Component {
                             ?(
                                 <Svg>              
                                 <Hexagon  q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={item.section_hexvalue} stroke={'#fff'} showText={item.section_name} showDetails={() =>this.callParentFunction(item.section_id)} strokeWidth={"2"}>
-                                    <HexText x={this.state.x} y={ item.multiple_lines ? this.state.y-10 : this.state.y} fontSize={"12"}>{item.section_name}</HexText>
-                                    <HexText x={this.state.x} y={this.state.y+5} fontSize={"12"}>{item.section_name1}</HexText>
-                                    <HexText x={this.state.x} y={this.state.y+15} fontSize={"12"}>{item.section_name2}</HexText>
+                                    <HexText x={this.state.x} y={ item.multiple_lines ? this.state.y-10 : this.state.y} fontSize={"12"} fill={'#fff'} isStroke={true}>{item.section_name}</HexText>
+                                    <HexText x={this.state.x} y={this.state.y+5} fontSize={"12"} fill={'#fff'} isStroke={true}>{item.section_name1}</HexText>
+                                    <HexText x={this.state.x} y={this.state.y+15} fontSize={"12"} fill={'#fff'} isStroke={true}>{item.section_name2}</HexText>
                                 </Hexagon>  
                             </Svg>
                              ) 
                             :(
                                 <Svg>               
                                 <Hexagon  q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={'#fff'} stroke={item.section_hexvalue} showText={item.section_name} showDetails={() =>this.callParentFunction(item.section_id)} strokeWidth={"2"}>
-                                    <HexText x={this.state.x} y={ item.multiple_lines ? this.state.y-10 : this.state.y} fontSize={"12"}>{item.section_name}</HexText>
-                                    <HexText x={this.state.x} y={this.state.y+5} fontSize={"12"}>{item.section_name1}</HexText>
-                                    <HexText x={this.state.x} y={this.state.y+15} fontSize={"12"}>{item.section_name2}</HexText>
+                                    <HexText x={this.state.x} y={ item.multiple_lines ? this.state.y-10 : this.state.y} fontSize={"12"} fill={item.section_hexvalue} isStroke={true}>{item.section_name}</HexText>
+                                    <HexText x={this.state.x} y={this.state.y+5} fontSize={"12"} fill={item.section_hexvalue} isStroke={true}>{item.section_name1}</HexText>
+                                    <HexText x={this.state.x} y={this.state.y+15} fontSize={"12"} fill={item.section_hexvalue} isStroke={true}>{item.section_name2}</HexText>
                                 </Hexagon>  
                             </Svg>
                              )
@@ -138,20 +142,13 @@ class SubChildLayout extends Component {
     }
 } 
 
-  const styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         flex :1,
         width: Dimensions.get('window').width,
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    paragraph: {
-      width:"100%",
-      fontSize: 40,
-      fontWeight: 'bold',
-      textAlign: 'center',
-      color: '#34495e',
-    },
-  });
+    }
+});
 
 export default SubChildLayout;

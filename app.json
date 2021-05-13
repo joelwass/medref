@@ -1,9 +1,9 @@
 {
-  "name": "BAMA",
-  "displayName": "BAMA",
+  "name": "medref",
+  "displayName": "medref",
   "expo": {
-    "name": "BAMA",
-    "slug": "BAMA",
+    "name": "medref",
+    "slug": "medref",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"

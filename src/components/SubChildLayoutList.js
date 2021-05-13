@@ -1,15 +1,16 @@
 import { isEmergencyLaunch } from 'expo-updates';
 import React ,{useState, useEffect}from 'react';
-import {Text, View,StyleSheet, TouchableOpacity,SafeAreaView, FlatList} from 'react-native';
+import {Text, View,StyleSheet, TouchableOpacity,SafeAreaView, FlatList, Switch} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import { MaterialIcons } from '@expo/vector-icons';
 import data from '../data/data.json';
 
-import itemDetailsList from '../data/itemSubDetails.json';
 
 const Item = ({ item, backgroundColor, onPress, textColor }) => (
   <View style={{alignItems:'center'}}>   
    <TouchableOpacity onPress={onPress} style={[styles.SubmitButtonStyle , backgroundColor = backgroundColor]}>
      <Text style={[styles.title, textColor]}>{item.child_name}</Text>
+     <MaterialIcons name={item.vis ? 'keyboard-arrow-up' : 'keyboard-arrow-down'} size={30} style={{color:'white'}} />
    </TouchableOpacity>
    {item.vis && <Text style={styles.TextComponentStyle}>{item.child_desc}</Text>}  
    </View> 
@@ -18,6 +19,7 @@ const Item = ({ item, backgroundColor, onPress, textColor }) => (
 export default function SubChildLayoutList(props) {
   const [selectedId, setSelectedId] = useState(null);
   const [selectedIdArr, setSelectedIdArr] = useState([]);
+  const [isEnabled, setIsEnabled] = useState(false);
   let arr = [];
     
   useEffect( () =>{
@@ -47,36 +49,11 @@ export default function SubChildLayoutList(props) {
     })
     
     setSelectedIdArr(rawArr);
-  
-    /*itemDetailsList.map( (item) => {
-         if(item.parent_id === props.selectedValue && item.section_id === props.subSelectedValue )
-          {
-              arrRaw = item.children 
-          }
-     } 
-    )
-   
-    // To put the visibility option into the array
-    if( arrRaw && arrRaw.length > 0)
-    {
-      var obj = {};
-      arrRaw.map( (item) =>{
-        obj = {}
-        obj.child_id = item.child_id,
-        obj.child_name = item.child_name,
-        obj.child_desc = item.child_desc,
-        obj.backgroundColor = backgroundColor,
-        obj.vis = false;
-        arrTemp.push(obj);
-      })
-    }
-    setSelectedIdArr(arrTemp);
-    */
   },[props])
 
   const renderItem = ({item}) =>{
     const backgroundColor = item.backgroundColor;
-    const color = 'black' ;
+    const color = '#fff' ;
     return (
       <Item
         item={item}
@@ -87,7 +64,7 @@ export default function SubChildLayoutList(props) {
     );    
   } 
 
-  callParentFunction = (value) =>{
+  const callParentFunction = (value) =>{
     //props.showSubDetails(value);
     // this function is not called here.
     console.log('call parent function');
@@ -110,11 +87,7 @@ export default function SubChildLayoutList(props) {
     ) 
     setSelectedIdArr(
       selectedArray
-    )
-    //const selectedArray = selectedIdArr;
-    //const mySortedList = selectedArray.sort();
-    //const sortedNoDupes = Array.from(new Set(mySortedList));
-    //setSelectedIdArr(sortedNoDupes);   
+    ) 
   }
 
   const EmptyList = () =>{
@@ -124,8 +97,42 @@ export default function SubChildLayoutList(props) {
     )
   }
 
+  const toggleSwitch = () => {
+    let tempArray = [...selectedIdArr];
+    if(isEnabled)
+    {
+      tempArray.map( (item , index) => {
+        item.vis = false
+      })      
+    }
+    else
+    {
+      tempArray.map( (item , index) => {
+        item.vis = true
+      }) 
+    }
+    setSelectedIdArr(tempArray);
+    setIsEnabled(previousState => !previousState);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
+    <View style={{marginRight:30, paddingTop:30, flexDirection:'row', justifyContent:'space-between'}}>
+      <View>
+        <Text>*potential starting doses</Text>
+      </View>
+      <View >
+      <Switch
+        trackColor={{ false: '#9dcddf', true: '#63a1b0' }}
+        thumbColor='#fbfbfb' 
+        ios_backgroundColor="#3e3e3e"
+        style={{ transform: [{ scaleX: 1.1 }, { scaleY: 1.1 }] }}
+        onValueChange={toggleSwitch}
+        value={isEnabled}
+      />
+      </View>
+    </View>
+    <View>
       { 
         <FlatList 
         data={selectedIdArr}
@@ -135,6 +142,7 @@ export default function SubChildLayoutList(props) {
         extraData={selectedIdArr}
         />
       }
+      </View>
     </SafeAreaView> 
   );
 }
@@ -156,47 +164,48 @@ const styles = StyleSheet.create({
       width: 300
     },
     title: {
-      fontSize: 20
+      fontSize: 25,
+      marginRight : 15,
+      marginLeft : 15
     },
     TextComponentStyle: {
-  
-      borderRadius: 5,
-  
-      // Set border width.
+      marginLeft:30,
+      marginRight:30,
+      borderRadius:25,
       borderWidth: 2,
-   
+      borderColor: '#fff',
+      width: 300,
       // Set border Hex Color Code Here.
-      borderColor: '#000',
-  
+      borderTopColor : '#fff',
+      borderBottomColor : '#fff',
+      borderLeftColor :'#000',
+      borderRightColor : '#000',
       // Setting up Text Font Color.
       color: '#000',
-  
       // Setting Up Background Color of Text component.
       backgroundColor : '#fff',
-      
       // Adding padding on Text component.
-      padding : 2,
-  
       fontSize: 20,
-  
       textAlign: 'center',
-  
-      margin: 10,
-      height:100,
-      width:280
+      elevation : 50,
+     
+      shadowColor: '#A9A9A9',
+      shadowRadius: 10,
+      shadowOpacity: 1
     },
     SubmitButtonStyle: {
- 
       marginTop:10,
       paddingTop:15,
       paddingBottom:15,
       marginLeft:30,
       marginRight:30,
-      borderRadius:10,
+      borderRadius:25,
       borderWidth: 1,
       borderColor: '#fff',
       width: 300,
-      alignItems:'center'
+      alignItems:'center',
+      flexDirection: 'row',
+      justifyContent:'space-between'
     },
     TextStyle:{
       color:'#000',

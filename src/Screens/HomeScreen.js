@@ -1,52 +1,23 @@
-import { NavigationHelpersContext } from '@react-navigation/core';
-import React , {Component, useEffect, useState} from 'react';
-import {Text, View, TouchableOpacity, StyleSheet} from 'react-native';
-import {HexGrid, Layout} from '../components/index';
-import data from '../data/data.json';
-import HomeLayout from '../components/HomeLayout';
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, View , Button} from 'react-native';
+import HomeLayout from '../Components/HomeLayout';
+import Svg, { G,Circle, Path, Polygon, Text as SvgText} from 'react-native-svg';
 
-const pointArr = [
-  {id : 1 ,q :0 ,r :-1, s :1},
-  {id : 2 ,q :0 ,r : 0, s :0},
-  {id : 3 ,q :1 ,r :-1, s :-1},
-  {id : 4 ,q :1.5 ,r :1, s :1},
-  {id : 5 ,q :1.5 ,r :0, s :0},
-  {id : 6 ,q :0.5 ,r :1, s :-1},
-  {id : 7 ,q :0 ,r :-1, s :1},
-  {id : 8 ,q :0 ,r :-1, s :1},
-  {id : 9 ,q :0 ,r :-1, s :1},
-]
+export default function HomeScreen({navigation, route}) {
+  const hexagonSize = { x: 13, y: 13 };
 
-export default function HomeScreen({route, navigation}) {
-    const hexagonSize = { x: 12, y: 12 };
+  const showDetails =(props) => {
+      navigation.navigate("Details",{value : props});
+  }
 
-    const [ selectedArr, setSelectedArr ] = useState([]);
-
-    const showDetails = (props) => {
-      navigation.navigate("Details", {value: props});
-    }
-
-    useEffect( () => {
-      
-    },[])
-
-    
-    return (
-      <View>
-      <HexGrid className="grid" width='100%' height='100%' viewBox='0 0 100 100'>
-        <HomeLayout size={hexagonSize} flat={true} spacing={1.0} origin={{ x: 1, y: 20 }} showDetails={showDetails}  >
+  return (        
+          
+    <HomeLayout size={hexagonSize} flat={true} spacing={1.0} origin={{ x: 7, y: 7 }} showDetails={showDetails}  >
         
-        </HomeLayout>          
-      </HexGrid>     
-      </View>
-    );
-  }
+    </HomeLayout>  
+    
+  );
+}
 
-const styles = StyleSheet.create({
-  constainer:{
-    flex:1,
-    backgroundColor:'#fff',
-    alignItems : 'center',
-    justifyContent : 'center'
-  }
-});
+

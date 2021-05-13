@@ -2,7 +2,6 @@ import { isEmergencyLaunch } from 'expo-updates';
 import React ,{useState, useEffect}from 'react';
 import {Text, View,StyleSheet, TouchableOpacity,SafeAreaView, FlatList} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import itemdetails from '../data/itemDetails.json';
 import data from '../data/data.json';
 
 
@@ -73,7 +72,7 @@ export default function SubLayoutList(props) {
   const renderItem1 = ({item}) =>{
 
     const backgroundColor = item.section_hexvalue;
-    const color = 'black' ;
+    const color = '#fff' ;
     
     return (
       <Item
@@ -85,7 +84,7 @@ export default function SubLayoutList(props) {
     );    
   } 
 
-  callParentFunction = (value) =>{
+  const callParentFunction = (value) =>{
     props.showSubDetails(value);
  }
 
@@ -174,7 +173,7 @@ const styles = StyleSheet.create({
       // Adding padding on Text component.
       padding : 2,
   
-      fontSize: 20,
+      fontSize: 30,
   
       textAlign: 'center',
   

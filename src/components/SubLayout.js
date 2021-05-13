@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Svg, { G, Rect, Polygon } from 'react-native-svg';
 import {View, StyleSheet , TouchableOpacity, Text , Dimensions} from 'react-native';
-import { HexGrid, Layout, Orientation,Point,Hexagon,HexText}  from '../components/index';
 import { ScrollView } from 'react-native-gesture-handler';
-import { AsyncStorage } from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import Svg, { G, Rect, Polygon } from 'react-native-svg';
 import Constants from 'expo-constants';
-import itemColors from '../data/color.json';
 import data from '../data/data.json';
-//https://rossbulat.medium.com/react-native-carousels-with-horizontal-scroll-views-60b0587a670c
+import Orientation from './Orientation';
+import Point from './Point';
+import Hexagon from './Hexagon';
+import HexText from './HexText';
+
+
 class SubLayout extends Component {
     static LAYOUT_FLAT = new Orientation(3.0 / 2.0, 0.0, Math.sqrt(3.0) / 2.0, Math.sqrt(3.0),2.0 / 3.0, 0.0, -1.0 / 3.0, Math.sqrt(3.0) / 3.0, 0.0);
     static LAYOUT_POINTY = new Orientation(Math.sqrt(3.0), Math.sqrt(3.0) / 2.0, 0.0, 3.0 / 2.0, Math.sqrt(3.0) / 3.0, -1.0 / 3.0, 0.0, 2.0 / 3.0, 0.5);
@@ -18,7 +20,7 @@ class SubLayout extends Component {
     constructor(props){
         super(props); 
         const {  flat, className, hexname, ...rest } = this.props;
-        const orientation = (flat) ? Layout.LAYOUT_FLAT : Layout.LAYOUT_POINTY;
+        const orientation = (flat) ? SubLayout.LAYOUT_FLAT : SubLayout.LAYOUT_POINTY;
         const cornerCoords = this.calculateCoordinates(orientation);
         const points1 = cornerCoords.map(point => `${point.x},${point.y}`).join(' ');
         const layout = Object.assign({}, rest, { orientation }); 
@@ -33,6 +35,8 @@ class SubLayout extends Component {
             selectedValue : this.props.showText,
             itemArr : []
         }
+
+        this.state.itemArr = this.updateData();
     }
 
     getPointOffset(corner, orientation, size) {
@@ -55,7 +59,7 @@ class SubLayout extends Component {
         return corners;
     }
 
-    componentDidMount = () =>{
+    updateData = () =>{
         const itemArrTemp = [];
         
         data.map( (obj) => {     
@@ -67,7 +71,7 @@ class SubLayout extends Component {
                ob
             ) 
         })
-        this.setState({itemArr : itemArrTemp});
+        return itemArrTemp;
     }
 
     callParentFunction = (value) =>{
@@ -77,15 +81,16 @@ class SubLayout extends Component {
         this.props.showDetails(value);
     }
 
+    
     render(){
         const innerViewHeight = this.props.height;
         const innerViewWidth = Dimensions.get('window').width/5;
-
+        
         let fillcolor;
         let strokecolor;
         let arr= [];
-       
-        return (
+
+        return(
             <View style={styles.container}>
             <ScrollView contentContainerStyle={{justifyContent:'center',alignItems:'center'}} horizontal={true} >
             {this.state.itemArr && this.state.itemArr.map( (item) => {
@@ -96,13 +101,13 @@ class SubLayout extends Component {
                             {item.id === this.state.selectedValue ? (
                                 (<Svg>               
                                     <Hexagon key={item.id} q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={item.hexvalue} stroke={'#fff'} showText={item.name} showDetails={() =>this.callParentFunction(item.id)} strokeWidth={"2"}>
-                                        <HexText x={this.state.x} y={this.state.y} fontSize={"15"}>{item.name}</HexText>
+                                        <HexText x={this.state.x} y={this.state.y} fontSize={"15"} fill={'#fff'} isStroke={true}>{item.name}</HexText>
                                     </Hexagon>  
                                 </Svg> )
                             ): (
                                 (<Svg>               
                                     <Hexagon key={item.id} q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={'#fff'} stroke={item.hexvalue} showText={item.name} showDetails={() => this.callParentFunction(item.id)} strokeWidth={"2"}>
-                                        <HexText x={this.state.x} y={this.state.y} fontSize={"15"}>{item.name}</HexText>
+                                        <HexText x={this.state.x} y={this.state.y} fill={item.hexvalue} fontSize={"15"} isStroke={true}>{item.name}</HexText>
                                     </Hexagon>  
                                 </Svg> )
                             ) }
@@ -112,24 +117,17 @@ class SubLayout extends Component {
             }                    
             </ScrollView>
             </View>
-          );   
+        )
     }
-} 
+}
 
-  const styles = StyleSheet.create({
+export default SubLayout;
+
+const styles = StyleSheet.create({
     container: {
         flex :1,
         width: Dimensions.get('window').width,
         justifyContent: 'center',
         alignItems: 'center'
     },
-    paragraph: {
-      width:"100%",
-      fontSize: 40,
-      fontWeight: 'bold',
-      textAlign: 'center',
-      color: '#34495e',
-    },
-  });
-
-export default SubLayout;
+});

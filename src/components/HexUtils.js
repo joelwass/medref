@@ -1,5 +1,5 @@
-import Hex from './models/Hex';
-import Point from './models/Point';
+import Hex from './Hex';
+import Point from './Point';
 
 class HexUtils {
 
