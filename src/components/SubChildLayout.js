@@ -35,10 +35,10 @@ class SubChildLayout extends Component {
             subSelectedValue : this.props.subSelectedValue,
             itemArray : []
         }
-        this.state.itemArray = this.updateData();
+        this.state.itemArray = this.updateData(this.props.showText);
     }
 
-    updateData = () =>{
+    updateData = (selectedValue) =>{
         
         const reqArr = [];
         const reqIt = data.find( obj => obj.id === this.props.selectedValue );
@@ -51,10 +51,17 @@ class SubChildLayout extends Component {
             ob.section_id = obj.section_id;
             ob.section_name = obj.section_name;
             ob.section_name1 = obj.section_name1;
+            ob.section_name2 = obj.section_name2 !== undefined ? obj.section_name2 : null;
             ob.section_hexvalue = obj.section_hexvalue;
             ob.multiple_lines = obj.multiple_lines;
             reqArr.push(ob);            
         })
+        }
+
+        let oldIndex = reqArr.findIndex( x => x.id === selectedValue);
+        if(oldIndex !== -1)
+        {
+            reqArr.splice(2, 0, reqArr.splice(oldIndex, 1)[0]);
         }
         return reqArr;
         //this.setState({itemArray : reqArr});
@@ -119,7 +126,7 @@ class SubChildLayout extends Component {
                                 <Hexagon  q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={item.section_hexvalue} stroke={'#fff'} showText={item.section_name} showDetails={() =>this.callParentFunction(item.section_id)} strokeWidth={"2"}>
                                     <HexText x={this.state.x} y={ item.multiple_lines ? this.state.y-10 : this.state.y} fontSize={"12"} fill={'#fff'} isStroke={true}>{item.section_name}</HexText>
                                     <HexText x={this.state.x} y={this.state.y+5} fontSize={"12"} fill={'#fff'} isStroke={true}>{item.section_name1}</HexText>
-                                    <HexText x={this.state.x} y={this.state.y+15} fontSize={"12"} fill={'#fff'} isStroke={true}>{item.section_name2}</HexText>
+                                    <HexText x={this.state.x} y={this.state.y+20} fontSize={"12"} fill={'#fff'} isStroke={true}>{item.section_name2}</HexText>
                                 </Hexagon>  
                             </Svg>
                              ) 
@@ -128,7 +135,7 @@ class SubChildLayout extends Component {
                                 <Hexagon  q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={'#fff'} stroke={item.section_hexvalue} showText={item.section_name} showDetails={() =>this.callParentFunction(item.section_id)} strokeWidth={"2"}>
                                     <HexText x={this.state.x} y={ item.multiple_lines ? this.state.y-10 : this.state.y} fontSize={"12"} fill={item.section_hexvalue} isStroke={true}>{item.section_name}</HexText>
                                     <HexText x={this.state.x} y={this.state.y+5} fontSize={"12"} fill={item.section_hexvalue} isStroke={true}>{item.section_name1}</HexText>
-                                    <HexText x={this.state.x} y={this.state.y+15} fontSize={"12"} fill={item.section_hexvalue} isStroke={true}>{item.section_name2}</HexText>
+                                    <HexText x={this.state.x} y={this.state.y+20} fontSize={"12"} fill={item.section_hexvalue} isStroke={true}>{item.section_name2}</HexText>
                                 </Hexagon>  
                             </Svg>
                              )

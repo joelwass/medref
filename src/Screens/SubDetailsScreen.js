@@ -49,7 +49,7 @@ export default function SubDetailsScreen({navigation, route, props}) {
         <View style={{ flex: 1, backgroundColor: '#e5e5e5' }} >
           <SubChildLayout size={hexagonSize} flat={false} spacing={1.2} origin={{ x:  120, y: 120 }} showText={selectedValue} showChildDetails={showChildDetails} height={upperViewHeight} selectedValue={selectedValue} subSelectedValue={subSelectedValue} /> 
         </View>
-        <View style={{ flex: 5 , justifyContent :'space-around',  alignItems :'center' }} >         
+        <View style={{ flex: 5  }} >         
           <SubChildLayoutList selectedValue={selectedValue} subSelectedValue={subSelectedValue}/>
         </View>
         </View>
@@ -65,7 +65,6 @@ export default function SubDetailsScreen({navigation, route, props}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor:'#fff'
   },
 });

@@ -8,11 +8,10 @@ import HomeScreen from './Screens/HomeScreen';
 import DetailsScreen from './Screens/DetailsScreen';
 import SubDetailsScreen from './Screens/SubDetailsScreen';
 import SettingScreen from './Screens/SettingScreen';
-
+import ImageScreen from './Screens/ImageScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-
 
 function HomeStack() {
     return (
@@ -37,7 +36,9 @@ function HomeStack() {
         <Stack.Screen
           name="SubDetails" component={SubDetailsScreen} />  
         <Stack.Screen
-          name="Settings" component={SettingScreen} />    
+          name="Settings" component={SettingScreen} />   
+        <Stack.Screen
+          name="ImageScreen" component={ImageScreen} />      
         
       </Stack.Navigator>
     );
@@ -70,7 +71,7 @@ export default function NavigationComponent() {
       <Tab.Navigator
             initialRouteName="Home"
             tabBarOptions={{
-              activeTintColor: '#eeeffe',
+              
               activeBackgroundColor: '#000',
             }}>
             <Tab.Screen
@@ -78,7 +79,7 @@ export default function NavigationComponent() {
               component={HomeStack}
               options={{
                
-                backgroundColor:'#343c44',
+                
                 tabBarLabel: 'Home',
                 tabBarIcon: ({ color, size }) => (
                   <MaterialCommunityIcons

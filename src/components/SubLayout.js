@@ -36,7 +36,7 @@ class SubLayout extends Component {
             itemArr : []
         }
 
-        this.state.itemArr = this.updateData();
+        this.state.itemArr = this.updateData(this.props.showText);
     }
 
     getPointOffset(corner, orientation, size) {
@@ -59,7 +59,8 @@ class SubLayout extends Component {
         return corners;
     }
 
-    updateData = () =>{
+    updateData = (selectedValue) =>{
+        
         const itemArrTemp = [];
         
         data.map( (obj) => {     
@@ -71,6 +72,12 @@ class SubLayout extends Component {
                ob
             ) 
         })
+        let oldIndex = itemArrTemp.findIndex( x => x.id === selectedValue);
+        if(oldIndex !== -1)
+        {
+            itemArrTemp.splice(2, 0, itemArrTemp.splice(oldIndex, 1)[0]);
+        }
+       
         return itemArrTemp;
     }
 

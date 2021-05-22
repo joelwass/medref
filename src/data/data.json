@@ -106,27 +106,107 @@
         "selected" : true,
         "section" :[
             {
-                "section_id": 11 , 
-                "section_name" : "Vent 1",
-                "section_name1" : "",
+                "section_id": 21 , 
+                "section_name" : "Vent",
+                "section_name1" : "Settings",
                 "section_hexvalue" :  "#61a0af",
                 "multiple_lines" : true,
-                "children" :[]
+                "children" :[
+                    {
+                        "child_id": 211 , 
+                        "child_name" : "Mode",
+                        "child_desc" :  "Volume Control"
+                    },
+                    {
+                         "child_id": 212 , 
+                        "child_name" : "Tidal Volume(Vt)",
+                        "child_desc" :  "6- 8 mL/kg IBW"                    
+                    }
+                    ,
+                    {
+                        "child_id": 213 , 
+                        "child_name" : "Flow Rate",
+                        "child_desc" :  "60 - 80 LPM"                    
+                    },                    
+                    {
+                        "child_id": 214 , 
+                        "child_name" : "RR",
+                        "child_desc" : "Initially 16-18 - Adjust Based on CO2 and Vent Needs",
+                        "child_desc1": "Minute ventillation for normal CO2 when not intubated = 60 ml/kg/min. Double to 120 mL/kg/min when intubated 2/2 t dead space Mild hypercarbia is ok."
+                        
+                    }
+                    ,                    
+                    {
+                        "child_id": 215 , 
+                        "child_name" : "Fi02 and PEEP",
+                        "child_desc" :  "Goal: PaO2 55-80 mmHg or SpO2 99-95% \n -Start at 100% FiO2 and PEEP of 5, start at higher peep for severe hypoxemia \n -Wait 15-20 min, then draw an ABG \n -Titrate FiO2 and PEEP based on chart every 5-10 min; quicker if low sat" ,                   
+                        "button_img" : "Fi"
+                    }
+                    ,                    
+                    {
+                        "child_id": 216 , 
+                        "child_name" : "Plateau Pressure",
+                        "child_desc" :  "Goal: <= 30cm H2O \n if > 30, reduce Vt by 1mL/kg IBW down to 4mL/kg IBW ",                    
+                        "button_img" : "PP"
+                    }
+               ]
             },
             {
                  "section_id": 12 , 
-                 "section_name" : "Vent 2",
+                 "section_name" : "Fi02",
                  "section_hexvalue" :  "#61a0af",
-                 "multiple_lines" : false,
+                 "section_name1" : "and",
+                 "section_name2" : "Peep Chart",
+                 "multiple_lines" : true,                
                  "children" :[]
-            }]
+            }
+            ,
+            {
+                 "section_id": 13 , 
+                 "section_name" : "Post-",
+                 "section_name1" : "Intubation",
+                 "section_name2" : "Hypoxia",
+                 "section_hexvalue" :  "#61a0af",
+                 "multiple_lines" : true,
+                 "children" :[
+                    {
+                        "child_id": 131 ,                                          
+                        "display_img": "DOP" 
+                    }
+                 ]
+            }
+            ,
+            {
+                 "section_id": 14 , 
+                 "section_name" : "Useful",
+                 "section_name1" : "Info",
+                 "section_hexvalue" :  "#61a0af",
+                 "multiple_lines" : true,
+                 "children" :[
+                    {
+                        "child_id": 131 ,                                          
+                        "display_img": "MaleFemale" 
+                    }
+                 ]
+            }
+          ]
     },
     {
         "id" :3,
-        "name": "Rbi",
+        "name": "RSI",
         "hexvalue": "#f9b9b7",
         "selected" : true,
         "section" :[
+                {
+                    "section_id": 31 , 
+                    "section_name" : "Vasopressors",
+                    "section_name1" : "/Inotropes",
+                    "section_hexvalue" :  "#b6d377",
+                    "multiple_lines" : true,
+                    "children" :[
+
+                    ]
+                }
             ]
        
     },

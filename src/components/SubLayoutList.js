@@ -139,11 +139,12 @@ export default function SubLayoutList(props) {
 
 const styles = StyleSheet.create({
 
-    MainContainer: {
+    container: {
       flex: 1,
       alignItems : 'center',
-      justifyContent:'space-evenly',
-      backgroundColor:'#fff'
+      justifyContent:'center',
+      backgroundColor:'#fff',
+      marginTop : 25
     },
     item: {
       padding: 10,
