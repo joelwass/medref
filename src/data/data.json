@@ -199,12 +199,67 @@
         "section" :[
                 {
                     "section_id": 31 , 
-                    "section_name" : "Vasopressors",
-                    "section_name1" : "/Inotropes",
-                    "section_hexvalue" :  "#b6d377",
-                    "multiple_lines" : true,
+                    "section_name" : "",
+                    "section_hexvalue" :  "#febd38",
+                    "multiple_lines" : false,
                     "children" :[
-
+                        {
+                            "child_id": 311 , 
+                            "child_name"  : "Preinduction",
+                            "children" :[
+                                {
+                                    "child_id" : 3111,
+                                    "child_detail_name"  : "Fentanyl",
+                                    "child_detail_desc" : "23 mcg/kg slow IVP \n typical dose 25-"
+                                }
+                            ]
+                            
+                        },
+                        {
+                            "child_id": 312 , 
+                            "child_name"  : "Induction",
+                            "special_instruction_header":"*Consider lower dosage for hemodynamically unstable patients",
+                            "children" :[
+                                {
+                                    "child_id" : 3121,
+                                    "child_detail_name"  : "Etomidate",
+                                    "child_detail_desc" : "0.15 - 0.3 mg/kg IVP"
+                                },
+                                {
+                                    "child_id" : 3122,
+                                    "child_detail_name"  : "Ketamine",
+                                    "child_detail_desc" : "1-2 mg/kg IVP alliquots \n 4 mg/kg IM"
+                                },
+                                {
+                                    "child_id" : 3123,
+                                    "child_detail_name"  : "Propofol",
+                                    "child_detail_desc" : "0.5 to 2 mg/kg IVP"
+                                }
+                            ]
+                        },
+                        {
+                            "child_id": 313 , 
+                            "child_name"  : "NMBAs",
+                            "special_instruction_header" : "O=onset D=duration",
+                            "children" :[                                
+                                {
+                                    "child_id" : 3131,
+                                    "child_detail_name"  : "Etomidate",
+                                    "child_detail_desc" : "0.15 - 0.3 mg/kg IVP"
+                                },
+                                {
+                                    "child_id" : 3132,
+                                    "child_detail_name"  : "Ketamine",
+                                    "child_detail_desc" : "1-2 mg/kg IVP alliquots \n 4 mg/kg IM"
+                                },
+                                {
+                                    "child_id" : 3133,
+                                    "child_detail_name"  : "Propofol",
+                                    "child_detail_desc" : "0.5 to 2 mg/kg IVP"
+                                }
+                            ],
+                            "special_instruction_footer" : "SUX Contraindications  \n Hx malignant hyperthermia \n >48hr old spinal cord injury/burns \n NMJ Dz \n SUSPECTED HyperK GBS \n Crush Injury"
+                        }
                     ]
                 }
             ]

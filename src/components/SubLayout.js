@@ -63,11 +63,21 @@ class SubLayout extends Component {
         
         const itemArrTemp = [];
         
+        let itemSectionArr = [];
+
         data.map( (obj) => {     
             const ob = {};
             ob.id = obj.id, 
             ob.name = obj.name, 
-            ob.hexvalue = obj.hexvalue           
+            ob.hexvalue = obj.hexvalue 
+
+            itemSectionArr = obj.section;
+            // if section details are not there then select the color accordingly
+            itemSectionArr.map( (objTem) => { 
+                if(objTem.section_name !== undefined && objTem.section_name === "")
+                    ob.hexvalue = objTem.section_hexvalue    
+            })            
+
             itemArrTemp.push( 
                ob
             ) 
@@ -108,13 +118,13 @@ class SubLayout extends Component {
                             {item.id === this.state.selectedValue ? (
                                 (<Svg>               
                                     <Hexagon key={item.id} q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={item.hexvalue} stroke={'#fff'} showText={item.name} showDetails={() =>this.callParentFunction(item.id)} strokeWidth={"2"}>
-                                        <HexText x={this.state.x} y={this.state.y} fontSize={"15"} fill={'#fff'} isStroke={true}>{item.name}</HexText>
+                                        <HexText x={this.state.x} y={this.state.y} fontSize={"15"} fill={'#fff'} isStroke={true} showDetails={() => this.callParentFunction(item.id)}>{item.name}</HexText>
                                     </Hexagon>  
                                 </Svg> )
                             ): (
                                 (<Svg>               
                                     <Hexagon key={item.id} q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={'#fff'} stroke={item.hexvalue} showText={item.name} showDetails={() => this.callParentFunction(item.id)} strokeWidth={"2"}>
-                                        <HexText x={this.state.x} y={this.state.y} fill={item.hexvalue} fontSize={"15"} isStroke={true}>{item.name}</HexText>
+                                        <HexText x={this.state.x} y={this.state.y} fill={item.hexvalue} fontSize={"15"} isStroke={true} showDetails={() => this.callParentFunction(item.id)}>{item.name}</HexText>
                                     </Hexagon>  
                                 </Svg> )
                             ) }

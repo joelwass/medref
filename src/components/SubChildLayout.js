@@ -124,18 +124,18 @@ class SubChildLayout extends Component {
                             ?(
                                 <Svg>              
                                 <Hexagon  q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={item.section_hexvalue} stroke={'#fff'} showText={item.section_name} showDetails={() =>this.callParentFunction(item.section_id)} strokeWidth={"2"}>
-                                    <HexText x={this.state.x} y={ item.multiple_lines ? this.state.y-10 : this.state.y} fontSize={"12"} fill={'#fff'} isStroke={true}>{item.section_name}</HexText>
-                                    <HexText x={this.state.x} y={this.state.y+5} fontSize={"12"} fill={'#fff'} isStroke={true}>{item.section_name1}</HexText>
-                                    <HexText x={this.state.x} y={this.state.y+20} fontSize={"12"} fill={'#fff'} isStroke={true}>{item.section_name2}</HexText>
+                                    <HexText x={this.state.x} y={ item.multiple_lines ? this.state.y-10 : this.state.y} fontSize={"12"} fill={'#fff'} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name}</HexText>
+                                    <HexText x={this.state.x} y={this.state.y+5} fontSize={"12"} fill={'#fff'} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name1}</HexText>
+                                    <HexText x={this.state.x} y={this.state.y+20} fontSize={"12"} fill={'#fff'} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name2}</HexText>
                                 </Hexagon>  
                             </Svg>
                              ) 
                             :(
                                 <Svg>               
                                 <Hexagon  q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={'#fff'} stroke={item.section_hexvalue} showText={item.section_name} showDetails={() =>this.callParentFunction(item.section_id)} strokeWidth={"2"}>
-                                    <HexText x={this.state.x} y={ item.multiple_lines ? this.state.y-10 : this.state.y} fontSize={"12"} fill={item.section_hexvalue} isStroke={true}>{item.section_name}</HexText>
-                                    <HexText x={this.state.x} y={this.state.y+5} fontSize={"12"} fill={item.section_hexvalue} isStroke={true}>{item.section_name1}</HexText>
-                                    <HexText x={this.state.x} y={this.state.y+20} fontSize={"12"} fill={item.section_hexvalue} isStroke={true}>{item.section_name2}</HexText>
+                                    <HexText x={this.state.x} y={ item.multiple_lines ? this.state.y-10 : this.state.y} fontSize={"12"} fill={item.section_hexvalue} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name}</HexText>
+                                    <HexText x={this.state.x} y={this.state.y+5} fontSize={"12"} fill={item.section_hexvalue} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name1}</HexText>
+                                    <HexText x={this.state.x} y={this.state.y+20} fontSize={"12"} fill={item.section_hexvalue} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name2}</HexText>
                                 </Hexagon>  
                             </Svg>
                              )

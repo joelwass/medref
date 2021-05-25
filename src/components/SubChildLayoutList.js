@@ -189,7 +189,6 @@ export default function SubChildLayoutList(props) {
         else if(item.display_img === "MaleFemale")
         {
           const viewHeight = height - 100;
-          console.log(viewHeight)
           return(
             <DisplayMaleFemaleImage
               image = {image} 

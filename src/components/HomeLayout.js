@@ -105,7 +105,7 @@ updateData = () =>{
           {this.state.itemArr.map( (obj) => {  
               return( 
               <Hexagon key={obj.id} q={obj.q} r={obj.r} s={obj.s} points=    {this.state.points} layout={this.state.layout} fill={obj.hexvalue} stroke={obj.hexvalue} showDetails= {this.props.showDetails} showText={obj.id} strokeWidth={"5"}> 
-                   <HexText x={this.state.x} y={this.state.y} fill={obj.fill}>{obj.name}
+                   <HexText x={this.state.x} y={this.state.y} fill={obj.fill} showDetails= {this.props.showDetails} >{obj.name}
                    </HexText>
               </Hexagon>   
               )
