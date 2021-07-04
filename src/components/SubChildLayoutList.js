@@ -4,8 +4,10 @@ import {Text, View,StyleSheet, TouchableOpacity,SafeAreaView, FlatList, Switch,I
 import { ScrollView } from 'react-native-gesture-handler';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-
+import MultipleHexagons from './Common/MultipleHexagon';
 import data from '../data/data.json';
+import LoadingIndicator from './Common/LoadingIndicator';
+
 const {width, height} = Dimensions.get('window');
 
 const getImage = (image) => {
@@ -56,7 +58,7 @@ const Item = ({ item, backgroundColor, onPress, textColor , image ,onImageClick,
    {item.vis && 
     <View style={styles.TextComponentStyle}>
      
-     <Text style={{paddingLeft:10}}>
+     <Text style={[styles.TextComponentChildStyle, {fontSize : 20}]}>
      {item.child_desc}
      {item.child_desc1 && <Text style={{fontSize:15}}>{"\n"}{item.child_desc1}</Text>}
      </Text>
@@ -79,45 +81,54 @@ const Item = ({ item, backgroundColor, onPress, textColor , image ,onImageClick,
   </View>
  );
   
- const DisplayMaleFemaleImage = ({image, backgroundColor ,onFImageClick,onMImageClick}) => ( 
+ const DisplayMaleFemaleImage = ({image, backgroundColor ,onFImageClick,onMImageClick, dataArray, hexagonSize,onUserClick}) => ( 
   
-
   <View style={{height:height, width:width,backgroundColor:'#fff'}}>
-  <View style={{flex:0.15,backgroundColor:'#f5d491' , margin:20, borderRadius : 20,alignItems:'center', justifyContent:'space-around'}}>
+
+  <View style={{flex:0.15,backgroundColor:'#f5d491' , margin:5, borderRadius : 20,alignItems:'center', justifyContent:'space-around'}}>
       <Text style={{ fontSize : 20 , fontWeight: "bold", color: '#fff'}}>Ideal Body Weight ( IBW in Kg )</Text>
       <Text style={{ fontSize : 15 , color: '#fff'}}>Male : 50 + 2.3 * (ht in inches - 60)</Text>
       <Text style={{ fontSize : 15 , color: '#fff'}}>Female : 45.5 + 2.3 * (ht in inches - 60)</Text>
   </View>
   
-  <View style={{flex:0.3,backgroundColor:'#fff', height:10}}>
-  <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+  <View style={{flex:0.3,backgroundColor:'#fff'}}>
+  <MultipleHexagons size={hexagonSize} nameArray={dataArray} onPressHexagon={onUserClick} origin={{ x: 15, y: 15 }} spacing={1} >
+  </MultipleHexagons>  
+  </View>
   
-  <TouchableHighlight onPress={onMImageClick}>
-  <ImageBackground source={getImage("Male")} style={{width:200, height:210}}  ></ImageBackground>
-  </TouchableHighlight>
+  <View style={{flex:0.20,backgroundColor:'#f5d491' , margin:5, borderRadius : 20,alignItems:'center', justifyContent:'space-around'}}>
+      <Text style={{ fontSize : 20 , fontWeight: "bold", color: '#fff'}}>Oxygenation titration</Text>
+      <Text style={{ fontSize : 15 , color: '#fff'}}>Adjust FiO2 and PEEP</Text>
+      <Text style={{ fontSize : 20 , fontWeight: "bold", color: '#fff'}}>Ventiation titration</Text>
+      <Text style={{ fontSize : 15 , color: '#fff'}}>Adjust RR and Vt</Text>
+  </View>
 
-  <TouchableHighlight onPress={onFImageClick}>
-  <ImageBackground source={getImage("Female")} style={{width:200, height:210}}  ></ImageBackground>
-  </TouchableHighlight>
-
   </View>
-  </View>
-  
-  <View style={{flex:0.20,backgroundColor:'#f5d491' , margin:20, borderRadius : 20,alignItems:'center', justifyContent:'space-around'}}>
-   <Text style={{ fontSize : 20 , fontWeight: "bold", color: '#fff'}}>Oxygenation titration</Text>
-   <Text style={{ fontSize : 15 , color: '#fff'}}>Adjust FiO2 and PEEP</Text>
-   <Text style={{ fontSize : 20 , fontWeight: "bold", color: '#fff'}}>Ventiation titration</Text>
-   <Text style={{ fontSize : 15 , color: '#fff'}}>Adjust RR and Vt</Text>
-  </View>
-  </View>
-  
  );
  
+/*
+ <View st
+ 
+ yle={{flexDirection:'row', justifyContent:'space-between'}}>
+      
+    </View>
+
+<TouchableHighlight onPress={onMImageClick}>
+      <ImageBackground source={getImage("Male")} style={{width:200, height:210}}  ></ImageBackground>
+      </TouchableHighlight>
+
+      <TouchableHighlight onPress={onFImageClick}>
+      <ImageBackground source={getImage("Female")} style={{width:200, height:210}}  ></ImageBackground>
+      </TouchableHighlight>
+*/
 
 export default function SubChildLayoutList(props) {
   const [selectedId, setSelectedId] = useState(null);
   const [selectedIdArr, setSelectedIdArr] = useState([]);
   const [isEnabled, setIsEnabled] = useState(false);
+  const [displaySwitch, setDisplaySwitch] = useState(true);
+  const [loading, setLoading] = useState(true);
+
   const navigation = useNavigation();
 
   let arr = [];
@@ -152,9 +163,14 @@ export default function SubChildLayoutList(props) {
     })
     
     setSelectedIdArr(rawArr);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   },[props])
 
-  const renderItem = ({item}) =>{
+
+
+  const renderItem = ({item, index}) =>{
     const backgroundColor = item.backgroundColor;
     const color = '#fff' ;
     const imageUrl = item.button_img;
@@ -163,6 +179,24 @@ export default function SubChildLayoutList(props) {
     {
       
       return (
+        <View>
+        { index === 0 &&
+        (<View style={styles.switchview}>
+          <View style={{height:30 }}>
+            <Text style={{fontSize: 18}}>*potential starting doses</Text>
+          </View>
+          <View >
+          <Switch
+            trackColor={{ false: '#9dcddf', true: '#63a1b0' }}
+            thumbColor='#fbfbfb' 
+            ios_backgroundColor="#3e3e3e"
+            style={{ transform: [{ scaleX: 1.0 }, { scaleY: 1.0 }] }}
+            onValueChange={toggleSwitch}
+            value={isEnabled}
+          />
+          </View>
+        </View>
+        )}
         <Item
           item={item}
           onPress = { () => addToSelectedList(item.child_id)}
@@ -171,11 +205,11 @@ export default function SubChildLayoutList(props) {
           image = {imageUrl}
           onImageClick = { () => onImageClick(imageUrl)}        
         />
+        </View>
       );
     }
     else if(item.display_img !== null)
     {
-    
         const image = item.display_img;
         if(item.display_img === "DOP")
         {
@@ -188,14 +222,39 @@ export default function SubChildLayoutList(props) {
         }
         else if(item.display_img === "MaleFemale")
         {
-          const viewHeight = height - 100;
+          const arr = [
+            { 
+              "id" :1 ,
+              "name": "Male",
+              "hexvalue" :'#f5d491',
+              "q" : 1,
+              "r" : 0,
+              "s" : 0,
+              "onUserClick" : 'onUserClick("Male")' 
+            }
+            ,
+            { 
+              "id" :2 , 
+              "name": "Female",
+              "hexvalue" :'#f5d491',
+              "q" : 1,
+              "r" : 1,
+              "s" : 0,
+              "onUserClick": 'onUserClick("Female")'
+            }
+          ];
+          const viewHeight = height - 80;
+          const hexagonSize = { x: 13, y: 13 };
           return(
             <DisplayMaleFemaleImage
               image = {image} 
               backgroundColor={{ backgroundColor }}
               height= {{viewHeight}}
               onMImageClick = { () => onMImageClick("Male")}  
-              onFImageClick = { () => onFImageClick("Female")}   
+              onFImageClick = { () => onFImageClick("Female")}  
+              onUserClick = {onUserClick}
+              dataArray = {arr} 
+              hexagonSize ={hexagonSize}
             /> 
             );
         }
@@ -223,10 +282,20 @@ export default function SubChildLayoutList(props) {
     navigation.navigate("ImageScreen",{value : item});
   }
 
+  const onUserClick = (item) =>{
+    if( item === 1)
+    {
+      navigation.navigate("ImageScreen",{value : "Male"});
+    }
+    else if(item === 2)
+    {
+      navigation.navigate("ImageScreen",{value : "Female"});
+    }
+  }
+  
   const callParentFunction = (value) =>{
     //props.showSubDetails(value);
     // this function is not called here.
-    console.log('call parent function');
    }
 
   const addToSelectedList = (child_id) =>{
@@ -273,33 +342,40 @@ export default function SubChildLayoutList(props) {
     setIsEnabled(previousState => !previousState);
   };
 
+  const startLoading = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  };
+
+  
+  const renderFlatList = () =>{
+    if(loading)
+    {
+      return(
+        <LoadingIndicator />
+      )
+    }
+    else if(!loading){
+      return(
+        <SafeAreaView style={styles.container}>
+
+        <View style ={{ flex:1 , paddingTop : 5 }}>
+          <FlatList 
+          data={selectedIdArr}        
+          renderItem= { ({item , index}) => renderItem({item, index})}
+          keyExtractor = { (item, index) => item.child_id.toString() }
+          ListEmptyComponent = {EmptyList}
+          extraData={selectedIdArr}
+          />
+        </View>
+        </SafeAreaView> 
+      )
+    }
+  }
   return (
-    <SafeAreaView style={styles.container}>
-    <View style={styles.switchview}>
-      <View style={{height:25}}>
-        <Text>*potential starting doses</Text>
-      </View>
-      <View >
-      <Switch
-        trackColor={{ false: '#9dcddf', true: '#63a1b0' }}
-        thumbColor='#fbfbfb' 
-        ios_backgroundColor="#3e3e3e"
-        style={{ transform: [{ scaleX: 1.0 }, { scaleY: 1.0 }] }}
-        onValueChange={toggleSwitch}
-        value={isEnabled}
-      />
-      </View>
-    </View>
-    <View style ={{ flex:1 , paddingTop : 25}}>
-        <FlatList 
-        data={selectedIdArr}        
-        renderItem= { ({item , index}) => renderItem({item})}
-        keyExtractor = { (item, index) => item.child_id.toString() }
-        ListEmptyComponent = {EmptyList}
-        extraData={selectedIdArr}
-        />
-        </View>    
-    </SafeAreaView> 
+    renderFlatList()
   );
 }
 
@@ -317,8 +393,8 @@ const styles = StyleSheet.create({
     },
     switchview:{ 
       height : 20,
-      paddingTop:5, 
-      paddingBottom:5,
+      padding:5, 
+      marginBottom :5,
       flexDirection:'row', 
       justifyContent:'space-between',
       alignItems:'flex-start'
@@ -363,8 +439,15 @@ const styles = StyleSheet.create({
       elevation : 50,
      
       shadowColor: '#A9A9A9',
+      shadowOffset: {
+        width: 0,
+        height: 3,
+      },      
       shadowRadius: 10,
       shadowOpacity: 1
+    },
+    TextComponentChildStyle:{
+      padding: 15
     },
     SubmitButtonStyle: {
       marginTop:10,

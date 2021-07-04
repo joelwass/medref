@@ -171,14 +171,23 @@ export default function SubLayoutList(props) {
    
     if( item.children) {
       items = item.children.map( ( row, index) => {
-        
-        return (<View key={index} style={{justifyContent:'center'}}>
-                {index === 0 && <ItemDetailHeader headerText={item.special_instruction_header}  /> }
+        return (
+                <View key={index} style={{justifyContent:'center'}}>
+               
+                {
+                   index === 0 && 
+                  <ItemDetailHeader headerText={item.special_instruction_header}  /> 
+                }
+                
                 <ItemDetailsDesc childDetailDesc={row.child_detail_name} borderColor={{borderColor}} textColor={{color}}  />        
+                
                 <View style={{alignItems:'center', justifyContent:'center'}} >
-                <Text style={{fontSize: 20, justifyContent:'center', marginTop:5}}>{row.child_detail_desc}</Text>
+                  <Text style={{fontSize: 20, justifyContent:'center', marginTop:5}}>{row.child_detail_desc}</Text>
                 </View>
-                {index === childArrLength && <ItemDetailFooter footerText={item.special_instruction_footer} /> }
+
+                { index === childArrLength && 
+                  <ItemDetailFooter footerText={item.special_instruction_footer} /> }
+                
                 </View>)
       })
     } 
@@ -192,9 +201,11 @@ export default function SubLayoutList(props) {
         backgroundColor={{backgroundColor}}
         textColor = {{color}}
         />
-        <View style={styles.TextComponentStyle}>
-        {item.vis && items}
-        </View>
+        
+        {item.vis && 
+          <View style={styles.TextComponentStyle}>{items}</View>
+        }
+        
         
       </View>
       
@@ -293,7 +304,7 @@ export default function SubLayoutList(props) {
         <View>
         <View style={styles.switchview}>
           <View style={{height:25}}>
-            <Text>*potential starting doses</Text>
+            <Text style={{fontSize:20}}>*potential starting doses</Text>
           </View>
           <View >
           <Switch
@@ -385,6 +396,9 @@ const styles = StyleSheet.create({
       alignItems:'center',
       flexDirection: 'row',
       justifyContent:'space-between'
+    },
+    TextComponentChildStyle:{
+      padding: 15
     },
     ChildButtonStyle:{
       marginTop:10,

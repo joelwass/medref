@@ -1,0 +1,166 @@
+import data from '../../data/data.json';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const pointArr = [
+    {id : 1 ,q :1.2 ,r :-1, s :1},
+    {id : 2 ,q :1.2 ,r : 0, s :0},
+    {id : 3 ,q :2.2 ,r :-1, s :-1},
+    {id : 4 ,q :2.8 ,r :1, s :1},
+    {id : 5 ,q :2.8 ,r :0, s :0},
+    {id : 6 ,q :1.8 ,r :1, s :-1},
+    {id : 7 ,q :1.2 ,r :3.5, s :1},
+    {id : 8 ,q :1.2 ,r :2.5, s :0},
+    {id : 9 ,q :2.2 ,r :2.5, s :1},
+]
+
+class DataUtils {
+
+    static items()
+    {
+        const array = [];
+        data.map( (obj) => {
+            var ob = {}
+            ob.id = obj.id,
+            ob.name = obj.name
+            if( obj.multiple_lines)
+                ob.name = `${obj.name}  ${obj.name1}  ${obj.name2}`
+            array.push( ob );
+        })
+        return array;
+    }
+
+    static defaultItems()
+    {
+        const array = [];
+        data.map( (obj) => {
+            if(obj.selected)
+            {
+                var ob = {}
+                ob.id = obj.id,
+                ob.name = obj.name
+                array.push( ob );
+            }
+        })
+        return array;
+    }
+
+    static getDefaultItems()
+    {
+        const arr = [];
+        data.map( ( obj) => {
+          if( obj.selected)
+            arr.push(obj.id)
+        })
+        
+        return arr;
+    }
+
+    static async getUserSelectedItems()
+    {
+        try{
+            const jsonValue = await AsyncStorage.getItem('@storage_Key');
+            const temp  = jsonValue != null ? JSON.parse(jsonValue) : null;
+            return temp;
+        }
+        catch(e)
+        {
+            console.log(e)
+        }   
+    }
+
+    static async setUserSelectedItems(values)
+    {
+        try
+        {
+            const result = await AsyncStorage.setItem('@storage_Key', JSON.stringify(values));
+            return values;
+        }
+        catch(e)
+        {
+            console.log(e)
+        }
+    }
+
+    static async getItemArray()
+    {
+        let resultArray = [];
+        
+        let tempArr = [];
+
+        const result = await this.getUserSelectedItems();
+        if(result)
+        {
+            resultArray = this.computeData(result);
+        }
+        else
+        {
+            tempArr = this.getDefaultItems();
+            resultArray = this.computeData(tempArr)
+        }
+        
+        return resultArray;
+    }
+
+    static computeData(SettingIds)
+    {
+        try{
+            const itemArrTemp = [];
+            const ptArr = [];
+            let count = 1;
+            data.map( (obj) =>{
+                if( SettingIds != null && SettingIds.includes(obj.id) === true && count <=9 )
+                {
+                    var ptObj = {};
+                    ptObj = pointArr.find(x => x.id === count);
+                    if (count <= 9 )
+                    {
+                        const ob = {};
+                        ob.id = obj.id, 
+                        ob.pointId = count,
+                        ob.name = obj.name,
+                        ob.name1 = obj.name1,
+                        ob.name2 = obj.name2,
+                        ob.multiple_lines = obj.multiple_lines, 
+                        ob.hexvalue = obj.hexvalue, 
+                        ob.selected = obj.selected,
+                        ob.q = ptObj.q,
+                        ob.r = ptObj.r,
+                        ob.s = ptObj.s
+                        itemArrTemp.push( 
+                            ob
+                        )
+                    }
+                    count++;
+                }
+            })
+            if(count === 9)
+            {
+                // Enter the last element "More"
+                const lastObj = data.find( item => item.default === true);
+                var ptObj = {};
+                ptObj = pointArr.find(x => x.id === count);
+                const ob = {};
+                ob.id = lastObj.id, 
+                ob.pointId = count,
+                ob.name = lastObj.name,
+                ob.name1 = lastObj.name1,
+                ob.name2 = lastObj.name2,
+                ob.multiple_lines = lastObj.multiple_lines, 
+                ob.hexvalue = lastObj.hexvalue, 
+                ob.selected = lastObj.selected,
+                ob.q = ptObj.q,
+                ob.r = ptObj.r,
+                ob.s = ptObj.s
+                itemArrTemp.push( 
+                ob
+                ) 
+            }
+            return itemArrTemp;
+        }
+        catch(e)
+        {
+            console.log(e);
+        }
+    }
+}
+export default DataUtils;

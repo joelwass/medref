@@ -1,7 +1,7 @@
 [
     {
         "id" :1,
-        "name": "Csv",
+        "name": "CV",
         "hexvalue": "#96c9dc",
         "selected" : true,
         "section" :[
@@ -300,17 +300,88 @@
     },
     {
         "id" :8,
-        "name" : "Sedation",
+        "name" : "OB",
         "hexvalue": "#b6d377",
-        "selected" : true,
+        "selected" : false,
         "section" :[
         ]
     },
     {
         "id" :9,
-        "name" : "More",
+        "name" : "Intranasal",
+        "hexvalue": "#f5d491",
+        "selected" : false,
+        "section" :[
+        ]
+    },
+    {
+        "id" :10,
+        "name" : "Psych",
+        "hexvalue": "#ff6262",
+        "selected" : false,
+        "section" :[
+        ]
+    },
+    {
+        "id" :11,
+        "name" : "Anesthetics",
+        "hexvalue": "#f5d491",
+        "selected" : false,
+        "section" :[
+        ]
+    },
+    {
+        "id" :12,
+        "name" : "Inhibitors",
+        "hexvalue": "#b6d377",
+        "selected" : false,
+        "section" :[
+        ]
+    },
+    {
+        "id" :13,
+        "name" : "Anaphylax",
+        "hexvalue": "#b6d377",
+        "selected" : false,
+        "section" :[
+        ]
+    },
+    {
+        "id" :14,
+        "name" : "Direct",
+        "name1" : "Thromblin",
+        "name2" : "Inhibitors",
+        "multiple_lines" : true,
+        "hexvalue": "#b6d377",
+        "selected" : false,
+        "section" :[
+        ]
+    },
+    {
+        "id" :15,
+        "name" : "Factor",
+        "name1" : "Xa-",
+        "name2" :"Inhibitors",
+        "multiple_lines" : true,
         "hexvalue": "#e5e5e5",
+        "selected" : false,
+        "section" :[
+        ]
+    },
+    {
+        "id" :16,
+        "name" : "Sedation",
+        "hexvalue": "#b6d377",
         "selected" : true,
+        "section" :[
+        ]
+    }
+    ,
+    {
+        "id" :17,
+        "name" : "More",
+        "hexvalue": "#DDDDDD",
+        "default" : true,
         "section" :[
         ]
     }

@@ -9,6 +9,8 @@ import DetailsScreen from './Screens/DetailsScreen';
 import SubDetailsScreen from './Screens/SubDetailsScreen';
 import SettingScreen from './Screens/SettingScreen';
 import ImageScreen from './Screens/ImageScreen';
+import { HeaderBackButton } from '@react-navigation/stack';
+
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -19,12 +21,13 @@ function HomeStack() {
       initialRouteName="Home"
       screenOptions={({ navigation, route }) => ({
         title:'BAMA',
-        headerStyle: { backgroundColor: '#fff', height : 80 },
+        headerStyle: { backgroundColor: '#fff', height : 90 },
         headerTintColor: '#96c9dc',
-        headerTitleStyle: { fontWeight: 'bold' },
+        headerTitleStyle: { fontWeight: 'bold' , fontSize: 30 },
         headerTitleAlign: 'center',
+        headerRightContainerStyle :{ paddingRight : 10 },
         headerRight : () => (
-          <AntDesign name="setting" size={32} color="grey" onPress={() => navigation.navigate("Settings")}
+          <AntDesign name="setting" size={37} color="grey" onPress={() => navigation.navigate("Settings")}
           />
           ),
       })}
@@ -54,9 +57,16 @@ function SettingsStack() {
           headerTintColor: '#96c9dc',
           headerTitleStyle: { fontWeight: 'bold' },
           headerTitleAlign: 'center',
+          headerRightContainerStyle :{ paddingRight : 30 },
+          
           headerRight : () => (
-            <AntDesign name="setting" size={32} color="grey" onPress={() => navigation.navigate("Settings")}
-            />
+            <View style={{flexDirection: "row",justifyContent: "flex-end",paddingRight:10,width: 120}}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Settings")}
+                >
+                <Icon type="font-awesome" name="cog" color="white" />
+              </TouchableOpacity>
+            </View>      
             ),
         })}
         >
@@ -78,14 +88,13 @@ export default function NavigationComponent() {
               name="HomeStack"
               component={HomeStack}
               options={{
-               
-                
-                tabBarLabel: 'Home',
+                tabBarLabel: '',
                 tabBarIcon: ({ color, size }) => (
                   <MaterialCommunityIcons
                     name="home"
                     color={'#fff'}
-                    size={size}                    
+                    size={size * 1.7} 
+                    style={{marginTop :15}}                   
                   />
                 ),
               }}

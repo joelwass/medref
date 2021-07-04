@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import {View , Text, StyleSheet, Dimensions} from 'react-native';
+import {View , Text, StyleSheet, Dimensions , FlatList} from 'react-native';
 import Svg, { G,Circle, Path, Polygon, Text as SvgText} from 'react-native-svg';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import Constants from 'expo-constants';
 import Orientation from './Orientation';
 import Point from './Point';
 import Hexagon from './Hexagon';
 import HexText from './HexText';
-
+import { GlobalContext }  from '../context/provider';
+import settingInitialState from '../context/initialStates/appSettingsInitialState';
 import data from '../data/data.json';
+import DataUtils from './Helper/DataUtils';
+
 
 
 const pointArr = [
@@ -22,11 +26,13 @@ const pointArr = [
     {id : 9 ,q :2.2 ,r :2.5, s :1},
 ]
 
+
 class HomeLayout extends Component {
    
-     static LAYOUT_FLAT = new Orientation(3.0 / 2.0, 0.0, Math.sqrt(3.0) / 2.0, Math.sqrt                             (3.0),2.0 / 3.0, 0.0, -1.0 / 3.0, Math.sqrt(3.0) / 3.0, 0.0);
-    static LAYOUT_POINTY = new Orientation(Math.sqrt(3.0), Math.sqrt(3.0) / 2.0, 0.0, 3.0 /                            2.0, Math.sqrt(3.0) / 3.0, -1.0 / 3.0, 0.0, 2.0 / 3.0, 0.5);
-    
+    static LAYOUT_FLAT = new Orientation(3.0 / 2.0, 0.0, Math.sqrt(3.0) / 2.0, Math.sqrt(3.0),2.0 / 3.0, 0.0, -1.0 / 3.0, Math.sqrt(3.0) / 3.0, 0.0);
+    static LAYOUT_POINTY = new Orientation(Math.sqrt(3.0), Math.sqrt(3.0) / 2.0, 0.0, 3.0 /2.0, Math.sqrt(3.0) / 3.0, -1.0 / 3.0, 0.0, 2.0 / 3.0, 0.5);
+    static contextType = GlobalContext;
+
     constructor(props){
         super(props); 
         const {  flat, className, ...rest } = this.props;
@@ -41,43 +47,121 @@ class HomeLayout extends Component {
             x: 0,
             y:0,
             showDetails : this.props.showDetails,
-            itemArr : []
+            itemArr : [],
+            settingIds : []
         }
-        this.state.itemArr = this.updateData();
     }
 
-updateData = () =>{
+  componentDidMount =() => {
+  
+    var tempArr =[]
+
+    //if(settingIds != null)
+    //{
+    //  this.setState({settingIds : settingIds})
+    //}
+
+   /*DataUtils.getUserSelectedItems()
+  .then( (result) => {
+      result !== null ? (  
+          this.setState({settingIds : result}),
+          this.setState({itemArr : this.updateData(result)})
+        ) : (
+        //this.setState({settingIds : []}),
+          tempArr = this.getDefaultSettings(),
+          this.setState({settingIds : tempArr}),
+          this.setState({itemArr : this.updateData(tempArr)})
+        )
+  })*/
+}
+
+/*updateData = (SettingIds) =>{
       const itemArrTemp = [];
       const ptArr = [];
       let count = 1;
+
       data.map( (obj) => {
+         if( SettingIds != null && SettingIds.includes(obj.id) === true && count <=8 )
+         {          
           var ptObj = {};
           ptObj = pointArr.find(x => x.id === count);
-          const ob = {};
-          ob.id = obj.id, 
-          ob.pointId = count,
-          ob.name = obj.name, 
-          ob.hexvalue = obj.hexvalue, 
-          ob.selected = obj.selected,
-          count <= 9 ?
-          (
-          ob.q = ptObj.q,
-          ob.r = ptObj.r,
-          ob.s = ptObj.s
-          )
-          : (
-            ob.q = null,
-            ob.r = null,
-            ob.s = null
-          )
-          count = count + 1
-         
-          itemArrTemp.push( 
-             ob
-          ) 
-      })
+          if (count <= 8 )
+          {
+            const ob = {};
+            ob.id = obj.id, 
+            ob.pointId = count,
+            ob.name = obj.name,
+            ob.name1 = obj.name1,
+            ob.name2 = obj.name2,
+            ob.multiple_lines = obj.multiple_lines, 
+            ob.hexvalue = obj.hexvalue, 
+            ob.selected = obj.selected,
+            ob.q = ptObj.q,
+            ob.r = ptObj.r,
+            ob.s = ptObj.s
+            itemArrTemp.push( 
+              ob
+            ) 
+          }
+          count = count + 1;
+          }     
+      }) // map ends
+
+      if(count === 9)
+      {
+        // Enter the last element "More"
+        const lastObj = data.find( item => item.default === true);
+        var ptObj = {};
+        ptObj = pointArr.find(x => x.id === count);
+        const ob = {};
+        ob.id = lastObj.id, 
+        ob.pointId = count,
+        ob.name = lastObj.name,
+        ob.name1 = lastObj.name1,
+        ob.name2 = lastObj.name2,
+        ob.multiple_lines = lastObj.multiple_lines, 
+        ob.hexvalue = lastObj.hexvalue, 
+        ob.selected = lastObj.selected,
+        ob.q = ptObj.q,
+        ob.r = ptObj.r,
+        ob.s = ptObj.s
+        itemArrTemp.push( 
+          ob
+        ) 
+      }
       return itemArrTemp;
     }
+
+    /*async removeItemValue(key) {
+      try {
+          await AsyncStorage.removeItem(key);
+          return true;
+      }
+      catch(exception) {
+          return false;
+      }
+    }
+  
+
+   /* getSettingsFromStorage = async() => {
+      try {
+        const jsonValue = await AsyncStorage.getItem('@storage_Key');
+        const settingValues  = jsonValue != null ? JSON.parse(jsonValue) : null;
+        return settingValues;
+      } catch(e) {
+        // read error
+      }
+    }
+
+    getDefaultSettings = () =>{
+        const arr = [];
+        data.map( ( obj) => {
+          if( obj.selected)
+            arr.push(obj.id)
+        })
+        
+        return arr;
+    }*/
 
     getPointOffset(corner, orientation, size) {
         let angle = 2.0 * Math.PI * (corner + orientation.startAngle) / 6;
@@ -97,22 +181,33 @@ updateData = () =>{
         });
         return corners;
     }
+  
+    render() { 
+      const {
+        settingsState:{itemArray},
+      } = this.context;
 
-    render() {              
-        return ( 
-          <View style={styles.container}>
-          <Svg  width={'100%'} height={'100%'} viewBox={"0 0 100 100"} version="1.1" xmlns="http://www.w3.org/2000/svg">
-          {this.state.itemArr.map( (obj) => {  
-              return( 
-              <Hexagon key={obj.id} q={obj.q} r={obj.r} s={obj.s} points=    {this.state.points} layout={this.state.layout} fill={obj.hexvalue} stroke={obj.hexvalue} showDetails= {this.props.showDetails} showText={obj.id} strokeWidth={"5"}> 
-                   <HexText x={this.state.x} y={this.state.y} fill={obj.fill} showDetails= {this.props.showDetails} >{obj.name}
-                   </HexText>
-              </Hexagon>   
-              )
-          })}
-          </Svg>
-          </View>
-        )
+          return ( 
+            
+            <View style={styles.container}>
+            <Svg  width={'100%'} height={'100%'} viewBox={"0 0 100 100"} version="1.1" xmlns="http://www.w3.org/2000/svg">
+              {itemArray.map( (obj, index) => {  
+                  return( 
+                    <Hexagon key={obj.id} q={obj.q} r={obj.r} s={obj.s} points={this.state.points} layout={this.state.layout} fill={obj.hexvalue} stroke={obj.hexvalue} showDetails= {this.props.showDetails} showText={obj.id} strokeWidth={"5"} > 
+                      <HexText x={this.state.x} y={obj.multiple_lines ? this.state.y-4 : this.state.y} fill={obj.fill} showDetails= {this.props.showDetails} >{obj.name}
+                      </HexText>
+                      <HexText x={this.state.x} y={this.state.y+1} fill={obj.fill} showDetails= {this.props.showDetails} >{obj.name1}
+                      </HexText>
+                      <HexText x={this.state.x} y={this.state.y+5} fill={obj.fill} showDetails= {this.props.showDetails} >{obj.name2}
+                      </HexText>           
+                  </Hexagon> 
+                  )
+              })}
+            </Svg> 
+            </View>
+            
+          )
+
     }
 }
 

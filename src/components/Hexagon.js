@@ -16,8 +16,8 @@ class Hexagon extends Component {
     const {layout} = Object.assign(this.props.layout);
     const hex = new Hex(q, r, s);
     const pixel = HexUtils.hexToPixel(hex, this.props.layout);
-    this.state = { hex, pixel };
-   
+    
+    this.state = { hex, pixel};
   }
   
   onClick(e) {
@@ -30,9 +30,11 @@ class Hexagon extends Component {
   render() {
     const { fill, stroke, cellStyle, showDetails, className } = this.props;
     const { points } = this.props.points;
-    const { hex, pixel } = this.state;
+    const { hex, pixel ,appSettings} = this.state;
     const fillId = (fill) ? `url(#${fill})` : null;
     const {strokeWidth} = this.props.strokeWidth;
+
+    
   
     if ((Platform.OS === 'ios' ) || (Platform.OS === 'android')) {
     return (
