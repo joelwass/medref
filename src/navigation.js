@@ -18,20 +18,19 @@ const Tab = createBottomTabNavigator();
 function HomeStack() {
     return (
       <Stack.Navigator
-      initialRouteName="Home"
-      screenOptions={({ navigation, route }) => ({
-        title:'BAMA',
-        headerStyle: { backgroundColor: '#fff', height : 90 },
-        headerTintColor: '#96c9dc',
-        headerTitleStyle: { fontWeight: 'bold' , fontSize: 30 },
-        headerTitleAlign: 'center',
-        headerRightContainerStyle :{ paddingRight : 10 },
-        headerRight : () => (
-          <AntDesign name="setting" size={37} color="grey" onPress={() => navigation.navigate("Settings")}
-          />
+        initialRouteName="Home"
+        screenOptions={({ navigation, route }) => ({
+          title:'BAMA',
+          headerStyle: { backgroundColor: '#fff', height : 100 },
+          headerTintColor: '#96c9dc',
+          headerTitleStyle: { fontWeight: 'bold' , fontSize: 30 },
+          headerTitleAlign: 'center',
+          headerRightContainerStyle :{ paddingRight : 10 },
+          headerRight : () => (
+            <AntDesign name="setting" size={37} color="grey" onPress={() => navigation.navigate("Settings")}/>
           ),
-      })}
-        >
+        })}
+      >
         <Stack.Screen
           name="Home" component={HomeScreen}  />
         <Stack.Screen
@@ -78,10 +77,9 @@ function SettingsStack() {
 export default function NavigationComponent() {
     return (
       <NavigationContainer>
-      <Tab.Navigator
+        <Tab.Navigator
             initialRouteName="Home"
             tabBarOptions={{
-              
               activeBackgroundColor: '#000',
             }}>
             <Tab.Screen
@@ -94,7 +92,7 @@ export default function NavigationComponent() {
                     name="home"
                     color={'#fff'}
                     size={size * 1.7} 
-                    style={{marginTop :15}}                   
+                    style={{marginTop :10}}                   
                   />
                 ),
               }}

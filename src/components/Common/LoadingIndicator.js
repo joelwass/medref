@@ -1,16 +1,11 @@
 import React, { Component, useEffect , useState} from 'react';
 import { ActivityIndicator, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const LoadingIndicator = ({
- isLoading
-}) =>
-{
-  const[animating, setAnimating] = useState(true)
-
-   
-   closeActivityIndicator = () => {
-    setTimeout(() => setAnimating( 
-         false ), 500)      
+const LoadingIndicator = ({ isLoading }) => {
+   const [animating, setAnimating] = useState(true)
+ 
+   const closeActivityIndicator = () => {
+    setTimeout(() => setAnimating( false ), 500)      
    }
 
    useEffect( () =>{

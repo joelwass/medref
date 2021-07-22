@@ -304,7 +304,7 @@ export default function SubLayoutList(props) {
         <View>
         <View style={styles.switchview}>
           <View style={{height:25}}>
-            <Text style={{fontSize:20}}>*potential starting doses</Text>
+            <Text style={{fontSize:20}}>* expand all</Text>
           </View>
           <View >
           <Switch

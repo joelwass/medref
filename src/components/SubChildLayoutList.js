@@ -183,7 +183,7 @@ export default function SubChildLayoutList(props) {
         { index === 0 &&
         (<View style={styles.switchview}>
           <View style={{height:30 }}>
-            <Text style={{fontSize: 18}}>*potential starting doses</Text>
+            <Text style={{fontSize: 18}}>* expand all</Text>
           </View>
           <View >
           <Switch
@@ -320,7 +320,7 @@ export default function SubChildLayoutList(props) {
 
   const EmptyList = () =>{
     return(
-      <View style={{flex:1, alignItems:'center'}} ><Text style={styles.title}>No Data Found</Text></View>
+      <View style={{flex:1}} ><Text style={styles.title} textAlign='center'>No Data Found</Text></View>
     )
   }
 
@@ -413,8 +413,8 @@ const styles = StyleSheet.create({
     },
     title: {
       fontSize: 25,
-      marginRight : 15,
-      marginLeft : 15,
+      margin:'auto',
+      textAlign: 'center',
       justifyContent:'center'
     },
     TextComponentStyle: {

@@ -1,12 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
 import React,{useEffect, useState, useContext} from 'react';
-import { StyleSheet, Text, View , Button} from 'react-native';
 import HomeLayout from '../Components/HomeLayout';
-import Svg, { G,Circle, Path, Polygon, Text as SvgText} from 'react-native-svg';
-import { useFocusEffect, useIsFocused } from '@react-navigation/native';
+import { useIsFocused } from '@react-navigation/native';
 import DataUtils from '../Components/Helper/DataUtils';
 import { GlobalContext }  from '../context/provider';
-import LoadingIndicator from '../Components/Common/LoadingIndicator';
 
 export default function HomeScreen({navigation, route}) {
   const hexagonSize = { x: 13, y: 13 };
@@ -62,18 +58,10 @@ export default function HomeScreen({navigation, route}) {
   }
 
   const renderHomeScreen = () => {
-    
-      if(isChanged)
-      {
-        setTimeout(() =>{setChanged(false)},1000)
-        return(<LoadingIndicator />)
-      }
-      else{
-        return(
-          <HomeLayout size={hexagonSize} flat={true} spacing={1.0} origin={{ x: 7, y: 7 }} showDetails={showDetails} >
-          </HomeLayout> 
-        )
-      }
+    return(
+      <HomeLayout size={hexagonSize} flat={true} spacing={1.0} origin={{ x: 7, y: 7 }} showDetails={showDetails} >
+      </HomeLayout> 
+    )
   }
   
   return(
