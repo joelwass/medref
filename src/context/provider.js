@@ -9,19 +9,16 @@ export const GlobalContext = createContext({});
 
 const GlobalProvider = ({children}) => {
   
-    const[settingsState, settingDispatch] = useReducer( settings, appSettingsInitialState);
+  const [settingsState, settingDispatch] = useReducer(settings, appSettingsInitialState)
 
-    useEffect( () =>{
-       setInitialContext()(settingDispatch);
-    },[])
+  useEffect( () =>{
+    setInitialContext()(settingDispatch);
+  },[])
 
-    return (
-    
-        <GlobalContext.Provider
-         value={{settingsState,settingDispatch}}
-        >{children}
-        </GlobalContext.Provider>
-    
-    );
-};
+  return (
+    <GlobalContext.Provider value={{settingsState, settingDispatch}} >
+      {children}
+    </GlobalContext.Provider>
+  )
+}
 export default GlobalProvider;

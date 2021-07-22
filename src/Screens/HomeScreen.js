@@ -17,43 +17,31 @@ export default function HomeScreen({navigation, route}) {
     let mounted = true;
     setChanged(true);
     
-    DataUtils.getUserSelectedItems().then(
-      (result) => {
-        if(result === null)
-        { 
-          //console.log(result);
-          if(mounted)
-          {
-            setDefaultItems().then(
-              (result) =>{
-                //console.log("default items updated");
-              }
-            );
-          }
-        }
+    DataUtils.getUserSelectedItems().then((result) => {
+      if (result === null && mounted) { 
+        setDefaultItems()
       }
-    )
-    return () =>{
+    })
+    return () => {
      mounted = false; 
     }
   }, [isFocused]);
 
-  const showDetails =(props) => {
-    navigation.navigate("Details",{value : props});
+  const showDetails = (props) => {
+    navigation.navigate("Details", {value : props})
   }
  
-  const setDefaultItems = async() =>{
-    try{
-        const jsonValue = DataUtils.getDefaultItems();
-        //console.log(jsonValue);
+  const setDefaultItems = async () => {
+    try {
+      const jsonValue = DataUtils.getDefaultItems();
+      //console.log(jsonValue);
 
-        const result = await DataUtils.setUserSelectedItems(jsonValue);
-        //console.log(result);
-        return result;
+      const result = await DataUtils.setUserSelectedItems(jsonValue);
+      //console.log(result);
+      return result;
     }
-    catch(e)
-    {
-      console.log(e);
+    catch(e) {
+      console.log(e)
     }
   }
 

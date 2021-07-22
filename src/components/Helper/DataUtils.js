@@ -51,6 +51,8 @@ class DataUtils {
           if( obj.selected)
             arr.push(obj.id)
         })
+
+        console.log('here getting default items', arr)
         
         return arr;
     }
@@ -58,7 +60,7 @@ class DataUtils {
     static async getUserSelectedItems()
     {
         try{
-            const jsonValue = await AsyncStorage.getItem('@storage_Key');
+            const jsonValue = await AsyncStorage.getItem('@bama_storage_Key');
             const temp  = jsonValue != null ? JSON.parse(jsonValue) : null;
             return temp;
         }
@@ -72,7 +74,7 @@ class DataUtils {
     {
         try
         {
-            const result = await AsyncStorage.setItem('@storage_Key', JSON.stringify(values));
+            const result = await AsyncStorage.setItem('@bama_storage_Key', JSON.stringify(values));
             return values;
         }
         catch(e)

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MaterialCommunityIcons, Ionicons, AntDesign } from '@expo/vector-icons';
+import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 import HomeScreen from './Screens/HomeScreen';
 import DetailsScreen from './Screens/DetailsScreen';
 import SubDetailsScreen from './Screens/SubDetailsScreen';
@@ -46,33 +46,6 @@ function HomeStack() {
     );
 }
 
-function SettingsStack() {
-    return (
-        <Stack.Navigator
-        initialRouteName="Details"
-        screenOptions={({ navigation, route }) => ({
-          title:'BAMA',
-          headerStyle: { backgroundColor: '#fff' },
-          headerTintColor: '#96c9dc',
-          headerTitleStyle: { fontWeight: 'bold' },
-          headerTitleAlign: 'center',
-          headerRightContainerStyle :{ paddingRight : 30 },
-          
-          headerRight : () => (
-            <View style={{flexDirection: "row",justifyContent: "flex-end",paddingRight:10,width: 120}}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate("Settings")}
-                >
-                <Icon type="font-awesome" name="cog" color="white" />
-              </TouchableOpacity>
-            </View>      
-            ),
-        })}
-        >
-      </Stack.Navigator>
-    );
-}
-
 
 export default function NavigationComponent() {
     return (
@@ -80,7 +53,7 @@ export default function NavigationComponent() {
         <Tab.Navigator
             initialRouteName="Home"
             tabBarOptions={{
-              activeBackgroundColor: '#000',
+              activeBackgroundColor: 'black',
             }}>
             <Tab.Screen
               name="HomeStack"

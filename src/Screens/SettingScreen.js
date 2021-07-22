@@ -25,37 +25,27 @@ export default function SettingScreen({route, navigation}) {
     } = useContext(GlobalContext) ;
 
 
-    useEffect( () =>{
-      let arr =[];
+    useEffect(() =>{
       let itemlist = DataUtils.items();
       setSettings(itemlist);
       //clearAsyncStorage().then( (result) => {
       //  //console.log(result);
       //})
 
-      getData()
-        .then( (result) => {
+      getCachedPinnedTopics()
+        .then((result) => {
             result !== null ? (
-
-                setIds(result)
-              ) : (
-
-                setIds([])
-              )
+              setIds(result)
+            ) : (
+              setIds([])
+            )
         })
-
-        return () => {
-           
-        }
     },[navigation, hasUnsavedChanges]);
 
     
-    const getData = async() => {
+    const getCachedPinnedTopics = async () => {
       try {
-        
-        const jsonValue = await DataUtils.getUserSelectedItems();
-        return jsonValue;
- 
+        return DataUtils.getUserSelectedItems();
       } catch(e) {
         console.log(e);
       }
@@ -85,55 +75,42 @@ export default function SettingScreen({route, navigation}) {
         <View style={[styles.subtitleView, index % 2 > 0 ? styles.oddItem : styles.evenItem]}>
         <ListItem>       
           <ListItem.Content>
-          <ListItem.Title>
-            <Text style={styles.itemStyle}>{item.name}</Text>
-          </ListItem.Title>
+            <ListItem.Title>
+              <Text style={styles.itemStyle}>{item.name}</Text>
+            </ListItem.Title>
           </ListItem.Content>
           <ListItem.CheckBox
-          checkedIcon="dot-circle-o"
-          uncheckedIcon="circle-o"
-          checked= {isChecked(item.id)}
-          onPress={() => toggleChecked(item.id)}
+            checkedIcon="dot-circle-o"
+            uncheckedIcon="circle-o"
+            checked= {isChecked(item.id)}
+            onPress={() => toggleChecked(item.id)}
           >
           </ListItem.CheckBox>   
-      </ListItem>
+        </ListItem>
       </View>
-      );
-  }; 
-
-  const onPress = () => {   
-    checkData();
+    )
   }
-  const checkData =() =>{
+
+  const updatePressed = () => {   
+    validateAndSubmit();
+  }
+  const validateAndSubmit = () => {
     try {
-      if(ids && ids.length > 0){
+      if (ids && ids.length === 8) {
+        storeData(ids) // store in async storage
+        .then(() => {
+          updateContext(ids)(settingDispatch)
+          // TODO: show toast saying succesful save or something
           
-          if(ids.length === 8)
-          {
-            //const jsonValue = JSON.stringify(ids);
-            storeData(ids) // store in async storage
-            .then(
-              (result) =>{
-                  updateContext(ids)(settingDispatch);
-                  AlertMessage("Items Saved Successfully");
-              }
-            )
-            .catch( (err) =>{
-                console.log('Check Data 111 :'+err)
-            })
-          }
-          else if( ids.length < 8)
-          {
-            AlertMessage("Action Required !!!","You have to select 8 items from the list");
-          }
-          else if(ids.length > 8)
-          {
-                let response = AlertMessage(`Attention !!!","You have selected ${ids.length} items. You can select max 8.`);
-                return;
-          }
+          // Nav back to home screen
+          navigation.navigate("Home")
+        })
+        .catch( (err) =>{
+          console.log('Check Data 111 :'+err)
+        })
       }
-      else{
-        console.log("else checkdata");
+      else {
+        AlertMessage("Insufficient topics","Please select 8 topics to pin.");
       }
     } catch (e) {
       // saving error
@@ -141,14 +118,10 @@ export default function SettingScreen({route, navigation}) {
     }
   }
   const storeData = async (values) => {
-    try
-    {
-      let arr = [];
-      arr = await DataUtils.setUserSelectedItems(values);
-      return arr;
+    try {
+      return DataUtils.setUserSelectedItems(values)
     }
-    catch(e)
-    {
+    catch(e) {
       console.log(e)
     }
   }
@@ -164,23 +137,21 @@ export default function SettingScreen({route, navigation}) {
          }
        )
     }
-    const AlertMessage = (title, message) =>
-    { 
-        Alert.alert(
-            title,
-            message,
-            [
-              { text: "OK", onPress: () => { setSaveItem(true)}  }
-            ]
-        );  
-        return true
+    const AlertMessage = (title, message) => { 
+      console.log('alerted?', message)
+      Alert.alert(
+        title,
+        message,
+        [{ text: "OK", onPress: () => { setSaveItem(true)}}]
+      )
+      return true
     }
 
     return (
       <SafeAreaView style={styles.container} forceInset={{ top : 'always'}}>
       
       <View style={{justifyContent:'flex-start'}}>
-        <Text style={{ fontSize:22, color:'#3f3f3f', paddingLeft : 10 , margin : 2}}> Settings :  </Text>
+        <Text style={{ fontSize:22, color:'#3f3f3f', paddingLeft : 10 , margin : 2}}> Pinned home screen topics: </Text>
       </View>
       
       <FlatList 
@@ -191,9 +162,9 @@ export default function SettingScreen({route, navigation}) {
         initialNumToRender = {9}
       />
       <View style={{alignItems:'center',justifyContent:'center', backgroundColor:'#d3d3d3'}}>
-          <TouchableHighlight onPress={onPress}>
+        <TouchableHighlight onPress={updatePressed}>
           <View style={styles.button}>
-            <Text style={{fontSize : 20, color: '#fff', margin : 5}}>Save</Text>
+            <Text style={{fontSize : 20, color: '#fff', margin : 5}}>Update</Text>
           </View>
         </TouchableHighlight> 
       </View>

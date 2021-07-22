@@ -50,7 +50,7 @@ export default function SettingsScreen  ({route,navigation}) {
 
     const getData = async() => {
       try {
-        const jsonValue = await AsyncStorage.getItem('@storage_Key');
+        const jsonValue = await AsyncStorage.getItem('@bama_storage_Key');
         const temp  = jsonValue != null ? JSON.parse(jsonValue) : null;
         return temp;
       } catch(e) {
@@ -107,7 +107,7 @@ export default function SettingsScreen  ({route,navigation}) {
           if(ids.length === 8)
           {
             const jsonValue = JSON.stringify(ids);
-            await AsyncStorage.setItem('@storage_Key', jsonValue)
+            await AsyncStorage.setItem('@bama_storage_Key', jsonValue)
           }
           else if( ids.length < 8)
           {

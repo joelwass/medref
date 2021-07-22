@@ -269,8 +269,7 @@ export default function SubChildLayoutList(props) {
     }    
   } 
 
-  const onImageClick = (item) => { 
-   
+  const onImageClick = (item) => {
     navigation.navigate("ImageScreen",{value : item});
   }
 
