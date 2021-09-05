@@ -1,6 +1,6 @@
 
-export default{
-    appSettingsUpdate : false,
-    itemArray  : [],
-    error : {}
+export default {
+  appSettingsUpdate: false,
+  itemArray: [],
+  error: {}
 }

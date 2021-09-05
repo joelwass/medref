@@ -1,23 +1,23 @@
-import {SET_SETTINGS,SETTING_UPDATE_FAIL} from '../../../constants/actiontypes';
-import DataUtils from "../../../Components/Helper/DataUtils";
+import { SET_SETTINGS, SETTING_UPDATE_FAIL } from '../../../constants/actiontypes'
+import DataUtils from '../../../Components/Helper/DataUtils'
 
 export default () => dispatch => {
+  console.log('are we dispatching?')
   DataUtils.getItemArray().then((res) => {
     dispatch({
-        type:SET_SETTINGS,
-        payload : {
-            appSettingsUpdate : false,
-            itemArray  : res,
-        }
+      type: SET_SETTINGS,
+      payload: {
+        appSettingsUpdate: false,
+        itemArray: res
+      }
     })
-  }).catch( (err) => {
+  }).catch((err) => {
     dispatch({
-        type:SETTING_UPDATE_FAIL,
-        payload: 
-            err.response 
-            ?  err.response.data 
-            : {error : "Something went wrong"}
-      });
+      type: SETTING_UPDATE_FAIL,
+      payload:
+            err.response
+              ? err.response.data
+              : { error: 'Something went wrong' }
+    })
   })
-}    
-
+}
