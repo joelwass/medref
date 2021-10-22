@@ -598,6 +598,77 @@
         "hexvalue": "#b6d377",
         "selected" : false,
         "section" :[
+          {
+            "section_id": 500 , 
+            "section_name" : "",
+            "section_hexvalue" :  "#b6d377",
+            "multiple_lines" : false,
+            "children" :[
+                {
+                    "child_id": 311 , 
+                    "child_name"  : "Post Partum Hemorrhage",
+                    "children" :[
+                        {
+                            "child_id" : 3111,
+                            "child_detail_name"  : "Oxytocin",
+                            "child_detail_desc" : "10 units IM or 30 units/500 mL"
+                        },
+                        {
+                          "child_id" : 3112,
+                          "child_detail_name"  : "TXA",
+                          "child_detail_desc" : "1 g IV over 10 min Repeat if con’t bleeding after 30 min"
+                        },
+                        {
+                          "child_id" : 3113,
+                          "child_detail_name"  : "Methergine",
+                          "child_detail_desc" : "0.2 mg IM repeat q2-4 hrs PRN\n*Caution with HTN*"
+                        },
+                        {
+                          "child_id" : 3114,
+                          "child_detail_name"  : "Carboprost",
+                          "child_detail_desc" : "0.25 mg IM q15 - 90min PRN  (max 2 mg)\n*Caution with asthma*"
+                        },
+                        {
+                          "child_id" : 3115,
+                          "child_detail_name"  : "Misoprostol",
+                          "child_detail_desc" : "400 – 800 mcg PO\n600–1000 mcg PR\n*Can cause pyrexia*"
+                        }
+                    ]
+                    
+                },
+                {
+                    "child_id": 312 , 
+                    "child_name"  : "Pre-Eclampsia with Severe Features",
+                    "children" :[
+                        {
+                            "child_id" : 3121,
+                            "child_detail_name"  : "Magnesium sulfate",
+                            "child_detail_desc" : "For seizure prevention\n4-6 g IV bolus then 1-2 g/hr\n*Watch for toxicity: monitor for loss of DTR*"
+                        },
+                        {
+                          "child_id" : 3122,
+                          "child_detail_name"  : "Hydralazine",
+                          "child_detail_desc" : "5 mg IVP repeat dose 10 mg NTE 30 mg total dose"
+                        },
+                        {
+                          "child_id" : 3123,
+                          "child_detail_name"  : "Labetalol",
+                          "child_detail_desc" : "20 mg IVP\nrepeat dose 40 mg\nrepeat dose 80 mg\n*Avoid with asthmatics*"
+                        },
+                        {
+                          "child_id" : 3124,
+                          "child_detail_name"  : "Nifedipine PO",
+                          "child_detail_desc" : "10 mg po"
+                        },
+                        {
+                          "child_id" : 3125,
+                          "child_detail_name"  : "Calcium Gluconate",
+                          "child_detail_desc" : "1000 mg IV over 2-5 min\n(To treat magnesium toxicity if needed)"
+                        }
+                    ]
+                }
+            ]
+          }
         ]
     },
     {
@@ -614,6 +685,60 @@
         "hexvalue": "#ff6262",
         "selected" : false,
         "section" :[
+          {
+            "section_id": 600 , 
+            "section_name" : "",
+            "section_hexvalue" :  "#ff6262",
+            "multiple_lines" : false,
+            "children" :[
+                {
+                    "child_id": 311 , 
+                    "child_name"  : "Haloperidol",
+                    "child_desc": "1-5 mg IM"
+                },
+                {
+                    "child_id": 312 , 
+                    "child_name"  : "Ketamine",
+                    "child_desc": "4-6 mg/kg IM (limited data)"
+                },
+                {
+                  "child_id": 313 , 
+                  "child_name"  : "Olanzepine",
+                  "child_desc": "2.5-5 mg IM"
+                },
+                {
+                  "child_id": 314 , 
+                  "child_name"  : "Ziprasidone",
+                  "child_desc": "10 -20 mg IM"
+                },
+                {
+                  "child_id": 315 , 
+                  "child_name"  : "Droperidol",
+                  "child_desc": "5-10 mg IV (off label use)"
+                },
+                {
+                  "child_id": 316, 
+                  "child_name"  : "B-52 Cocktail",
+                  "children" :[
+                    {
+                        "child_id" : 3121,
+                        "child_detail_name"  : "Diphenhydramine",
+                        "child_detail_desc" : "50 mg IM/IV"
+                    },
+                    {
+                      "child_id" : 3122,
+                      "child_detail_name"  : "Haloperidol",
+                      "child_detail_desc" : "5 mg IM/IV"
+                    },
+                    {
+                      "child_id" : 3123,
+                      "child_detail_name"  : "Lorazepam",
+                      "child_detail_desc" : "2 mg IM/IV"
+                    }
+                ]
+                }
+            ]
+          }
         ]
     },
     {
