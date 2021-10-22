@@ -101,6 +101,7 @@ export default function SubLayoutList (props) {
                 obChildDetail.child_detail_name = childDetails.child_detail_name,
                 obChildDetail.child_detail_desc = childDetails.child_detail_desc,
                 obChildDetail.child_bullets = childDetails.child_bullets,
+                obChildDetail.child_subheader = childDetails.child_subheader,
                 childDetArr.push(obChildDetail)
               })
               obChild.children = childDetArr
@@ -161,7 +162,7 @@ export default function SubLayoutList (props) {
             )}    
 
             {row.child_bullets && (
-              <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: '0.5em' }}>
+              <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: '0.5em', marginTop: '1em' }}>
                 {row.child_bullets.map((bullet, idx) => (
                   <View style={{ flexDirection: 'column', justifyContent: 'left' }} key={idx}>
                     <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'left' }}>{bullet.title}</Text>
