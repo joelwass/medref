@@ -115,24 +115,6 @@ export default function SubLayoutList (props) {
     })
     setSelectedChildArr(childArr)
     setSelectedIdArr(temp)
-
-    /* itemdetails.map( (item) => {
-        item.id === props.selectedValue ?  ( arrRaw = item.section ) : null;
-     }
-    )
-
-    if( arrRaw && arrRaw.length > 0)
-    {
-      var obj = {};
-      arrRaw.map( (item) =>{
-        obj = {}
-        obj.section_id = item.section_id,
-        obj.section_name = item.section_name,
-        obj.section_desc = item.section_desc,
-        obj.vis = false;
-        arrTemp.push(obj);
-      })
-    } */
   }, [props])
 
   const renderItem1 = ({ item }) => {
@@ -160,15 +142,16 @@ export default function SubLayoutList (props) {
 
     let items = []
 
+    console.log('in sublayout list', item.children)
+
     if (item.children) {
       items = item.children.map((row, index) => {
         return (
           <View key={index} style={{ justifyContent: 'center' }}>
 
             {
-                   index === 0 &&
-                     <ItemDetailHeader headerText={item.special_instruction_header} />
-                }
+              index === 0 && <ItemDetailHeader headerText={item.special_instruction_header} />
+            }
 
             <ItemDetailsDesc childDetailDesc={row.child_detail_name} borderColor={{ borderColor }} textColor={{ color }} />
 

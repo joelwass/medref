@@ -13,15 +13,31 @@ class HexText extends Component {
 
     if ((Platform.OS === 'ios') || (Platform.OS === 'android')) {
       return (
-
-        <SvgText x={x || 0} y={y || '0.1em'} fill={fillcolor} onPress={() => this.props.showDetails(this.props.showText)} fontWeight='bold' stroke={strokeColor} fontSize={fontsize} textAnchor='middle'>{children}</SvgText>
-
+        <SvgText
+          x={x || 0} 
+          y={y || '0.1em'} 
+          fill={fillcolor} 
+          onPress={() => this.props.showDetails(this.props.showText)} 
+          fontWeight='bold' 
+          stroke={strokeColor} 
+          fontSize={fontsize} 
+          textAnchor='middle'>
+            {children}
+        </SvgText>
       )
     } else {
       return (
-
-        <SvgText x={x || 0} y={y || '0.1em'} fill={fillcolor} onClick={() => this.props.showDetails(this.props.showText)} fontWeight='bold' stroke={strokeColor} fontSize={fontsize} textAnchor='middle'>{children}</SvgText>
-
+        <SvgText 
+          x={x || 0} 
+          y={y || '0.1em'} 
+          fill={fillcolor} 
+          onClick={() => this.props.showDetails(this.props.showText)} 
+          fontWeight='bold' 
+          stroke={strokeColor} 
+          fontSize={fontsize} 
+          textAnchor='middle'>
+            {children}
+        </SvgText>
       )
     }
   }

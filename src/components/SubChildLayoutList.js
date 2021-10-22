@@ -45,8 +45,9 @@ const getImage = (image) => {
   }
 }
 
-const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick, display_img }) => (
-
+const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick, display_img }) => {
+  console.log("here sub", item)
+  return (
   <View style={{ flex: 1, alignItems: 'center' }}>
     <TouchableOpacity onPress={onPress} style={[styles.SubmitButtonStyle, backgroundColor = backgroundColor]}>
       <Text style={[styles.title, textColor]}>{item.child_name}</Text>
@@ -54,22 +55,41 @@ const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick, 
     </TouchableOpacity>
 
     {item.vis &&
-      <View style={styles.TextComponentStyle}>
-
-        <Text style={[styles.TextComponentChildStyle, { fontSize: 20 }]}>
-          {item.child_desc}
-          {item.child_desc1 && <Text style={{ fontSize: 15 }}>{'\n'}{item.child_desc1}</Text>}
-        </Text>
-        {image !== null &&
-          <TouchableOpacity onPress={onImageClick}>
-            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-              <ImageBackground source={getImage(image)} style={{ height: 70, width: 80 }} />
-            </View>
-          </TouchableOpacity>}
-
-      </View>}
+      <div>
+        <View style={styles.TextComponentStyle}>
+          <Text style={[styles.TextComponentChildStyle, { fontSize: 20 }]}>
+            {item.child_desc}
+            {item.child_desc1 && <Text style={{ fontSize: 15 }}>{'\n'}{item.child_desc1}</Text>}
+          </Text>
+          {image !== null &&
+            <TouchableOpacity onPress={onImageClick}>
+              <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                <ImageBackground source={getImage(image)} style={{ height: 70, width: 80 }} />
+              </View>
+            </TouchableOpacity>}
+        </View>
+        {item.subchildren && item.subchildren.map((subchild, idx) => (
+          <View style={styles.TextComponentStyle} key={idx}>
+            <Text 
+              style={{ 
+                fontWeight: 'bold', 
+                textAlign: 'center', 
+                fontSize: 23,
+                textDecorationLine: 'underline'
+              }}
+            >
+              {subchild.child_name}
+            </Text>
+            <Text style={[styles.TextComponentChildStyle, { fontSize: 20 }]}>
+              {subchild.child_desc}
+            </Text>
+          </View>
+        ))}
+      </div>
+    }
   </View>
 )
+        }
 
 const DisplayImage = ({ image, backgroundColor }) => (
   <View style={styles.imageView}>
@@ -144,6 +164,7 @@ export default function SubChildLayoutList (props) {
           const obj = {}
           obj.child_id = item.child_id,
           obj.child_name = item.child_name !== undefined ? item.child_name : null,
+          obj.subchildren = item.subchildren !== undefined ? item.subchildren : null,
           obj.child_desc = item.child_desc !== undefined ? item.child_desc : null,
           obj.child_desc1 = item.child_desc1 !== undefined ? item.child_desc1 : null,
           obj.button_img = item.button_img !== undefined ? item.button_img : null,
@@ -172,7 +193,7 @@ export default function SubChildLayoutList (props) {
           {index === 0 &&
         (<View style={styles.switchview}>
           <View style={{ height: 30 }}>
-            <Text style={{ fontSize: 18 }}>* expand all2</Text>
+            <Text style={{ fontSize: 18 }}>* expand all</Text>
           </View>
           <View>
             <Switch
@@ -323,6 +344,7 @@ export default function SubChildLayoutList (props) {
   }
 
   const renderFlatList = () => {
+    console.log('rendering flat list', selectedIdArr)
     if (loading) {
       return (
         <LoadingIndicator />

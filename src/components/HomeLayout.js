@@ -27,14 +27,12 @@ class HomeLayout extends Component {
   static contextType = GlobalContext;
 
   constructor(props) {
-    console.log("here", props)
     super(props)
     const { flat, className, ...rest } = this.props;
     const orientation = (flat) ? HomeLayout.LAYOUT_FLAT : HomeLayout.LAYOUT_POINTY;
     const cornerCoords = this.calculateCoordinates(orientation);
     const points1 = cornerCoords.map(point => `${point.x},${point.y}`).join(' ');
     const layout = Object.assign({}, rest, { orientation }); 
-    console.log('what is points', points1)
     this.state = {
       flat : this.props.flat,
       points : points1,
@@ -67,20 +65,15 @@ class HomeLayout extends Component {
   }
 
   render() { 
-    console.log('help', this.context && this.context.settingsState && this.context.settingsState.itemArray)
-    console.log('help2', this.state.layout)
     const {
       settingsState: { itemArray },
     } = this.context;
-
-    console.log('last straw', itemArray)
 
     return ( 
       
       <View style={styles.container}>
         <Svg  width={'100%'} height={'100%'} viewBox={"0 0 100 100"} version="1.1" xmlns="http://www.w3.org/2000/svg">
-          {itemArray.map( (obj) => { 
-            console.log('2', obj) 
+          {itemArray.map( (obj) => {  
             return ( 
               <Hexagon key={obj.name} q={obj.q} r={obj.r} s={obj.s} points={this.state.points} layout={this.state.layout} fill={obj.hexvalue} stroke={obj.hexvalue} showDetails= {this.props.showDetails} showText={obj.id} strokeWidth={"5"} > 
                 <HexText x={this.state.x} y={obj.multiple_lines ? this.state.y-4 : this.state.y} fill={obj.fill} showDetails= {this.props.showDetails} >{obj.name}

@@ -24,7 +24,7 @@ class SubChildLayout extends Component {
         const points1 = cornerCoords.map(point => `${point.x},${point.y}`).join(' ');
         const layout = Object.assign({}, rest, { orientation }); 
 
-        this.state={
+        this.state= {
             flat : this.props.flat,
             points : points1,
             layout : layout,
@@ -39,7 +39,6 @@ class SubChildLayout extends Component {
     }
 
     updateData = (selectedValue) =>{
-        
         const reqArr = [];
         const reqIt = data.find( obj => obj.id === this.props.selectedValue );
         if(reqIt !== undefined)
@@ -105,45 +104,42 @@ class SubChildLayout extends Component {
     }
 
     render(){
+      console.log('subchild layout', this.state.itemArray)
         const innerViewHeight = this.props.height;
         const innerViewWidth = Dimensions.get('window').width/5;
-        let fillcolor;
-        let strokecolor;
-        let arr= [];
-
        
         return (
             <View style={styles.container}>
-            <ScrollView contentContainerStyle={{justifyContent:'center',alignItems:'center'}} horizontal={true} >
-            {this.state.itemArray && this.state.itemArray.map( (item) => {                
+              <ScrollView contentContainerStyle={{justifyContent:'center',alignItems:'center'}} horizontal={true} >
+              {this.state.itemArray && this.state.itemArray.map( (item) => {                
                 return(
-                    <View key={item.section_id} style={{height:innerViewHeight,width:innerViewWidth,
-                        justifyContent: 'center',
-                        alignItems: 'center'}}>
-                        { item.section_id === this.state.subSelectedValue
-                            ?(
-                                <Svg>              
-                                <Hexagon  q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={item.section_hexvalue} stroke={'#fff'} showText={item.section_name} showDetails={() =>this.callParentFunction(item.section_id)} strokeWidth={"2"}>
-                                    <HexText x={this.state.x} y={ item.multiple_lines ? this.state.y-10 : this.state.y} fontSize={"12"} fill={'#fff'} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name}</HexText>
-                                    <HexText x={this.state.x} y={this.state.y+5} fontSize={"12"} fill={'#fff'} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name1}</HexText>
-                                    <HexText x={this.state.x} y={this.state.y+20} fontSize={"12"} fill={'#fff'} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name2}</HexText>
-                                </Hexagon>  
-                            </Svg>
-                             ) 
-                            :(
-                                <Svg>               
-                                <Hexagon  q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={'#fff'} stroke={item.section_hexvalue} showText={item.section_name} showDetails={() =>this.callParentFunction(item.section_id)} strokeWidth={"2"}>
-                                    <HexText x={this.state.x} y={ item.multiple_lines ? this.state.y-10 : this.state.y} fontSize={"12"} fill={item.section_hexvalue} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name}</HexText>
-                                    <HexText x={this.state.x} y={this.state.y+5} fontSize={"12"} fill={item.section_hexvalue} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name1}</HexText>
-                                    <HexText x={this.state.x} y={this.state.y+20} fontSize={"12"} fill={item.section_hexvalue} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name2}</HexText>
-                                </Hexagon>  
-                            </Svg>
-                             )
-                        }
-                    </View>
-                )
-            })}
-            </ScrollView>
+                  <View key={item.section_id} style={{height:innerViewHeight,width:innerViewWidth,
+                      justifyContent: 'center',
+                      alignItems: 'center'}}>
+                      { item.section_id === this.state.subSelectedValue
+                        ? (
+                          <Svg>              
+                            <Hexagon  q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={item.section_hexvalue} stroke={'#fff'} showText={item.section_name} showDetails={() =>this.callParentFunction(item.section_id)} strokeWidth={"2"}>
+                              <HexText x={this.state.x} y={ item.multiple_lines ? this.state.y-10 : this.state.y} fontSize={"12"} fill={'#fff'} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name}</HexText>
+                              <HexText x={this.state.x} y={this.state.y+5} fontSize={"12"} fill={'#fff'} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name1}</HexText>
+                              <HexText x={this.state.x} y={this.state.y+20} fontSize={"12"} fill={'#fff'} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name2}</HexText>
+                            </Hexagon>  
+                          </Svg>
+                        ) 
+                        : (
+                          <Svg>               
+                            <Hexagon  q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={'#fff'} stroke={item.section_hexvalue} showText={item.section_name} showDetails={() =>this.callParentFunction(item.section_id)} strokeWidth={"2"}>
+                              <HexText x={this.state.x} y={ item.multiple_lines ? this.state.y-10 : this.state.y} fontSize={"12"} fill={item.section_hexvalue} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name}</HexText>
+                              <HexText x={this.state.x} y={this.state.y+5} fontSize={"12"} fill={item.section_hexvalue} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name1}</HexText>
+                              <HexText x={this.state.x} y={this.state.y+20} fontSize={"12"} fill={item.section_hexvalue} isStroke={true} showDetails={() =>this.callParentFunction(item.section_id)}>{item.section_name2}</HexText>
+                            </Hexagon>  
+                          </Svg>
+                        )
+                      }
+                  </View>
+                  )
+              })}
+              </ScrollView>
             </View>
           );   
     }
