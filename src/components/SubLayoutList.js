@@ -100,7 +100,7 @@ export default function SubLayoutList (props) {
                 obChildDetail.child_id = childDetails.child_id,
                 obChildDetail.child_detail_name = childDetails.child_detail_name,
                 obChildDetail.child_detail_desc = childDetails.child_detail_desc,
-
+                obChildDetail.child_bullets = childDetails.child_bullets,
                 childDetArr.push(obChildDetail)
               })
               obChild.children = childDetArr
@@ -144,9 +144,9 @@ export default function SubLayoutList (props) {
 
     if (item.children) {
       items = item.children.map((row, index) => {
+        console.log('here wtf', row)
         return (
           <View key={index} style={{ justifyContent: 'center' }}>
-
             {
               index === 0 && <ItemDetailHeader headerText={item.special_instruction_header} />
             }
@@ -155,9 +155,22 @@ export default function SubLayoutList (props) {
               <ItemDetailsDesc childDetailDesc={row.child_detail_name} borderColor={{ borderColor }} textColor={{ color }} />
             )}
 
-            <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-              <Text style={{ fontSize: 20, justifyContent: 'center', marginTop: 5 }}>{row.child_detail_desc}</Text>
-            </View>
+            {row.child_detail_desc && (
+              <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                <Text style={{ fontSize: 20, justifyContent: 'center', marginTop: 5 }}>{row.child_detail_desc}</Text>
+              </View>
+            )}    
+
+            {row.child_bullets && (
+              <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: '0.5em' }}>
+                {row.child_bullets.map((bullet, idx) => (
+                  <View style={{ flexDirection: 'column', justifyContent: 'left' }} key={idx}>
+                    <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'left' }}>{bullet.title}</Text>
+                    <Text style={{ fontSize: 20, textAlign: 'left' }}>{bullet.subtext}</Text>
+                  </View>
+                ))}
+              </View>
+            )}      
 
             {index === childArrLength &&
               <ItemDetailFooter footerText={item.special_instruction_footer} />}

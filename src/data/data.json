@@ -830,6 +830,64 @@
         "hexvalue": "#f5d491",
         "selected" : false,
         "section" :[
+          {
+            "section_id": 700 , 
+            "section_name" : "",
+            "section_hexvalue" :  "#f5d491",
+            "multiple_lines" : false,
+            "children" :[
+                {
+                    "child_id": 311 , 
+                    "child_name"  : "Bupivacaine ",
+                    "children": [
+                      {
+                        "child_id": 3111,
+                        "child_detail_desc": "175 mg (Dental: Max 90 mg)\nBupi 0.25%= 2.5mg/mL\nBupi 0.5% = 5 mg/mL"
+                      }
+                    ]
+                },
+                {
+                    "child_id": 312 , 
+                    "child_name"  : "Bupivacaine+Epi 1:200K",
+                    "children": [
+                      {
+                        "child_id": 3111,
+                        "child_detail_desc": "225 mg\nBupi 0.25%= 2.5mg/mL\nBupi 0.5% = 5 mg/mL"
+                      }
+                    ]
+                },
+                {
+                  "child_id": 313 , 
+                  "child_name"  : "Lidocaine",
+                  "children": [
+                    {
+                      "child_id": 3111,
+                      "child_detail_desc": "300 mg (4.5 mg/kg)"
+                    }
+                  ]
+                },
+                {
+                  "child_id": 314 , 
+                  "child_name"  : "Lido+Epi 1:100K,1:200K ",
+                  "children": [
+                    {
+                      "child_id": 3111,
+                      "child_detail_desc": "500 mg (7 mg/kg)\nLido 1% = 10 mg/mL\nLido 2% = 20 mg/mL"
+                    }
+                  ]
+                },
+                {
+                  "child_id": 315 , 
+                  "child_name"  : "Ropivacaine 0.5%=5mg/mL",
+                  "children": [
+                    {
+                      "child_id": 3111,
+                      "child_detail_desc": "Field block 5-200 mg\n(1-40 mL of 0.5%)\nMajor nerve block 75-300 mg\n(10-40 mL of 0.5%)"
+                    }
+                  ]
+                }
+            ]
+          }
         ]
     },
     {
@@ -846,6 +904,65 @@
         "hexvalue": "#b6d377",
         "selected" : false,
         "section" :[
+          {
+            "section_id": 700 , 
+            "section_name" : "",
+            "section_hexvalue" :  "#b6d377",
+            "multiple_lines" : false,
+            "children" :[
+                {
+                    "child_id": 311 , 
+                    "child_name"  : "Epinephrine",
+                    "special_instruction_header":"1 mg/mL IM",
+                    "children": [
+                      {
+                        "child_id": 3111,
+                        "child_detail_desc": "0.2 - 0.5 mg (0.2-0.5 mL) IM q5min; see drip info under vasopressors"
+                      }
+                    ]
+                },
+                {
+                    "child_id": 312 , 
+                    "child_name"  : "Diphenhydramine",
+                    "children": [
+                      {
+                        "child_id": 3111,
+                        "child_detail_desc": "10-50 mg IV/IM over 5 min Max 400 mg/day"
+                      }
+                    ]
+                },
+                {
+                  "child_id": 313 , 
+                  "child_name"  : "Methylprednisolone",
+                  "children": [
+                    {
+                      "child_id": 3111,
+                      "child_detail_desc": "1-2 mg/kg/day"
+                    }
+                  ]
+                },
+                {
+                  "child_id": 314 , 
+                  "child_name"  : "Ranitidine",
+                  "children": [
+                    {
+                      "child_id": 3111,
+                      "child_detail_desc": "50 mg IV over 5 min"
+                    }
+                  ]
+                },
+                {
+                  "child_id": 315 , 
+                  "child_name"  : "Albuterol INH",
+                  "children": [
+                    {
+                      "child_id": 3111,
+                      "child_detail_desc": "2.5-5 mg Neb"
+                    }
+                  ]
+                }
+            ]
+          }
         ]
     },
     {
@@ -865,9 +982,189 @@
         "name1" : "Xa-",
         "name2" :"Inhibitors",
         "multiple_lines" : true,
-        "hexvalue": "#e5e5e5",
+        "hexvalue": "#EE1111",
         "selected" : false,
         "section" :[
+          {
+            "section_id": 700 , 
+            "section_name" : "",
+            "section_hexvalue" :  "#EE1111",
+            "multiple_lines" : false,
+            "children" :[
+                {
+                    "child_id": 311 , 
+                    "child_name"  : "Fondaparinux (Arixtra)",
+                    "children": [
+                      {
+                        "child_id": 3111,
+                        "child_bullets": [
+                          {
+                            "title": "Common Indication:",
+                            "subtext": "DVT, PE, post-op DVT ppx, HIT"
+                          },
+                          {
+                            "title": "Route:",
+                            "subtext": "Subcutaneous"
+                          },
+                          {
+                            "title": "Half-life:",
+                            "subtext": "13-21 hours"
+                          },
+                          {
+                            "title": "Renal excretion:",
+                            "subtext": "77%"
+                          },
+                          {
+                            "title": "Removal by dialysis:",
+                            "subtext": "20%"
+                          },
+                          {
+                            "title": "Preferred lab:",
+                            "subtext": "Anti-Xa"
+                          },
+                          {
+                            "title": "Antidote:",
+                            "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
+                          },
+                          {
+                            "title": "How long to hold prior to LP:",
+                            "subtext": "36-48 hrs"
+                          }
+                        ]
+                      }
+                    ]
+                },
+                {
+                    "child_id": 312 , 
+                    "child_name"  : "Rivaroxaban (Xarelto)",
+                    "children": [
+                      {
+                        "child_id": 3111,
+                        "child_bullets": [
+                          {
+                            "title": "Common Indication:",
+                            "subtext": "DVT, PE, non-valvular Afib"
+                          },
+                          {
+                            "title": "Route:",
+                            "subtext": "Oral"
+                          },
+                          {
+                            "title": "Half-life:",
+                            "subtext": "5-12 hours (Elderly 11-13 hours)"
+                          },
+                          {
+                            "title": "Renal excretion:",
+                            "subtext": "66%"
+                          },
+                          {
+                            "title": "Removal by dialysis:",
+                            "subtext": "no"
+                          },
+                          {
+                            "title": "Preferred lab:",
+                            "subtext": "Anti-X*"
+                          },
+                          {
+                            "title": "Antidote:",
+                            "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
+                          },
+                          {
+                            "title": "How long to hold prior to LP:",
+                            "subtext": "3 days"
+                          }
+                        ]
+                      }
+                    ]
+                },
+                {
+                  "child_id": 313 , 
+                  "child_name"  : "Apixaban (Eliquis)",
+                  "children": [
+                    {
+                      "child_id": 3111,
+                      "child_bullets": [
+                        {
+                          "title": "Common Indication:",
+                          "subtext": "DVT, PE, non-valvular Afib"
+                        },
+                        {
+                          "title": "Route:",
+                          "subtext": "Oral"
+                        },
+                        {
+                          "title": "Half-life:",
+                          "subtext": "7-12 hours"
+                        },
+                        {
+                          "title": "Renal excretion:",
+                          "subtext": "27%"
+                        },
+                        {
+                          "title": "Removal by dialysis:",
+                          "subtext": "no"
+                        },
+                        {
+                          "title": "Preferred lab:",
+                          "subtext": "Anti-X^"
+                        },
+                        {
+                          "title": "Antidote:",
+                          "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
+                        },
+                        {
+                          "title": "How long to hold prior to LP:",
+                          "subtext": "3 days"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "child_id": 314 , 
+                  "child_name"  : "Edoxaban (Savaysa)",
+                  "children": [
+                    {
+                      "child_id": 3111,
+                      "child_bullets": [
+                        {
+                          "title": "Common Indication:",
+                          "subtext": "DVT, PE, non-valvular Afib"
+                        },
+                        {
+                          "title": "Route:",
+                          "subtext": "Oral"
+                        },
+                        {
+                          "title": "Half-life:",
+                          "subtext": "12 hours"
+                        },
+                        {
+                          "title": "Renal excretion:",
+                          "subtext": "35%"
+                        },
+                        {
+                          "title": "Removal by dialysis:",
+                          "subtext": "no (6.6%)"
+                        },
+                        {
+                          "title": "Preferred lab:",
+                          "subtext": "Anti-X*"
+                        },
+                        {
+                          "title": "Antidote:",
+                          "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
+                        },
+                        {
+                          "title": "How long to hold prior to LP:",
+                          "subtext": "3 days"
+                        }
+                      ]
+                    }
+                  ]
+                }
+            ]
+          }
         ]
     },
     {
