@@ -971,9 +971,138 @@
         "name1" : "Thromblin",
         "name2" : "Inhibitors",
         "multiple_lines" : true,
-        "hexvalue": "#b6d377",
+        "hexvalue": "#B6D377",
         "selected" : false,
         "section" :[
+          {
+            "section_id": 900 , 
+            "section_name" : "",
+            "section_hexvalue" :  "#B6D377",
+            "multiple_lines" : false,
+            "children" :[
+                {
+                    "child_id": 311 , 
+                    "child_name"  : "Bivalirudin",
+                    "children": [
+                      {
+                        "child_id": 3111,
+                        "child_bullets": [
+                          {
+                            "title": "Common Indication:",
+                            "subtext": "PCI"
+                          },
+                          {
+                            "title": "Route:",
+                            "subtext": "IV Infusion"
+                          },
+                          {
+                            "title": "Half-life:",
+                            "subtext": "25 minutes (renal impairment 1-3.5 hours)"
+                          },
+                          {
+                            "title": "Renal excretion:",
+                            "subtext": "20%"
+                          },
+                          {
+                            "title": "Removal by dialysis:",
+                            "subtext": "25%"
+                          },
+                          {
+                            "title": "Preferred lab:",
+                            "subtext": "PTT"
+                          },
+                          {
+                            "title": "Antidote:",
+                            "subtext": "4F-PCC (note these medications have short half life)"
+                          }
+                        ]
+                      }
+                    ]
+                },
+                {
+                    "child_id": 312 , 
+                    "child_name"  : "Argatroban",
+                    "children": [
+                      {
+                        "child_id": 3112,
+                        "child_bullets": [
+                          {
+                            "title": "Common Indication:",
+                            "subtext": "HIT"
+                          },
+                          {
+                            "title": "Route:",
+                            "subtext": "IV Infusion"
+                          },
+                          {
+                            "title": "Half-life:",
+                            "subtext": "30 - 51 minutes (Hepatic impairment 181 min)"
+                          },
+                          {
+                            "title": "Renal excretion:",
+                            "subtext": "22-25%"
+                          },
+                          {
+                            "title": "Removal by dialysis:",
+                            "subtext": "20%"
+                          },
+                          {
+                            "title": "Preferred lab:",
+                            "subtext": "PTT"
+                          },
+                          {
+                            "title": "Antidote:",
+                            "subtext": "4F-PCC (note these medications have short half life)"
+                          }
+                        ]
+                      }
+                    ]
+                },
+                {
+                  "child_id": 313 , 
+                  "child_name"  : "Dabigatran (Pradaxa)",
+                  "children": [
+                    {
+                      "child_id": 3111,
+                      "child_bullets": [
+                        {
+                          "title": "Common Indication:",
+                          "subtext": "DVT, PE, non-valvular Afib"
+                        },
+                        {
+                          "title": "Route:",
+                          "subtext": "Oral"
+                        },
+                        {
+                          "title": "Half-life:",
+                          "subtext": "12-17 hours (Renal impairment 15-34 hrs)"
+                        },
+                        {
+                          "title": "Renal excretion:",
+                          "subtext": "80%"
+                        },
+                        {
+                          "title": "Removal by dialysis:",
+                          "subtext": "50%"
+                        },
+                        {
+                          "title": "Preferred lab:",
+                          "subtext": "ECT (PTT)"
+                        },
+                        {
+                          "title": "Antidote:",
+                          "subtext": "Idarucizumab 2.5g IV bolus x 2 doses (total 5g)"
+                        },
+                        {
+                          "title": "How long to hold prior to LP:",
+                          "subtext": "5 days"
+                        }
+                      ]
+                    }
+                  ]
+                }
+            ]
+          }
         ]
     },
     {
