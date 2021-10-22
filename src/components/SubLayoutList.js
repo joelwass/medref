@@ -142,8 +142,6 @@ export default function SubLayoutList (props) {
 
     let items = []
 
-    console.log('in sublayout list', item.children)
-
     if (item.children) {
       items = item.children.map((row, index) => {
         return (
@@ -153,7 +151,9 @@ export default function SubLayoutList (props) {
               index === 0 && <ItemDetailHeader headerText={item.special_instruction_header} />
             }
 
-            <ItemDetailsDesc childDetailDesc={row.child_detail_name} borderColor={{ borderColor }} textColor={{ color }} />
+            {row.child_detail_name && (
+              <ItemDetailsDesc childDetailDesc={row.child_detail_name} borderColor={{ borderColor }} textColor={{ color }} />
+            )}
 
             <View style={{ alignItems: 'center', justifyContent: 'center' }}>
               <Text style={{ fontSize: 20, justifyContent: 'center', marginTop: 5 }}>{row.child_detail_desc}</Text>

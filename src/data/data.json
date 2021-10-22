@@ -589,7 +589,40 @@
         "hexvalue": "#96c9dc",
         "selected" : true,
         "section" :[
-        ]
+          {
+            "section_id": 700 , 
+            "section_name" : "",
+            "section_hexvalue" :  "#96c9dc",
+            "multiple_lines" : false,
+            "children" :[
+                {
+                    "child_id": 311 , 
+                    "child_name"  : "Diazepam",
+                    "child_desc": "5-10 mg IVP q10-15 min Max 30mg"
+                },
+                {
+                    "child_id": 312 , 
+                    "child_name"  : "Lorazepam",
+                    "child_desc": "4 mg slow IVP over 2 min or 0.1 mg/kg IVP max 4 mg/dose"
+                },
+                {
+                  "child_id": 313 , 
+                  "child_name"  : "Levetiracetam",
+                  "child_desc": "1-3 g IVPB over 15 min (IV:PO::1:1)"
+                },
+                {
+                  "child_id": 314 , 
+                  "child_name"  : "Phenytoin ",
+                  "child_desc": "10-15 mg/kg IVPB LD (may give 20 mg/kg)"
+                },
+                {
+                  "child_id": 315 , 
+                  "child_name"  : "Phenobarbital",
+                  "child_desc": "100-320 mg slow IVP or IM"
+                }
+          ]
+        }
+      ]
        
     },
     {
@@ -694,27 +727,52 @@
                 {
                     "child_id": 311 , 
                     "child_name"  : "Haloperidol",
-                    "child_desc": "1-5 mg IM"
+                    "children": [
+                      {
+                        "child_id": 3111,
+                        "child_detail_desc": "1-5 mg IM"
+                      }
+                    ]
                 },
                 {
                     "child_id": 312 , 
                     "child_name"  : "Ketamine",
-                    "child_desc": "4-6 mg/kg IM (limited data)"
+                    "children": [
+                      {
+                        "child_id": 3121,
+                        "child_detail_desc": "4-6 mg/kg IM (limited data)"
+                      }
+                    ]
                 },
                 {
                   "child_id": 313 , 
                   "child_name"  : "Olanzepine",
-                  "child_desc": "2.5-5 mg IM"
+                  "children": [
+                    {
+                      "child_id": 3121,
+                      "child_detail_desc": "2.5-5 mg IM"
+                    }
+                  ]
                 },
                 {
                   "child_id": 314 , 
                   "child_name"  : "Ziprasidone",
-                  "child_desc": "10 -20 mg IM"
+                  "children": [
+                    {
+                      "child_id": 3121,
+                      "child_detail_desc": "10 -20 mg IM"
+                    }
+                  ]
                 },
                 {
                   "child_id": 315 , 
                   "child_name"  : "Droperidol",
-                  "child_desc": "5-10 mg IV (off label use)"
+                  "children": [
+                    {
+                      "child_id": 3121,
+                      "child_detail_desc": "5-10 mg IV (off label use)"
+                    }
+                  ]
                 },
                 {
                   "child_id": 316, 
