@@ -144,7 +144,6 @@ export default function SubLayoutList (props) {
 
     if (item.children) {
       items = item.children.map((row, index) => {
-        console.log('here wtf', row)
         return (
           <View key={index} style={{ justifyContent: 'center' }}>
             {
