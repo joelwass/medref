@@ -243,12 +243,38 @@
                         "child_desc" : "Initially 16-18 - Adjust Based on CO2 and Vent Needs",
                         "child_desc1": "Minute ventillation for normal CO2 when not intubated = 60 ml/kg/min. Double to 120 mL/kg/min when intubated 2/2 t dead space Mild hypercarbia is ok."
                         
-                    }
-                    ,                    
+                    },                    
                     {
                         "child_id": 215 , 
                         "child_name" : "Fi02 and PEEP",
-                        "child_desc" :  "Goal: PaO2 55-80 mmHg or SpO2 99-95% \n -Start at 100% FiO2 and PEEP of 5, start at higher peep for severe hypoxemia \n -Wait 15-20 min, then draw an ABG \n -Titrate FiO2 and PEEP based on chart every 5-10 min; quicker if low sat" ,                   
+                        "subchildren": [
+                          {
+                            "child_id": 3111,
+                            "child_detail_desc": "",
+                            "child_bullets": [
+                              {
+                                "title": "Goal: ",
+                                "subtext": "PaO2 55-80 mmHg or SpO2 99-95%"
+                              },
+                              {
+                                "title": "Start ",
+                                "subtext": "at 100% FiO2 and PEEP of 5"
+                              },
+                              {
+                                "title": "Start ",
+                                "subtext": "at higher peep for severe hypoxemia"
+                              },
+                              {
+                                "title": "Wait ",
+                                "subtext": "15-20 min, then draw an ABG"
+                              },
+                              {
+                                "title": "Titrate ",
+                                "subtext": "FiO2 and PEEP based on chart every 5-10 min; quicker if low sat"
+                              }
+                            ]
+                          }
+                        ],
                         "button_img" : "Fi"
                     }
                     ,                    
