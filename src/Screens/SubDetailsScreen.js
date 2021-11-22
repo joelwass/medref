@@ -25,11 +25,12 @@ export default function SubDetailsScreen ({ navigation, route, props }) {
 
   const renderChildItems = () => {
     if (selectedValue === undefined || subSelectedValue === undefined) {
+      console.log({ selectedValue })
+      console.log({ subSelectedValue })
       return (
         <View style={[styles.container, {
           flexDirection: 'column'
-        }]}
-        >
+        }]}>
           <View style={{ flex: 1, backgroundColor: '#e5e5e5' }}>
             <SubChildLayout size={hexagonSize} flat={false} spacing={1.2} origin={{ x: 120, y: 120 }} showText={selectedValue} showChildDetails={showChildDetails} height={upperViewHeight} selectedValue={route.params.value} subSelectedValue={route.params.subvalue} />
           </View>
@@ -39,11 +40,13 @@ export default function SubDetailsScreen ({ navigation, route, props }) {
         </View>
       )
     } else {
+      console.log('in else statement')
+      console.log({ selectedValue })
+      console.log({ subSelectedValue })
       return (
         <View style={[styles.container, {
           flexDirection: 'column'
-        }]}
-        >
+        }]}>
           <View style={{ flex: 1, backgroundColor: '#e5e5e5' }}>
             <SubChildLayout size={hexagonSize} flat={false} spacing={1.2} origin={{ x: 120, y: 130 }} showText={selectedValue} showChildDetails={showChildDetails} height={upperViewHeight} selectedValue={selectedValue} subSelectedValue={subSelectedValue} />
           </View>

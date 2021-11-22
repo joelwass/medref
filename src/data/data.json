@@ -143,14 +143,16 @@
                     "child_id": 4,
                     "child_name": "Beta Blockers",
                     "child_desc": "β1 selective: Atenolol, Metoprolol, Betaxolol, Acebutolol, Bisoprolol, Esmolol",
-                    "subchildren": [
+                    "children": [
                       {
-                        "child_name": "Esmolol",
-                        "child_desc": "250-500 mcg/kg bolus then 50-100 mcg/kg/min"
+                        "child_id": 14,
+                        "child_detail_name": "Esmolol",
+                        "child_detail_desc": "250-500 mcg/kg bolus then 50-100 mcg/kg/min"
                       },
                       {
-                        "child_name": "Lebatolol β1, β2, α",
-                        "child_desc": "20-80 mg IVP or 0.5-2 mg/min (max 300 mg/day)"
+                        "child_id": 15,
+                        "child_detail_name": "Lebatolol β1, β2, α",
+                        "child_detail_desc": "20-80 mg IVP or 0.5-2 mg/min (max 300 mg/day)"
                       }
                     ]
                   }
@@ -247,7 +249,7 @@
                     {
                         "child_id": 215 , 
                         "child_name" : "Fi02 and PEEP",
-                        "subchildren": [
+                        "children": [
                           {
                             "child_id": 3111,
                             "child_detail_desc": "",
@@ -294,8 +296,7 @@
                  "section_name2" : "Peep Chart",
                  "multiple_lines" : true,                
                  "children" :[]
-            }
-            ,
+            },
             {
                  "section_id": 13 , 
                  "section_name" : "Post-",
@@ -309,8 +310,7 @@
                         "display_img": "DOP" 
                     }
                  ]
-            }
-            ,
+            },
             {
                  "section_id": 14 , 
                  "section_name" : "Useful",
@@ -1032,7 +1032,7 @@
                   ]
                 },
                 {
-                  "child_id": 315, 
+                  "child_id": 316, 
                   "child_name"  : "Flumazenil (0.1 mg/mL)",
                   "children": [
                     {
@@ -1052,7 +1052,7 @@
                   ]
                 },
                 {
-                  "child_id": 316, 
+                  "child_id": 317, 
                   "child_name"  : "Dexmedetomidine (100 mcg/mL)",
                   "children": [
                     {

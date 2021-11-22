@@ -1,9 +1,20 @@
-import { isEmergencyLaunch } from 'expo-updates'
 import React, { useState, useEffect } from 'react'
 import { Text, View, StyleSheet, TouchableOpacity, SafeAreaView, FlatList, TouchableWithoutFeedback, Switch } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import { MaterialIcons } from '@expo/vector-icons'
 import data from '../data/data.json'
+
+/**
+ * 
+ * sublayout list will go to render all the sections within a top level node
+ * within each section, if there are children and there is NO section name (which i dont think happens much)
+ * then we make an array (selectedChildArr) of all the children for that section
+ * if there is no section_name then children / children of children will all be rendered WITHIN this page
+ * meaning subdetails page will never be nav'd to even if we have a section with children and sub children!
+ * 
+ * otherwise, if we do have a section_name, then just push the section object onto the list (selected Id Arr)
+ * and clicking on one of the list items will actually navigate you to the sub details page !!!
+ */
 
 const Item = ({ item, backgroundColor, onPress, textColor }) => (
   <View style={{ flex: 1, alignItems: 'center' }}>

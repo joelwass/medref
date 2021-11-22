@@ -1,6 +1,6 @@
 const data = require('./data.json')
 
-export const search = (s) => {
+export default (s) => {
   s = s.toLowerCase()
   const result = []
   // for each top level node
@@ -19,23 +19,31 @@ export const search = (s) => {
         }
 
         if (sectionNode.children) {
-          childrenNodes = sectionNode.children
+          const childrenNodes = sectionNode.children
           childrenNodes.forEach((childNode) => {
             const childNameIncludes = childNode.child_name?.toLowerCase().includes(s)
             const childDescIncludes = childNode.child_desc?.toLowerCase().includes(s)
 
             if (childNameIncludes || childDescIncludes) {
-              result.push(childNode)
+              result.push({
+                ...childNode,
+                section_id: sectionNode.section_id,
+                hexvalue: sectionNode.section_hexvalue
+              })
             }
 
-            if (childNode.subchildren) {
-              const subchildren = childNode.subchildren
+            if (childNode.children) {
+              const subchildren = childNode.children
               subchildren.forEach((subChild) => {
-                const subchildNameIncludes = subChild.child_name?.toLowerCase().includes(s)
-                const subchildDescIncludes = subChild.child_desc?.toLowerCase().includes(s)
+                const subchildNameIncludes = subChild.child_detail_name?.toLowerCase().includes(s)
+                const subchildDescIncludes = subChild.child_detail_desc?.toLowerCase().includes(s)
 
                 if (subchildNameIncludes || subchildDescIncludes) {
-                  result.push(subChild)
+                  result.push({
+                    ...subChild,
+                    section_id: sectionNode.section_id,
+                    hexvalue: sectionNode.section_hexvalue
+                  })
                 }
               })
             }

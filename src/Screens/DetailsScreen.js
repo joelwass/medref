@@ -9,7 +9,6 @@ export default function DetailsScreen ({ navigation, route, props }) {
   const hexagonSize = { x: 40, y: 40 }
 
   const [selectedValue, setSelectedValue] = useState()
-  const [subSelectedValue, setSubSelectedValue] = useState()
 
   const height = Dimensions.get('window').height
   const width = Dimensions.get('window').width
@@ -17,12 +16,10 @@ export default function DetailsScreen ({ navigation, route, props }) {
 
   useEffect(() => {
     setSelectedValue(value)
-    setSubSelectedValue(subValue)
   }, [props])
 
   const showDetails = (props) => {
     setSelectedValue(props)
-    setSubSelectedValue('0')
   }
 
   const showSubDetails = (props) => { // navigate to sub details screen
@@ -31,18 +28,21 @@ export default function DetailsScreen ({ navigation, route, props }) {
 
   const renderItems = () => {
     if (selectedValue === undefined) {
+      console.log('details screen selected value undefined')
       return (
-        <View style={[styles.container, {
-          flexDirection: 'column'
-        }]}
+        <View 
+          style={[styles.container, {
+            flexDirection: 'column'
+          }]} 
         />
       )
     } else {
+      console.log('details screen')
+      console.log({ selectedValue })
       return (
         <View style={[styles.container, {
           flexDirection: 'column'
-        }]}
-        >
+        }]}>
           <View style={{ flex: 1, backgroundColor: '#e5e5e5' }}>
             <SubLayout size={hexagonSize} flat={false} spacing={1.2} origin={{ x: 120, y: 125 }} showText={selectedValue} showDetails={showDetails} height={upperViewHeight} />
           </View>

@@ -8,6 +8,7 @@ import HomeScreen from './Screens/HomeScreen'
 import DetailsScreen from './Screens/DetailsScreen'
 import SubDetailsScreen from './Screens/SubDetailsScreen'
 import SettingScreen from './Screens/SettingScreen'
+import SearchScreen from './Screens/SearchScreen'
 import ImageScreen from './Screens/ImageScreen'
 
 const Stack = createStackNavigator()
@@ -24,9 +25,13 @@ function HomeStack () {
         headerTitleStyle: { fontWeight: 'bold', fontSize: 30 },
         headerTitleAlign: 'center',
         headerRightContainerStyle: { paddingRight: 10 },
+        headerLeftContainerStyle: { paddingLeft: 10 },
         headerRight: () => (
-          <AntDesign name='setting' size={37} color='grey' onPress={() => navigation.navigate('Settings')} />
-        )
+          <AntDesign name='setting' size={37} color='grey' onPress={() => navigation.navigate('Search')} />
+        ),
+        headerLeft: () => {
+          <AntDesign name='setting' size={37} color='grey' onPress={() => navigation.navigate('Search')} />
+        }
       })}
     >
       <Stack.Screen
@@ -40,6 +45,9 @@ function HomeStack () {
       />
       <Stack.Screen
         name='Settings' component={SettingScreen}
+      />
+      <Stack.Screen
+        name='Search' component={SearchScreen}
       />
       <Stack.Screen
         name='ImageScreen' component={ImageScreen}
