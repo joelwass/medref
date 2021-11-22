@@ -28,10 +28,7 @@ function HomeStack () {
         headerLeftContainerStyle: { paddingLeft: 10 },
         headerRight: () => (
           <AntDesign name='setting' size={37} color='grey' onPress={() => navigation.navigate('Search')} />
-        ),
-        headerLeft: () => {
-          <AntDesign name='setting' size={37} color='grey' onPress={() => navigation.navigate('Search')} />
-        }
+        )
       })}
     >
       <Stack.Screen

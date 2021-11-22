@@ -171,7 +171,7 @@ export default function SettingScreen ({ route, navigation }) {
         />
       )}
 
-      {searchResults && searchResults.length && (
+      {searchResults && searchResults.length > 0 && (
         <View style={[styles.container, { flexDirection: 'column '}]}>
           <FlatList
             data={searchResults}

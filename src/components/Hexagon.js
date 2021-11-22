@@ -1,64 +1,69 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Platform } from 'react-native'
 import Hex from './Hex'
 import HexUtils from './HexUtils'
 import { G, Polygon } from 'react-native-svg'
 
-class Hexagon extends Component {
-  constructor (props) {
-    super(props)
+export default function Hexagon (props) {
 
-    this.reCalculateState()
-  }
+  const [state, setState] = useState({
+    pixel: undefined
+  })
 
-  reCalculateState () {
-    const { q, r, s } = this.props
+  useEffect(() => {
+    reCalculateState(props)
+  }, [props])
+
+  function reCalculateState(p) {
+    const { q, r, s, fill, stroke } = p
     const hex = new Hex(q, r, s)
-    const pixel = HexUtils.hexToPixel(hex, this.props.layout)
+    const pixel = HexUtils.hexToPixel(hex, p.layout)
+    const { strokeWidth } = p.strokeWidth
 
-    this.state = { hex, pixel }
+    setState({
+      hex,
+      pixel,
+      fill,
+      stroke,
+      strokeWidth
+    })
   }
 
-  onClick (e) {
-    if (this.props.onClick) {
-      this.props.onClick(e, this)
-    }
+  function goToHexagonTarget() {
+    props.showDetails(props.showText)
   }
 
-  render () {
-    this.reCalculateState()
-    const { fill, stroke } = this.props
-    const { pixel } = this.state
-    const { strokeWidth } = this.props.strokeWidth
+  if (!state.pixel) {
+    return (
+      <G></G>
+    )
+  }
 
-    if ((Platform.OS === 'ios') || (Platform.OS === 'android')) {
-      return (
-        <G transform={`translate(${pixel.x}, ${pixel.y})`}>
-          <Polygon
-            points={this.props.points}
-            fill={fill}
-            stroke={stroke}
-            strokeWidth={strokeWidth}
-            onPress={() => this.props.showDetails(this.props.showText)}
-          />
-          {this.props.children}
-        </G>
-      )
-    } else {
-      return (
-        <G transform={`translate(${pixel.x}, ${pixel.y})`}>
-          <Polygon
-            points={this.props.points}
-            fill={fill}
-            stroke={stroke}
-            strokeWidth={strokeWidth}
-            onClick={() => this.props.showDetails(this.props.showText)}
-          />
-          {this.props.children}
-        </G>
-      )
-    }
+  if ((Platform.OS === 'ios') || (Platform.OS === 'android')) {
+    return (
+      <G transform={`translate(${state.pixel.x}, ${state.pixel.y})`}>
+        <Polygon
+          points={props.points}
+          fill={state.fill}
+          stroke={state.stroke}
+          strokeWidth={state.strokeWidth}
+          onPress={() => goToHexagonTarget()}
+        />
+        {props.children}
+      </G>
+    )
+  } else {
+    return (
+      <G transform={`translate(${state.pixel.x}, ${state.pixel.y})`}>
+        <Polygon
+          points={props.points}
+          fill={state.fill}
+          stroke={state.stroke}
+          strokeWidth={state.strokeWidth}
+          onClick={() => goToHexagonTarget()}
+        />
+        {props.children}
+      </G>
+    )
   }
 }
-
-export default Hexagon

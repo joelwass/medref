@@ -5,7 +5,6 @@ import SubLayout from '../Components/SubLayout'
 import SubLayoutList from '../Components/SubLayoutList'
 
 export default function DetailsScreen ({ navigation, route, props }) {
-  const { value, subValue } = route.params
   const hexagonSize = { x: 40, y: 40 }
 
   const [selectedValue, setSelectedValue] = useState()
@@ -15,14 +14,19 @@ export default function DetailsScreen ({ navigation, route, props }) {
   const upperViewHeight = height / 6
 
   useEffect(() => {
+    console.log('here use effect ', route.params)
+    const { value, subValue } = route.params
+    console.log('here use effect props:', props)
     setSelectedValue(value)
   }, [props])
 
   const showDetails = (props) => {
+    console.log('show details clicked in details screen')
     setSelectedValue(props)
   }
 
   const showSubDetails = (props) => { // navigate to sub details screen
+    console.log('navigating to sub details screen')
     navigation.navigate('SubDetails', { value: selectedValue, subvalue: props })
   }
 
@@ -37,7 +41,7 @@ export default function DetailsScreen ({ navigation, route, props }) {
         />
       )
     } else {
-      console.log('details screen')
+      console.log('details screen render')
       console.log({ selectedValue })
       return (
         <View style={[styles.container, {
