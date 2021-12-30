@@ -1649,11 +1649,10 @@
         "selected" : true,
         "section" :[
         ]
-    }
-    ,
+    },
     {
         "id" :17,
-        "name" : "More",
+        "name" : "Search",
         "hexvalue": "#DDDDDD",
         "default" : true,
         "section" :[

@@ -79,14 +79,14 @@ class HexUtils {
     return new Point(x + layout.origin.x, y + layout.origin.y);
   }
 
-  static pixelToHex(point, layout) {
-    const M = layout.orientation;
-    const pt = new Point((point.x - layout.origin.x) / layout.size.x, (point.y - layout.origin.y) / layout.size.y);
-    const q = M.b0 * pt.x + M.b1 * pt.y;
-    const r = M.b2 * pt.x + M.b3 * pt.y;
-    const hex = new Hex(q, r, -q - r);
-    return HexUtils.round(hex);
-  }
+  // static pixelToHex(point, layout) {
+  //   const M = layout.orientation;
+  //   const pt = new Point((point.x - layout.origin.x) / layout.size.x, (point.y - layout.origin.y) / layout.size.y);
+  //   const q = M.b0 * pt.x + M.b1 * pt.y;
+  //   const r = M.b2 * pt.x + M.b3 * pt.y;
+  //   const hex = new Hex(q, r, -q - r);
+  //   return HexUtils.round(hex);
+  // }
 
   static lerp(a, b, t) {
     return a + ((b - a) * t);

@@ -1,6 +1,8 @@
 import 'react-native-gesture-handler'
 import * as React from 'react'
+import {TouchableOpacity, View, Text} from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import { createStackNavigator, HeaderBackButton } from '@react-navigation/stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons'
@@ -27,7 +29,7 @@ function HomeStack () {
         headerRightContainerStyle: { paddingRight: 10 },
         headerLeftContainerStyle: { paddingLeft: 10 },
         headerRight: () => (
-          <AntDesign name='setting' size={37} color='grey' onPress={() => navigation.navigate('Search')} />
+          <AntDesign name='setting' size={37} color='grey' onPress={() => navigation.navigate('Settings')} />
         )
       })}
     >
@@ -54,31 +56,72 @@ function HomeStack () {
   )
 }
 
+function MyTabBar({ state, descriptors, navigation }) {
+  return (
+    <View style={{ flexDirection: 'row' }}>
+      {state.routes.map((route, index) => {
+        const { options } = descriptors[route.key];
+
+        const isFocused = state.index === index;
+
+        const onPress = () => {
+          const event = navigation.emit({
+            type: 'tabPress',
+            target: route.key,
+            canPreventDefault: true,
+          });
+
+          if (!isFocused && !event.defaultPrevented) {
+            // The `merge: true` option makes sure that the params inside the tab screen are preserved
+            navigation.navigate({ name: route.name, merge: true });
+          }
+        };
+
+        return (
+          <TouchableOpacity
+            key={index}
+            accessibilityRole="button"
+            accessibilityState={isFocused ? { selected: true } : {}}
+            accessibilityLabel={options.tabBarAccessibilityLabel}
+            testID={options.tabBarTestID}
+            onPress={onPress}
+            onLongPress={onPress}
+            style={{ flex: 1, height: 75, alignItems: 'center', backgroundColor: 'black' }}
+          >
+            <MaterialCommunityIcons
+              name='home'
+              color='white'
+              size={40}
+              style={{ marginTop: 10, height: 'auto' }}
+            />
+          </TouchableOpacity>
+        );
+      })}
+    </View>
+  );
+}
+
 export default function NavigationComponent () {
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        initialRouteName='Home'
-        tabBarOptions={{
-          activeBackgroundColor: 'black'
-        }}
-      >
-        <Tab.Screen
-          name='HomeStack'
-          component={HomeStack}
-          options={{
-            tabBarLabel: '',
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons
-                name='home'
-                color='#fff'
-                size={size * 1.7}
-                style={{ marginTop: 10 }}
-              />
-            )
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Tab.Navigator
+          style={{flex: 1}}
+          initialRouteName='Home'
+          tabBarOptions={{
+            activeBackgroundColor: 'black',
           }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
+          screenOptions={{
+            tabBarStyle:{ height: '100'},
+          }}
+          tabBar={props => <MyTabBar {...props} />}
+        >
+          <Tab.Screen
+            name='HomeStack'
+            component={HomeStack}
+          />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   )
 }

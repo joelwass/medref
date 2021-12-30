@@ -86,7 +86,6 @@ class DataUtils {
   }
 
   static computeData (SettingIds) {
-    console.log('are we in here?')
     try {
       const itemArrTemp = []
       const ptArr = []

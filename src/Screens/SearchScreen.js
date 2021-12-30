@@ -139,7 +139,7 @@ export default function SettingScreen ({ route, navigation }) {
   }
 
   return (
-    <SafeAreaView style={styles.container} forceInset={{ top: 'always' }}>
+    <SafeAreaView style={styles.container} forceInset={{ top: 'always', bottom: 'never' }}>
       <TextInput
         editable
         style={{ 

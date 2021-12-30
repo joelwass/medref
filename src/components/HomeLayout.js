@@ -8,6 +8,7 @@ import Point from './Point';
 import Hexagon from './Hexagon';
 import HexText from './HexText';
 import { GlobalContext }  from '../context/provider';
+import {SafeAreaView} from 'react-native-safe-area-context'
 
 const pointArr = [
     {id : 1 ,q :1.2 ,r :-1, s :1},
@@ -67,22 +68,24 @@ export default function HomeLayout (props) {
   }
 
   return ( 
-    <View style={styles.container}>
-      <Svg  width={'100%'} height={'100%'} viewBox={"0 0 100 100"} version="1.1" xmlns="http://www.w3.org/2000/svg">
-        {itemArray.map( (obj) => {  
-          return ( 
-            <Hexagon key={obj.name} q={obj.q} r={obj.r} s={obj.s} points={state.points} layout={state.layout} fill={obj.hexvalue} stroke={obj.hexvalue} showDetails={state.showDetails} showText={obj.id} strokeWidth={"5"} > 
-              <HexText x={state.x} y={obj.multiple_lines ? state.y-4 : state.y} fill={obj.fill} showDetails={state.showDetails} showText={obj.id}>{obj.name}
-              </HexText>
-              <HexText x={state.x} y={state.y+1} fill={obj.fill} showDetails={state.showDetails} showText={obj.id}>{obj.name1}
-              </HexText>
-              <HexText x={state.x} y={state.y+5} fill={obj.fill} showDetails={state.showDetails} showText={obj.id}>{obj.name2}
-              </HexText>           
-            </Hexagon> 
-          )
-        })}
-      </Svg> 
-    </View>
+    <>
+      {state && state.layout && (
+        <Svg  width={'100%'} height={'100%'} viewBox={"0 0 100 100"} version="1.1" xmlns="http://www.w3.org/2000/svg">
+          {itemArray.map( (obj) => {  
+            return ( 
+              <Hexagon key={obj.name} q={obj.q} r={obj.r} s={obj.s} points={state.points} layout={state.layout} fill={obj.hexvalue} stroke={obj.hexvalue} showDetails={state.showDetails} showText={obj.id} strokeWidth={"5"} > 
+                <HexText x={state.x} y={obj.multiple_lines ? state.y-4 : state.y} fill={obj.fill} showDetails={state.showDetails} showText={obj.id}>{obj.name}
+                </HexText>
+                <HexText x={state.x} y={state.y+1} fill={obj.fill} showDetails={state.showDetails} showText={obj.id}>{obj.name1}
+                </HexText>
+                <HexText x={state.x} y={state.y+5} fill={obj.fill} showDetails={state.showDetails} showText={obj.id}>{obj.name2}
+                </HexText>           
+              </Hexagon> 
+            )
+          })}
+        </Svg> 
+      )}
+    </>
   )
 
 }

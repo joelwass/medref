@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useContext } from 'react'
+import {StyleSheet} from 'react-native'
+import Constants from 'expo-constants'
 import HomeLayout from '../Components/HomeLayout'
 import DataUtils from '../Components/Helper/DataUtils'
-import { GlobalContext } from '../context/provider'
+import {SafeAreaView} from 'react-native-safe-area-context'
 
 export default function HomeScreen ({ navigation, route }) {
   const hexagonSize = { x: 13, y: 13 }
@@ -36,7 +38,9 @@ export default function HomeScreen ({ navigation, route }) {
 
   const renderHomeScreen = () => {
     return (
-      <HomeLayout size={hexagonSize} flat spacing={1.0} origin={{ x: 7, y: 7 }} showDetails={showDetails} />
+      <SafeAreaView style={styles.container}>
+        <HomeLayout size={hexagonSize} flat spacing={1.0} origin={{ x: 7, y: 7 }} showDetails={showDetails} />
+      </SafeAreaView>
     )
   }
 
@@ -44,3 +48,12 @@ export default function HomeScreen ({ navigation, route }) {
     renderHomeScreen()
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex:1,
+    justifyContent:'center',
+    alignItems :'center',
+    paddingTop: Constants.statusBarHeight,
+  }
+})

@@ -130,7 +130,7 @@ export default function SettingsScreen ({ route, navigation }) {
     )
 
   return (
-    <SafeAreaView style={styles.container} forceInset={{ top: 'always' }}>
+    <SafeAreaView style={styles.container} forceInset={{ top: 'always', bottom: 'never' }}>
       <View style={{ alignItems: 'center', justifyContent: 'center' }}>
         <Text style={{ fontSize: 30 }}> Settings </Text>
       </View>
