@@ -1652,7 +1652,7 @@
     },
     {
         "id" :17,
-        "name" : "Search",
+        "name" : "Settings",
         "hexvalue": "#DDDDDD",
         "default" : true,
         "section" :[

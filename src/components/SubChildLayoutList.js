@@ -55,7 +55,7 @@ const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick, 
     </TouchableOpacity>
 
     {item.vis &&
-      <div>
+      <>
         <View style={styles.TextComponentStyle}>
           <Text style={[styles.TextComponentChildStyle, { fontSize: 20 }]}>
             {item.child_desc}
@@ -85,7 +85,7 @@ const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick, 
             </Text>
           </View>
         ))}
-      </div>
+      </>
     }
   </View>
 )
@@ -352,7 +352,6 @@ export default function SubChildLayoutList (props) {
     } else if (!loading) {
       return (
         <SafeAreaView style={styles.container}>
-
           <View style={{ flex: 1, paddingTop: 5 }}>
             <FlatList
               data={selectedIdArr}

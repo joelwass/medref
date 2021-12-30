@@ -74,12 +74,19 @@ export default function HomeLayout (props) {
           {itemArray.map( (obj) => {  
             return ( 
               <Hexagon key={obj.name} q={obj.q} r={obj.r} s={obj.s} points={state.points} layout={state.layout} fill={obj.hexvalue} stroke={obj.hexvalue} showDetails={state.showDetails} showText={obj.id} strokeWidth={"5"} > 
-                <HexText x={state.x} y={obj.multiple_lines ? state.y-4 : state.y} fill={obj.fill} showDetails={state.showDetails} showText={obj.id}>{obj.name}
+                <HexText x={state.x} y={obj.multiple_lines ? state.y-4 : state.y} fill={obj.fill} showDetails={state.showDetails} showText={obj.id}>
+                  {obj.name}
                 </HexText>
-                <HexText x={state.x} y={state.y+1} fill={obj.fill} showDetails={state.showDetails} showText={obj.id}>{obj.name1}
-                </HexText>
-                <HexText x={state.x} y={state.y+5} fill={obj.fill} showDetails={state.showDetails} showText={obj.id}>{obj.name2}
-                </HexText>           
+                {obj.name1 && ( // if there is a second line to the name
+                  <HexText x={state.x} y={state.y+1} fill={obj.fill} showDetails={state.showDetails} showText={obj.id}>
+                    {obj.name1}
+                  </HexText>
+                )}
+                {obj.name2 && ( // if there is a third line to the name
+                  <HexText x={state.x} y={state.y+5} fill={obj.fill} showDetails={state.showDetails} showText={obj.id}>
+                    {obj.name2}
+                  </HexText> 
+                )}      
               </Hexagon> 
             )
           })}

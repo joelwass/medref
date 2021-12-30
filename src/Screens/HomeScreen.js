@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect } from 'react'
 import {StyleSheet} from 'react-native'
-import Constants from 'expo-constants'
 import HomeLayout from '../Components/HomeLayout'
 import DataUtils from '../Components/Helper/DataUtils'
 import {SafeAreaView} from 'react-native-safe-area-context'
@@ -22,6 +21,12 @@ export default function HomeScreen ({ navigation, route }) {
   }, [])
 
   const showDetails = (targetNodeId) => {
+    // If we're navigating to the "Settings" node, then just go to settings page, otherwise
+    // go to the node id's details that were clicked on
+    if (targetNodeId == '17') {
+      navigation.navigate('Settings', { value: targetNodeId })
+      return
+    }
     navigation.navigate('Details', { value: targetNodeId })
   }
 
@@ -54,6 +59,6 @@ const styles = StyleSheet.create({
     flex:1,
     justifyContent:'center',
     alignItems :'center',
-    paddingTop: Constants.statusBarHeight,
+    paddingTop: 0,
   }
 })

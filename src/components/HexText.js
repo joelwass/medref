@@ -15,7 +15,7 @@ export default function HexText(props) {
     return (
       <SvgText
         x={x || 0} 
-        y={y || '0.1em'} 
+        y={y || 1} 
         fill={fillcolor} 
         onPress={() => props.showDetails(props.showText)} 
         fontWeight='bold' 
@@ -29,7 +29,7 @@ export default function HexText(props) {
     return (
       <SvgText 
         x={x || 0} 
-        y={y || '0.1em'} 
+        y={y || 1} 
         fill={fillcolor} 
         onClick={() => props.showDetails(props.showText)} 
         fontWeight='bold' 

@@ -25,7 +25,6 @@ export default function SettingScreen ({ route, navigation }) {
         setResultsLoading(false)
         return []
       }
-      // console.log('here', timer)
       if (timer !== undefined) {
         clearTimeout(timer)
       }
@@ -34,15 +33,19 @@ export default function SettingScreen ({ route, navigation }) {
         const results = searchData(searchText)
         setSearchResults(results)
       }, 2000)
-      // console.log('timer now', timer)
     }
   }
 
   const debounce = searchDebounce()
 
-  const onSearchInputChanged = (e) => {
+  const onSearchInputChanged = (newSearchText) => {
+    if (!newSearchText) {
+      setResultsLoading(false)
+      setSearchResults([])
+      return
+    }
     setResultsLoading(true)
-    debounce(e.target.value)
+    debounce(newSearchText)
   }
 
   const showSubDetails = (sectionId, childId) => { // navigate to sub details screen 
@@ -111,7 +114,7 @@ export default function SettingScreen ({ route, navigation }) {
         )}    
 
         {item.child_bullets && (
-          <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: '0.5em', marginTop: '1em' }}>
+          <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: 5, marginTop: 10 }}>
             {item.child_bullets.map((bullet, idx) => (
               <View style={{ flexDirection: 'column', justifyContent: 'left' }} key={idx}>
                 <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'left' }}>{bullet.title}</Text>
@@ -139,22 +142,23 @@ export default function SettingScreen ({ route, navigation }) {
   }
 
   return (
-    <SafeAreaView style={styles.container} forceInset={{ top: 'always', bottom: 'never' }}>
+    <SafeAreaView style={styles.container}>
       <TextInput
         editable
         style={{ 
           width: '100%',
-          borderRadius: '5px', 
-          height: '3em', 
+          borderRadius: 5, 
+          height: 70, 
           backgroundColor: 'white',
-          paddingRight: '8px',
-          paddingLeft: '8px'
+          paddingRight: 8,
+          fontSize: 20,
+          paddingLeft: 8
         }}
         placeholder='Search'
         maxLength={40}
         autoCorrect={false}
         autoFocus={true}
-        onChange={onSearchInputChanged}
+        onChangeText={onSearchInputChanged}
       />
       
       {resultsLoading && (

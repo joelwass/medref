@@ -173,7 +173,7 @@ export default function SubLayoutList (props) {
             )}    
 
             {row.child_bullets && (
-              <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: '0.5em', marginTop: '1em' }}>
+              <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: 5, marginTop: 10 }}>
                 {row.child_bullets.map((bullet, idx) => (
                   <View style={{ flexDirection: 'column', justifyContent: 'left' }} key={idx}>
                     <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'left' }}>{bullet.title}</Text>
