@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Text, 
   ActivityIndicator, 
+  TouchableWithoutFeedback,
   SafeAreaView, 
   Dimensions, 
   FlatList 
@@ -53,6 +54,61 @@ export default function SettingScreen ({ route, navigation }) {
     navigation.navigate('SubDetails', { value: sectionId, subValue: undefined })
   }
 
+  const expandItem = (value) => {
+    const updatedArr = searchResults.map((item) => {
+      if (item.id === value) {
+        return {
+          ...item,
+          expanded: !item.expanded
+        }
+      }
+      return item
+    })
+    setSearchResults(
+      updatedArr
+    )
+  }
+
+  const ExpandedContent = ({ child, sectionColor, showName }) => (
+    <View style={{ justifyContent: 'center' }}>
+      {child.special_instruction_header && (
+        <ItemDetailHeader headerText={child.special_instruction_header} />
+      )}
+
+      {showName && (child.child_detail_name || child.child_name) && (
+        <ItemDetailsDesc childDetailDesc={child.child_detail_name || child.child_name} borderColor={{ borderColor: sectionColor }} textColor={{ color: sectionColor }} />
+      )}
+
+      {(child.child_detail_desc || child.child_desc) && (
+        <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+          <Text style={{ fontSize: 20, justifyContent: 'center', marginTop: 5 }}>{child.child_detail_desc || child.child_desc}</Text>
+        </View>
+      )}
+
+      {child.child_bullets && (
+        <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: 5, marginTop: 10 }}>
+          {child.child_bullets.map((bullet, idx) => (
+            <View style={{ flexDirection: 'column', justifyContent: 'left' }} key={idx.toString()}>
+              <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'left' }}>{bullet.title}</Text>
+              <Text style={{ fontSize: 20, textAlign: 'left' }}>{bullet.subtext}</Text>
+            </View>
+          ))}
+        </View>
+      )}      
+
+      {child.special_instruction_footer && (
+        <ItemDetailFooter footerText={child.special_instruction_footer} />
+      )}
+    </View>
+  )
+
+  const ItemDetails = ({ item, backgroundColor, onPress, textColor }) => (
+    <TouchableOpacity onPress={onPress} style={[styles.SubmitButtonStyle, backgroundColor = backgroundColor]}>
+      <Text style={[styles.title, textColor]}>{item.child_name}</Text>
+      <MaterialIcons name={item.expanded ? 'keyboard-arrow-up' : 'keyboard-arrow-down'} size={30} style={{ color: 'white' }} />
+    </TouchableOpacity>
+  )
+
   const Item = ({ item, backgroundColor, onPress, textColor }) => (
     <View style={{ flex: 1, alignItems: 'center' }}>
       <TouchableOpacity onPress={onPress} style={[styles.SubmitButtonStyle, backgroundColor = backgroundColor]}>
@@ -85,10 +141,8 @@ export default function SettingScreen ({ route, navigation }) {
   )
 
   const renderNodes = ({ item, index }) => {
-    console.log('here', item)
     const backgroundColor = item.hexvalue || item.section_hexvalue
     const color = '#fff'
-    const borderColor = '#36454F'
 
     // if it's a top level node, show the node so that it will nav to sections when clicked
 
@@ -98,42 +152,36 @@ export default function SettingScreen ({ route, navigation }) {
 
     // if there are no children of the node then render the node so it expands when clicked
     if (item.child_id) {
-      <View key={item.id} style={{ justifyContent: 'center' }}>
-        {item.special_instruction_header && (
-          <ItemDetailHeader headerText={item.special_instruction_header} />
-        )}
+      let expandableContents = []
 
-        {(item.child_detail_name || item.child_name) && (
-          <ItemDetailsDesc childDetailDesc={item.child_detail_name || item.child_name} borderColor={{ borderColor }} textColor={{ color }} />
-        )}
+      if (item.children) {
+        expandableContents = item.children.map((child, index) => {
+          return (
+            <ExpandedContent child={child} key={(child.child_id + index).toString()} sectionColor={backgroundColor} showName={true} />
+          )
+        })
+      } else {
+        expandableContents = [<ExpandedContent child={item} key={(item.child_id + index).toString()} sectionColor={backgroundColor} showName={false} />]
+      }
 
-        {(item.child_detail_desc || item.child_desc) && (
-          <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-            <Text style={{ fontSize: 20, justifyContent: 'center', marginTop: 5 }}>{item.child_detail_desc || item.child_desc}</Text>
-          </View>
-        )}    
-
-        {item.child_bullets && (
-          <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: 5, marginTop: 10 }}>
-            {item.child_bullets.map((bullet, idx) => (
-              <View style={{ flexDirection: 'column', justifyContent: 'left' }} key={idx}>
-                <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'left' }}>{bullet.title}</Text>
-                <Text style={{ fontSize: 20, textAlign: 'left' }}>{bullet.subtext}</Text>
-              </View>
-            ))}
-          </View>
-        )}      
-
-        {item.special_instruction_footer && (
-          <ItemDetailFooter footerText={item.special_instruction_footer} />
-        )}
-      </View>
+      return (
+        <View key={item.child_id.toString()}>
+          <ItemDetails
+            item={item}
+            onPress={() => expandItem(item.child_id)}
+            backgroundColor={{ backgroundColor }}
+            textColor={{ color }}
+          />
+          {!!item.expanded && (
+            <View style={styles.TextComponentStyle}>{expandableContents}</View>
+          )}
+        </View>
+      )
     } else {
       // if there are children of the node, have the node navigate to the sub layout page for that node
       return (
         <Item
           item={item}
-          // TODO figure out what show sub details does and what to call it with.
           onPress={() => showSubDetails(item.id, item.child_id)}
           backgroundColor={{ backgroundColor }}
           textColor={{ color }}
@@ -181,7 +229,7 @@ export default function SettingScreen ({ route, navigation }) {
           <FlatList
             data={searchResults}
             renderItem={({ item, index }) => renderNodes({ item, index })}
-            keyExtractor={(item) => item.id}
+            keyExtractor={(item) => item.id.toString()}
             ListEmptyComponent={EmptyList}
           />
         </View>

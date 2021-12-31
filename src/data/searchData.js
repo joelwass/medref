@@ -72,13 +72,11 @@ export default (s) => {
 
             // If a match was found in either of the child node, or the child node's children, push the child node
             if (foundMatchInChildNode) {
-              const childNodeCopy = {
+              result.push({
                 ...childNode,
                 id: childNode.child_id,
                 hexvalue: sectionNode.section_hexvalue
-              }
-              delete childNodeCopy.children
-              result.push(childNodeCopy)
+              })
             }
           })
         }

@@ -29,7 +29,7 @@ function HomeStack () {
         headerRightContainerStyle: { paddingRight: 10 },
         headerLeftContainerStyle: { paddingLeft: 10 },
         headerRight: () => (
-          <AntDesign name='search1' size={37} color='grey' onPress={() => navigation.navigate('Search')} />
+          <AntDesign name='search1' size={30} color='grey' onPress={() => navigation.navigate('Search')} />
         )
       })}
     >

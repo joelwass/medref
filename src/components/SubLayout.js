@@ -102,38 +102,34 @@ class SubLayout extends Component {
     render(){
         const innerViewHeight = this.props.height;
         const innerViewWidth = Dimensions.get('window').width/5;
-        
-        let fillcolor;
-        let strokecolor;
-        let arr= [];
 
         return(
-            <View style={styles.container}>
+          <View style={styles.container}>
             <ScrollView contentContainerStyle={{justifyContent:'center',alignItems:'center'}} horizontal={true} >
-            {this.state.itemArr && this.state.itemArr.map( (item) => {
-                    return(
-                        <View key={item.id} style={{height:innerViewHeight,width:innerViewWidth,
-                            justifyContent: 'center',
-                            alignItems: 'center'}}>
-                            {item.id === this.state.selectedValue ? (
-                                (<Svg>               
-                                    <Hexagon key={item.id} q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={item.hexvalue} stroke={'#fff'} showText={item.name} showDetails={() =>this.callParentFunction(item.id)} strokeWidth={"2"}>
-                                        <HexText x={this.state.x} y={this.state.y} fontSize={"15"} fill={'#fff'} isStroke={true} showDetails={() => this.callParentFunction(item.id)}>{item.name}</HexText>
-                                    </Hexagon>  
-                                </Svg> )
-                            ): (
-                                (<Svg>               
-                                    <Hexagon key={item.id} q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={'#fff'} stroke={item.hexvalue} showText={item.name} showDetails={() => this.callParentFunction(item.id)} strokeWidth={"2"}>
-                                        <HexText x={this.state.x} y={this.state.y} fill={item.hexvalue} fontSize={"15"} isStroke={true} showDetails={() => this.callParentFunction(item.id)}>{item.name}</HexText>
-                                    </Hexagon>  
-                                </Svg> )
-                            ) }
-                        </View>                         
-                    ) // return ends
-                }) // map ends
-            }                    
+              {this.state.itemArr && this.state.itemArr.map( (item) => {
+                  return(
+                    <View key={item.id} style={{height:innerViewHeight,width:innerViewWidth,
+                        justifyContent: 'center',
+                        alignItems: 'center'}}>
+                        {item.id === this.state.selectedValue ? (
+                            (<Svg>               
+                                <Hexagon key={item.id} q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={item.hexvalue} stroke={'#fff'} showText={item.name} showDetails={() =>this.callParentFunction(item.id)} strokeWidth={"2"}>
+                                    <HexText x={this.state.x} y={this.state.y} fontSize={"15"} fill={'#fff'} isStroke={true} showDetails={() => this.callParentFunction(item.id)}>{item.name}</HexText>
+                                </Hexagon>  
+                            </Svg> )
+                        ): (
+                            (<Svg>               
+                                <Hexagon key={item.id} q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={'#fff'} stroke={item.hexvalue} showText={item.name} showDetails={() => this.callParentFunction(item.id)} strokeWidth={"2"}>
+                                    <HexText x={this.state.x} y={this.state.y} fill={item.hexvalue} fontSize={"15"} isStroke={true} showDetails={() => this.callParentFunction(item.id)}>{item.name}</HexText>
+                                </Hexagon>  
+                            </Svg> )
+                        ) }
+                    </View>  
+                  )                       
+                })
+              }                    
             </ScrollView>
-            </View>
+          </View>
         )
     }
 }

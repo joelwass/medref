@@ -335,13 +335,6 @@ export default function SubChildLayoutList (props) {
     setIsEnabled(previousState => !previousState)
   }
 
-  const startLoading = () => {
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 1000)
-  }
-
   const renderFlatList = () => {
     if (loading) {
       return (

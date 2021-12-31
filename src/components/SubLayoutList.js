@@ -7,7 +7,7 @@ import data from '../data/data.json'
 /**
  * 
  * sublayout list will go to render all the sections within a top level node
- * within each section, if there are children and there is NO section name (which i dont think happens much)
+ * within each section, if there are children and there is NO section name 
  * then we make an array (selectedChildArr) of all the children for that section
  * if there is no section_name then children / children of children will all be rendered WITHIN this page
  * meaning subdetails page will never be nav'd to even if we have a section with children and sub children!
@@ -26,12 +26,10 @@ const Item = ({ item, backgroundColor, onPress, textColor }) => (
 )
 
 const ItemDetails = ({ item, backgroundColor, onPress, textColor }) => (
-
   <TouchableOpacity onPress={onPress} style={[styles.SubmitButtonStyle, backgroundColor = backgroundColor]}>
-    <Text style={[styles.title, textColor]}>{item.child_desc}</Text>
-    <MaterialIcons name={item.vis ? 'keyboard-arrow-up' : 'keyboard-arrow-down'} size={30} style={{ color: 'white' }} />
+    <Text style={[styles.title, textColor]}>{item.child_name}</Text>
+    <MaterialIcons name={item.expanded ? 'keyboard-arrow-up' : 'keyboard-arrow-down'} size={30} style={{ color: 'white' }} />
   </TouchableOpacity>
-
 )
 
 const ItemDetailsDesc = ({ childDetailDesc, borderColor, textColor }) => (
@@ -49,8 +47,6 @@ const ItemDetailHeader = ({ headerText }) => (
 const ItemDetailFooter = ({ footerText }) => (
   <View><Text>{footerText}</Text></View>
 )
-
-const extractKey = ({ item }) => child_id
 
 export default function SubLayoutList (props) {
   const [selectedId, setSelectedId] = useState(null)
@@ -91,7 +87,7 @@ export default function SubLayoutList (props) {
             ob.section_name = item.section_name + ' ' + tempText + ' ' + tempText1
           }
           ob.section_hexvalue = obj.hexvalue
-          ob.vis = false
+          ob.expanded = false
 
           if (item.section_name === '' && item.children.length) {
             setDisplayDetails(true)
@@ -100,11 +96,11 @@ export default function SubLayoutList (props) {
               const obChild = {}
               obChild.section_id = item.section_id,
               obChild.child_id = childItem.child_id,
-              obChild.child_desc = childItem.child_name,
+              obChild.child_name = childItem.child_name,
               obChild.backgroundColor = item.section_hexvalue,
               obChild.special_instruction_header = childItem.special_instruction_header,
               obChild.special_instruction_footer = childItem.special_instruction_footer
-              obChild.vis = false
+              obChild.expanded = false
 
               childItem.children.map(childDetails => {
                 const obChildDetail = {}
@@ -183,8 +179,9 @@ export default function SubLayoutList (props) {
               </View>
             )}      
 
-            {index === childArrLength &&
-              <ItemDetailFooter footerText={item.special_instruction_footer} />}
+            {index === childArrLength && (
+              <ItemDetailFooter footerText={item.special_instruction_footer} />
+            )}
 
           </View>
         )
@@ -196,12 +193,12 @@ export default function SubLayoutList (props) {
       <View>
         <ItemDetails
           item={item}
-          onPress={() => displayItemDetails(item.child_id)}
+          onPress={() => expandItemDetails(item.child_id)}
           backgroundColor={{ backgroundColor }}
           textColor={{ color }}
         />
 
-        {item.vis &&
+        {item.expanded &&
           <View style={styles.TextComponentStyle}>{items}</View>}
 
       </View>
@@ -213,60 +210,34 @@ export default function SubLayoutList (props) {
     const tempArray = [...selectedIdChildArr]
     if (isEnabled) {
       tempArray.map((item, index) => {
-        item.vis = false
+        item.expanded = false
       })
     } else {
       tempArray.map((item, index) => {
-        item.vis = true
+        item.expanded = true
       })
     }
     setSelectedChildArr(tempArray)
     setIsEnabled(previousState => !previousState)
   }
 
-  const displayItemDetails = (value) => {
-    const selectedArray = [...selectedIdChildArr]
-    let obj
-    let result = {}
-    result = selectedIdChildArr.find(obj => obj.child_id === value)
-    result.vis = !result.vis
-    selectedArray.map((item, index) =>
-      item.child_id === value
-        ? {
-            item: result
-          }
-        : item
-    )
+  const expandItemDetails = (value) => {
+    const updatedArr = selectedIdChildArr.map((item, index) => {
+      if (item.child_id === value) {
+        return {
+          ...item,
+          expanded: !item.expanded
+        }
+      }
+      return item
+    })
     setSelectedChildArr(
-      selectedArray
+      updatedArr
     )
   }
 
   const callParentFunction = (value) => {
     props.showSubDetails(value)
-  }
-
-  const addToSelectedList = (sec_id) => {
-    const selectedArray = [...selectedIdArr]
-    let obj
-    let result = {}
-    result = selectedIdArr.find(obj => obj.section_id === sec_id)
-    result.vis = !result.vis
-    selectedArray.map((item, index) =>
-      item.section_id === sec_id
-        ? {
-            item: result
-          }
-        : item
-    )
-    setSelectedIdArr(
-      selectedArray
-    )
-
-    // const selectedArray = selectedIdArr;
-    // const mySortedList = selectedArray.sort();
-    // const sortedNoDupes = Array.from(new Set(mySortedList));
-    // setSelectedIdArr(sortedNoDupes);
   }
 
   const EmptyList = () => {
@@ -306,10 +277,9 @@ export default function SubLayoutList (props) {
           </View>
           <FlatList
             data={selectedIdChildArr}
-            renderItem={({ item, index }) => renderItem({ item })}
-            keyExtractor={(item, index) => item.child_id.toString()}
+            renderItem={({ item }) => renderItem({ item })}
+            keyExtractor={(item) => item.child_id.toString()}
             ListEmptyComponent={EmptyList}
-            extraData={selectedIdChildArr}
           />
         </View>
       )
