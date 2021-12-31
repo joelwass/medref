@@ -45,8 +45,6 @@ class DataUtils {
       if (obj.selected) { arr.push(obj.id) }
     })
 
-    console.log('here getting default items', arr)
-
     return arr
   }
 
@@ -56,7 +54,7 @@ class DataUtils {
       const temp = jsonValue != null ? JSON.parse(jsonValue) : null
       return temp
     } catch (e) {
-      console.log(e)
+      console.error(e)
     }
   }
 
@@ -65,7 +63,7 @@ class DataUtils {
       const result = await AsyncStorage.setItem('@bama_storage_Key', JSON.stringify(values))
       return values
     } catch (e) {
-      console.log(e)
+      console.error(e)
     }
   }
 
@@ -137,7 +135,7 @@ class DataUtils {
       }
       return itemArrTemp
     } catch (e) {
-      console.log(e)
+      console.error(e)
     }
   }
 }

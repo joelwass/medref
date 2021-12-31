@@ -64,27 +64,8 @@ const MultipleHexagons = ({
       const point = new Point(center.x + offset.x, center.y + offset.y)
       corners.push(point)
     })
-    // console.log(corners);
     return corners
   }
-
-  /* const renderHexagons = () => {
-        return(
-            <View style={[styles.container]}>
-            <Svg  height ={'100%'} width={'100%'} viewBox={"10 0 70 50"} >
-            {
-                itemArr.map( (item ) =>{
-                return(
-                    <Hexagon key={item.id} q={item.q} r={item.r} s={item.s} points={points} layout={layout} showDetails={item.onUserClick} fill={'#fff'} stroke={item.hexvalue} showText={item.id}  strokeWidth={"2"} >
-                        <HexText x={0} y={0} fill={item.hexvalue} showDetails={item.onUserClick} showText={item.id} >{item.name} </HexText>
-                    </Hexagon>
-                )
-                })
-            }
-            </Svg>
-            </View>
-        )
-    } */
 
   const onHexagonClick = (item) => {
     onPressHexagon(item)

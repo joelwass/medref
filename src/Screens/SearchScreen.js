@@ -39,6 +39,7 @@ export default function SettingScreen ({ route, navigation }) {
   const debounce = searchDebounce()
 
   const onSearchInputChanged = (newSearchText) => {
+    setSearchResults([])
     if (!newSearchText) {
       setResultsLoading(false)
       setSearchResults([])
@@ -55,7 +56,7 @@ export default function SettingScreen ({ route, navigation }) {
   const Item = ({ item, backgroundColor, onPress, textColor }) => (
     <View style={{ flex: 1, alignItems: 'center' }}>
       <TouchableOpacity onPress={onPress} style={[styles.SubmitButtonStyle, backgroundColor = backgroundColor]}>
-        <Text style={[styles.title, textColor]}>{item.section_name}</Text>
+        <Text style={[styles.title, textColor]}>{item.name || item.section_name}</Text>
         <MaterialIcons name='keyboard-arrow-down' size={30} style={{ color: 'white' }} />
       </TouchableOpacity>
     </View>
@@ -84,21 +85,20 @@ export default function SettingScreen ({ route, navigation }) {
   )
 
   const renderNodes = ({ item, index }) => {
-    console.log('wtf here', index)
+    console.log('here', item)
     const backgroundColor = item.hexvalue || item.section_hexvalue
     const color = '#fff'
     const borderColor = '#36454F'
 
-    // concat the multiple line section names if necessary
-    if (item.multiple_lines) {
-      let tempText = item.section_name1 ? item.section_name1 : ''
-      let tempText1 = item.section_name2 ? item.section_name2 : ''
-      item.section_name = item.section_name + ' ' + tempText + ' ' + tempText1
-    }
+    // if it's a top level node, show the node so that it will nav to sections when clicked
+
+    // if it's a section node, show the node so that it will nav to children when clicked
+
+    // if it's a child node, show the node so it will expand when clicked
 
     // if there are no children of the node then render the node so it expands when clicked
-    if (!item.children) {
-      <View key={index} style={{ justifyContent: 'center' }}>
+    if (item.child_id) {
+      <View key={item.id} style={{ justifyContent: 'center' }}>
         {item.special_instruction_header && (
           <ItemDetailHeader headerText={item.special_instruction_header} />
         )}
@@ -133,7 +133,8 @@ export default function SettingScreen ({ route, navigation }) {
       return (
         <Item
           item={item}
-          onPress={() => showSubDetails(item.section_id, item.child_id)}
+          // TODO figure out what show sub details does and what to call it with.
+          onPress={() => showSubDetails(item.id, item.child_id)}
           backgroundColor={{ backgroundColor }}
           textColor={{ color }}
         />
@@ -180,9 +181,8 @@ export default function SettingScreen ({ route, navigation }) {
           <FlatList
             data={searchResults}
             renderItem={({ item, index }) => renderNodes({ item, index })}
-            keyExtractor={(item, index) => index.toString()}
+            keyExtractor={(item) => item.id}
             ListEmptyComponent={EmptyList}
-            extraData={searchResults}
           />
         </View>
       )}

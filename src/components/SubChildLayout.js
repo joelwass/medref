@@ -104,7 +104,6 @@ class SubChildLayout extends Component {
     }
 
     render(){
-      console.log('subchild layout', this.state.itemArray)
         const innerViewHeight = this.props.height;
         const innerViewWidth = Dimensions.get('window').width/5;
        

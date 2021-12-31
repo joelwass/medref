@@ -46,7 +46,6 @@ const getImage = (image) => {
 }
 
 const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick, display_img }) => {
-  console.log("here sub", item)
   return (
   <View style={{ flex: 1, alignItems: 'center' }}>
     <TouchableOpacity onPress={onPress} style={[styles.SubmitButtonStyle, backgroundColor = backgroundColor]}>
@@ -344,7 +343,6 @@ export default function SubChildLayoutList (props) {
   }
 
   const renderFlatList = () => {
-    console.log('rendering flat list', selectedIdArr)
     if (loading) {
       return (
         <LoadingIndicator />

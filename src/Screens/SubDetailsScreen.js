@@ -25,8 +25,6 @@ export default function SubDetailsScreen ({ navigation, route, props }) {
 
   const renderChildItems = () => {
     if (selectedValue === undefined || subSelectedValue === undefined) {
-      console.log({ selectedValue })
-      console.log({ subSelectedValue })
       return (
         <View style={[styles.container, {
           flexDirection: 'column'
@@ -40,9 +38,6 @@ export default function SubDetailsScreen ({ navigation, route, props }) {
         </View>
       )
     } else {
-      console.log('in else statement')
-      console.log({ selectedValue })
-      console.log({ subSelectedValue })
       return (
         <View style={[styles.container, {
           flexDirection: 'column'

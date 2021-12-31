@@ -98,7 +98,6 @@ export default function SettingsScreen ({ route, navigation }) {
   const storeData = async () => {
     try {
       if (ids && ids.length > 0) {
-        console.log(ids.length)
         if (ids.length === 8) {
           const jsonValue = JSON.stringify(ids)
           await AsyncStorage.setItem('@bama_storage_Key', jsonValue)
@@ -108,11 +107,10 @@ export default function SettingsScreen ({ route, navigation }) {
           minimumNumberofSelectionAlert('Attention !!!', 'First 8 items will only be saved.')
         }
       } else {
-        console.log('else storedata')
+        // TODO: else storedata
       }
     } catch (e) {
-      // saving error
-      console.log('catch block store data')
+      console.error('catch block store data')
     }
   }
 
@@ -125,7 +123,7 @@ export default function SettingsScreen ({ route, navigation }) {
       title,
       message,
       [
-        { text: 'OK', onPress: () => console.log('OK Pressed') }
+        { text: 'OK', onPress: () => {} }
       ]
     )
 

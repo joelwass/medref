@@ -27,9 +27,6 @@ export default function SettingScreen ({ route, navigation }) {
   useEffect(() => {
     const itemlist = DataUtils.items()
     setSettings(itemlist)
-    // clearAsyncStorage().then( (result) => {
-    //  //console.log(result);
-    // })
 
     getCachedPinnedTopics()
       .then((result) => {
@@ -45,7 +42,7 @@ export default function SettingScreen ({ route, navigation }) {
     try {
       return DataUtils.getUserSelectedItems()
     } catch (e) {
-      console.log(e)
+      console.error(e)
     }
   }
 
@@ -94,7 +91,6 @@ export default function SettingScreen ({ route, navigation }) {
       if (ids && ids.length === 8) {
         storeData(ids) // store in async storage
           .then(() => {
-            console.log('are we dispatching')
             updateContext(ids)(settingDispatch)
             // TODO: show toast saying succesful save or something
 
@@ -102,21 +98,21 @@ export default function SettingScreen ({ route, navigation }) {
             navigation.navigate('Home')
           })
           .catch((err) => {
-            console.log('Check Data 111 :' + err)
+            console.error('Check Data 111 :' + err)
           })
       } else {
         AlertMessage('Insufficient topics', 'Please select 8 topics to pin.')
       }
     } catch (e) {
       // saving error
-      console.log('catch block finally check data')
+      console.error('catch block finally check data')
     }
   }
   const storeData = async (values) => {
     try {
       return DataUtils.setUserSelectedItems(values)
     } catch (e) {
-      console.log(e)
+      console.error(e)
     }
   }
 
@@ -132,7 +128,6 @@ export default function SettingScreen ({ route, navigation }) {
     )
   }
   const AlertMessage = (title, message) => {
-    console.log('alerted?', message)
     Alert.alert(
       title,
       message,

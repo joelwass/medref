@@ -2,7 +2,6 @@ import { SET_SETTINGS, SETTING_UPDATE_FAIL } from '../../../constants/actiontype
 import DataUtils from '../../../Components/Helper/DataUtils'
 
 export default () => dispatch => {
-  console.log('are we dispatching?')
   DataUtils.getItemArray().then((res) => {
     dispatch({
       type: SET_SETTINGS,

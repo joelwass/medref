@@ -37,7 +37,7 @@ export default function HomeScreen ({ navigation, route }) {
       const result = await DataUtils.setUserSelectedItems(jsonValue)
       return result
     } catch (e) {
-      console.log(e)
+      console.error(e)
     }
   }
 
