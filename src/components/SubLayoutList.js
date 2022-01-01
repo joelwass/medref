@@ -41,11 +41,11 @@ const ItemDetailsDesc = ({ childDetailDesc, borderColor, textColor }) => (
 )
 
 const ItemDetailHeader = ({ headerText }) => (
-  <View><Text>{headerText}</Text></View>
+  <View style={{paddingLeft: 16, paddingRight: 8}}><Text>{headerText}</Text></View>
 )
 
 const ItemDetailFooter = ({ footerText }) => (
-  <View><Text>{footerText}</Text></View>
+  <View style={{paddingLeft: 16, paddingRight: 8}}><Text>{footerText}</Text></View>
 )
 
 export default function SubLayoutList (props) {

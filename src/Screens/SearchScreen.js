@@ -15,7 +15,7 @@ import { MaterialIcons } from '@expo/vector-icons'
 import searchData from '../data/searchData'
 
 
-export default function SettingScreen ({ route, navigation }) {
+export default function SearchScreen ({ route, navigation }) {
   const [searchResults, setSearchResults] = useState([])
   const [resultsLoading, setResultsLoading] = useState(false)
 
@@ -133,11 +133,11 @@ export default function SettingScreen ({ route, navigation }) {
   )
   
   const ItemDetailHeader = ({ headerText }) => (
-    <View><Text>{headerText}</Text></View>
+    <View style={{paddingLeft: 16, paddingRight: 8}}><Text>{headerText}</Text></View>
   )
   
   const ItemDetailFooter = ({ footerText }) => (
-    <View><Text>{footerText}</Text></View>
+    <View style={{paddingLeft: 16, paddingRight: 8}}><Text>{footerText}</Text></View>
   )
 
   const renderNodes = ({ item, index }) => {

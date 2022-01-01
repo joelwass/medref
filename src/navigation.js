@@ -9,7 +9,11 @@ import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons'
 import HomeScreen from './Screens/HomeScreen'
 import DetailsScreen from './Screens/DetailsScreen'
 import SubDetailsScreen from './Screens/SubDetailsScreen'
+import PinnedItemsScreen from './Screens/PinnedItemsScreen'
 import SettingScreen from './Screens/SettingScreen'
+import AboutScreen from './Screens/AboutScreen'
+import TermsOfUseScreen from './Screens/TermsOfUseScreen'
+import ContactScreen from './Screens/ContactScreen'
 import SearchScreen from './Screens/SearchScreen'
 import ImageScreen from './Screens/ImageScreen'
 
@@ -44,6 +48,18 @@ function HomeStack () {
       />
       <Stack.Screen
         name='Settings' component={SettingScreen}
+      />
+      <Stack.Screen
+        name='About' component={AboutScreen}
+      />
+      <Stack.Screen
+        name='PinnedItems' component={PinnedItemsScreen}
+      />
+      <Stack.Screen
+        name='TermsOfUse' component={TermsOfUseScreen}
+      />
+      <Stack.Screen
+        name='Contact' component={ContactScreen}
       />
       <Stack.Screen
         name='Search' component={SearchScreen}
