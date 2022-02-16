@@ -24,7 +24,7 @@ export default function DetailsScreen ({ navigation, route, props }) {
 
   const showSubDetails = (props) => { // navigate to sub details screen
     navigation.navigate('SubDetails', { value: selectedValue, subvalue: props })
-  }
+  } 
 
   const renderItems = () => {
     if (selectedValue === undefined) {

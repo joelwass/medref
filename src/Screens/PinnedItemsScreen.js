@@ -95,8 +95,10 @@ export default function PinnedItemsScreen ({ route, navigation }) {
           .catch((err) => {
             console.error('Check Data 111 :' + err)
           })
-      } else {
+      } else if (ids && ids.length < 8) {
         AlertMessage('Insufficient topics', 'Please select 8 topics to pin.')
+      } else {
+        AlertMessage('Too many topics', 'Please select only 8 topics to pin.')
       }
     } catch (e) {
       // saving error

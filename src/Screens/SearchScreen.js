@@ -40,7 +40,6 @@ export default function SearchScreen ({ route, navigation }) {
   const debounce = searchDebounce()
 
   const onSearchInputChanged = (newSearchText) => {
-    setSearchResults([])
     if (!newSearchText) {
       setResultsLoading(false)
       setSearchResults([])
@@ -50,8 +49,9 @@ export default function SearchScreen ({ route, navigation }) {
     debounce(newSearchText)
   }
 
-  const showSubDetails = (sectionId, childId) => { // navigate to sub details screen 
-    navigation.navigate('SubDetails', { value: sectionId, subValue: undefined })
+  const showSubDetails = (node) => { // navigate to sub details screen 
+    const parentId = parseInt(node.id.toString().substring(0, 1))
+    navigation.navigate('SubDetails', { value: parentId, subvalue: node.id })
   }
 
   const expandItem = (value) => {
@@ -110,7 +110,7 @@ export default function SearchScreen ({ route, navigation }) {
   )
 
   const Item = ({ item, backgroundColor, onPress, textColor }) => (
-    <View style={{ flex: 1, alignItems: 'center' }}>
+    <View>
       <TouchableOpacity onPress={onPress} style={[styles.SubmitButtonStyle, backgroundColor = backgroundColor]}>
         <Text style={[styles.title, textColor]}>{item.name || item.section_name}</Text>
         <MaterialIcons name='keyboard-arrow-down' size={30} style={{ color: 'white' }} />
@@ -143,14 +143,8 @@ export default function SearchScreen ({ route, navigation }) {
   const renderNodes = ({ item, index }) => {
     const backgroundColor = item.hexvalue || item.section_hexvalue
     const color = '#fff'
-
-    // if it's a top level node, show the node so that it will nav to sections when clicked
-
-    // if it's a section node, show the node so that it will nav to children when clicked
-
-    // if it's a child node, show the node so it will expand when clicked
-
-    // if there are no children of the node then render the node so it expands when clicked
+    // if it's a child node (has a childId), show the node so it will expand when clicked
+    // within this - if there are sub children, then add those to the expandable content
     if (item.child_id) {
       let expandableContents = []
 
@@ -177,12 +171,14 @@ export default function SearchScreen ({ route, navigation }) {
           )}
         </View>
       )
+    // if it's a top level node, show the node so that it will nav to sections when clicked
+    // Or if it's a section node, show the node so that it will nav to children when clicked
     } else {
       // if there are children of the node, have the node navigate to the sub layout page for that node
       return (
         <Item
           item={item}
-          onPress={() => showSubDetails(item.id, item.child_id)}
+          onPress={() => showSubDetails(item)}
           backgroundColor={{ backgroundColor }}
           textColor={{ color }}
         />
