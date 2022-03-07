@@ -23,7 +23,7 @@ export default function HomeScreen ({ navigation, route }) {
   const showDetails = (targetNodeId) => {
     // If we're navigating to the "Settings" node, then just go to settings page, otherwise
     // go to the node id's details that were clicked on
-    if (targetNodeId == '17') {
+    if (targetNodeId == '18') {
       navigation.navigate('Settings', { value: targetNodeId })
       return
     }

@@ -105,7 +105,7 @@ const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick, 
 
 const DisplayImage = ({ image, backgroundColor }) => (
   <View style={styles.imageView}>
-    <ImageBackground source={getImage(image)} style={styles.imageBackgroundView} />
+    <ImageBackground source={getImage(image)} style={styles.imageBackgroundView} resizeMode='contain' />
   </View>
 )
 
@@ -155,7 +155,6 @@ export default function SubChildLayoutList (props) {
     data.map((item) => {
       if (item.id === props.selectedValue) {
         const secDet = item.section.find(obj => obj.section_id === props.subSelectedValue)
-        // so here we have 
         backgroundColor = secDet.section_hexvalue
         secDet.children.map((item) => {
           const obj = {}
@@ -214,17 +213,6 @@ export default function SubChildLayoutList (props) {
             onImageClick={() => onImageClick(imageUrl)}
           />
         </View>
-      )
-    } else if (item.children !== null) {
-      return (
-        <Item
-          item={item}
-          onPress={() => callParentFunction(item.child_id)}
-          backgroundColor={{ backgroundColor }}
-          textColor={{ color }}
-          image={imageUrl}
-          onImageClick={() => onImageClick(imageUrl)}
-        />
       )
     } else if (item.display_img !== null) {
       const image = item.display_img
@@ -396,10 +384,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     flexGrow: 1,
-    marginTop: 7
+    marginTop: 0
   },
   imageBackgroundView: {
-    margin: 5,
     height: Dimensions.get('window').height,
     width: Dimensions.get('window').width
   },

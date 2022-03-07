@@ -160,49 +160,6 @@
                ]
           },
           {
-               "section_id" :15,
-               "section_name" : "Trauma",
-               "section_hexvalue" :  "#96c9dc",
-               "multiple_lines" : false,
-               "children" :[
-                {
-                  "child_id": 151,
-                  "child_name": "PCC (Kcentra)",
-                  "child_desc": "* Factors 2, 7, 9, 10 * \n1000-1500 units (follow hospital MTP protocol) \nFor trauma patient with bleed associated with anticoagulation (warfarin) see Antidote section for dosing"
-                },
-                {
-                  "child_id": 152,
-                  "child_name": "Tranexamic Acid (TXA)",
-                  "child_desc": "1 g IVPB over 10 min then 1 g IVPB over 8 hours"
-                },
-                {
-                  "child_id": 153,
-                  "child_name": "Levetiracetam",
-                  "child_desc": "1000 mg IVPB"
-                },
-                {
-                  "child_id": 154,
-                  "child_name": "Phenytoin",
-                  "child_desc": "20 mg/kg IVPB not to exceed 50 mcg/min"
-                },
-                {
-                  "child_id": 155,
-                  "child_name": "Mannitol",
-                  "child_desc": "1 g/kg IV bolus over 10 min \n* caution:hypotension *"
-                },
-                {
-                  "child_id": 156,
-                  "child_name": "3% NaCl",
-                  "child_desc": "250 mL IVPB over 30 minutes"
-                },
-                {
-                  "child_id": 157,
-                  "child_name": "DDAVP",
-                  "child_desc": "0.3 mcg/kg IVPB \n* For uremic bleed *"
-                }
-               ]
-          },
-          {
                "section_id" :16,
                "section_name" : "Blood",
                "section_hexvalue" :  "#96c9dc",
@@ -219,8 +176,8 @@
       "section" :[
           {
               "section_id": 21, 
-              "section_name" : "Vent",
-              "section_name1" : "Settings",
+              "section_name" : "Injured",
+              "section_name1" : "Strategy",
               "section_hexvalue" :  "#61a0af",
               "multiple_lines" : true,
               "children" :[
@@ -282,6 +239,71 @@
                       "button_img" : "PP"
                   }
              ]
+          },
+          {
+            "section_id": 21, 
+            "section_name" : "Obstructive",
+            "section_name1" : "Strategy",
+            "section_hexvalue" :  "#61a0af",
+            "multiple_lines" : true,
+            "children" :[
+                {
+                    "child_id": 211, 
+                    "child_name" : "Mode",
+                    "child_desc" :  "Volume Control"
+                },
+                {
+                     "child_id": 212, 
+                    "child_name" : "Tidal Volume(Vt)",
+                    "child_desc" :  "6- 8 mL/kg IBW"                    
+                }
+                ,
+                {
+                    "child_id": 213, 
+                    "child_name" : "Flow Rate",
+                    "child_desc" :  "60 - 80 LPM"                    
+                },                    
+                {
+                    "child_id": 214, 
+                    "child_name" : "RR",
+                    "child_desc" : "Initially 16-18 - Adjust Based on CO2 and Vent Needs",
+                    "child_desc1": "Minute ventillation for normal CO2 when not intubated = 60 ml/kg/min. Double to 120 mL/kg/min when intubated 2/2 t dead space Mild hypercarbia is ok."
+                    
+                },                    
+                {
+                    "child_id": 215, 
+                    "child_name" : "Fi02 and PEEP",
+                    "child_bullets": [
+                      {
+                        "title": "Goal: ",
+                        "subtext": "PaO2 55-80 mmHg or SpO2 99-95%"
+                      },
+                      {
+                        "title": "Start ",
+                        "subtext": "at 100% FiO2 and PEEP of 5"
+                      },
+                      {
+                        "title": "Start ",
+                        "subtext": "at higher peep for severe hypoxemia"
+                      },
+                      {
+                        "title": "Wait ",
+                        "subtext": "15-20 min, then draw an ABG"
+                      },
+                      {
+                        "title": "Titrate ",
+                        "subtext": "FiO2 and PEEP based on chart every 5-10 min; quicker if low sat"
+                      }
+                    ],
+                    "button_img" : "Fi"
+                },                    
+                {
+                    "child_id": 216 , 
+                    "child_name" : "Plateau Pressure",
+                    "child_desc" :  "Goal: <= 30cm H2O \nif > 30, reduce Vt by 1mL/kg IBW down to 4mL/kg IBW ",                    
+                    "button_img" : "PP"
+                }
+            ]
           },
           {
                "section_id": 22, 
@@ -1597,7 +1619,93 @@
       ]
   },
   {
-      "id" :17,
+    "id" : 17,
+    "name": "Trauma",
+    "hexvalue": "#96c9dc",
+    "selected" : false,
+    "section" :[
+      {
+        "section_id": 171, 
+        "section_name" : "",
+        "section_hexvalue" :  "#96c9dc",
+        "multiple_lines" : false,
+        "children" :[
+          {
+            "child_id": 1711, 
+            "child_name"  : "PCC (Kcentra)",
+            "children": [
+              {
+                "child_id": 17111,
+                "child_detail_desc": "* Factors 2, 7, 9, 10 * \n1000-1500 units (follow hospital MTP protocol) \nFor trauma patient with bleed associated with anticoagulation (warfarin) see Antidote section for dosing"
+              }
+            ]
+          },
+          {
+            "child_id": 1712, 
+            "child_name"  : "Tranexamic Acid (TXA)",
+            "children": [
+              {
+                "child_id": 17121,
+                "child_detail_desc": "1 g IVPB over 10 min then 1 g IVPB over 8 hours"
+              }
+            ]
+          },
+          {
+            "child_id": 1713, 
+            "child_name"  : "Levetiracetam",
+            "children": [
+              {
+                "child_id": 17131,
+                "child_detail_desc": "1000 mg IVPB"
+              }
+            ]
+          },
+          {
+            "child_id": 1714, 
+            "child_name"  : "Phenytoin",
+            "children": [
+              {
+                "child_id": 17141,
+                "child_detail_desc": "20 mg/kg IVPB not to exceed 50 mcg/min"
+              }
+            ]
+          },
+          {
+            "child_id": 1715, 
+            "child_name"  : "Mannitol",
+            "children": [
+              {
+                "child_id": 17151,
+                "child_detail_desc": "1 g/kg IV bolus over 10 min \n* caution:hypotension *"
+              }
+            ]
+          },
+          {
+            "child_id": 1716, 
+            "child_name"  : "3% NaCl",
+            "children": [
+              {
+                "child_id": 17161,
+                "child_detail_desc": "250 mL IVPB over 30 minutes"
+              }
+            ]
+          },
+          {
+            "child_id": 1717, 
+            "child_name"  : "DDAVP",
+            "children": [
+              {
+                "child_id": 17171,
+                "child_detail_desc": "0.3 mcg/kg IVPB \n* For uremic bleed *"
+              }
+            ]
+          }
+        ]
+      }
+    ]  
+  },
+  {
+      "id" :18,
       "name" : "Settings",
       "hexvalue": "#DDDDDD",
       "default" : true,
