@@ -158,13 +158,6 @@
                   ]
                 }
                ]
-          },
-          {
-               "section_id" :16,
-               "section_name" : "Blood",
-               "section_hexvalue" :  "#96c9dc",
-               "multiple_lines" : false,
-               "children" :[]
           }
        ]
   },
@@ -1626,79 +1619,45 @@
     "section" :[
       {
         "section_id": 171, 
-        "section_name" : "",
+        "section_name" : "Trauma",
+        "section_name1" : "Meds",
         "section_hexvalue" :  "#96c9dc",
-        "multiple_lines" : false,
+        "multiple_lines" : true,
         "children" :[
           {
             "child_id": 1711, 
-            "child_name"  : "PCC (Kcentra)",
-            "children": [
-              {
-                "child_id": 17111,
-                "child_detail_desc": "* Factors 2, 7, 9, 10 * \n1000-1500 units (follow hospital MTP protocol) \nFor trauma patient with bleed associated with anticoagulation (warfarin) see Antidote section for dosing"
-              }
-            ]
+            "child_name": "PCC (Kcentra)",
+            "child_desc": "* Factors 2, 7, 9, 10 * \n1000-1500 units (follow hospital MTP protocol) \nFor trauma patient with bleed associated with anticoagulation (warfarin) see Antidote section for dosing"
           },
           {
             "child_id": 1712, 
             "child_name"  : "Tranexamic Acid (TXA)",
-            "children": [
-              {
-                "child_id": 17121,
-                "child_detail_desc": "1 g IVPB over 10 min then 1 g IVPB over 8 hours"
-              }
-            ]
+            "child_desc": "1 g IVPB over 10 min then 1 g IVPB over 8 hours"
           },
           {
             "child_id": 1713, 
             "child_name"  : "Levetiracetam",
-            "children": [
-              {
-                "child_id": 17131,
-                "child_detail_desc": "1000 mg IVPB"
-              }
-            ]
+            "child_desc": "1000 mg IVPB"
           },
           {
             "child_id": 1714, 
             "child_name"  : "Phenytoin",
-            "children": [
-              {
-                "child_id": 17141,
-                "child_detail_desc": "20 mg/kg IVPB not to exceed 50 mcg/min"
-              }
-            ]
+            "child_desc": "20 mg/kg IVPB not to exceed 50 mcg/min"
           },
           {
             "child_id": 1715, 
             "child_name"  : "Mannitol",
-            "children": [
-              {
-                "child_id": 17151,
-                "child_detail_desc": "1 g/kg IV bolus over 10 min \n* caution:hypotension *"
-              }
-            ]
+            "child_desc": "1 g/kg IV bolus over 10 min \n* caution:hypotension *"
           },
           {
             "child_id": 1716, 
             "child_name"  : "3% NaCl",
-            "children": [
-              {
-                "child_id": 17161,
-                "child_detail_desc": "250 mL IVPB over 30 minutes"
-              }
-            ]
+            "child_desc": "250 mL IVPB over 30 minutes"
           },
           {
             "child_id": 1717, 
             "child_name"  : "DDAVP",
-            "children": [
-              {
-                "child_id": 17171,
-                "child_detail_desc": "0.3 mcg/kg IVPB \n* For uremic bleed *"
-              }
-            ]
+            "child_desc": "0.3 mcg/kg IVPB \n* For uremic bleed *"
           }
         ]
       }

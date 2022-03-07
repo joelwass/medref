@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
+import * as Linking from 'expo-linking';
 
 export default function AboutScreen ({ navigation, props, route }) {
 
@@ -13,6 +14,10 @@ export default function AboutScreen ({ navigation, props, route }) {
     </View>
   )
 
+  const _goToAboutPage = () => {
+    Linking.openURL("https://www.drbenmati.com/bedside-acute-care-medication-reference");
+  }
+
   return (
     <View style={styles.container}>
       <Text style={{textAlign: 'center', fontSize: 30, textDecorationLine: 'underline', margin: 10}}>
@@ -20,7 +25,7 @@ export default function AboutScreen ({ navigation, props, route }) {
       </Text>
 
       <Text style={{ textAlign: 'center', fontSize: 16, margin: 10}}>
-        BAMA is the brainchild of Ventura, CA residents Benjamin Mati and Florence Jung.
+        Bedside Acute care Medication App (BAMA) was developed by Benjamin Mati, MD and Florence Jung, PharmD.
       </Text>
 
       <Text style={{ textAlign: 'center', fontSize: 16, margin: 10}}>
@@ -31,6 +36,10 @@ export default function AboutScreen ({ navigation, props, route }) {
       <Text style={{ textAlign: 'center', fontSize: 16, margin: 10}}>
         Before graduating from Jefferson Medical College, Benjamin Mati studied anthropology at New York University and lived and traveled in Europe, 
         Asia and South and Central America. He completed his family medicine residency followed by an acute care and point of care ultrasound fellowship at Ventura County Medical Center (VCMC). He has been working in the emergency department and intensive care unit at VCMC since. While not working, he enjoys surfing, rock climbing, yoga, reading and cooking.
+      </Text>
+
+      <Text style={{ textAlign: 'center', fontSize: 16, margin: 10, color:'blue', textDecorationLine:'underline'}} onPress={_goToAboutPage}>
+        https://www.drbenmati.com/bedside-acute-care-medication-reference
       </Text>
 
       <LogoImage />
