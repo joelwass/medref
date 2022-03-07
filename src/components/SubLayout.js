@@ -13,7 +13,7 @@ import HexText from './HexText';
 
 class SubLayout extends Component {
     static LAYOUT_FLAT = new Orientation(3.0 / 2.0, 0.0, Math.sqrt(3.0) / 2.0, Math.sqrt(3.0),2.0 / 3.0, 0.0, -1.0 / 3.0, Math.sqrt(3.0) / 3.0, 0.0);
-    static LAYOUT_POINTY = new Orientation(Math.sqrt(3.0), Math.sqrt(3.0) / 2.0, 0.0, 3.0 / 2.0, Math.sqrt(3.0) / 3.0, -1.0 / 3.0, 0.0, 2.0 / 3.0, 0.5);
+    static LAYOUT_POINTY = new Orientation(Math.sqrt(3.0), Math.sqrt(3.0) / 2.0, -.35, 1.5, Math.sqrt(3.0) / 3.0, -1.0 / 3.0, 0.0, 2.0 / 3.0, 0.5);
     
     static width = Dimensions.get('window').width ;
 
@@ -78,9 +78,13 @@ class SubLayout extends Component {
                     ob.hexvalue = objTem.section_hexvalue    
             })            
 
-            itemArrTemp.push( 
-               ob
-            ) 
+            // filter out settings when adding to the item temp array since we dont want that to show
+            // up in the sub layout list
+            if (ob.name !== "Settings") {
+              itemArrTemp.push( 
+                ob
+              ) 
+            }
         })
         let oldIndex = itemArrTemp.findIndex( x => x.id === selectedValue);
         if(oldIndex !== -1)
@@ -114,13 +118,13 @@ class SubLayout extends Component {
                         {item.id === this.state.selectedValue ? (
                             (<Svg>               
                                 <Hexagon key={item.id} q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={item.hexvalue} stroke={'#fff'} showText={item.name} showDetails={() =>this.callParentFunction(item.id)} strokeWidth={"2"}>
-                                    <HexText x={this.state.x} y={this.state.y} fontSize={"15"} fill={'#fff'} isStroke={true} showDetails={() => this.callParentFunction(item.id)}>{item.name}</HexText>
+                                    <HexText x={this.state.x} y={this.state.y} fontSize={"14"} fill={'#fff'} isStroke={true} showDetails={() => this.callParentFunction(item.id)}>{item.name}</HexText>
                                 </Hexagon>  
                             </Svg> )
                         ): (
                             (<Svg>               
                                 <Hexagon key={item.id} q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={'#fff'} stroke={item.hexvalue} showText={item.name} showDetails={() => this.callParentFunction(item.id)} strokeWidth={"2"}>
-                                    <HexText x={this.state.x} y={this.state.y} fill={item.hexvalue} fontSize={"15"} isStroke={true} showDetails={() => this.callParentFunction(item.id)}>{item.name}</HexText>
+                                    <HexText x={this.state.x} y={this.state.y} fill={item.hexvalue} fontSize={"13"} isStroke={true} showDetails={() => this.callParentFunction(item.id)}>{item.name}</HexText>
                                 </Hexagon>  
                             </Svg> )
                         ) }

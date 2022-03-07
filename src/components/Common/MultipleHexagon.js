@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { View, StyleSheet, TouchableOpacity, Text, Dimensions } from 'react-native'
 import Svg, { Text as SvgText } from 'react-native-svg'
-import Constants from 'expo-constants'
-import data from '../../data/data.json'
 import Orientation from '../Orientation'
 import Point from '../Point'
 import Hexagon from '../Hexagon'

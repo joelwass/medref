@@ -6,13 +6,13 @@ import SubChildLayoutList from '../Components/SubChildLayoutList'
 
 export default function SubDetailsScreen ({ navigation, route, props }) {
   const { value, subValue } = route.params
-  const hexagonSize = { x: 40, y: 40 }
+  const hexagonSize = { x: 42, y: 42 }
   const [selectedValue, setSelectedValue] = useState()
   const [subSelectedValue, setSubSelectedValue] = useState()
 
   const height = Dimensions.get('window').height
   const width = Dimensions.get('window').width
-  const upperViewHeight = height / 6
+  const upperViewHeight = height / 7.9
 
   useEffect(() => {
     setSelectedValue(value)

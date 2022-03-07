@@ -247,7 +247,7 @@ export default function SubChildLayoutList (props) {
           }
         ]
         const viewHeight = height - 80
-        const hexagonSize = { x: 13, y: 13 }
+        const hexagonSize = { x: 15, y: 15 }
         return (
           <DisplayMaleFemaleImage
             image={image}
@@ -395,6 +395,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 25,
+    paddingLeft: 10,
     margin: 'auto',
     textAlign: 'center',
     justifyContent: 'center'

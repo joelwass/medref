@@ -38,9 +38,9 @@ class Hexagon extends Component {
     
     const { q, r, s } = this.props;
     const {points} = this.props.points;
-    const {layout} = Object.assign(this.props.layout);
+    const layout = Object.assign({}, this.props.layout);
     const hex = new Hex(q, r, s);
-    const pixel = HexUtils.hexToPixel(hex, this.props.layout);
+    const pixel = HexUtils.hexToPixel(hex, layout);
     this.state = { hex, pixel };
    
   }

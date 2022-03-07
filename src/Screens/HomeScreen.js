@@ -5,7 +5,7 @@ import DataUtils from '../Components/Helper/DataUtils'
 import {SafeAreaView} from 'react-native-safe-area-context'
 
 export default function HomeScreen ({ navigation, route }) {
-  const hexagonSize = { x: 13, y: 13 }
+  const hexagonSize = { x: 15, y: 15 }
 
   useEffect(() => {
     let mounted = true
@@ -44,7 +44,7 @@ export default function HomeScreen ({ navigation, route }) {
   const renderHomeScreen = () => {
     return (
       <SafeAreaView style={styles.container}>
-        <HomeLayout size={hexagonSize} flat spacing={1.0} origin={{ x: 7, y: 7 }} showDetails={showDetails} />
+        <HomeLayout size={hexagonSize} flat spacing={1.0} origin={{ x: 7, y: 3 }} showDetails={showDetails} />
       </SafeAreaView>
     )
   }
