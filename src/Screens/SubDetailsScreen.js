@@ -6,13 +6,13 @@ import SubChildLayoutList from '../Components/SubChildLayoutList'
 
 export default function SubDetailsScreen ({ navigation, route, props }) {
   const { value, subValue } = route.params
-  const hexagonSize = { x: 40, y: 40 }
+  const hexagonSize = { x: 41, y: 41 }
   const [selectedValue, setSelectedValue] = useState()
   const [subSelectedValue, setSubSelectedValue] = useState()
 
   const height = Dimensions.get('window').height
   const width = Dimensions.get('window').width
-  const upperViewHeight = height / 6
+  const upperViewHeight = height / 7.9
 
   useEffect(() => {
     setSelectedValue(value)
@@ -30,7 +30,7 @@ export default function SubDetailsScreen ({ navigation, route, props }) {
           flexDirection: 'column'
         }]}>
           <View style={{ flex: 1, backgroundColor: '#e5e5e5' }}>
-            <SubChildLayout size={hexagonSize} flat={false} spacing={1.2} origin={{ x: 120, y: 120 }} showText={selectedValue} showChildDetails={showChildDetails} height={upperViewHeight} selectedValue={route.params.value} subSelectedValue={route.params.subvalue} />
+            <SubChildLayout size={hexagonSize} flat={false} spacing={1.2} origin={{ x: 127, y: 120 }} showText={selectedValue} showChildDetails={showChildDetails} height={upperViewHeight} selectedValue={route.params.value} subSelectedValue={route.params.subvalue} />
           </View>
           <View style={{ flex: 5, justifyContent: 'space-around', alignItems: 'center' }}>
             <SubChildLayoutList selectedValue={route.params.value} subSelectedValue={route.params.subvalue} />

@@ -1,10 +1,10 @@
 {
   "name": "BAMA",
   "displayName": "BAMA",
-	"owner": "bama-rn",
   "expo": {
     "name": "bama",
     "slug": "bama",
+    "owner": "bama-rn",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"

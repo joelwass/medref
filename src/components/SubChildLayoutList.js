@@ -56,16 +56,29 @@ const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick, 
     {item.vis &&
       <>
         <View style={styles.TextComponentStyle}>
-          <Text style={[styles.TextComponentChildStyle, { fontSize: 20 }]}>
-            {item.child_desc}
-            {item.child_desc1 && <Text style={{ fontSize: 15 }}>{'\n'}{item.child_desc1}</Text>}
-          </Text>
+          {item.child_desc && (
+            <Text style={[styles.TextComponentChildStyle, { fontSize: 20 }]}>
+              {item.child_desc}
+              {item.child_desc1 && <Text style={{ fontSize: 15 }}>{'\n'}{item.child_desc1}</Text>}
+            </Text>
+          )}
+          {item.child_bullets && (
+            <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: 5, marginTop: 10 }}>
+              {item.child_bullets.map((bullet, idx) => (
+                <View style={{ flexDirection: 'column', justifyContent: 'left' }} key={idx}>
+                  <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'left' }}>{bullet.title}</Text>
+                  <Text style={{ fontSize: 20, textAlign: 'left' }}>{bullet.subtext}</Text>
+                </View>
+              ))}
+            </View>
+          )}  
           {image !== null &&
             <TouchableOpacity onPress={onImageClick}>
               <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <ImageBackground source={getImage(image)} style={{ height: 70, width: 80 }} />
               </View>
-            </TouchableOpacity>}
+            </TouchableOpacity>
+          }
         </View>
         {item.subchildren && item.subchildren.map((subchild, idx) => (
           <View style={styles.TextComponentStyle} key={idx}>
@@ -83,7 +96,7 @@ const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick, 
               {subchild.child_desc}
             </Text>
           </View>
-        ))}
+        ))}    
       </>
     }
   </View>
@@ -92,7 +105,7 @@ const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick, 
 
 const DisplayImage = ({ image, backgroundColor }) => (
   <View style={styles.imageView}>
-    <ImageBackground source={getImage(image)} style={styles.imageBackgroundView} />
+    <ImageBackground source={getImage(image)} style={styles.imageBackgroundView} resizeMode='contain' />
   </View>
 )
 
@@ -119,22 +132,6 @@ const DisplayMaleFemaleImage = ({ image, backgroundColor, onFImageClick, onMImag
 
   </View>
 )
-
-/*
- <View st
-
- yle={{flexDirection:'row', justifyContent:'space-between'}}>
-
-    </View>
-
-<TouchableHighlight onPress={onMImageClick}>
-      <ImageBackground source={getImage("Male")} style={{width:200, height:210}}  ></ImageBackground>
-      </TouchableHighlight>
-
-      <TouchableHighlight onPress={onFImageClick}>
-      <ImageBackground source={getImage("Female")} style={{width:200, height:210}}  ></ImageBackground>
-      </TouchableHighlight>
-*/
 
 export default function SubChildLayoutList (props) {
   const [selectedId, setSelectedId] = useState(null)
@@ -164,6 +161,7 @@ export default function SubChildLayoutList (props) {
           obj.child_id = item.child_id,
           obj.child_name = item.child_name !== undefined ? item.child_name : null,
           obj.subchildren = item.subchildren !== undefined ? item.subchildren : null,
+          obj.child_bullets = item.child_bullets !== undefined ? item.child_bullets : null,
           obj.child_desc = item.child_desc !== undefined ? item.child_desc : null,
           obj.child_desc1 = item.child_desc1 !== undefined ? item.child_desc1 : null,
           obj.button_img = item.button_img !== undefined ? item.button_img : null,
@@ -186,7 +184,7 @@ export default function SubChildLayoutList (props) {
     const color = '#fff'
     const imageUrl = item.button_img
 
-    if (item.child_desc !== null) {
+    if (item.child_desc !== null || item.child_bullets !== null) {
       return (
         <View>
           {index === 0 &&
@@ -247,7 +245,7 @@ export default function SubChildLayoutList (props) {
           }
         ]
         const viewHeight = height - 80
-        const hexagonSize = { x: 13, y: 13 }
+        const hexagonSize = { x: 15, y: 15 }
         return (
           <DisplayMaleFemaleImage
             image={image}
@@ -292,7 +290,7 @@ export default function SubChildLayoutList (props) {
   }
 
   const callParentFunction = (value) => {
-    // props.showSubDetails(value);
+    props.showSubDetails(value);
     // this function is not called here.
   }
 
@@ -386,15 +384,15 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     flexGrow: 1,
-    marginTop: 7
+    marginTop: 0
   },
   imageBackgroundView: {
-    margin: 5,
     height: Dimensions.get('window').height,
     width: Dimensions.get('window').width
   },
   title: {
     fontSize: 25,
+    paddingLeft: 10,
     margin: 'auto',
     textAlign: 'center',
     justifyContent: 'center'

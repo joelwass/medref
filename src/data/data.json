@@ -1,961 +1,929 @@
 [
-    {
-        "id" :1,
-        "name": "CV",
-        "hexvalue": "#96c9dc",
-        "selected" : true,
-        "section" :[
-            {
-                "section_id": 11 , 
-                "section_name" : "Vasopressors",
-                "section_name1" : "/ Inotropes",
-                "section_hexvalue" :  "#b6d377",
-                "multiple_lines" : true,
-                "children" :[
-                    {
-                        "child_id": 111 , 
-                        "child_name" : "AngioTension II",
-                        "child_desc" :  "20 nanogram/kg/min First 3hr MAX: 80 nanogram/kg/min Maintainance Max: 40 nanogram/kg/min"
-                    },
-                    {
-                         "child_id": 112 , 
-                         "child_name" : "Dobutamine",
-                         "child_desc" :  "2.5 mcg/kg/min MAX: 20 mcg/kg/min"
-                    },
-                    {
-                         "child_id": 113 , 
-                         "child_name" : "Dopamine",
-                         "child_desc" :  "a > b: > 10-20 mcg/kg/min 5mcg/kg/min MAX: 20 mcg/kg/min"
-                    },
-                    {
-                         "child_id": 114 , 
-                         "child_name" : "Epinephrine",
-                         "child_desc" :  "1-2 mcg/min MAX:10 mcg/min"
-                    },
-                    {
-                         "child_id": 115 , 
-                         "child_name" : "Isoproterenol",
-                         "child_desc" :  "0.5 mcg/min MAX:30 mcg/min"
-                    },
-                    {
-                         "child_id": 116 , 
-                         "child_name" : "Miirinone",
-                         "child_desc" :  "0.25 mcg/kg/min MAX: 0.75 mcg/kg/min"
-                    },
-                    {
-                         "child_id": 117 , 
-                         "child_name" : "Norepinephrine",
-                         "child_desc" :  "2-12 mcg/min MAX: 30 mcg/min"
-                    },
-                    {
-                         "child_id": 118 , 
-                         "child_name" : "Phenylephrine",
-                         "child_desc" :  "100 mcg/min MAX: 240 mcg/min"                         
-                    },
-                    {
-                         "child_id": 119 , 
-                         "child_name" : "Vasopressin",
-                         "child_desc" :  "0.03 unit/min MAX: 0.03 unit/min"
-                    }
-                 ]
-            },
-            {
-                 "section_id": 12, 
-                 "section_name" : "ACLS",
-                 "section_hexvalue" :  "#f9b9b7",
-                 "multiple_lines" : false,
-                 "children" :[
-                   {
-                     "child_id": 121,
-                     "child_name": "Adenosine",
-                     "child_desc": "6 mg IVP may repeat q1-2 min max 12 mg/dose"
-                   },
-                   {
-                    "child_id": 122,
-                    "child_name": "Amiodarone",
-                    "child_desc": "300 mg IV bolus repeat if needed 150 mg IV bolus"
-                  },
-                  {
-                    "child_id": 123,
-                    "child_name": "Atropine",
-                    "child_desc": "0.5 mg IVP q 3-5 minutes; max 3 mg"
-                  },
-                  {
-                    "child_id": 124,
-                    "child_name": "Epinephrine",
-                    "child_desc": "1 mg (10 mL) IVP q 3-5 min max 3mg"
-                  },
-                  {
-                    "child_id": 125,
-                    "child_name": "Procainamide",
-                    "child_desc": "t20-50 mg/min infusion until arrithymia suppressed, hypotension QRs increase > 50% max 17 mg/kg Avoid prolonged QT or CHF"
-                  },
-                  {
-                    "child_id": 126,
-                    "child_name": "Sotalol",
-                    "child_desc": "1.5 mg/kg (100mg) IV over 10 min"
-                  }
-                 ]
-            },
-            {
-                "section_id" :13,
-                "section_name" : "Push",
-                "section_name1" : "Dose",
-                "section_name2" : "Pressor",
-                "section_hexvalue" :  "#96c9dc",
-                "multiple_lines" : true,
-                "children" :[
-                  {
-                     "child_id": 131,
-                     "child_name": "Epinephrine",
-                     "child_desc": "5-20 mcg (0.5-2 mL) IVP q2-5 minutes"
-                  },
-                  {
-                    "child_id": 132,
-                    "child_name": "Phenylephrine",
-                    "child_desc": "50-200 mcg (0.5-2mL) IVP q 2-5 min Max dose 200 mcg"
-                  }
-                ]
-            },           
-            {
-                 "section_id" :14,
-                 "section_name" : "HTN",
-                 "section_name1" : "Emergency",
-                 "section_hexvalue" :  "#96c9dc",
-                 "multiple_lines" : true,
-                 "children" :[
-                  {
-                    "child_id": 141,
-                    "child_name": "Enalaprilat",
-                    "child_desc": "1.25-5 mg IVP (max 5mg IV q6h)"
-                  },
-                  {
-                    "child_id": 142,
-                    "child_name": "Hydralazine",
-                    "child_desc": "10-20 mg IVP (max 300 mg/day)"
-                  },
-                  {
-                    "child_id": 143,
-                    "child_name": "Nicardipine",
-                    "child_desc": "5-15 mg/hr (max 15 mg/hr)"
-                  },
-                  {
-                    "child_id": 144,
-                    "child_name": "Beta Blockers",
-                    "child_desc": "β1 selective: Atenolol, Metoprolol, Betaxolol, Acebutolol, Bisoprolol, Esmolol",
-                    "children": [
-                      {
-                        "child_id": 1441,
-                        "child_detail_name": "Esmolol",
-                        "child_detail_desc": "250-500 mcg/kg bolus then 50-100 mcg/kg/min"
-                      },
-                      {
-                        "child_id": 1442,
-                        "child_detail_name": "Lebatolol β1, β2, α",
-                        "child_detail_desc": "20-80 mg IVP or 0.5-2 mg/min (max 300 mg/day)"
-                      }
-                    ]
-                  }
-                 ]
-            },
-            {
-                 "section_id" :15,
-                 "section_name" : "Trauma",
-                 "section_hexvalue" :  "#96c9dc",
-                 "multiple_lines" : false,
-                 "children" :[
-                  {
-                    "child_id": 151,
-                    "child_name": "PCC (kcentra)",
-                    "child_desc": "1000-1500 units follow hospital MTP protocol For trauma patient with bleed associated with anticoagulation (warfarin) see Antidote section for dosing"
-                  },
-                  {
-                    "child_id": 152,
-                    "child_name": "Tranexamic Acid",
-                    "child_desc": "1 g IVPB over 10 min then 1 g IVPB over 8 hours"
-                  },
-                  {
-                    "child_id": 153,
-                    "child_name": "Levetiracetam",
-                    "child_desc": "1000 mg IVPB"
-                  },
-                  {
-                    "child_id": 154,
-                    "child_name": "Phenytoin",
-                    "child_desc": "20 mg/kg IVPB not to exceed 50 mcg/min"
-                  },
-                  {
-                    "child_id": 155,
-                    "child_name": "Mannitol",
-                    "child_desc": "1 g/kg IVbolus over 10 min (caution:hypotension)"
-                  },
-                  {
-                    "child_id": 156,
-                    "child_name": "3% Nacl",
-                    "child_desc": "250 mL IVPB over 30 minutes"
-                  },
-                  {
-                    "child_id": 157,
-                    "child_name": "DDAVP",
-                    "child_desc": "0.3 mcg/kg IVPB (uremic bleed)"
-                  }
-                 ]
-            },
-            {
-                 "section_id" :16,
-                 "section_name" : "Blood",
-                 "section_hexvalue" :  "#96c9dc",
-                 "multiple_lines" : false,
-                 "children" :[]
-            }
-         ]
-    },
-    {
-        "id" :2,
-        "name" : "Vent",
-        "hexvalue": "#61a0af",
-        "selected" : true,
-        "section" :[
-            {
-                "section_id": 21, 
-                "section_name" : "Vent",
-                "section_name1" : "Settings",
-                "section_hexvalue" :  "#61a0af",
-                "multiple_lines" : true,
-                "children" :[
-                    {
-                        "child_id": 211, 
-                        "child_name" : "Mode",
-                        "child_desc" :  "Volume Control"
-                    },
-                    {
-                         "child_id": 212, 
-                        "child_name" : "Tidal Volume(Vt)",
-                        "child_desc" :  "6- 8 mL/kg IBW"                    
-                    }
-                    ,
-                    {
-                        "child_id": 213, 
-                        "child_name" : "Flow Rate",
-                        "child_desc" :  "60 - 80 LPM"                    
-                    },                    
-                    {
-                        "child_id": 214, 
-                        "child_name" : "RR",
-                        "child_desc" : "Initially 16-18 - Adjust Based on CO2 and Vent Needs",
-                        "child_desc1": "Minute ventillation for normal CO2 when not intubated = 60 ml/kg/min. Double to 120 mL/kg/min when intubated 2/2 t dead space Mild hypercarbia is ok."
-                        
-                    },                    
-                    {
-                        "child_id": 215, 
-                        "child_name" : "Fi02 and PEEP",
-                        "children": [
-                          {
-                            "child_id": 2151,
-                            "child_detail_desc": "",
-                            "child_bullets": [
-                              {
-                                "title": "Goal: ",
-                                "subtext": "PaO2 55-80 mmHg or SpO2 99-95%"
-                              },
-                              {
-                                "title": "Start ",
-                                "subtext": "at 100% FiO2 and PEEP of 5"
-                              },
-                              {
-                                "title": "Start ",
-                                "subtext": "at higher peep for severe hypoxemia"
-                              },
-                              {
-                                "title": "Wait ",
-                                "subtext": "15-20 min, then draw an ABG"
-                              },
-                              {
-                                "title": "Titrate ",
-                                "subtext": "FiO2 and PEEP based on chart every 5-10 min; quicker if low sat"
-                              }
-                            ]
-                          }
-                        ],
-                        "button_img" : "Fi"
-                    }
-                    ,                    
-                    {
-                        "child_id": 216 , 
-                        "child_name" : "Plateau Pressure",
-                        "child_desc" :  "Goal: <= 30cm H2O \n if > 30, reduce Vt by 1mL/kg IBW down to 4mL/kg IBW ",                    
-                        "button_img" : "PP"
-                    }
-               ]
-            },
-            {
-                 "section_id": 22, 
-                 "section_name" : "Fi02",
-                 "section_hexvalue" :  "#61a0af",
-                 "section_name1" : "and",
-                 "section_name2" : "Peep Chart",
-                 "multiple_lines" : true,                
-                 "children" :[]
-            },
-            {
-                 "section_id": 23, 
-                 "section_name" : "Post-",
-                 "section_name1" : "Intubation",
-                 "section_name2" : "Hypoxia",
-                 "section_hexvalue" :  "#61a0af",
-                 "multiple_lines" : true,
-                 "children" :[
-                    {
-                        "child_id": 231,                                          
-                        "display_img": "DOP" 
-                    }
-                 ]
-            },
-            {
-                 "section_id": 24, 
-                 "section_name" : "Useful",
-                 "section_name1" : "Info",
-                 "section_hexvalue" :  "#61a0af",
-                 "multiple_lines" : true,
-                 "children" :[
-                    {
-                        "child_id": 241,                                          
-                        "display_img": "MaleFemale" 
-                    }
-                 ]
-            }
-          ]
-    },
-    {
-        "id" : 3,
-        "name": "RSI",
-        "hexvalue": "#f9b9b7",
-        "selected" : true,
-        "section" :[
+  {
+      "id" :1,
+      "name": "CV",
+      "hexvalue": "#96c9dc",
+      "selected" : true,
+      "section" :[
           {
-              "section_id": 31, 
-              "section_name" : "",
-              "section_hexvalue" :  "#febd38",
-              "multiple_lines" : false,
+            "section_id": 11 , 
+            "section_name" : "Vaso-",
+            "section_name1" : "pressors /",
+            "section_name2" : "Inotropes",
+            "section_hexvalue" :  "#b6d377",
+            "multiple_lines" : true,
+            "children" :[
+                {
+                    "child_id": 111 , 
+                    "child_name" : "AngioTension II",
+                    "child_desc" :  "* Synthetic human angiotensin II, activates RAAS * \nStart: 20 nanogram/kg/min \nFirst 3hr MAX: 80 nanogram/kg/min \nMaintainance Max: 40 nanogram/kg/min"
+                },
+                {
+                      "child_id": 112 , 
+                      "child_name" : "Dobutamine",
+                      "child_desc" :  "* α1+, β1+++, β2++ * \nStart: 2.5 mcg/kg/min \nMAX: 20 mcg/kg/min"
+                },
+                {
+                      "child_id": 113 , 
+                      "child_name" : "Dopamine",
+                      "child_desc" :  "* Pure β: 5-10 mcg/kg/min \nα>β: >10-20 mcg/kg/min * \nStart: 5mcg/kg/min \nMAX: 20 mcg/kg/min"
+                },
+                {
+                      "child_id": 114 , 
+                      "child_name" : "Epinephrine",
+                      "child_desc" :  "* β: <3 mcg/min \nα: >6 mcg/min * \nStart: 1-2 mcg/min \nMAX:10 mcg/min"
+                },
+                {
+                      "child_id": 115 , 
+                      "child_name" : "Isoproterenol",
+                      "child_desc" :  "* β1 and β2 ++++* \nStart: 0.5 mcg/min \nMAX:30 mcg/min"
+                },
+                {
+                      "child_id": 116 , 
+                      "child_name" : "Milrinone",
+                      "child_desc" :  "* PDE inhibitor: +vasodilate, +inotropy * \nStart: 0.25 mcg/kg/min \nMAX: 0.75 mcg/kg/min"
+                },
+                {
+                      "child_id": 117 , 
+                      "child_name" : "Norepinephrine",
+                      "child_desc" :  "* α1 ++++,α2 ++++, β1+++ * \nStart: 2-12 mcg/min \nMAX: 30 mcg/min"
+                },
+                {
+                      "child_id": 118 , 
+                      "child_name" : "Phenylephrine",
+                      "child_desc" :  "* α1+++ * \nStart: 100 mcg/min \nMAX: 240 mcg/min"                         
+                },
+                {
+                      "child_id": 119 , 
+                      "child_name" : "Vasopressin",
+                      "child_desc" :  "* V1 * \nStart: 0.03 unit/min \nMAX: 0.03 unit/min"
+                }
+              ]
+          },
+          {
+               "section_id": 12, 
+               "section_name" : "ACLS",
+               "section_hexvalue" :  "#f9b9b7",
+               "multiple_lines" : false,
+               "children" :[
+                 {
+                   "child_id": 121,
+                   "child_name": "Adenosine",
+                   "child_desc": "6 mg IVP \nmay repeat q1-2 min \nmax 12 mg/dose"
+                 },
+                 {
+                  "child_id": 122,
+                  "child_name": "Amiodarone",
+                  "child_desc": "300 mg IV bolus \nrepeat with 150 mg IV bolus if needed"
+                },
+                {
+                  "child_id": 123,
+                  "child_name": "Atropine",
+                  "child_desc": "0.5 mg IVP q 3-5 minutes \nmax 3 mg"
+                },
+                {
+                  "child_id": 124,
+                  "child_name": "Epinephrine",
+                  "child_desc": "* 0.1mg/mL (1:10,000) * \n1 mg (10 mL) IVP q 3-5 min \nmax 3mg"
+                },
+                {
+                  "child_id": 125,
+                  "child_name": "Procainamide",
+                  "child_desc": "20-50 mg/min infusion until arrithymia suppressed, hypotension, QRS increase > 50% \nmax 17 mg/kg \n** Avoid if prolonged QT or CHF **"
+                },
+                {
+                  "child_id": 126,
+                  "child_name": "Sotalol",
+                  "child_desc": "1.5 mg/kg (100mg) IV over 10 min"
+                }
+               ]
+          },
+          {
+              "section_id" :13,
+              "section_name" : "Push",
+              "section_name1" : "Dose",
+              "section_name2" : "Pressor",
+              "section_hexvalue" :  "#96c9dc",
+              "multiple_lines" : true,
+              "children" :[
+                {
+                   "child_id": 131,
+                   "child_name": "Epinephrine",
+                   "child_desc": "* 0.01mg/mL * \n5-20 mcg (0.5-2 mL) IVP q2-5 minutes"
+                },
+                {
+                  "child_id": 132,
+                  "child_name": "Phenylephrine",
+                  "child_desc": "* 100mcg/mL * \n50-200 mcg (0.5-2mL) IVP q 2-5 min \nMax dose 200 mcg"
+                }
+              ]
+          },           
+          {
+               "section_id" :14,
+               "section_name" : "HTN",
+               "section_name1" : "Emergency",
+               "section_hexvalue" :  "#96c9dc",
+               "multiple_lines" : true,
+               "children" :[
+                {
+                  "child_id": 141,
+                  "child_name": "Enalaprilat",
+                  "child_desc": "1.25-5 mg IVP \nmax 5mg IV q6h"
+                },
+                {
+                  "child_id": 142,
+                  "child_name": "Hydralazine",
+                  "child_desc": "10-20 mg IVP \nmax 300 mg/day"
+                },
+                {
+                  "child_id": 143,
+                  "child_name": "Nicardipine",
+                  "child_desc": "5-15 mg/hr \nmax 15 mg/hr"
+                },
+                {
+                  "child_id": 144,
+                  "child_name": "Beta Blockers",
+                  "child_desc": "β1 selective: Atenolol, Metoprolol, Betaxolol, Acebutolol, Bisoprolol, Esmolol",
+                  "children": [
+                    {
+                      "child_id": 1441,
+                      "child_detail_name": "Esmolol",
+                      "child_detail_desc": "250-500 mcg/kg bolus then 50-100 mcg/kg/min"
+                    },
+                    {
+                      "child_id": 1442,
+                      "child_detail_name": "Lebatolol",
+                      "child_detail_desc": "* β1, β2, α * \n20-80 mg IVP or 0.5-2 mg/min \nmax 300 mg/day"
+                    }
+                  ]
+                }
+               ]
+          },
+          {
+               "section_id" :16,
+               "section_name" : "Blood",
+               "section_hexvalue" :  "#96c9dc",
+               "multiple_lines" : false,
+               "children" :[]
+          }
+       ]
+  },
+  {
+      "id" :2,
+      "name" : "Vent",
+      "hexvalue": "#61a0af",
+      "selected" : true,
+      "section" :[
+          {
+              "section_id": 21, 
+              "section_name" : "Injured",
+              "section_name1" : "Strategy",
+              "section_hexvalue" :  "#61a0af",
+              "multiple_lines" : true,
               "children" :[
                   {
-                      "child_id": 311, 
-                      "child_name"  : "Preinduction",
-                      "children" :[
-                          {
-                              "child_id" : 3111,
-                              "child_detail_name"  : "Fentanyl",
-                              "child_detail_desc" : "23 mcg/kg slow IVP \n typical dose 25-"
-                          }
-                      ]
-                      
+                      "child_id": 211, 
+                      "child_name" : "Mode",
+                      "child_desc" :  "Volume Control"
                   },
                   {
-                      "child_id": 312, 
-                      "child_name"  : "Induction",
-                      "special_instruction_header":"*Consider lower dosage for hemodynamically unstable patients",
-                      "children" :[
-                          {
-                              "child_id" : 3121,
-                              "child_detail_name"  : "Etomidate",
-                              "child_detail_desc" : "0.15 - 0.3 mg/kg IVP"
-                          },
-                          {
-                              "child_id" : 3122,
-                              "child_detail_name"  : "Ketamine",
-                              "child_detail_desc" : "1-2 mg/kg IVP alliquots \n 4 mg/kg IM"
-                          },
-                          {
-                              "child_id" : 3123,
-                              "child_detail_name"  : "Propofol",
-                              "child_detail_desc" : "0.5 to 2 mg/kg IVP"
-                          }
-                      ]
-                  },
-                  {
-                      "child_id": 313, 
-                      "child_name"  : "NMBAs",
-                      "special_instruction_header" : "O=onset D=duration",
-                      "children" :[                                
-                          {
-                              "child_id" : 3131,
-                              "child_detail_name"  : "Etomidate",
-                              "child_detail_desc" : "0.15 - 0.3 mg/kg IVP"
-                          },
-                          {
-                              "child_id" : 3132,
-                              "child_detail_name"  : "Ketamine",
-                              "child_detail_desc" : "1-2 mg/kg IVP alliquots \n 4 mg/kg IM"
-                          },
-                          {
-                              "child_id" : 3133,
-                              "child_detail_name"  : "Propofol",
-                              "child_detail_desc" : "0.5 to 2 mg/kg IVP"
-                          }
-                      ],
-                      "special_instruction_footer" : "SUX Contraindications  \n Hx malignant hyperthermia \n >48hr old spinal cord injury/burns \n NMJ Dz \n SUSPECTED HyperK GBS \n Crush Injury"
+                       "child_id": 212, 
+                      "child_name" : "Tidal Volume(Vt)",
+                      "child_desc" :  "6- 8 mL/kg IBW"                    
                   }
-              ]
-          }
-      ]  
-    },
-    {
-        "id" :4,
-        "name" : "Antidotes",
-        "hexvalue": "#febd38",
-        "selected" : true,
-        "section" :[
+                  ,
+                  {
+                      "child_id": 213, 
+                      "child_name" : "Flow Rate",
+                      "child_desc" :  "60 - 80 LPM"                    
+                  },                    
+                  {
+                      "child_id": 214, 
+                      "child_name" : "RR",
+                      "child_desc" : "Initially 16-18 - Adjust Based on CO2 and Vent Needs",
+                      "child_desc1": "Minute ventillation for normal CO2 when not intubated = 60 ml/kg/min. Double to 120 mL/kg/min when intubated 2/2 t dead space Mild hypercarbia is ok."
+                      
+                  },                    
+                  {
+                      "child_id": 215, 
+                      "child_name" : "Fi02 and PEEP",
+                      "child_bullets": [
+                        {
+                          "title": "Goal: ",
+                          "subtext": "PaO2 55-80 mmHg or SpO2 99-95%"
+                        },
+                        {
+                          "title": "Start ",
+                          "subtext": "at 100% FiO2 and PEEP of 5"
+                        },
+                        {
+                          "title": "Start ",
+                          "subtext": "at higher peep for severe hypoxemia"
+                        },
+                        {
+                          "title": "Wait ",
+                          "subtext": "15-20 min, then draw an ABG"
+                        },
+                        {
+                          "title": "Titrate ",
+                          "subtext": "FiO2 and PEEP based on chart every 5-10 min; quicker if low sat"
+                        }
+                      ],
+                      "button_img" : "Fi"
+                  }
+                  ,                    
+                  {
+                      "child_id": 216 , 
+                      "child_name" : "Plateau Pressure",
+                      "child_desc" :  "Goal: <= 30cm H2O \nif > 30, reduce Vt by 1mL/kg IBW down to 4mL/kg IBW ",                    
+                      "button_img" : "PP"
+                  }
+             ]
+          },
           {
-            "section_id": 41, 
+            "section_id": 21, 
+            "section_name" : "Obstructive",
+            "section_name1" : "Strategy",
+            "section_hexvalue" :  "#61a0af",
+            "multiple_lines" : true,
+            "children" :[
+                {
+                    "child_id": 211, 
+                    "child_name" : "Mode",
+                    "child_desc" :  "Volume Control"
+                },
+                {
+                     "child_id": 212, 
+                    "child_name" : "Tidal Volume(Vt)",
+                    "child_desc" :  "6- 8 mL/kg IBW"                    
+                }
+                ,
+                {
+                    "child_id": 213, 
+                    "child_name" : "Flow Rate",
+                    "child_desc" :  "60 - 80 LPM"                    
+                },                    
+                {
+                    "child_id": 214, 
+                    "child_name" : "RR",
+                    "child_desc" : "Initially 16-18 - Adjust Based on CO2 and Vent Needs",
+                    "child_desc1": "Minute ventillation for normal CO2 when not intubated = 60 ml/kg/min. Double to 120 mL/kg/min when intubated 2/2 t dead space Mild hypercarbia is ok."
+                    
+                },                    
+                {
+                    "child_id": 215, 
+                    "child_name" : "Fi02 and PEEP",
+                    "child_bullets": [
+                      {
+                        "title": "Goal: ",
+                        "subtext": "PaO2 55-80 mmHg or SpO2 99-95%"
+                      },
+                      {
+                        "title": "Start ",
+                        "subtext": "at 100% FiO2 and PEEP of 5"
+                      },
+                      {
+                        "title": "Start ",
+                        "subtext": "at higher peep for severe hypoxemia"
+                      },
+                      {
+                        "title": "Wait ",
+                        "subtext": "15-20 min, then draw an ABG"
+                      },
+                      {
+                        "title": "Titrate ",
+                        "subtext": "FiO2 and PEEP based on chart every 5-10 min; quicker if low sat"
+                      }
+                    ],
+                    "button_img" : "Fi"
+                },                    
+                {
+                    "child_id": 216 , 
+                    "child_name" : "Plateau Pressure",
+                    "child_desc" :  "Goal: <= 30cm H2O \nif > 30, reduce Vt by 1mL/kg IBW down to 4mL/kg IBW ",                    
+                    "button_img" : "PP"
+                }
+            ]
+          },
+          {
+               "section_id": 22, 
+               "section_name" : "Fi02",
+               "section_hexvalue" :  "#61a0af",
+               "section_name1" : "and",
+               "section_name2" : "Peep Chart",
+               "multiple_lines" : true,                
+               "children" :[]
+          },
+          {
+               "section_id": 23, 
+               "section_name" : "Post-",
+               "section_name1" : "Intubation",
+               "section_name2" : "Hypoxia",
+               "section_hexvalue" :  "#61a0af",
+               "multiple_lines" : true,
+               "children" :[
+                  {
+                      "child_id": 231,                                          
+                      "display_img": "DOP" 
+                  }
+               ]
+          },
+          {
+               "section_id": 24, 
+               "section_name" : "Useful",
+               "section_name1" : "Info",
+               "section_hexvalue" :  "#61a0af",
+               "multiple_lines" : true,
+               "children" :[
+                  {
+                      "child_id": 241,                                          
+                      "display_img": "MaleFemale" 
+                  }
+               ]
+          }
+        ]
+  },
+  {
+      "id" : 3,
+      "name": "RSI",
+      "hexvalue": "#f9b9b7",
+      "selected" : true,
+      "section" :[
+        {
+            "section_id": 31, 
             "section_name" : "",
             "section_hexvalue" :  "#febd38",
             "multiple_lines" : false,
             "children" :[
                 {
-                    "child_id": 411, 
-                    "child_name"  : "Acetaminophen",
+                    "child_id": 311, 
+                    "child_name"  : "Preinduction",
                     "children" :[
                         {
-                            "child_id" : 4111,
-                            "child_detail_name"  : "N-acetylcysteine",
-                            "child_detail_desc" : "140 mg/kg PO LD or 150 mg/kg IV LD then start MD"
+                            "child_id" : 3111,
+                            "child_detail_name"  : "Fentanyl",
+                            "child_detail_desc" : "2-3 mcg/kg slow IVP \ntypical dose 25-100 mcg"
                         }
                     ]
                     
                 },
                 {
-                    "child_id": 412, 
-                    "child_name"  : "Anticholingeric",
+                    "child_id": 312, 
+                    "child_name"  : "Induction",
+                    "special_instruction_header":"*Consider lower dosage for hemodynamically unstable patients",
                     "children" :[
                         {
-                            "child_id" : 4121,
-                            "child_detail_name"  : "Physostigmine",
-                            "child_detail_desc" : "2 mg via slow IV or IM"
+                            "child_id" : 3121,
+                            "child_detail_name"  : "Etomidate",
+                            "child_detail_desc" : "0.15 - 0.3 mg/kg IVP"
+                        },
+                        {
+                            "child_id" : 3122,
+                            "child_detail_name"  : "Ketamine",
+                            "child_detail_desc" : "1-2 mg/kg IVP alliquots \n4 mg/kg IM"
+                        },
+                        {
+                            "child_id" : 3123,
+                            "child_detail_name"  : "Propofol",
+                            "child_detail_desc" : "0.5 to 2 mg/kg IVP"
                         }
                     ]
                 },
                 {
-                    "child_id": 413, 
-                    "child_name"  : "Betablocker, CCB",
+                    "child_id": 313, 
+                    "child_name"  : "NMBAs",
+                    "special_instruction_header" : "O=onset D=duration",
                     "children" :[                                
                         {
-                            "child_id" : 4131,
-                            "child_detail_name"  : "Glucagon",
-                            "child_detail_desc" : "5 mg slow IVP"
+                            "child_id" : 3131,
+                            "child_detail_name"  : "Succinylcholine ",
+                            "child_detail_desc" : "* Onset: 30 sec  Duration: 6-10 min * \n1.5 mg/kg IVP \nContraindications  \nHx malignant hyperthermia \n>48hr old spinal cord injury or burns \nNMJ Dz \nSUSPECTED HyperK \nGBS \nCrush Injury \n* Can cause ↑IOP *"
+                        },
+                        {
+                            "child_id" : 3132,
+                            "child_detail_name"  : "Rocuronium",
+                            "child_detail_desc" : "* Onset: 75 sec  Duration: 20-90 min * \n0.6-1.2 mg/kg IVP"
+                        },
+                        {
+                            "child_id" : 3133,
+                            "child_detail_name"  : "Vecuronium",
+                            "child_detail_desc" : "* Onset: 60 sec  Duration: 30-40 min * \n0.08 - 1 mg/kg IVP"
                         }
                     ]
-                },
-                {
-                  "child_id": 414 , 
-                  "child_name"  : "Digoxin",
-                  "children" :[                                
+                }
+            ]
+        }
+    ]  
+  },
+  {
+      "id" :4,
+      "name" : "Antidotes",
+      "hexvalue": "#febd38",
+      "selected" : true,
+      "section" :[
+        {
+          "section_id": 41, 
+          "section_name" : "",
+          "section_hexvalue" :  "#febd38",
+          "multiple_lines" : false,
+          "children" :[
+              {
+                  "child_id": 411, 
+                  "child_name"  : "Acetaminophen",
+                  "children" :[
                       {
-                          "child_id" : 4141,
-                          "child_detail_name"  : "DigiFab",
-                          "child_detail_desc" : "Dosed per drug level"
+                          "child_id" : 4111,
+                          "child_detail_name"  : "N-acetylcysteine",
+                          "child_detail_desc" : "140 mg/kg PO LD or 150 mg/kg IV LD \nthen start MD"
+                      }
+                  ]
+                  
+              },
+              {
+                  "child_id": 412, 
+                  "child_name"  : "Anticholingeric",
+                  "children" :[
+                      {
+                          "child_id" : 4121,
+                          "child_detail_name"  : "Physostigmine",
+                          "child_detail_desc" : "2 mg via slow IV or IM"
                       }
                   ]
               },
               {
-                "child_id": 415, 
-                "child_name"  : "Direct Thrombin Inhibitors",
-                "children" :[]
+                  "child_id": 413, 
+                  "child_name"  : "Betablocker, CCB",
+                  "children" :[                                
+                      {
+                          "child_id" : 4131,
+                          "child_detail_name"  : "Glucagon",
+                          "child_detail_desc" : "5 mg slow IVP"
+                      }
+                  ]
               },
               {
-                "child_id": 416, 
-                "child_name"  : "Ethylene glycol, Methanol",
+                "child_id": 414 , 
+                "child_name"  : "Digoxin",
                 "children" :[                                
                     {
-                        "child_id" : 4161,
-                        "child_detail_name"  : "Fomepizole",
-                        "child_detail_desc" : "15 mg/kg IV LD then start MD"
+                        "child_id" : 4141,
+                        "child_detail_name"  : "DigiFab",
+                        "child_detail_desc" : "Dosed per drug level"
                     }
+                ]
+            },
+            {
+              "child_id": 415, 
+              "child_name"  : "Direct Thrombin Inhibitors",
+              "children" :[]
+            },
+            {
+              "child_id": 416, 
+              "child_name"  : "Ethylene glycol, Methanol",
+              "children" :[                                
+                  {
+                      "child_id" : 4161,
+                      "child_detail_name"  : "Fomepizole",
+                      "child_detail_desc" : "15 mg/kg IV LD then start MD"
+                  }
+              ]
+            },
+            {
+              "child_id": 417, 
+              "child_name"  : "Extravasation of pressor",
+              "children" :[                                
+                  {
+                      "child_id" : 4171,
+                      "child_detail_name"  : "Phentolamine",
+                      "child_detail_desc" : "5-10 mg in 0.5-1 mL aliquots to affected area"
+                  }
+              ]
+            },
+            {
+              "child_id": 418, 
+              "child_name"  : "Heparin",
+              "children" :[                                
+                  {
+                      "child_id" : 4181,
+                      "child_detail_name"  : "Protamine",
+                      "child_detail_desc" : "1 mg per 100 units of heparin given in the past 4 hours"
+                  }
+              ]
+            },
+            {
+              "child_id": 419, 
+              "child_name"  : "Enoxaparin",
+              "children" :[                                
+                  {
+                      "child_id" : 4191,
+                      "child_detail_name"  : "Protamine",
+                      "child_detail_desc" : "1 mg for every 1 mg given in the previous 8 hours 60% reversal"
+                  }
+              ]
+            },
+            {
+              "child_id": 420, 
+              "child_name"  : "Hypoglycemia",
+              "children" :[                                
+                  {
+                      "child_id" : 4201,
+                      "child_detail_name"  : "Dextrose (50%)",
+                      "child_detail_desc" : "1 amp = 25 gm = 50 mL"
+                  }
+              ]
+            },
+            {
+              "child_id": 421, 
+              "child_name"  : "Local anesthetic toxicity",
+              "children" :[                                
+                  {
+                      "child_id" : 4201,
+                      "child_detail_name"  : "Lipid Emulsion",
+                      "child_detail_desc" : "1.5 mL/kg over 1 min then 0.25 mL/kg/min infusion"
+                  }
+              ]
+            },
+            {
+              "child_id": 422, 
+              "child_name"  : "Malignant hyperthermia",
+              "children" :[                                
+                  {
+                      "child_id" : 4221,
+                      "child_detail_name"  : "Dantrolene",
+                      "child_detail_desc" : "1 mg/kg IVP \nmax 10mg/kg"
+                  }
+              ]
+            },
+            {
+              "child_id": 423, 
+              "child_name"  : "Methemoglobinemia",
+              "children" :[                                
+                  {
+                      "child_id" : 4231,
+                      "child_detail_name"  : "Methylene blue",
+                      "child_detail_desc" : "1 mg/kg IVP over 5 min"
+                  }
+              ]
+            },
+            {
+              "child_id": 424, 
+              "child_name"  : "Opioids",
+              "children" :[                                
+                  {
+                      "child_id" : 4241,
+                      "child_detail_name"  : "Naloxone",
+                      "child_detail_desc" : "0.04 - 0.4 mg IVP"
+                  }
+              ]
+            },
+            {
+              "child_id": 425, 
+              "child_name"  : "Rocuronium",
+              "children" :[                                
+                  {
+                      "child_id" : 4251,
+                      "child_detail_name"  : "Sugammadex",
+                      "child_detail_desc" : "16 mg/kg (ABW) IV bolus"
+                  }
+              ],
+              "special_instruction_footer" : "** Do not use in severe renal impairment or HD patients **"
+            },
+            {
+              "child_id": 426, 
+              "child_name"  : "Warfarin",
+              "children" :[                                
+                  {
+                      "child_id" : 4261,
+                      "child_detail_name"  : "Phytonadione (VitK)",
+                      "child_detail_desc" : "10 mg IVPB over 1 hour"
+                  },
+                  {
+                    "child_id" : 4262,
+                    "child_detail_name"  : "Kcentra",
+                    "child_detail_desc" : "INR 2-4: 25 units/kg (max 2500 units) \nINR 4-6: 35 units/kg (max 3500 units)\nINR > 6: 50 units/kg (max 5000 units)\n**Must give w/VitK 10 mg ivpb**"
+                }
+              ]
+            }
+          ]
+      }
+      ]
+  },
+  {
+      "id" :5,
+      "name": "Trauma",
+      "hexvalue": "#f5d491",
+      "selected" : true ,
+      "section" :[
+        {
+          "section_id": 51, 
+          "section_name" : "",
+          "section_hexvalue" :  "#f5d491",
+          "multiple_lines" : false,
+          "children" :[
+              {
+                  "child_id": 511, 
+                  "child_name"  : "PCC (kcentra)",
+                  "children": [
+                    {
+                      "child_id": 5111,
+                      "child_detail_desc": "1000-1500 units follow hospital MTP protocol\nFor trauma patient with bleed associated with anticoagulation (warfarin) see Antidote section for dosing"
+                    }
+                  ]
+              },
+              {
+                  "child_id": 512, 
+                  "child_name"  : "Tranexamic Acid",
+                  "children": [
+                    {
+                      "child_id": 5121,
+                      "child_detail_desc": "1 g IVPB over 10 min then 1 g IVPB over 8 hours"
+                    }
+                  ]
+              },
+              {
+                "child_id": 513, 
+                "child_name"  : "Levetiracetam",
+                "children": [
+                  {
+                    "child_id": 5131,
+                    "child_detail_desc": "1000 mg IVPB"
+                  }
                 ]
               },
               {
-                "child_id": 417, 
-                "child_name"  : "Extravasation of pressor",
-                "children" :[                                
-                    {
-                        "child_id" : 4171,
-                        "child_detail_name"  : "Phentolamine",
-                        "child_detail_desc" : "5-10 mg in 0.5-1 mL aliquots to affected area"
-                    }
+                "child_id": 514, 
+                "child_name"  : "Phenytoin",
+                "children": [
+                  {
+                    "child_id": 5141,
+                    "child_detail_desc": "20 mg/kg IVPB not to exceed 50 mcg/min"
+                  }
                 ]
               },
               {
-                "child_id": 418, 
-                "child_name"  : "Heparin",
-                "children" :[                                
-                    {
-                        "child_id" : 4181,
-                        "child_detail_name"  : "Protamine",
-                        "child_detail_desc" : "1 mg per 100 units of heparin given past 4 hours"
-                    }
+                "child_id": 515, 
+                "child_name"  : "Mannitol",
+                "children": [
+                  {
+                    "child_id": 5151,
+                    "child_detail_desc": "1 g/kg IVbolus over 10 min (caution:hypotension)"
+                  }
                 ]
               },
               {
-                "child_id": 419, 
-                "child_name"  : "Enoxaparin",
-                "children" :[                                
-                    {
-                        "child_id" : 4191,
-                        "child_detail_name"  : "Protamine",
-                        "child_detail_desc" : "1 mg for ever 1 mg given in the previous 8 hours 60% reversal"
-                    }
+                "child_id": 516, 
+                "child_name"  : "3% Nacl",
+                "children": [
+                  {
+                    "child_id": 5161,
+                    "child_detail_desc": "250 mL IVPB over 30 minutes"
+                  }
                 ]
               },
               {
-                "child_id": 420, 
-                "child_name"  : "Hypoglycemia",
-                "children" :[                                
-                    {
-                        "child_id" : 4201,
-                        "child_detail_name"  : "Dextrose (50%)",
-                        "child_detail_desc" : "1 amp = 25 gm = 50 mL"
-                    }
-                ]
-              },
-              {
-                "child_id": 421, 
-                "child_name"  : "Local anesthetic toxicity",
-                "children" :[                                
-                    {
-                        "child_id" : 4201,
-                        "child_detail_name"  : "Lipid Emulsion",
-                        "child_detail_desc" : "1.5 mL/kg over 1 min then 0.25 mL/kg/min infusion"
-                    }
-                ]
-              },
-              {
-                "child_id": 422, 
-                "child_name"  : "Malignant hyperthermia",
-                "children" :[                                
-                    {
-                        "child_id" : 4221,
-                        "child_detail_name"  : "Dantrolene",
-                        "child_detail_desc" : "1 mg/kg IVP (max 10mg/kg)"
-                    }
-                ]
-              },
-              {
-                "child_id": 423, 
-                "child_name"  : "Methemoglobinemia",
-                "children" :[                                
-                    {
-                        "child_id" : 4231,
-                        "child_detail_name"  : "Methylene blue",
-                        "child_detail_desc" : "1 mg/kg IVP over 5 min"
-                    }
-                ]
-              },
-              {
-                "child_id": 424, 
-                "child_name"  : "Opioids",
-                "children" :[                                
-                    {
-                        "child_id" : 4241,
-                        "child_detail_name"  : "Naloxone",
-                        "child_detail_desc" : "0.04 - 0.4 mg IVP"
-                    }
-                ]
-              },
-              {
-                "child_id": 425, 
-                "child_name"  : "Rocuronium",
-                "children" :[                                
-                    {
-                        "child_id" : 4251,
-                        "child_detail_name"  : "Sugammadex",
-                        "child_detail_desc" : "16 mg/kg (ABW) IV bolus"
-                    }
-                ],
-                "special_instruction_footer" : "(Do not use in severe renal impairment or HD patients)"
-              },
-              {
-                "child_id": 426, 
-                "child_name"  : "Warfarin",
-                "children" :[                                
-                    {
-                        "child_id" : 4261,
-                        "child_detail_name"  : "Phytonadione (VitK)",
-                        "child_detail_desc" : "10 mg IVPB over 1 hour"
-                    },
-                    {
-                      "child_id" : 4262,
-                      "child_detail_name"  : "Kcentra",
-                      "child_detail_desc" : "INR 2-4: 25 units/kg (max 2500 units)\nINR 4-6: 35 units/kg (max 3500 units)\nINR > 6: 50 units/kg (max 5000 units)\n**Must give w/VitK 10 mg ivpb**"
+                "child_id": 517, 
+                "child_name"  : "DDAVP",
+                "children": [
+                  {
+                    "child_id": 5171,
+                    "child_detail_desc": "0.3 mcg/kg IVPB (uremic bleed)"
                   }
                 ]
               }
-            ]
-        }
         ]
-    },
-    {
-        "id" :5,
-        "name": "Trauma",
-        "hexvalue": "#f5d491",
-        "selected" : true ,
-        "section" :[
-          {
-            "section_id": 51, 
-            "section_name" : "",
-            "section_hexvalue" :  "#f5d491",
-            "multiple_lines" : false,
-            "children" :[
-                {
-                    "child_id": 511, 
-                    "child_name"  : "PCC (kcentra)",
-                    "children": [
+      }
+    ]     
+  },
+  {
+      "id" :6,
+      "name" : "Blood",
+      "hexvalue": "#ff6262",
+      "selected" : true,
+      "section" :[
+        {
+          "section_id": 61, 
+          "section_name" : "",
+          "section_hexvalue" :  "#ff6262",
+          "multiple_lines" : false,
+          "children" :[
+              {
+                  "child_id": 611, 
+                  "child_name"  : "pRBC",
+                  "children": [
+                    {
+                      "child_id": 6111,
+                      "child_detail_desc": "1 unit = 220 mL = 1 gm/dL rise in Hgb"
+                    }
+                  ]
+              },
+              {
+                  "child_id": 612, 
+                  "child_name"  : "FFP",
+                  "children": [
+                    {
+                      "child_id": 6121,
+                      "child_detail_desc": "Coagulation factors and colloid proteins"
+                    }
+                  ]
+              },
+              {
+                "child_id": 613, 
+                "child_name"  : "Platelets (apheresis)",
+                "children": [
+                  {
+                    "child_id": 6131,
+                    "child_detail_desc": "1 bag = ~6units = rise of 30-60 k /uL"
+                  }
+                ]
+              },
+              {
+                "child_id": 614, 
+                "child_name"  : "Cryoprecipitate",
+                "children": [
+                  {
+                    "child_id": 6141,
+                    "child_detail_desc": "Fibrinogen, Factor VIII and XIII, vWF\n1 unit = ↑7-10 mg/dL"
+                  }
+                ]
+              },
+              {
+                "child_id": 615, 
+                "child_name"  : "MTP",
+                "children": [
+                  {
+                    "child_id": 6151,
+                    "child_detail_desc": "1 pRBC: 1 Plt: 1 FFP\nConsider cryo, TXA, 4-PCC\nWatch for ↓Ca, ↓ temp"
+                  }
+                ]
+              }
+        ]
+      }
+    ]
+  },
+  {
+      "id" :7,
+      "name": "Siezure",
+      "hexvalue": "#96c9dc",
+      "selected" : true,
+      "section" :[
+        {
+          "section_id": 71, 
+          "section_name" : "",
+          "section_hexvalue" :  "#96c9dc",
+          "multiple_lines" : false,
+          "children" :[
+              {
+                  "child_id": 711, 
+                  "child_name"  : "Diazepam",
+                  "children": [
+                    {
+                      "child_id": 7111,
+                      "child_detail_desc": "5-10 mg IVP q10-15 min \nMax 30mg"
+                    }
+                  ]
+              },
+              {
+                  "child_id": 712, 
+                  "child_name"  : "Lorazepam",
+                  "children": [
+                    {
+                      "child_id": 7121,
+                      "child_detail_desc": "4 mg slow IVP over 2 min or 0.1 mg/kg IVP \nmax 4 mg/dose"
+                    }
+                  ]
+              },
+              {
+                "child_id": 713, 
+                "child_name"  : "Levetiracetam",
+                "children": [
+                  {
+                    "child_id": 7131,
+                    "child_detail_desc": "1-3 g IVPB over 15 min \n*IV:PO::1:1*"
+                  }
+                ]
+              },
+              {
+                "child_id": 714, 
+                "child_name"  : "Phenytoin",
+                "children": [
+                  {
+                    "child_id": 7141,
+                    "child_detail_desc": "10-15 mg/kg IVPB LD \nmay give 20 mg/kg"
+                  }
+                ]
+              },
+              {
+                "child_id": 715, 
+                "child_name"  : "Phenobarbital",
+                "children": [
+                  {
+                    "child_id": 7151,
+                    "child_detail_desc": "100-320 mg slow IVP or IM"
+                  }
+                ]
+              }
+        ]
+      }
+    ] 
+  },
+  {
+      "id" :8,
+      "name" : "OB",
+      "hexvalue": "#b6d377",
+      "selected" : false,
+      "section" :[
+        {
+          "section_id": 81, 
+          "section_name" : "",
+          "section_hexvalue" :  "#b6d377",
+          "multiple_lines" : false,
+          "children" :[
+              {
+                  "child_id": 811, 
+                  "child_name"  : "Post Partum Hemorrhage",
+                  "children" :[
                       {
-                        "child_id": 5111,
-                        "child_detail_desc": "1000-1500 units follow hospital MTP protocol\nFor trauma patient with bleed associated with anticoagulation (warfarin) see Antidote section for dosing"
-                      }
-                    ]
-                },
-                {
-                    "child_id": 512, 
-                    "child_name"  : "Tranexamic Acid",
-                    "children": [
+                          "child_id" : 8111,
+                          "child_detail_name"  : "Oxytocin",
+                          "child_detail_desc" : "10 units IM or 30 units/500 mL"
+                      },
                       {
-                        "child_id": 5121,
-                        "child_detail_desc": "1 g IVPB over 10 min then 1 g IVPB over 8 hours"
-                      }
-                    ]
-                },
-                {
-                  "child_id": 513, 
-                  "child_name"  : "Levetiracetam",
-                  "children": [
-                    {
-                      "child_id": 5131,
-                      "child_detail_desc": "1000 mg IVPB"
-                    }
-                  ]
-                },
-                {
-                  "child_id": 514, 
-                  "child_name"  : "Phenytoin",
-                  "children": [
-                    {
-                      "child_id": 5141,
-                      "child_detail_desc": "20 mg/kg IVPB not to exceed 50 mcg/min"
-                    }
-                  ]
-                },
-                {
-                  "child_id": 515, 
-                  "child_name"  : "Mannitol",
-                  "children": [
-                    {
-                      "child_id": 5151,
-                      "child_detail_desc": "1 g/kg IVbolus over 10 min (caution:hypotension)"
-                    }
-                  ]
-                },
-                {
-                  "child_id": 516, 
-                  "child_name"  : "3% Nacl",
-                  "children": [
-                    {
-                      "child_id": 5161,
-                      "child_detail_desc": "250 mL IVPB over 30 minutes"
-                    }
-                  ]
-                },
-                {
-                  "child_id": 517, 
-                  "child_name"  : "DDAVP",
-                  "children": [
-                    {
-                      "child_id": 5171,
-                      "child_detail_desc": "0.3 mcg/kg IVPB (uremic bleed)"
-                    }
-                  ]
-                }
-          ]
-        }
-      ]     
-    },
-    {
-        "id" :6,
-        "name" : "Blood",
-        "hexvalue": "#ff6262",
-        "selected" : true,
-        "section" :[
-          {
-            "section_id": 61, 
-            "section_name" : "",
-            "section_hexvalue" :  "#ff6262",
-            "multiple_lines" : false,
-            "children" :[
-                {
-                    "child_id": 611, 
-                    "child_name"  : "pRBC",
-                    "children": [
+                        "child_id" : 8112,
+                        "child_detail_name"  : "TXA",
+                        "child_detail_desc" : "1 g IV over 10 min \nRepeat if continued bleeding after 30 min"
+                      },
                       {
-                        "child_id": 6111,
-                        "child_detail_desc": "1 unit = 220 mL = 1 gm/dL rise in Hgb"
-                      }
-                    ]
-                },
-                {
-                    "child_id": 612, 
-                    "child_name"  : "FFP",
-                    "children": [
+                        "child_id" : 8113,
+                        "child_detail_name"  : "Methergine",
+                        "child_detail_desc" : "0.2 mg IM repeat q2-4 hrs PRN\n*Caution with HTN*"
+                      },
                       {
-                        "child_id": 6121,
-                        "child_detail_desc": "Coagulation factors and colloid proteins"
+                        "child_id" : 8114,
+                        "child_detail_name"  : "Carboprost",
+                        "child_detail_desc" : "0.25 mg IM q15 - 90min PRN  \nmax 2 mg\n*Caution with asthma*"
+                      },
+                      {
+                        "child_id" : 8115,
+                        "child_detail_name"  : "Misoprostol",
+                        "child_detail_desc" : "400 – 800 mcg PO\n600–1000 mcg PR\n*Can cause pyrexia*"
                       }
-                    ]
-                },
-                {
-                  "child_id": 613, 
-                  "child_name"  : "Platelets (apheresis)",
-                  "children": [
-                    {
-                      "child_id": 6131,
-                      "child_detail_desc": "1 bag = ~6units = rise of 30-60 k /uL"
-                    }
                   ]
-                },
-                {
-                  "child_id": 614, 
-                  "child_name"  : "Cryoprecipitate",
-                  "children": [
-                    {
-                      "child_id": 6141,
-                      "child_detail_desc": "Fibrinogen, Factor VIII and XIII, vWF\n1 unit = ↑7-10 mg/dL"
-                    }
+                  
+              },
+              {
+                  "child_id": 812, 
+                  "child_name"  : "Pre-Eclampsia with Severe Features",
+                  "children" :[
+                      {
+                          "child_id" : 8121,
+                          "child_detail_name"  : "Magnesium sulfate",
+                          "child_detail_desc" : "For seizure prevention\n4-6 g IV bolus then 1-2 g/hr\n*Watch for toxicity: monitor for loss of DTR*"
+                      },
+                      {
+                        "child_id" : 8122,
+                        "child_detail_name"  : "Hydralazine",
+                        "child_detail_desc" : "5 mg IVP repeat dose 10 mg \nNot to exceed 30 mg total dose"
+                      },
+                      {
+                        "child_id" : 8123,
+                        "child_detail_name"  : "Labetalol",
+                        "child_detail_desc" : "20 mg IVP\nrepeat dose 40 mg\nrepeat dose 80 mg\n*Avoid with asthmatics*"
+                      },
+                      {
+                        "child_id" : 8124,
+                        "child_detail_name"  : "Nifedipine PO",
+                        "child_detail_desc" : "10 mg po"
+                      },
+                      {
+                        "child_id" : 8125,
+                        "child_detail_name"  : "Calcium Gluconate",
+                        "child_detail_desc" : "1000 mg IV over 2-5 min\n(To treat magnesium toxicity if needed)"
+                      }
                   ]
-                },
-                {
-                  "child_id": 615, 
-                  "child_name"  : "MTP",
-                  "children": [
-                    {
-                      "child_id": 6151,
-                      "child_detail_desc": "1 pRBC: 1 Plt: 1 FFP\nConsider cryo, TXA, 4-PCC\nWatch for ↓Ca, ↓ temp"
-                    }
-                  ]
-                }
+              }
           ]
         }
       ]
-    },
-    {
-        "id" :7,
-        "name": "Siezure",
-        "hexvalue": "#96c9dc",
-        "selected" : true,
-        "section" :[
-          {
-            "section_id": 71, 
-            "section_name" : "",
-            "section_hexvalue" :  "#96c9dc",
-            "multiple_lines" : false,
-            "children" :[
-                {
-                    "child_id": 711, 
-                    "child_name"  : "Diazepam",
-                    "children": [
-                      {
-                        "child_id": 7111,
-                        "child_detail_desc": "5-10 mg IVP q10-15 min Max 30mg"
-                      }
-                    ]
-                },
-                {
-                    "child_id": 712, 
-                    "child_name"  : "Lorazepam",
-                    "children": [
-                      {
-                        "child_id": 7121,
-                        "child_detail_desc": "4 mg slow IVP over 2 min or 0.1 mg/kg IVP max 4 mg/dose"
-                      }
-                    ]
-                },
-                {
-                  "child_id": 713, 
-                  "child_name"  : "Levetiracetam",
+  },
+  {
+      "id" :9,
+      "name" : "Intranasal",
+      "hexvalue": "#F5D491",
+      "selected" : false,
+      "section" :[
+        {
+          "section_id": 91, 
+          "section_name" : "",
+          "section_hexvalue" :  "#F5D491",
+          "multiple_lines" : false,
+          "children" :[
+              {
+                  "child_id": 911, 
+                  "child_name"  : "Midazolam (5 mg/mL)",
                   "children": [
                     {
-                      "child_id": 7131,
-                      "child_detail_desc": "1-3 g IVPB over 15 min (IV:PO::1:1)"
-                    }
-                  ]
-                },
-                {
-                  "child_id": 714, 
-                  "child_name"  : "Phenytoin",
-                  "children": [
-                    {
-                      "child_id": 7141,
-                      "child_detail_desc": "10-15 mg/kg IVPB LD (may give 20 mg/kg)"
-                    }
-                  ]
-                },
-                {
-                  "child_id": 715, 
-                  "child_name"  : "Phenobarbital",
-                  "children": [
-                    {
-                      "child_id": 7151,
-                      "child_detail_desc": "100-320 mg slow IVP or IM"
-                    }
-                  ]
-                }
-          ]
-        }
-      ] 
-    },
-    {
-        "id" :8,
-        "name" : "OB",
-        "hexvalue": "#b6d377",
-        "selected" : false,
-        "section" :[
-          {
-            "section_id": 81, 
-            "section_name" : "",
-            "section_hexvalue" :  "#b6d377",
-            "multiple_lines" : false,
-            "children" :[
-                {
-                    "child_id": 811, 
-                    "child_name"  : "Post Partum Hemorrhage",
-                    "children" :[
-                        {
-                            "child_id" : 8111,
-                            "child_detail_name"  : "Oxytocin",
-                            "child_detail_desc" : "10 units IM or 30 units/500 mL"
-                        },
-                        {
-                          "child_id" : 8112,
-                          "child_detail_name"  : "TXA",
-                          "child_detail_desc" : "1 g IV over 10 min Repeat if con’t bleeding after 30 min"
-                        },
-                        {
-                          "child_id" : 8113,
-                          "child_detail_name"  : "Methergine",
-                          "child_detail_desc" : "0.2 mg IM repeat q2-4 hrs PRN\n*Caution with HTN*"
-                        },
-                        {
-                          "child_id" : 8114,
-                          "child_detail_name"  : "Carboprost",
-                          "child_detail_desc" : "0.25 mg IM q15 - 90min PRN  (max 2 mg)\n*Caution with asthma*"
-                        },
-                        {
-                          "child_id" : 8115,
-                          "child_detail_name"  : "Misoprostol",
-                          "child_detail_desc" : "400 – 800 mcg PO\n600–1000 mcg PR\n*Can cause pyrexia*"
-                        }
-                    ]
-                    
-                },
-                {
-                    "child_id": 812, 
-                    "child_name"  : "Pre-Eclampsia with Severe Features",
-                    "children" :[
-                        {
-                            "child_id" : 8121,
-                            "child_detail_name"  : "Magnesium sulfate",
-                            "child_detail_desc" : "For seizure prevention\n4-6 g IV bolus then 1-2 g/hr\n*Watch for toxicity: monitor for loss of DTR*"
-                        },
-                        {
-                          "child_id" : 8122,
-                          "child_detail_name"  : "Hydralazine",
-                          "child_detail_desc" : "5 mg IVP repeat dose 10 mg NTE 30 mg total dose"
-                        },
-                        {
-                          "child_id" : 8123,
-                          "child_detail_name"  : "Labetalol",
-                          "child_detail_desc" : "20 mg IVP\nrepeat dose 40 mg\nrepeat dose 80 mg\n*Avoid with asthmatics*"
-                        },
-                        {
-                          "child_id" : 8124,
-                          "child_detail_name"  : "Nifedipine PO",
-                          "child_detail_desc" : "10 mg po"
-                        },
-                        {
-                          "child_id" : 8125,
-                          "child_detail_name"  : "Calcium Gluconate",
-                          "child_detail_desc" : "1000 mg IV over 2-5 min\n(To treat magnesium toxicity if needed)"
-                        }
-                    ]
-                }
-            ]
-          }
-        ]
-    },
-    {
-        "id" :9,
-        "name" : "Intranasal",
-        "hexvalue": "#F5D491",
-        "selected" : false,
-        "section" :[
-          {
-            "section_id": 91, 
-            "section_name" : "",
-            "section_hexvalue" :  "#F5D491",
-            "multiple_lines" : false,
-            "children" :[
-                {
-                    "child_id": 911, 
-                    "child_name"  : "Midazolam (5 mg/mL)",
-                    "children": [
-                      {
-                        "child_id": 9111,
-                        "child_detail_desc": " Seizure: 0.1 – 0.4 mg/kg\n(usual range 2-5 mg with max of 10 mg)",
-                        "child_bullets": [
-                          {
-                            "title": "Bioavailability:",
-                            "subtext": "50%"
-                          },
-                          {
-                            "title": "Time to peak effect",
-                            "subtext": "5 min"
-                          },
-                          {
-                            "title": "Duration",
-                            "subtext": "30 min"
-                          },
-                          {
-                            "title": "Volume Range",
-                            "subtext": "0.4 - 2mL"
-                          }
-                        ]
-                      }
-                    ]
-                },
-                {
-                    "child_id": 912, 
-                    "child_name"  : "Lorazepam (2 mg/mL)",
-                    "children": [
-                      {
-                        "child_id": 9121,
-                        "child_detail_desc": "Seizure: 0.1 mg/kg\n(usual range of 1-2 mg with a max of 4 mg)",
-                        "child_bullets": [
-                          {
-                            "title": "Time to peak effect",
-                            "subtext": "30 min"
-                          },
-                          {
-                            "title": "Volume Range",
-                            "subtext": "0.5 - 2mL"
-                          }
-                        ]
-                      }
-                    ]
-                },
-                {
-                  "child_id": 913 , 
-                  "child_name"  : "Ketamine (100 mg/mL)",
-                  "children": [
-                    {
-                      "child_id": 9131,
-                      "child_detail_desc": "Analgesia:0.5-1 mg/kg\n(limited by volume)",
+                      "child_id": 9111,
+                      "child_detail_desc": " Seizure: 0.1 – 0.4 mg/kg\n(usual range 2-5 mg with max of 10 mg)",
                       "child_bullets": [
                         {
                           "title": "Bioavailability:",
@@ -967,59 +935,7 @@
                         },
                         {
                           "title": "Duration",
-                          "subtext": "72 min"
-                        },
-                        {
-                          "title": "Volume Range",
-                          "subtext": "2 - 4mL"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "child_id": 914, 
-                  "child_name"  : "Fentanyl (50 mcg/mL)",
-                  "children": [
-                    {
-                      "child_id": 9141,
-                      "child_detail_desc": "Analgesia: 0.5 – 2 mcg/kg\n(limited by volume)",
-                      "child_bullets": [
-                        {
-                          "title": "Bioavailability:",
-                          "subtext": "89%"
-                        },
-                        {
-                          "title": "Time to peak effect",
-                          "subtext": "5 min"
-                        },
-                        {
-                          "title": "Duration",
-                          "subtext": "30-60 min"
-                        },
-                        {
-                          "title": "Volume Range",
-                          "subtext": "0.5 - 3mL"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "child_id": 915, 
-                  "child_name"  : "Naloxone (1 mg/mL)",
-                  "children": [
-                    {
-                      "child_id": 9151,
-                      "child_detail_desc": "0.1 mg/kg\n(usual range of 0.4 – 2 mg)",
-                      "child_bullets": [
-                        {
-                          "title": "Bioavailability:",
-                          "subtext": "30%"
-                        },
-                        {
-                          "title": "Time to peak effect",
-                          "subtext": "1 min"
+                          "subtext": "30 min"
                         },
                         {
                           "title": "Volume Range",
@@ -1028,631 +944,771 @@
                       ]
                     }
                   ]
-                },
-                {
-                  "child_id": 916, 
-                  "child_name"  : "Flumazenil (0.1 mg/mL)",
+              },
+              {
+                  "child_id": 912, 
+                  "child_name"  : "Lorazepam (2 mg/mL)",
                   "children": [
                     {
-                      "child_id": 9161,
-                      "child_detail_desc": "0.025 – 0.04 mg/kg\n(max of 0.1-0.2 mg)",
+                      "child_id": 9121,
+                      "child_detail_desc": "Seizure: 0.1 mg/kg\n(usual range of 1-2 mg with a max of 4 mg)",
                       "child_bullets": [
                         {
                           "title": "Time to peak effect",
-                          "subtext": "5 min"
+                          "subtext": "30 min"
                         },
                         {
                           "title": "Volume Range",
-                          "subtext": "1 - 2mL"
+                          "subtext": "0.5 - 2mL"
                         }
                       ]
                     }
                   ]
-                },
-                {
-                  "child_id": 917, 
-                  "child_name"  : "Dexmedetomidine (100 mcg/mL)",
-                  "children": [
-                    {
-                      "child_id": 9171,
-                      "child_detail_desc": "1-2 mcg/kg",
-                      "child_bullets": [
-                        {
-                          "title": "Bioavailability:",
-                          "subtext": "65%"
-                        },
-                        {
-                          "title": "Time to peak effect",
-                          "subtext": "20 min"
-                        },
-                        {
-                          "title": "Duration",
-                          "subtext": "100 min"
-                        },
-                        {
-                          "title": "Volume Range",
-                          "subtext": "0.7 - 1.5mL"
-                        }
-                      ]
-                    }
-                  ]
-                }
-            ]
-          }
-        ]
-    },
-    {
-        "id" :10,
-        "name" : "Psych",
-        "hexvalue": "#ff6262",
-        "selected" : false,
-        "section" :[
-          {
-            "section_id": 101, 
-            "section_name" : "",
-            "section_hexvalue" :  "#ff6262",
-            "multiple_lines" : false,
-            "children" :[
-                {
-                    "child_id": 1011, 
-                    "child_name"  : "Haloperidol",
-                    "children": [
+              },
+              {
+                "child_id": 913 , 
+                "child_name"  : "Ketamine (100 mg/mL)",
+                "children": [
+                  {
+                    "child_id": 9131,
+                    "child_detail_desc": "Analgesia:0.5-1 mg/kg\n(limited by volume)",
+                    "child_bullets": [
                       {
-                        "child_id": 10111,
-                        "child_detail_desc": "1-5 mg IM"
+                        "title": "Bioavailability:",
+                        "subtext": "50%"
+                      },
+                      {
+                        "title": "Time to peak effect",
+                        "subtext": "5 min"
+                      },
+                      {
+                        "title": "Duration",
+                        "subtext": "72 min"
+                      },
+                      {
+                        "title": "Volume Range",
+                        "subtext": "2 - 4mL"
                       }
                     ]
-                },
-                {
-                    "child_id": 1012, 
-                    "child_name"  : "Ketamine",
-                    "children": [
-                      {
-                        "child_id": 10121,
-                        "child_detail_desc": "4-6 mg/kg IM (limited data)"
-                      }
-                    ]
-                },
-                {
-                  "child_id": 1013, 
-                  "child_name"  : "Olanzepine",
-                  "children": [
-                    {
-                      "child_id": 10131,
-                      "child_detail_desc": "2.5-5 mg IM"
-                    }
-                  ]
-                },
-                {
-                  "child_id": 1014, 
-                  "child_name"  : "Ziprasidone",
-                  "children": [
-                    {
-                      "child_id": 10141,
-                      "child_detail_desc": "10 -20 mg IM"
-                    }
-                  ]
-                },
-                {
-                  "child_id": 1015 , 
-                  "child_name"  : "Droperidol",
-                  "children": [
-                    {
-                      "child_id": 10151,
-                      "child_detail_desc": "5-10 mg IV (off label use)"
-                    }
-                  ]
-                },
-                {
-                  "child_id": 1016, 
-                  "child_name"  : "B-52 Cocktail",
-                  "children" :[
-                    {
-                        "child_id" : 10161,
-                        "child_detail_name"  : "Diphenhydramine",
-                        "child_detail_desc" : "50 mg IM/IV"
-                    },
-                    {
-                      "child_id" : 10162,
-                      "child_detail_name"  : "Haloperidol",
-                      "child_detail_desc" : "5 mg IM/IV"
-                    },
-                    {
-                      "child_id" : 10163,
-                      "child_detail_name"  : "Lorazepam",
-                      "child_detail_desc" : "2 mg IM/IV"
-                    }
+                  }
                 ]
-                }
-            ]
-          }
-        ]
-    },
-    {
-        "id" :11,
-        "name" : "Anesthetics",
-        "hexvalue": "#f5d491",
-        "selected" : false,
-        "section" :[
+              },
+              {
+                "child_id": 914, 
+                "child_name"  : "Fentanyl (50 mcg/mL)",
+                "children": [
+                  {
+                    "child_id": 9141,
+                    "child_detail_desc": "Analgesia: 0.5 – 2 mcg/kg\n(limited by volume)",
+                    "child_bullets": [
+                      {
+                        "title": "Bioavailability:",
+                        "subtext": "89%"
+                      },
+                      {
+                        "title": "Time to peak effect",
+                        "subtext": "5 min"
+                      },
+                      {
+                        "title": "Duration",
+                        "subtext": "30-60 min"
+                      },
+                      {
+                        "title": "Volume Range",
+                        "subtext": "0.5 - 3mL"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "child_id": 915, 
+                "child_name"  : "Naloxone (1 mg/mL)",
+                "children": [
+                  {
+                    "child_id": 9151,
+                    "child_detail_desc": "0.1 mg/kg\n(usual range of 0.4 – 2 mg)",
+                    "child_bullets": [
+                      {
+                        "title": "Bioavailability:",
+                        "subtext": "30%"
+                      },
+                      {
+                        "title": "Time to peak effect",
+                        "subtext": "1 min"
+                      },
+                      {
+                        "title": "Volume Range",
+                        "subtext": "0.4 - 2mL"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "child_id": 916, 
+                "child_name"  : "Flumazenil (0.1 mg/mL)",
+                "children": [
+                  {
+                    "child_id": 9161,
+                    "child_detail_desc": "0.025 – 0.04 mg/kg\n(max of 0.1-0.2 mg)",
+                    "child_bullets": [
+                      {
+                        "title": "Time to peak effect",
+                        "subtext": "5 min"
+                      },
+                      {
+                        "title": "Volume Range",
+                        "subtext": "1 - 2mL"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "child_id": 917, 
+                "child_name"  : "Dexmedetomidine (100 mcg/mL)",
+                "children": [
+                  {
+                    "child_id": 9171,
+                    "child_detail_desc": "1-2 mcg/kg",
+                    "child_bullets": [
+                      {
+                        "title": "Bioavailability:",
+                        "subtext": "65%"
+                      },
+                      {
+                        "title": "Time to peak effect",
+                        "subtext": "20 min"
+                      },
+                      {
+                        "title": "Duration",
+                        "subtext": "100 min"
+                      },
+                      {
+                        "title": "Volume Range",
+                        "subtext": "0.7 - 1.5mL"
+                      }
+                    ]
+                  }
+                ]
+              }
+          ]
+        }
+      ]
+  },
+  {
+      "id" :10,
+      "name" : "Psych",
+      "hexvalue": "#ff6262",
+      "selected" : false,
+      "section" :[
+        {
+          "section_id": 101, 
+          "section_name" : "",
+          "section_hexvalue" :  "#ff6262",
+          "multiple_lines" : false,
+          "children" :[
+              {
+                  "child_id": 1011, 
+                  "child_name"  : "Haloperidol",
+                  "children": [
+                    {
+                      "child_id": 10111,
+                      "child_detail_desc": "1-5 mg IM"
+                    }
+                  ]
+              },
+              {
+                  "child_id": 1012, 
+                  "child_name"  : "Ketamine",
+                  "children": [
+                    {
+                      "child_id": 10121,
+                      "child_detail_desc": "4-6 mg/kg IM (limited data)"
+                    }
+                  ]
+              },
+              {
+                "child_id": 1013, 
+                "child_name"  : "Olanzepine",
+                "children": [
+                  {
+                    "child_id": 10131,
+                    "child_detail_desc": "2.5-5 mg IM"
+                  }
+                ]
+              },
+              {
+                "child_id": 1014, 
+                "child_name"  : "Ziprasidone",
+                "children": [
+                  {
+                    "child_id": 10141,
+                    "child_detail_desc": "10 -20 mg IM"
+                  }
+                ]
+              },
+              {
+                "child_id": 1015 , 
+                "child_name"  : "Droperidol",
+                "children": [
+                  {
+                    "child_id": 10151,
+                    "child_detail_desc": "5-10 mg IV (off label use)"
+                  }
+                ]
+              },
+              {
+                "child_id": 1016, 
+                "child_name"  : "B-52 Cocktail",
+                "children" :[
+                  {
+                      "child_id" : 10161,
+                      "child_detail_name"  : "Diphenhydramine",
+                      "child_detail_desc" : "50 mg IM/IV"
+                  },
+                  {
+                    "child_id" : 10162,
+                    "child_detail_name"  : "Haloperidol",
+                    "child_detail_desc" : "5 mg IM/IV"
+                  },
+                  {
+                    "child_id" : 10163,
+                    "child_detail_name"  : "Lorazepam",
+                    "child_detail_desc" : "2 mg IM/IV"
+                  }
+              ]
+              }
+          ]
+        }
+      ]
+  },
+  {
+      "id" :11,
+      "name" : "Local",
+      "hexvalue": "#f5d491",
+      "selected" : false,
+      "section" :[
+        {
+          "section_id": 111, 
+          "section_name" : "",
+          "section_hexvalue" :  "#f5d491",
+          "multiple_lines" : false,
+          "children" :[
+              {
+                  "child_id": 1111, 
+                  "child_name"  : "Bupivacaine ",
+                  "children": [
+                    {
+                      "child_id": 11111,
+                      "child_detail_desc": "175 mg (Dental: Max 90 mg)\nBupi 0.25%= 2.5mg/mL\nBupi 0.5% = 5 mg/mL"
+                    }
+                  ]
+              },
+              {
+                  "child_id": 1112, 
+                  "child_name"  : "Bupivacaine+Epi 1:200K",
+                  "children": [
+                    {
+                      "child_id": 11121,
+                      "child_detail_desc": "225 mg\nBupi 0.25%= 2.5mg/mL\nBupi 0.5% = 5 mg/mL"
+                    }
+                  ]
+              },
+              {
+                "child_id": 1113, 
+                "child_name"  : "Lidocaine",
+                "children": [
+                  {
+                    "child_id": 11131,
+                    "child_detail_desc": "300 mg (4.5 mg/kg)"
+                  }
+                ]
+              },
+              {
+                "child_id": 1114, 
+                "child_name"  : "Lido+Epi 1:100K,1:200K ",
+                "children": [
+                  {
+                    "child_id": 11141,
+                    "child_detail_desc": "500 mg (7 mg/kg)\nLido 1% = 10 mg/mL\nLido 2% = 20 mg/mL"
+                  }
+                ]
+              },
+              {
+                "child_id": 1115, 
+                "child_name"  : "Ropivacaine 0.5%=5mg/mL",
+                "children": [
+                  {
+                    "child_id": 11151,
+                    "child_detail_desc": "Field block 5-200 mg\n(1-40 mL of 0.5%)\nMajor nerve block 75-300 mg\n(10-40 mL of 0.5%)"
+                  }
+                ]
+              }
+          ]
+        }
+      ]
+  },
+  {
+      "id" :12,
+      "name" : "Inhibitors",
+      "hexvalue": "#b6d377",
+      "selected" : false,
+      "section" :[
+      ]
+  },
+  {
+      "id" :13,
+      "name" : "Anaphylaxis",
+      "hexvalue": "#b6d377",
+      "selected" : false,
+      "section" :[
+        {
+          "section_id": 131, 
+          "section_name" : "",
+          "section_hexvalue" :  "#b6d377",
+          "multiple_lines" : false,
+          "children" :[
+              {
+                  "child_id": 1311, 
+                  "child_name"  : "Epinephrine",
+                  "special_instruction_header":"1 mg/mL IM",
+                  "children": [
+                    {
+                      "child_id": 13111,
+                      "child_detail_desc": "0.2 - 0.5 mg (0.2-0.5 mL) IM q5min; see drip info under vasopressors"
+                    }
+                  ]
+              },
+              {
+                  "child_id": 1312, 
+                  "child_name"  : "Diphenhydramine",
+                  "children": [
+                    {
+                      "child_id": 13121,
+                      "child_detail_desc": "10-50 mg IV/IM over 5 min \nMax 400 mg/day"
+                    }
+                  ]
+              },
+              {
+                "child_id": 1313, 
+                "child_name"  : "Methylprednisolone",
+                "children": [
+                  {
+                    "child_id": 13131,
+                    "child_detail_desc": "1-2 mg/kg/day"
+                  }
+                ]
+              },
+              {
+                "child_id": 1314 , 
+                "child_name"  : "Ranitidine",
+                "children": [
+                  {
+                    "child_id": 13141,
+                    "child_detail_desc": "50 mg IV over 5 min"
+                  }
+                ]
+              },
+              {
+                "child_id": 1315 , 
+                "child_name"  : "Albuterol INH",
+                "children": [
+                  {
+                    "child_id": 13151,
+                    "child_detail_desc": "2.5-5 mg Neb"
+                  }
+                ]
+              }
+          ]
+        }
+      ]
+  },
+  {
+    "id" :14,
+    "name" : "DOAC",
+    "multiple_lines" : false,
+    "hexvalue": "#B6D377",
+    "selected" : false,
+    "section" :[
+      {
+        "section_id": 1411, 
+        "section_name" : "DTI",
+        "section_hexvalue" :  "#B6D377",
+        "multiple_lines" : false,
+        "children" :[
           {
-            "section_id": 111, 
-            "section_name" : "",
-            "section_hexvalue" :  "#f5d491",
-            "multiple_lines" : false,
-            "children" :[
-                {
-                    "child_id": 1111, 
-                    "child_name"  : "Bupivacaine ",
-                    "children": [
-                      {
-                        "child_id": 11111,
-                        "child_detail_desc": "175 mg (Dental: Max 90 mg)\nBupi 0.25%= 2.5mg/mL\nBupi 0.5% = 5 mg/mL"
-                      }
-                    ]
-                },
-                {
-                    "child_id": 1112, 
-                    "child_name"  : "Bupivacaine+Epi 1:200K",
-                    "children": [
-                      {
-                        "child_id": 11121,
-                        "child_detail_desc": "225 mg\nBupi 0.25%= 2.5mg/mL\nBupi 0.5% = 5 mg/mL"
-                      }
-                    ]
-                },
-                {
-                  "child_id": 1113, 
-                  "child_name"  : "Lidocaine",
-                  "children": [
-                    {
-                      "child_id": 11131,
-                      "child_detail_desc": "300 mg (4.5 mg/kg)"
-                    }
-                  ]
-                },
-                {
-                  "child_id": 1114, 
-                  "child_name"  : "Lido+Epi 1:100K,1:200K ",
-                  "children": [
-                    {
-                      "child_id": 11141,
-                      "child_detail_desc": "500 mg (7 mg/kg)\nLido 1% = 10 mg/mL\nLido 2% = 20 mg/mL"
-                    }
-                  ]
-                },
-                {
-                  "child_id": 1115, 
-                  "child_name"  : "Ropivacaine 0.5%=5mg/mL",
-                  "children": [
-                    {
-                      "child_id": 11151,
-                      "child_detail_desc": "Field block 5-200 mg\n(1-40 mL of 0.5%)\nMajor nerve block 75-300 mg\n(10-40 mL of 0.5%)"
-                    }
-                  ]
-                }
+            "child_id": 14111, 
+            "child_name"  : "Bivalirudin",
+            "child_bullets": [
+              {
+                "title": "Common Indication:",
+                "subtext": "PCI"
+              },
+              {
+                "title": "Route:",
+                "subtext": "IV Infusion"
+              },
+              {
+                "title": "Half-life:",
+                "subtext": "25 minutes (renal impairment 1-3.5 hours)"
+              },
+              {
+                "title": "Renal excretion:",
+                "subtext": "20%"
+              },
+              {
+                "title": "Removal by dialysis:",
+                "subtext": "25%"
+              },
+              {
+                "title": "Preferred lab:",
+                "subtext": "PTT"
+              },
+              {
+                "title": "Antidote:",
+                "subtext": "4F-PCC (note these medications have short half life)"
+              }
             ]
-          }
-        ]
-    },
-    {
-        "id" :12,
-        "name" : "Inhibitors",
-        "hexvalue": "#b6d377",
-        "selected" : false,
-        "section" :[
-        ]
-    },
-    {
-        "id" :13,
-        "name" : "Anaphylax",
-        "hexvalue": "#b6d377",
-        "selected" : false,
-        "section" :[
+          },
           {
-            "section_id": 131, 
-            "section_name" : "",
-            "section_hexvalue" :  "#b6d377",
-            "multiple_lines" : false,
-            "children" :[
-                {
-                    "child_id": 1311, 
-                    "child_name"  : "Epinephrine",
-                    "special_instruction_header":"1 mg/mL IM",
-                    "children": [
-                      {
-                        "child_id": 13111,
-                        "child_detail_desc": "0.2 - 0.5 mg (0.2-0.5 mL) IM q5min; see drip info under vasopressors"
-                      }
-                    ]
-                },
-                {
-                    "child_id": 1312, 
-                    "child_name"  : "Diphenhydramine",
-                    "children": [
-                      {
-                        "child_id": 13121,
-                        "child_detail_desc": "10-50 mg IV/IM over 5 min Max 400 mg/day"
-                      }
-                    ]
-                },
-                {
-                  "child_id": 1313, 
-                  "child_name"  : "Methylprednisolone",
-                  "children": [
-                    {
-                      "child_id": 13131,
-                      "child_detail_desc": "1-2 mg/kg/day"
-                    }
-                  ]
-                },
-                {
-                  "child_id": 1314 , 
-                  "child_name"  : "Ranitidine",
-                  "children": [
-                    {
-                      "child_id": 13141,
-                      "child_detail_desc": "50 mg IV over 5 min"
-                    }
-                  ]
-                },
-                {
-                  "child_id": 1315 , 
-                  "child_name"  : "Albuterol INH",
-                  "children": [
-                    {
-                      "child_id": 13151,
-                      "child_detail_desc": "2.5-5 mg Neb"
-                    }
-                  ]
-                }
+            "child_id": 14112, 
+            "child_name"  : "Argatroban",
+            "child_bullets": [
+              {
+                "title": "Common Indication:",
+                "subtext": "HIT"
+              },
+              {
+                "title": "Route:",
+                "subtext": "IV Infusion"
+              },
+              {
+                "title": "Half-life:",
+                "subtext": "30 - 51 minutes (Hepatic impairment 181 min)"
+              },
+              {
+                "title": "Renal excretion:",
+                "subtext": "22-25%"
+              },
+              {
+                "title": "Removal by dialysis:",
+                "subtext": "20%"
+              },
+              {
+                "title": "Preferred lab:",
+                "subtext": "PTT"
+              },
+              {
+                "title": "Antidote:",
+                "subtext": "4F-PCC (note these medications have short half life)"
+              }
+            ]
+          },
+          {
+            "child_id": 14113, 
+            "child_name"  : "Dabigatran (Pradaxa)",
+            "child_bullets": [
+              {
+                "title": "Common Indication:",
+                "subtext": "DVT, PE, non-valvular Afib"
+              },
+              {
+                "title": "Route:",
+                "subtext": "Oral"
+              },
+              {
+                "title": "Half-life:",
+                "subtext": "12-17 hours (Renal impairment 15-34 hrs)"
+              },
+              {
+                "title": "Renal excretion:",
+                "subtext": "80%"
+              },
+              {
+                "title": "Removal by dialysis:",
+                "subtext": "50%"
+              },
+              {
+                "title": "Preferred lab:",
+                "subtext": "ECT (PTT)"
+              },
+              {
+                "title": "Antidote:",
+                "subtext": "Idarucizumab 2.5g IV bolus x 2 doses (total 5g)"
+              },
+              {
+                "title": "How long to hold prior to LP:",
+                "subtext": "5 days"
+              }
             ]
           }
         ]
-    },
-    {
-        "id" :14,
-        "name" : "Direct",
-        "name1" : "Thromblin",
-        "name2" : "Inhibitors",
+      },
+      {
+        "section_id" :142,
+        "section_name" : "Factor",
+        "section_name1" : "Xa-",
+        "section_name2" :"Inhibitors",
         "multiple_lines" : true,
-        "hexvalue": "#B6D377",
-        "selected" : false,
-        "section" :[
+        "section_hexvalue": "#EE1111",
+        "children" :[
           {
-            "section_id": 141, 
-            "section_name" : "",
-            "section_hexvalue" :  "#B6D377",
-            "multiple_lines" : false,
-            "children" :[
+              "child_id": 14211, 
+              "child_name"  : "Fondaparinux (Arixtra)",
+              "child_bullets": [
                 {
-                    "child_id": 1411, 
-                    "child_name"  : "Bivalirudin",
-                    "children": [
-                      {
-                        "child_id": 14111,
-                        "child_bullets": [
-                          {
-                            "title": "Common Indication:",
-                            "subtext": "PCI"
-                          },
-                          {
-                            "title": "Route:",
-                            "subtext": "IV Infusion"
-                          },
-                          {
-                            "title": "Half-life:",
-                            "subtext": "25 minutes (renal impairment 1-3.5 hours)"
-                          },
-                          {
-                            "title": "Renal excretion:",
-                            "subtext": "20%"
-                          },
-                          {
-                            "title": "Removal by dialysis:",
-                            "subtext": "25%"
-                          },
-                          {
-                            "title": "Preferred lab:",
-                            "subtext": "PTT"
-                          },
-                          {
-                            "title": "Antidote:",
-                            "subtext": "4F-PCC (note these medications have short half life)"
-                          }
-                        ]
-                      }
-                    ]
+                  "title": "Common Indication:",
+                  "subtext": "DVT, PE, post-op DVT ppx, HIT"
                 },
                 {
-                    "child_id": 1412, 
-                    "child_name"  : "Argatroban",
-                    "children": [
-                      {
-                        "child_id": 14121,
-                        "child_bullets": [
-                          {
-                            "title": "Common Indication:",
-                            "subtext": "HIT"
-                          },
-                          {
-                            "title": "Route:",
-                            "subtext": "IV Infusion"
-                          },
-                          {
-                            "title": "Half-life:",
-                            "subtext": "30 - 51 minutes (Hepatic impairment 181 min)"
-                          },
-                          {
-                            "title": "Renal excretion:",
-                            "subtext": "22-25%"
-                          },
-                          {
-                            "title": "Removal by dialysis:",
-                            "subtext": "20%"
-                          },
-                          {
-                            "title": "Preferred lab:",
-                            "subtext": "PTT"
-                          },
-                          {
-                            "title": "Antidote:",
-                            "subtext": "4F-PCC (note these medications have short half life)"
-                          }
-                        ]
-                      }
-                    ]
+                  "title": "Route:",
+                  "subtext": "Subcutaneous"
                 },
                 {
-                  "child_id": 1413, 
-                  "child_name"  : "Dabigatran (Pradaxa)",
-                  "children": [
-                    {
-                      "child_id": 14131,
-                      "child_bullets": [
-                        {
-                          "title": "Common Indication:",
-                          "subtext": "DVT, PE, non-valvular Afib"
-                        },
-                        {
-                          "title": "Route:",
-                          "subtext": "Oral"
-                        },
-                        {
-                          "title": "Half-life:",
-                          "subtext": "12-17 hours (Renal impairment 15-34 hrs)"
-                        },
-                        {
-                          "title": "Renal excretion:",
-                          "subtext": "80%"
-                        },
-                        {
-                          "title": "Removal by dialysis:",
-                          "subtext": "50%"
-                        },
-                        {
-                          "title": "Preferred lab:",
-                          "subtext": "ECT (PTT)"
-                        },
-                        {
-                          "title": "Antidote:",
-                          "subtext": "Idarucizumab 2.5g IV bolus x 2 doses (total 5g)"
-                        },
-                        {
-                          "title": "How long to hold prior to LP:",
-                          "subtext": "5 days"
-                        }
-                      ]
-                    }
-                  ]
+                  "title": "Half-life:",
+                  "subtext": "13-21 hours"
+                },
+                {
+                  "title": "Renal excretion:",
+                  "subtext": "77%"
+                },
+                {
+                  "title": "Removal by dialysis:",
+                  "subtext": "20%"
+                },
+                {
+                  "title": "Preferred lab:",
+                  "subtext": "Anti-Xa"
+                },
+                {
+                  "title": "Antidote:",
+                  "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
+                },
+                {
+                  "title": "How long to hold prior to LP:",
+                  "subtext": "36-48 hrs"
                 }
+              ]
+          },
+          {
+              "child_id": 14212, 
+              "child_name"  : "Rivaroxaban (Xarelto)",
+              "child_bullets": [
+                {
+                  "title": "Common Indication:",
+                  "subtext": "DVT, PE, non-valvular Afib"
+                },
+                {
+                  "title": "Route:",
+                  "subtext": "Oral"
+                },
+                {
+                  "title": "Half-life:",
+                  "subtext": "5-12 hours (Elderly 11-13 hours)"
+                },
+                {
+                  "title": "Renal excretion:",
+                  "subtext": "66%"
+                },
+                {
+                  "title": "Removal by dialysis:",
+                  "subtext": "no"
+                },
+                {
+                  "title": "Preferred lab:",
+                  "subtext": "Anti-X*"
+                },
+                {
+                  "title": "Antidote:",
+                  "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
+                },
+                {
+                  "title": "How long to hold prior to LP:",
+                  "subtext": "3 days"
+                }
+              ]
+          },
+          {
+            "child_id": 14213, 
+            "child_name"  : "Apixaban (Eliquis)",
+            "child_bullets": [
+              {
+                "title": "Common Indication:",
+                "subtext": "DVT, PE, non-valvular Afib"
+              },
+              {
+                "title": "Route:",
+                "subtext": "Oral"
+              },
+              {
+                "title": "Half-life:",
+                "subtext": "7-12 hours"
+              },
+              {
+                "title": "Renal excretion:",
+                "subtext": "27%"
+              },
+              {
+                "title": "Removal by dialysis:",
+                "subtext": "no"
+              },
+              {
+                "title": "Preferred lab:",
+                "subtext": "Anti-X^"
+              },
+              {
+                "title": "Antidote:",
+                "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
+              },
+              {
+                "title": "How long to hold prior to LP:",
+                "subtext": "3 days"
+              }
+            ]
+          },
+          {
+            "child_id": 14214, 
+            "child_name"  : "Edoxaban (Savaysa)",
+            "child_bullets": [
+              {
+                "title": "Common Indication:",
+                "subtext": "DVT, PE, non-valvular Afib"
+              },
+              {
+                "title": "Route:",
+                "subtext": "Oral"
+              },
+              {
+                "title": "Half-life:",
+                "subtext": "12 hours"
+              },
+              {
+                "title": "Renal excretion:",
+                "subtext": "35%"
+              },
+              {
+                "title": "Removal by dialysis:",
+                "subtext": "no (6.6%)"
+              },
+              {
+                "title": "Preferred lab:",
+                "subtext": "Anti-X*"
+              },
+              {
+                "title": "Antidote:",
+                "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
+              },
+              {
+                "title": "How long to hold prior to LP:",
+                "subtext": "3 days"
+              }
             ]
           }
         ]
-    },
-    {
-        "id" :15,
-        "name" : "Factor",
-        "name1" : "Xa-",
-        "name2" :"Inhibitors",
-        "multiple_lines" : true,
-        "hexvalue": "#EE1111",
-        "selected" : false,
-        "section" :[
+      }
+    ]
+  },
+  {
+      "id" :16,
+      "name" : "Sedation",
+      "hexvalue": "#b6d377",
+      "selected" : true,
+      "section" :[
+      ]
+  },
+  {
+    "id" : 17,
+    "name": "Trauma",
+    "hexvalue": "#96c9dc",
+    "selected" : false,
+    "section" :[
+      {
+        "section_id": 171, 
+        "section_name" : "",
+        "section_hexvalue" :  "#96c9dc",
+        "multiple_lines" : false,
+        "children" :[
           {
-            "section_id": 151, 
-            "section_name" : "",
-            "section_hexvalue" :  "#EE1111",
-            "multiple_lines" : false,
-            "children" :[
-                {
-                    "child_id": 1511, 
-                    "child_name"  : "Fondaparinux (Arixtra)",
-                    "children": [
-                      {
-                        "child_id": 15111,
-                        "child_bullets": [
-                          {
-                            "title": "Common Indication:",
-                            "subtext": "DVT, PE, post-op DVT ppx, HIT"
-                          },
-                          {
-                            "title": "Route:",
-                            "subtext": "Subcutaneous"
-                          },
-                          {
-                            "title": "Half-life:",
-                            "subtext": "13-21 hours"
-                          },
-                          {
-                            "title": "Renal excretion:",
-                            "subtext": "77%"
-                          },
-                          {
-                            "title": "Removal by dialysis:",
-                            "subtext": "20%"
-                          },
-                          {
-                            "title": "Preferred lab:",
-                            "subtext": "Anti-Xa"
-                          },
-                          {
-                            "title": "Antidote:",
-                            "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
-                          },
-                          {
-                            "title": "How long to hold prior to LP:",
-                            "subtext": "36-48 hrs"
-                          }
-                        ]
-                      }
-                    ]
-                },
-                {
-                    "child_id": 1512, 
-                    "child_name"  : "Rivaroxaban (Xarelto)",
-                    "children": [
-                      {
-                        "child_id": 15121,
-                        "child_bullets": [
-                          {
-                            "title": "Common Indication:",
-                            "subtext": "DVT, PE, non-valvular Afib"
-                          },
-                          {
-                            "title": "Route:",
-                            "subtext": "Oral"
-                          },
-                          {
-                            "title": "Half-life:",
-                            "subtext": "5-12 hours (Elderly 11-13 hours)"
-                          },
-                          {
-                            "title": "Renal excretion:",
-                            "subtext": "66%"
-                          },
-                          {
-                            "title": "Removal by dialysis:",
-                            "subtext": "no"
-                          },
-                          {
-                            "title": "Preferred lab:",
-                            "subtext": "Anti-X*"
-                          },
-                          {
-                            "title": "Antidote:",
-                            "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
-                          },
-                          {
-                            "title": "How long to hold prior to LP:",
-                            "subtext": "3 days"
-                          }
-                        ]
-                      }
-                    ]
-                },
-                {
-                  "child_id": 1513, 
-                  "child_name"  : "Apixaban (Eliquis)",
-                  "children": [
-                    {
-                      "child_id": 15131,
-                      "child_bullets": [
-                        {
-                          "title": "Common Indication:",
-                          "subtext": "DVT, PE, non-valvular Afib"
-                        },
-                        {
-                          "title": "Route:",
-                          "subtext": "Oral"
-                        },
-                        {
-                          "title": "Half-life:",
-                          "subtext": "7-12 hours"
-                        },
-                        {
-                          "title": "Renal excretion:",
-                          "subtext": "27%"
-                        },
-                        {
-                          "title": "Removal by dialysis:",
-                          "subtext": "no"
-                        },
-                        {
-                          "title": "Preferred lab:",
-                          "subtext": "Anti-X^"
-                        },
-                        {
-                          "title": "Antidote:",
-                          "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
-                        },
-                        {
-                          "title": "How long to hold prior to LP:",
-                          "subtext": "3 days"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "child_id": 1514, 
-                  "child_name"  : "Edoxaban (Savaysa)",
-                  "children": [
-                    {
-                      "child_id": 15141,
-                      "child_bullets": [
-                        {
-                          "title": "Common Indication:",
-                          "subtext": "DVT, PE, non-valvular Afib"
-                        },
-                        {
-                          "title": "Route:",
-                          "subtext": "Oral"
-                        },
-                        {
-                          "title": "Half-life:",
-                          "subtext": "12 hours"
-                        },
-                        {
-                          "title": "Renal excretion:",
-                          "subtext": "35%"
-                        },
-                        {
-                          "title": "Removal by dialysis:",
-                          "subtext": "no (6.6%)"
-                        },
-                        {
-                          "title": "Preferred lab:",
-                          "subtext": "Anti-X*"
-                        },
-                        {
-                          "title": "Antidote:",
-                          "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
-                        },
-                        {
-                          "title": "How long to hold prior to LP:",
-                          "subtext": "3 days"
-                        }
-                      ]
-                    }
-                  ]
-                }
+            "child_id": 1711, 
+            "child_name"  : "PCC (Kcentra)",
+            "children": [
+              {
+                "child_id": 17111,
+                "child_detail_desc": "* Factors 2, 7, 9, 10 * \n1000-1500 units (follow hospital MTP protocol) \nFor trauma patient with bleed associated with anticoagulation (warfarin) see Antidote section for dosing"
+              }
+            ]
+          },
+          {
+            "child_id": 1712, 
+            "child_name"  : "Tranexamic Acid (TXA)",
+            "children": [
+              {
+                "child_id": 17121,
+                "child_detail_desc": "1 g IVPB over 10 min then 1 g IVPB over 8 hours"
+              }
+            ]
+          },
+          {
+            "child_id": 1713, 
+            "child_name"  : "Levetiracetam",
+            "children": [
+              {
+                "child_id": 17131,
+                "child_detail_desc": "1000 mg IVPB"
+              }
+            ]
+          },
+          {
+            "child_id": 1714, 
+            "child_name"  : "Phenytoin",
+            "children": [
+              {
+                "child_id": 17141,
+                "child_detail_desc": "20 mg/kg IVPB not to exceed 50 mcg/min"
+              }
+            ]
+          },
+          {
+            "child_id": 1715, 
+            "child_name"  : "Mannitol",
+            "children": [
+              {
+                "child_id": 17151,
+                "child_detail_desc": "1 g/kg IV bolus over 10 min \n* caution:hypotension *"
+              }
+            ]
+          },
+          {
+            "child_id": 1716, 
+            "child_name"  : "3% NaCl",
+            "children": [
+              {
+                "child_id": 17161,
+                "child_detail_desc": "250 mL IVPB over 30 minutes"
+              }
+            ]
+          },
+          {
+            "child_id": 1717, 
+            "child_name"  : "DDAVP",
+            "children": [
+              {
+                "child_id": 17171,
+                "child_detail_desc": "0.3 mcg/kg IVPB \n* For uremic bleed *"
+              }
             ]
           }
         ]
-    },
-    {
-        "id" :16,
-        "name" : "Sedation",
-        "hexvalue": "#b6d377",
-        "selected" : true,
-        "section" :[
-        ]
-    },
-    {
-        "id" :17,
-        "name" : "Settings",
-        "hexvalue": "#DDDDDD",
-        "default" : true,
-        "section" :[]
-    }
+      }
+    ]  
+  },
+  {
+      "id" :18,
+      "name" : "Settings",
+      "hexvalue": "#DDDDDD",
+      "default" : true,
+      "section" :[]
+  }
 ]

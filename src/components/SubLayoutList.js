@@ -317,6 +317,7 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     marginRight: 30,
     borderRadius: 25,
+    padding: 5,
     borderWidth: 2,
     borderColor: '#fff',
     width: 300,
@@ -370,7 +371,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   ChildTextStyle: {
-
     alignItems: 'center',
     justifyContent: 'center',
     fontSize: 25

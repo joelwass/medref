@@ -5,13 +5,13 @@ import SubLayout from '../Components/SubLayout'
 import SubLayoutList from '../Components/SubLayoutList'
 
 export default function DetailsScreen ({ navigation, route, props }) {
-  const hexagonSize = { x: 40, y: 40 }
+  const hexagonSize = { x: 42, y: 42 }
 
   const [selectedValue, setSelectedValue] = useState()
 
   const height = Dimensions.get('window').height
   const width = Dimensions.get('window').width
-  const upperViewHeight = height / 6
+  const upperViewHeight = height / 5.3
 
   useEffect(() => {
     const { value, subValue } = route.params
@@ -41,7 +41,7 @@ export default function DetailsScreen ({ navigation, route, props }) {
           flexDirection: 'column'
         }]}>
           <View style={{ flex: 1, backgroundColor: '#e5e5e5' }}>
-            <SubLayout size={hexagonSize} flat={false} spacing={1.2} origin={{ x: 120, y: 125 }} showText={selectedValue} showDetails={showDetails} height={upperViewHeight} />
+            <SubLayout size={hexagonSize} flat={false} spacing={1.12} origin={{ x: 120, y: 125 }} showText={selectedValue} showDetails={showDetails} height={upperViewHeight} />
           </View>
           <View style={{ flex: 5, alignItems: 'center' }}>
             <SubLayoutList selectedValue={selectedValue} showSubDetails={showSubDetails} />
