@@ -7,8 +7,9 @@
       "section" :[
           {
             "section_id": 11 , 
-            "section_name" : "Vasopressors",
-            "section_name1" : "/ Inotropes",
+            "section_name" : "Vaso-",
+            "section_name1" : "pressors /",
+            "section_name2" : "Inotropes",
             "section_hexvalue" :  "#b6d377",
             "multiple_lines" : true,
             "children" :[
@@ -249,32 +250,26 @@
                   {
                       "child_id": 215, 
                       "child_name" : "Fi02 and PEEP",
-                      "children": [
+                      "child_bullets": [
                         {
-                          "child_id": 2151,
-                          "child_detail_desc": "",
-                          "child_bullets": [
-                            {
-                              "title": "Goal: ",
-                              "subtext": "PaO2 55-80 mmHg or SpO2 99-95%"
-                            },
-                            {
-                              "title": "Start ",
-                              "subtext": "at 100% FiO2 and PEEP of 5"
-                            },
-                            {
-                              "title": "Start ",
-                              "subtext": "at higher peep for severe hypoxemia"
-                            },
-                            {
-                              "title": "Wait ",
-                              "subtext": "15-20 min, then draw an ABG"
-                            },
-                            {
-                              "title": "Titrate ",
-                              "subtext": "FiO2 and PEEP based on chart every 5-10 min; quicker if low sat"
-                            }
-                          ]
+                          "title": "Goal: ",
+                          "subtext": "PaO2 55-80 mmHg or SpO2 99-95%"
+                        },
+                        {
+                          "title": "Start ",
+                          "subtext": "at 100% FiO2 and PEEP of 5"
+                        },
+                        {
+                          "title": "Start ",
+                          "subtext": "at higher peep for severe hypoxemia"
+                        },
+                        {
+                          "title": "Wait ",
+                          "subtext": "15-20 min, then draw an ABG"
+                        },
+                        {
+                          "title": "Titrate ",
+                          "subtext": "FiO2 and PEEP based on chart every 5-10 min; quicker if low sat"
                         }
                       ],
                       "button_img" : "Fi"
@@ -1324,121 +1319,106 @@
           {
             "child_id": 14111, 
             "child_name"  : "Bivalirudin",
-            "children": [
+            "child_bullets": [
               {
-                "child_id": 141111,
-                "child_bullets": [
-                  {
-                    "title": "Common Indication:",
-                    "subtext": "PCI"
-                  },
-                  {
-                    "title": "Route:",
-                    "subtext": "IV Infusion"
-                  },
-                  {
-                    "title": "Half-life:",
-                    "subtext": "25 minutes (renal impairment 1-3.5 hours)"
-                  },
-                  {
-                    "title": "Renal excretion:",
-                    "subtext": "20%"
-                  },
-                  {
-                    "title": "Removal by dialysis:",
-                    "subtext": "25%"
-                  },
-                  {
-                    "title": "Preferred lab:",
-                    "subtext": "PTT"
-                  },
-                  {
-                    "title": "Antidote:",
-                    "subtext": "4F-PCC (note these medications have short half life)"
-                  }
-                ]
+                "title": "Common Indication:",
+                "subtext": "PCI"
+              },
+              {
+                "title": "Route:",
+                "subtext": "IV Infusion"
+              },
+              {
+                "title": "Half-life:",
+                "subtext": "25 minutes (renal impairment 1-3.5 hours)"
+              },
+              {
+                "title": "Renal excretion:",
+                "subtext": "20%"
+              },
+              {
+                "title": "Removal by dialysis:",
+                "subtext": "25%"
+              },
+              {
+                "title": "Preferred lab:",
+                "subtext": "PTT"
+              },
+              {
+                "title": "Antidote:",
+                "subtext": "4F-PCC (note these medications have short half life)"
               }
             ]
           },
           {
             "child_id": 14112, 
             "child_name"  : "Argatroban",
-            "children": [
+            "child_bullets": [
               {
-                "child_id": 141121,
-                "child_bullets": [
-                  {
-                    "title": "Common Indication:",
-                    "subtext": "HIT"
-                  },
-                  {
-                    "title": "Route:",
-                    "subtext": "IV Infusion"
-                  },
-                  {
-                    "title": "Half-life:",
-                    "subtext": "30 - 51 minutes (Hepatic impairment 181 min)"
-                  },
-                  {
-                    "title": "Renal excretion:",
-                    "subtext": "22-25%"
-                  },
-                  {
-                    "title": "Removal by dialysis:",
-                    "subtext": "20%"
-                  },
-                  {
-                    "title": "Preferred lab:",
-                    "subtext": "PTT"
-                  },
-                  {
-                    "title": "Antidote:",
-                    "subtext": "4F-PCC (note these medications have short half life)"
-                  }
-                ]
+                "title": "Common Indication:",
+                "subtext": "HIT"
+              },
+              {
+                "title": "Route:",
+                "subtext": "IV Infusion"
+              },
+              {
+                "title": "Half-life:",
+                "subtext": "30 - 51 minutes (Hepatic impairment 181 min)"
+              },
+              {
+                "title": "Renal excretion:",
+                "subtext": "22-25%"
+              },
+              {
+                "title": "Removal by dialysis:",
+                "subtext": "20%"
+              },
+              {
+                "title": "Preferred lab:",
+                "subtext": "PTT"
+              },
+              {
+                "title": "Antidote:",
+                "subtext": "4F-PCC (note these medications have short half life)"
               }
             ]
           },
           {
             "child_id": 14113, 
             "child_name"  : "Dabigatran (Pradaxa)",
-            "children": [
+            "child_bullets": [
               {
-                "child_id": 141131,
-                "child_bullets": [
-                  {
-                    "title": "Common Indication:",
-                    "subtext": "DVT, PE, non-valvular Afib"
-                  },
-                  {
-                    "title": "Route:",
-                    "subtext": "Oral"
-                  },
-                  {
-                    "title": "Half-life:",
-                    "subtext": "12-17 hours (Renal impairment 15-34 hrs)"
-                  },
-                  {
-                    "title": "Renal excretion:",
-                    "subtext": "80%"
-                  },
-                  {
-                    "title": "Removal by dialysis:",
-                    "subtext": "50%"
-                  },
-                  {
-                    "title": "Preferred lab:",
-                    "subtext": "ECT (PTT)"
-                  },
-                  {
-                    "title": "Antidote:",
-                    "subtext": "Idarucizumab 2.5g IV bolus x 2 doses (total 5g)"
-                  },
-                  {
-                    "title": "How long to hold prior to LP:",
-                    "subtext": "5 days"
-                  }
-                ]
+                "title": "Common Indication:",
+                "subtext": "DVT, PE, non-valvular Afib"
+              },
+              {
+                "title": "Route:",
+                "subtext": "Oral"
+              },
+              {
+                "title": "Half-life:",
+                "subtext": "12-17 hours (Renal impairment 15-34 hrs)"
+              },
+              {
+                "title": "Renal excretion:",
+                "subtext": "80%"
+              },
+              {
+                "title": "Removal by dialysis:",
+                "subtext": "50%"
+              },
+              {
+                "title": "Preferred lab:",
+                "subtext": "ECT (PTT)"
+              },
+              {
+                "title": "Antidote:",
+                "subtext": "Idarucizumab 2.5g IV bolus x 2 doses (total 5g)"
+              },
+              {
+                "title": "How long to hold prior to LP:",
+                "subtext": "5 days"
               }
             ]
           }
@@ -1455,172 +1435,152 @@
           {
               "child_id": 14211, 
               "child_name"  : "Fondaparinux (Arixtra)",
-              "children": [
+              "child_bullets": [
                 {
-                  "child_id": 142111,
-                  "child_bullets": [
-                    {
-                      "title": "Common Indication:",
-                      "subtext": "DVT, PE, post-op DVT ppx, HIT"
-                    },
-                    {
-                      "title": "Route:",
-                      "subtext": "Subcutaneous"
-                    },
-                    {
-                      "title": "Half-life:",
-                      "subtext": "13-21 hours"
-                    },
-                    {
-                      "title": "Renal excretion:",
-                      "subtext": "77%"
-                    },
-                    {
-                      "title": "Removal by dialysis:",
-                      "subtext": "20%"
-                    },
-                    {
-                      "title": "Preferred lab:",
-                      "subtext": "Anti-Xa"
-                    },
-                    {
-                      "title": "Antidote:",
-                      "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
-                    },
-                    {
-                      "title": "How long to hold prior to LP:",
-                      "subtext": "36-48 hrs"
-                    }
-                  ]
+                  "title": "Common Indication:",
+                  "subtext": "DVT, PE, post-op DVT ppx, HIT"
+                },
+                {
+                  "title": "Route:",
+                  "subtext": "Subcutaneous"
+                },
+                {
+                  "title": "Half-life:",
+                  "subtext": "13-21 hours"
+                },
+                {
+                  "title": "Renal excretion:",
+                  "subtext": "77%"
+                },
+                {
+                  "title": "Removal by dialysis:",
+                  "subtext": "20%"
+                },
+                {
+                  "title": "Preferred lab:",
+                  "subtext": "Anti-Xa"
+                },
+                {
+                  "title": "Antidote:",
+                  "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
+                },
+                {
+                  "title": "How long to hold prior to LP:",
+                  "subtext": "36-48 hrs"
                 }
               ]
           },
           {
               "child_id": 14212, 
               "child_name"  : "Rivaroxaban (Xarelto)",
-              "children": [
+              "child_bullets": [
                 {
-                  "child_id": 142121,
-                  "child_bullets": [
-                    {
-                      "title": "Common Indication:",
-                      "subtext": "DVT, PE, non-valvular Afib"
-                    },
-                    {
-                      "title": "Route:",
-                      "subtext": "Oral"
-                    },
-                    {
-                      "title": "Half-life:",
-                      "subtext": "5-12 hours (Elderly 11-13 hours)"
-                    },
-                    {
-                      "title": "Renal excretion:",
-                      "subtext": "66%"
-                    },
-                    {
-                      "title": "Removal by dialysis:",
-                      "subtext": "no"
-                    },
-                    {
-                      "title": "Preferred lab:",
-                      "subtext": "Anti-X*"
-                    },
-                    {
-                      "title": "Antidote:",
-                      "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
-                    },
-                    {
-                      "title": "How long to hold prior to LP:",
-                      "subtext": "3 days"
-                    }
-                  ]
+                  "title": "Common Indication:",
+                  "subtext": "DVT, PE, non-valvular Afib"
+                },
+                {
+                  "title": "Route:",
+                  "subtext": "Oral"
+                },
+                {
+                  "title": "Half-life:",
+                  "subtext": "5-12 hours (Elderly 11-13 hours)"
+                },
+                {
+                  "title": "Renal excretion:",
+                  "subtext": "66%"
+                },
+                {
+                  "title": "Removal by dialysis:",
+                  "subtext": "no"
+                },
+                {
+                  "title": "Preferred lab:",
+                  "subtext": "Anti-X*"
+                },
+                {
+                  "title": "Antidote:",
+                  "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
+                },
+                {
+                  "title": "How long to hold prior to LP:",
+                  "subtext": "3 days"
                 }
               ]
           },
           {
             "child_id": 14213, 
             "child_name"  : "Apixaban (Eliquis)",
-            "children": [
+            "child_bullets": [
               {
-                "child_id": 142131,
-                "child_bullets": [
-                  {
-                    "title": "Common Indication:",
-                    "subtext": "DVT, PE, non-valvular Afib"
-                  },
-                  {
-                    "title": "Route:",
-                    "subtext": "Oral"
-                  },
-                  {
-                    "title": "Half-life:",
-                    "subtext": "7-12 hours"
-                  },
-                  {
-                    "title": "Renal excretion:",
-                    "subtext": "27%"
-                  },
-                  {
-                    "title": "Removal by dialysis:",
-                    "subtext": "no"
-                  },
-                  {
-                    "title": "Preferred lab:",
-                    "subtext": "Anti-X^"
-                  },
-                  {
-                    "title": "Antidote:",
-                    "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
-                  },
-                  {
-                    "title": "How long to hold prior to LP:",
-                    "subtext": "3 days"
-                  }
-                ]
+                "title": "Common Indication:",
+                "subtext": "DVT, PE, non-valvular Afib"
+              },
+              {
+                "title": "Route:",
+                "subtext": "Oral"
+              },
+              {
+                "title": "Half-life:",
+                "subtext": "7-12 hours"
+              },
+              {
+                "title": "Renal excretion:",
+                "subtext": "27%"
+              },
+              {
+                "title": "Removal by dialysis:",
+                "subtext": "no"
+              },
+              {
+                "title": "Preferred lab:",
+                "subtext": "Anti-X^"
+              },
+              {
+                "title": "Antidote:",
+                "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
+              },
+              {
+                "title": "How long to hold prior to LP:",
+                "subtext": "3 days"
               }
             ]
           },
           {
             "child_id": 14214, 
             "child_name"  : "Edoxaban (Savaysa)",
-            "children": [
+            "child_bullets": [
               {
-                "child_id": 142141,
-                "child_bullets": [
-                  {
-                    "title": "Common Indication:",
-                    "subtext": "DVT, PE, non-valvular Afib"
-                  },
-                  {
-                    "title": "Route:",
-                    "subtext": "Oral"
-                  },
-                  {
-                    "title": "Half-life:",
-                    "subtext": "12 hours"
-                  },
-                  {
-                    "title": "Renal excretion:",
-                    "subtext": "35%"
-                  },
-                  {
-                    "title": "Removal by dialysis:",
-                    "subtext": "no (6.6%)"
-                  },
-                  {
-                    "title": "Preferred lab:",
-                    "subtext": "Anti-X*"
-                  },
-                  {
-                    "title": "Antidote:",
-                    "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
-                  },
-                  {
-                    "title": "How long to hold prior to LP:",
-                    "subtext": "3 days"
-                  }
-                ]
+                "title": "Common Indication:",
+                "subtext": "DVT, PE, non-valvular Afib"
+              },
+              {
+                "title": "Route:",
+                "subtext": "Oral"
+              },
+              {
+                "title": "Half-life:",
+                "subtext": "12 hours"
+              },
+              {
+                "title": "Renal excretion:",
+                "subtext": "35%"
+              },
+              {
+                "title": "Removal by dialysis:",
+                "subtext": "no (6.6%)"
+              },
+              {
+                "title": "Preferred lab:",
+                "subtext": "Anti-X*"
+              },
+              {
+                "title": "Antidote:",
+                "subtext": "4F-PCC 50 units/kg(max 5,000 units) or Andexanet alfa**"
+              },
+              {
+                "title": "How long to hold prior to LP:",
+                "subtext": "3 days"
               }
             ]
           }

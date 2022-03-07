@@ -56,16 +56,29 @@ const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick, 
     {item.vis &&
       <>
         <View style={styles.TextComponentStyle}>
-          <Text style={[styles.TextComponentChildStyle, { fontSize: 20 }]}>
-            {item.child_desc}
-            {item.child_desc1 && <Text style={{ fontSize: 15 }}>{'\n'}{item.child_desc1}</Text>}
-          </Text>
+          {item.child_desc && (
+            <Text style={[styles.TextComponentChildStyle, { fontSize: 20 }]}>
+              {item.child_desc}
+              {item.child_desc1 && <Text style={{ fontSize: 15 }}>{'\n'}{item.child_desc1}</Text>}
+            </Text>
+          )}
+          {item.child_bullets && (
+            <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: 5, marginTop: 10 }}>
+              {item.child_bullets.map((bullet, idx) => (
+                <View style={{ flexDirection: 'column', justifyContent: 'left' }} key={idx}>
+                  <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'left' }}>{bullet.title}</Text>
+                  <Text style={{ fontSize: 20, textAlign: 'left' }}>{bullet.subtext}</Text>
+                </View>
+              ))}
+            </View>
+          )}  
           {image !== null &&
             <TouchableOpacity onPress={onImageClick}>
               <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <ImageBackground source={getImage(image)} style={{ height: 70, width: 80 }} />
               </View>
-            </TouchableOpacity>}
+            </TouchableOpacity>
+          }
         </View>
         {item.subchildren && item.subchildren.map((subchild, idx) => (
           <View style={styles.TextComponentStyle} key={idx}>
@@ -83,7 +96,7 @@ const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick, 
               {subchild.child_desc}
             </Text>
           </View>
-        ))}
+        ))}    
       </>
     }
   </View>
@@ -120,22 +133,6 @@ const DisplayMaleFemaleImage = ({ image, backgroundColor, onFImageClick, onMImag
   </View>
 )
 
-/*
- <View st
-
- yle={{flexDirection:'row', justifyContent:'space-between'}}>
-
-    </View>
-
-<TouchableHighlight onPress={onMImageClick}>
-      <ImageBackground source={getImage("Male")} style={{width:200, height:210}}  ></ImageBackground>
-      </TouchableHighlight>
-
-      <TouchableHighlight onPress={onFImageClick}>
-      <ImageBackground source={getImage("Female")} style={{width:200, height:210}}  ></ImageBackground>
-      </TouchableHighlight>
-*/
-
 export default function SubChildLayoutList (props) {
   const [selectedId, setSelectedId] = useState(null)
   const [selectedIdArr, setSelectedIdArr] = useState([])
@@ -158,12 +155,14 @@ export default function SubChildLayoutList (props) {
     data.map((item) => {
       if (item.id === props.selectedValue) {
         const secDet = item.section.find(obj => obj.section_id === props.subSelectedValue)
+        // so here we have 
         backgroundColor = secDet.section_hexvalue
         secDet.children.map((item) => {
           const obj = {}
           obj.child_id = item.child_id,
           obj.child_name = item.child_name !== undefined ? item.child_name : null,
           obj.subchildren = item.subchildren !== undefined ? item.subchildren : null,
+          obj.child_bullets = item.child_bullets !== undefined ? item.child_bullets : null,
           obj.child_desc = item.child_desc !== undefined ? item.child_desc : null,
           obj.child_desc1 = item.child_desc1 !== undefined ? item.child_desc1 : null,
           obj.button_img = item.button_img !== undefined ? item.button_img : null,
@@ -186,7 +185,7 @@ export default function SubChildLayoutList (props) {
     const color = '#fff'
     const imageUrl = item.button_img
 
-    if (item.child_desc !== null) {
+    if (item.child_desc !== null || item.child_bullets !== null) {
       return (
         <View>
           {index === 0 &&
@@ -215,6 +214,17 @@ export default function SubChildLayoutList (props) {
             onImageClick={() => onImageClick(imageUrl)}
           />
         </View>
+      )
+    } else if (item.children !== null) {
+      return (
+        <Item
+          item={item}
+          onPress={() => callParentFunction(item.child_id)}
+          backgroundColor={{ backgroundColor }}
+          textColor={{ color }}
+          image={imageUrl}
+          onImageClick={() => onImageClick(imageUrl)}
+        />
       )
     } else if (item.display_img !== null) {
       const image = item.display_img
@@ -292,7 +302,7 @@ export default function SubChildLayoutList (props) {
   }
 
   const callParentFunction = (value) => {
-    // props.showSubDetails(value);
+    props.showSubDetails(value);
     // this function is not called here.
   }
 
