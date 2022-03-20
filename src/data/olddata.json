@@ -1,0 +1,86 @@
+ {
+      "id" :5,
+      "name": "Trauma",
+      "hexvalue": "#f5d491",
+      "selected" : true ,
+      "section" :[
+        {
+          "section_id": 51, 
+          "section_name" : "",
+          "section_hexvalue" :  "#f5d491",
+          "multiple_lines" : false,
+          "children" :[
+              {
+                  "child_id": 511, 
+                  "child_name"  : "PCC (kcentra)",
+                  "children": [
+                    {
+                      "child_id": 5111,
+                      "child_detail_desc": "1000-1500 units follow hospital MTP protocol\nFor trauma patient with bleed associated with anticoagulation (warfarin) see Antidote section for dosing"
+                    }
+                  ]
+              },
+              {
+                  "child_id": 512, 
+                  "child_name"  : "Tranexamic Acid",
+                  "children": [
+                    {
+                      "child_id": 5121,
+                      "child_detail_desc": "1 g IVPB over 10 min then 1 g IVPB over 8 hours"
+                    }
+                  ]
+              },
+              {
+                "child_id": 513, 
+                "child_name"  : "Levetiracetam",
+                "children": [
+                  {
+                    "child_id": 5131,
+                    "child_detail_desc": "1000 mg IVPB"
+                  }
+                ]
+              },
+              {
+                "child_id": 514, 
+                "child_name"  : "Phenytoin",
+                "children": [
+                  {
+                    "child_id": 5141,
+                    "child_detail_desc": "20 mg/kg IVPB not to exceed 50 mcg/min"
+                  }
+                ]
+              },
+              {
+                "child_id": 515, 
+                "child_name"  : "Mannitol",
+                "children": [
+                  {
+                    "child_id": 5151,
+                    "child_detail_desc": "1 g/kg IVbolus over 10 min (caution:hypotension)"
+                  }
+                ]
+              },
+              {
+                "child_id": 516, 
+                "child_name"  : "3% Nacl",
+                "children": [
+                  {
+                    "child_id": 5161,
+                    "child_detail_desc": "250 mL IVPB over 30 minutes"
+                  }
+                ]
+              },
+              {
+                "child_id": 517, 
+                "child_name"  : "DDAVP",
+                "children": [
+                  {
+                    "child_id": 5171,
+                    "child_detail_desc": "0.3 mcg/kg IVPB (uremic bleed)"
+                  }
+                ]
+              }
+        ]
+      }
+    ]     
+  }

@@ -234,37 +234,37 @@
              ]
           },
           {
-            "section_id": 21, 
+            "section_id": 22, 
             "section_name" : "Obstructive",
             "section_name1" : "Strategy",
             "section_hexvalue" :  "#61a0af",
             "multiple_lines" : true,
             "children" :[
                 {
-                    "child_id": 211, 
+                    "child_id": 221, 
                     "child_name" : "Mode",
                     "child_desc" :  "Volume Control"
                 },
                 {
-                     "child_id": 212, 
+                     "child_id": 222, 
                     "child_name" : "Tidal Volume(Vt)",
                     "child_desc" :  "6- 8 mL/kg IBW"                    
                 }
                 ,
                 {
-                    "child_id": 213, 
+                    "child_id": 223, 
                     "child_name" : "Flow Rate",
                     "child_desc" :  "60 - 80 LPM"                    
                 },                    
                 {
-                    "child_id": 214, 
+                    "child_id": 224, 
                     "child_name" : "RR",
                     "child_desc" : "Initially 16-18 - Adjust Based on CO2 and Vent Needs",
                     "child_desc1": "Minute ventillation for normal CO2 when not intubated = 60 ml/kg/min. Double to 120 mL/kg/min when intubated 2/2 t dead space Mild hypercarbia is ok."
                     
                 },                    
                 {
-                    "child_id": 215, 
+                    "child_id": 225, 
                     "child_name" : "Fi02 and PEEP",
                     "child_bullets": [
                       {
@@ -299,7 +299,7 @@
             ]
           },
           {
-               "section_id": 22, 
+               "section_id": 23, 
                "section_name" : "Fi02",
                "section_hexvalue" :  "#61a0af",
                "section_name1" : "and",
@@ -308,7 +308,7 @@
                "children" :[]
           },
           {
-               "section_id": 23, 
+               "section_id": 24, 
                "section_name" : "Post-",
                "section_name1" : "Intubation",
                "section_name2" : "Hypoxia",
@@ -316,20 +316,20 @@
                "multiple_lines" : true,
                "children" :[
                   {
-                      "child_id": 231,                                          
+                      "child_id": 241,                                          
                       "display_img": "DOP" 
                   }
                ]
           },
           {
-               "section_id": 24, 
+               "section_id": 25, 
                "section_name" : "Useful",
                "section_name1" : "Info",
                "section_hexvalue" :  "#61a0af",
                "multiple_lines" : true,
                "children" :[
                   {
-                      "child_id": 241,                                          
+                      "child_id": 251,                                          
                       "display_img": "MaleFemale" 
                   }
                ]
@@ -602,92 +602,6 @@
       ]
   },
   {
-      "id" :5,
-      "name": "Trauma",
-      "hexvalue": "#f5d491",
-      "selected" : true ,
-      "section" :[
-        {
-          "section_id": 51, 
-          "section_name" : "",
-          "section_hexvalue" :  "#f5d491",
-          "multiple_lines" : false,
-          "children" :[
-              {
-                  "child_id": 511, 
-                  "child_name"  : "PCC (kcentra)",
-                  "children": [
-                    {
-                      "child_id": 5111,
-                      "child_detail_desc": "1000-1500 units follow hospital MTP protocol\nFor trauma patient with bleed associated with anticoagulation (warfarin) see Antidote section for dosing"
-                    }
-                  ]
-              },
-              {
-                  "child_id": 512, 
-                  "child_name"  : "Tranexamic Acid",
-                  "children": [
-                    {
-                      "child_id": 5121,
-                      "child_detail_desc": "1 g IVPB over 10 min then 1 g IVPB over 8 hours"
-                    }
-                  ]
-              },
-              {
-                "child_id": 513, 
-                "child_name"  : "Levetiracetam",
-                "children": [
-                  {
-                    "child_id": 5131,
-                    "child_detail_desc": "1000 mg IVPB"
-                  }
-                ]
-              },
-              {
-                "child_id": 514, 
-                "child_name"  : "Phenytoin",
-                "children": [
-                  {
-                    "child_id": 5141,
-                    "child_detail_desc": "20 mg/kg IVPB not to exceed 50 mcg/min"
-                  }
-                ]
-              },
-              {
-                "child_id": 515, 
-                "child_name"  : "Mannitol",
-                "children": [
-                  {
-                    "child_id": 5151,
-                    "child_detail_desc": "1 g/kg IVbolus over 10 min (caution:hypotension)"
-                  }
-                ]
-              },
-              {
-                "child_id": 516, 
-                "child_name"  : "3% Nacl",
-                "children": [
-                  {
-                    "child_id": 5161,
-                    "child_detail_desc": "250 mL IVPB over 30 minutes"
-                  }
-                ]
-              },
-              {
-                "child_id": 517, 
-                "child_name"  : "DDAVP",
-                "children": [
-                  {
-                    "child_id": 5171,
-                    "child_detail_desc": "0.3 mcg/kg IVPB (uremic bleed)"
-                  }
-                ]
-              }
-        ]
-      }
-    ]     
-  },
-  {
       "id" :6,
       "name" : "Blood",
       "hexvalue": "#ff6262",
@@ -823,7 +737,7 @@
       "id" :8,
       "name" : "OB",
       "hexvalue": "#b6d377",
-      "selected" : false,
+      "selected" : true,
       "section" :[
         {
           "section_id": 81, 
@@ -1241,14 +1155,6 @@
               }
           ]
         }
-      ]
-  },
-  {
-      "id" :12,
-      "name" : "Inhibitors",
-      "hexvalue": "#b6d377",
-      "selected" : false,
-      "section" :[
       ]
   },
   {

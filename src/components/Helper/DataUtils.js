@@ -52,6 +52,9 @@ class DataUtils {
     try {
       const jsonValue = await AsyncStorage.getItem('@bama_storage_Key')
       const temp = jsonValue != null ? JSON.parse(jsonValue) : null
+      if (temp != null) {
+        console.log() // check if the data is corrupted that is pinned since we have diff ids now?
+      }
       return temp
     } catch (e) {
       console.error(e)
@@ -60,7 +63,7 @@ class DataUtils {
 
   static async setUserSelectedItems (values) {
     try {
-      const result = await AsyncStorage.setItem('@bama_storage_Key', JSON.stringify(values))
+      await AsyncStorage.setItem('@bama_storage_Key', JSON.stringify(values))
       return values
     } catch (e) {
       console.error(e)
