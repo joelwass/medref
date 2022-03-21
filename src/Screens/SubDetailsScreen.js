@@ -6,7 +6,7 @@ import SubChildLayoutList from '../Components/SubChildLayoutList'
 
 export default function SubDetailsScreen ({ navigation, route, props }) {
   const { value, subValue } = route.params
-  const hexagonSize = { x: 41, y: 41 }
+  const hexagonSize = { x: 45, y: 45 }
   const [selectedValue, setSelectedValue] = useState()
   const [subSelectedValue, setSubSelectedValue] = useState()
 

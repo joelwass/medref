@@ -5,13 +5,13 @@ import SubLayout from '../Components/SubLayout'
 import SubLayoutList from '../Components/SubLayoutList'
 
 export default function DetailsScreen ({ navigation, route, props }) {
-  const hexagonSize = { x: 42, y: 42 }
+  const hexagonSize = { x: 45, y: 45 }
 
   const [selectedValue, setSelectedValue] = useState()
 
   const height = Dimensions.get('window').height
   const width = Dimensions.get('window').width
-  const upperViewHeight = height / 5.3
+  const upperViewHeight = height / 5.8
 
   useEffect(() => {
     const { value, subValue } = route.params

@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Svg, { G, Rect, Polygon } from 'react-native-svg';
+import Svg from 'react-native-svg';
 import {View, StyleSheet , TouchableOpacity, Text , Dimensions} from 'react-native';
-import { HexGrid, Layout, Orientation,Point,Hexagon,HexText}  from '../components/index';
+import { Layout, Orientation,Point,Hexagon,HexText}  from '../components/index';
 import { ScrollView } from 'react-native-gesture-handler';
-import { AsyncStorage } from '@react-native-community/async-storage';
-import Constants from 'expo-constants';
 import itemColors from '../data/color.json';
+
 //https://rossbulat.medium.com/react-native-carousels-with-horizontal-scroll-views-60b0587a670c
 class SubLayoutChild extends Component {
     static LAYOUT_FLAT = new Orientation(3.0 / 2.0, 0.0, Math.sqrt(3.0) / 2.0, Math.sqrt(3.0),2.0 / 3.0, 0.0, -1.0 / 3.0, Math.sqrt(3.0) / 3.0, 0.0);

@@ -206,7 +206,7 @@ export default function SubChildLayoutList (props) {
             </View>
           </View>
           <View style={{ height: 30, padding: 5, paddingTop: 10, width: '90%', height: 'auto' }}>
-            <Text style={{ fontSize: 18, display: 'inline-block' }}>{item.child_warning}</Text>
+            <Text style={{ fontSize: 18 }}>{item.child_warning}</Text>
           </View>
         </View>
         )}

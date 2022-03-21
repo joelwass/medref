@@ -13,7 +13,7 @@ import HexText from './HexText';
 
 class SubLayout extends Component {
     static LAYOUT_FLAT = new Orientation(3.0 / 2.0, 0.0, Math.sqrt(3.0) / 2.0, Math.sqrt(3.0),2.0 / 3.0, 0.0, -1.0 / 3.0, Math.sqrt(3.0) / 3.0, 0.0);
-    static LAYOUT_POINTY = new Orientation(Math.sqrt(3.0), Math.sqrt(3.0) / 2.0, -.35, 1.5, Math.sqrt(3.0) / 3.0, -1.0 / 3.0, 0.0, 2.0 / 3.0, 0.5);
+    static LAYOUT_POINTY = new Orientation(Math.sqrt(2.3), Math.sqrt(3.0) / 2.0, -.35, 1.5, Math.sqrt(3.0) / 3.0, -1.0 / 3.0, 0.0, 2.0 / 3.0, 0.5);
     
     static width = Dimensions.get('window').width ;
 
@@ -46,7 +46,6 @@ class SubLayout extends Component {
     
       // TODO Refactor
     calculateCoordinates(orientation) {
-        
         const corners = [];
         const center = new Point(40,5);
         const { size } = this.props;
@@ -105,7 +104,8 @@ class SubLayout extends Component {
     
     render(){
         const innerViewHeight = this.props.height;
-        const innerViewWidth = Dimensions.get('window').width/5;
+        // THIS ADJUSTS THE WIDTH OF THE HEXAGON SUB LIST RENDER VIEW
+        const innerViewWidth = Dimensions.get('window').width/4.5;
 
         return(
           <View style={styles.container}>
