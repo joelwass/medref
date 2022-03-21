@@ -5,60 +5,60 @@
       "hexvalue": "#96c9dc",
       "selected" : true,
       "section" :[
-          {
-            "section_id": 11 , 
-            "section_name" : "Vaso-",
-            "section_name1" : "pressors /",
-            "section_name2" : "Inotropes",
-            "section_hexvalue" :  "#b6d377",
-            "multiple_lines" : true,
-            "children" :[
-                {
-                    "child_id": 111 , 
-                    "child_name" : "AngioTension II",
-                    "child_desc" :  "* Synthetic human angiotensin II, activates RAAS * \nStart: 20 nanogram/kg/min \nFirst 3hr MAX: 80 nanogram/kg/min \nMaintainance Max: 40 nanogram/kg/min"
-                },
-                {
-                      "child_id": 112 , 
-                      "child_name" : "Dobutamine",
-                      "child_desc" :  "* α1+, β1+++, β2++ * \nStart: 2.5 mcg/kg/min \nMAX: 20 mcg/kg/min"
-                },
-                {
-                      "child_id": 113 , 
-                      "child_name" : "Dopamine",
-                      "child_desc" :  "* Pure β: 5-10 mcg/kg/min \nα>β: >10-20 mcg/kg/min * \nStart: 5mcg/kg/min \nMAX: 20 mcg/kg/min"
-                },
-                {
-                      "child_id": 114 , 
-                      "child_name" : "Epinephrine",
-                      "child_desc" :  "* β: <3 mcg/min \nα: >6 mcg/min * \nStart: 1-2 mcg/min \nMAX:10 mcg/min"
-                },
-                {
-                      "child_id": 115 , 
-                      "child_name" : "Isoproterenol",
-                      "child_desc" :  "* β1 and β2 ++++* \nStart: 0.5 mcg/min \nMAX:30 mcg/min"
-                },
-                {
-                      "child_id": 116 , 
-                      "child_name" : "Milrinone",
-                      "child_desc" :  "* PDE inhibitor: +vasodilate, +inotropy * \nStart: 0.25 mcg/kg/min \nMAX: 0.75 mcg/kg/min"
-                },
-                {
-                      "child_id": 117 , 
-                      "child_name" : "Norepinephrine",
-                      "child_desc" :  "* α1 ++++,α2 ++++, β1+++ * \nStart: 2-12 mcg/min \nMAX: 30 mcg/min"
-                },
-                {
-                      "child_id": 118 , 
-                      "child_name" : "Phenylephrine",
-                      "child_desc" :  "* α1+++ * \nStart: 100 mcg/min \nMAX: 240 mcg/min"                         
-                },
-                {
-                      "child_id": 119 , 
-                      "child_name" : "Vasopressin",
-                      "child_desc" :  "* V1 * \nStart: 0.03 unit/min \nMAX: 0.03 unit/min"
-                }
-              ]
+        {
+          "section_id": 11 , 
+          "section_name" : "Vaso-",
+          "section_name1" : "pressors /",
+          "section_name2" : "Inotropes",
+          "section_hexvalue" :  "#b6d377",
+          "multiple_lines" : true,
+          "children" :[
+              {
+                  "child_id": 111 , 
+                  "child_name" : "AngioTension II",
+                  "child_desc" :  "* Synthetic human angiotensin II, activates RAAS * \nStart: 20 nanogram/kg/min \nFirst 3hr MAX: 80 nanogram/kg/min \nMaintainance Max: 40 nanogram/kg/min"
+              },
+              {
+                    "child_id": 112 , 
+                    "child_name" : "Dobutamine",
+                    "child_desc" :  "* α1+, β1+++, β2++ * \nStart: 2.5 mcg/kg/min \nMAX: 20 mcg/kg/min"
+              },
+              {
+                    "child_id": 113 , 
+                    "child_name" : "Dopamine",
+                    "child_desc" :  "* Pure β: 5-10 mcg/kg/min \nα>β: >10-20 mcg/kg/min * \nStart: 5mcg/kg/min \nMAX: 20 mcg/kg/min"
+              },
+              {
+                    "child_id": 114 , 
+                    "child_name" : "Epinephrine",
+                    "child_desc" :  "* β: <3 mcg/min \nα: >6 mcg/min * \nStart: 1-2 mcg/min \nMAX:10 mcg/min"
+              },
+              {
+                    "child_id": 115 , 
+                    "child_name" : "Isoproterenol",
+                    "child_desc" :  "* β1 and β2 ++++* \nStart: 0.5 mcg/min \nMAX:30 mcg/min"
+              },
+              {
+                    "child_id": 116 , 
+                    "child_name" : "Milrinone",
+                    "child_desc" :  "* PDE inhibitor: +vasodilate, +inotropy * \nStart: 0.25 mcg/kg/min \nMAX: 0.75 mcg/kg/min"
+              },
+              {
+                    "child_id": 117 , 
+                    "child_name" : "Norepinephrine",
+                    "child_desc" :  "* α1 ++++,α2 ++++, β1+++ * \nStart: 2-12 mcg/min \nMAX: 30 mcg/min"
+              },
+              {
+                    "child_id": 118 , 
+                    "child_name" : "Phenylephrine",
+                    "child_desc" :  "* α1+++ * \nStart: 100 mcg/min \nMAX: 240 mcg/min"                         
+              },
+              {
+                    "child_id": 119 , 
+                    "child_name" : "Vasopressin",
+                    "child_desc" :  "* V1 * \nStart: 0.03 unit/min \nMAX: 0.03 unit/min"
+              }
+            ]
           },
           {
                "section_id": 12, 
@@ -119,47 +119,120 @@
               ]
           },           
           {
-               "section_id" :14,
-               "section_name" : "HTN",
-               "section_name1" : "Emergency",
-               "section_hexvalue" :  "#96c9dc",
-               "multiple_lines" : true,
-               "children" :[
+            "section_id" :14,
+            "section_name" : "HTN",
+            "section_name1" : "Emergency",
+            "section_hexvalue" :  "#96c9dc",
+            "multiple_lines" : true,
+            "children" :[
+            {
+              "child_id": 141,
+              "child_name": "Enalaprilat",
+              "child_desc": "1.25-5 mg IVP \nmax 5mg IV q6h"
+            },
+            {
+              "child_id": 142,
+              "child_name": "Hydralazine",
+              "child_desc": "10-20 mg IVP \nmax 300 mg/day"
+            },
+            {
+              "child_id": 143,
+              "child_name": "Nicardipine",
+              "child_desc": "5-15 mg/hr \nmax 15 mg/hr"
+            },
+            {
+              "child_id": 144,
+              "child_name": "Beta Blockers",
+              "child_desc": "β1 selective: Atenolol, Metoprolol, Betaxolol, Acebutolol, Bisoprolol, Esmolol",
+              "children": [
                 {
-                  "child_id": 141,
-                  "child_name": "Enalaprilat",
-                  "child_desc": "1.25-5 mg IVP \nmax 5mg IV q6h"
+                  "child_id": 1441,
+                  "child_detail_name": "Esmolol",
+                  "child_detail_desc": "250-500 mcg/kg bolus then 50-100 mcg/kg/min"
                 },
                 {
-                  "child_id": 142,
-                  "child_name": "Hydralazine",
-                  "child_desc": "10-20 mg IVP \nmax 300 mg/day"
-                },
-                {
-                  "child_id": 143,
-                  "child_name": "Nicardipine",
-                  "child_desc": "5-15 mg/hr \nmax 15 mg/hr"
-                },
-                {
-                  "child_id": 144,
-                  "child_name": "Beta Blockers",
-                  "child_desc": "β1 selective: Atenolol, Metoprolol, Betaxolol, Acebutolol, Bisoprolol, Esmolol",
-                  "children": [
-                    {
-                      "child_id": 1441,
-                      "child_detail_name": "Esmolol",
-                      "child_detail_desc": "250-500 mcg/kg bolus then 50-100 mcg/kg/min"
-                    },
-                    {
-                      "child_id": 1442,
-                      "child_detail_name": "Lebatolol",
-                      "child_detail_desc": "* β1, β2, α * \n20-80 mg IVP or 0.5-2 mg/min \nmax 300 mg/day"
-                    }
-                  ]
+                  "child_id": 1442,
+                  "child_detail_name": "Lebatolol",
+                  "child_detail_desc": "* β1, β2, α * \n20-80 mg IVP or 0.5-2 mg/min \nmax 300 mg/day"
                 }
-               ]
-          }
-       ]
+              ]
+            }
+          ]
+        },
+        {
+          "section_id" :15,
+          "section_name" : "Arrhyth",
+          "section_name1" : "mias",
+          "section_hexvalue" :  "#61a0af",
+          "multiple_lines" : true,
+          "children" :[
+            {
+               "child_id": 151,
+               "child_name": "Adenosine",
+               "child_desc": "6 mg IVP; repeat dose of 12 mg IVP"
+            },
+            {
+              "child_id": 152,
+              "child_name": "Amiodarone",
+              "child_desc": "150 mg IVP then 1 mg/min x 6 hours then 0.5 mg/min x 18 hours"
+            },
+            {
+              "child_id": 153,
+              "child_name": "Atropine",
+              "child_desc": "0.5 mg IVP q3-5min NTE 3 mg"
+            },
+            {
+              "child_id": 154,
+              "child_name": "Calcium chloride",
+              "child_desc": "1 g IV over 10 min\n[1 g CaCL = 3 g CaGlu]"
+            },
+            {
+              "child_id": 155,
+              "child_name": "Calcium gluconate",
+              "child_desc": "1 g (= 1 amp) slow IVP may repeat\n[1 g CaCL = 3 g CaGlu]"
+            },
+            {
+              "child_id": 156,
+              "child_name": "Diltiazem",
+              "child_desc": "Initial: 0.25 mg/kg ABW over 2 min;\nmay repeat 0.35 mg/kg 15 min post 1st dose; usual dose 15-20 mg"
+            },
+            {
+              "child_id": 157,
+              "child_name": "Lidocaine",
+              "child_desc": "1-1.5 mg/kg (ACLS) IV/IO]\nmay repeat 0.5-0.75 mg/kg with max 3 mg/kg;\nintratrachael 2-3.75 mg/kg LD"
+            },
+            {
+              "child_id": 158,
+              "child_name": "Magnesium sulfate",
+              "child_desc": "1-2 g IVP (Torsades)"
+            },
+            {
+              "child_id": 159,
+              "child_name": "Procainamide",
+              "child_desc": "100 mg IVP q5min; 20-50 mg/min (ACLS)"
+            }
+          ]
+        },
+        {
+          "section_id" :16,
+          "section_name" : "Vaso/",
+          "section_name1": "dilators",
+          "section_hexvalue" :  "#ff6262",
+          "multiple_lines" : true,
+          "children" :[
+            {
+               "child_id": 161,
+               "child_name": "Nitroglycerin",
+               "child_desc": "5-200 mcg/min;\nacute pulmonary edema: 400 mcg/min x 2min then decrease to 100 mcg/min and titrate"
+            },
+            {
+              "child_id": 162,
+              "child_name": "Nitroprusside",
+              "child_desc": "0.3-5 mcg/kg/min;\nMax 1 mcg/kg/min if CrCL<30"
+            }
+          ]
+        } 
+      ]
   },
   {
       "id" :2,
@@ -466,11 +539,6 @@
                 ]
             },
             {
-              "child_id": 415, 
-              "child_name"  : "Direct Thrombin Inhibitors",
-              "children" :[]
-            },
-            {
               "child_id": 416, 
               "child_name"  : "Ethylene glycol, Methanol",
               "children" :[                                
@@ -596,9 +664,25 @@
                     "child_detail_desc" : "INR 2-4: 25 units/kg (max 2500 units) \nINR 4-6: 35 units/kg (max 3500 units)\nINR > 6: 50 units/kg (max 5000 units)\n**Must give w/VitK 10 mg ivpb**"
                 }
               ]
+            },
+            {
+              "child_id": 427, 
+              "child_name"  : "Direct Thombin Inhibitor",
+              "children" :[                                
+                  {
+                      "child_id" : 4271,
+                      "child_detail_name"  : "Bivalirudin",
+                      "child_detail_desc" : "10 mg IVPB over 1 hour"
+                  },
+                  {
+                    "child_id" : 4272,
+                    "child_detail_name"  : "Kcentra",
+                    "child_detail_desc" : "INR 2-4: 25 units/kg (max 2500 units) \nINR 4-6: 35 units/kg (max 3500 units)\nINR > 6: 50 units/kg (max 5000 units)\n**Must give w/VitK 10 mg ivpb**"
+                }
+              ]
             }
           ]
-      }
+        }
       ]
   },
   {
@@ -1233,9 +1317,11 @@
     "section" :[
       {
         "section_id": 1411, 
-        "section_name" : "DTI",
+        "section_name" : "Direct",
+        "section_name1": "Thombin",
+        "section_name2": "Inhibitors",
         "section_hexvalue" :  "#B6D377",
-        "multiple_lines" : false,
+        "multiple_lines" : true,
         "children" :[
           {
             "child_id": 14111, 
@@ -1356,6 +1442,8 @@
           {
               "child_id": 14211, 
               "child_name"  : "Fondaparinux (Arixtra)",
+              "comment": "child_warning is just used to show the warning on the first child element even though the warning is for the entire section",
+              "child_warning": "** Andexanet alfa has limited data and may be cost prohibitive with complicated dosing regimen. Note the \"reversal effect\" is no longer seen when infusion is stopped.",
               "child_bullets": [
                 {
                   "title": "Common Indication:",
@@ -1515,6 +1603,238 @@
       "hexvalue": "#b6d377",
       "selected" : true,
       "section" :[
+        {
+          "section_id": 161, 
+          "section_name" : "",
+          "section_hexvalue" :  "#b6d377",
+          "multiple_lines" : false,
+          "children" :[
+              {
+                  "child_id": 1611, 
+                  "child_name"  : "Dexmedetomidine",
+                  "children": [
+                    {
+                      "child_id": 16111,
+                      "child_detail_desc": "NO bolus; 0.2 mcg/kg/hr",
+                      "child_bullets": [
+                        {
+                          "title": "Onset:",
+                          "subtext": "5-10 min"
+                        },
+                        {
+                          "title": "Duration:",
+                          "subtext": "4 hrs"
+                        },
+                        {
+                          "title": "Sedation:",
+                          "subtext": "Yes"
+                        },
+                        {
+                          "title": "Analgesia",
+                          "subtext": "Yes"
+                        },
+                        {
+                          "title": "Amnesia",
+                          "subtext": "50% of pt's"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              {
+                "child_id": 1612, 
+                "child_name"  : "Fentanyl",
+                "children": [
+                  {
+                    "child_id": 16121,
+                    "child_detail_desc": "25-100 mcg IVP; 10-50 mcg/hr",
+                    "child_bullets": [
+                      {
+                        "title": "Onset:",
+                        "subtext": "1-2 min"
+                      },
+                      {
+                        "title": "Duration:",
+                        "subtext": "30-60 min"
+                      },
+                      {
+                        "title": "Sedation:",
+                        "subtext": "Yes"
+                      },
+                      {
+                        "title": "Analgesia",
+                        "subtext": "Yes"
+                      },
+                      {
+                        "title": "Amnesia",
+                        "subtext": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "child_id": 1613, 
+                "child_name"  : "Hydromorphone",
+                "children": [
+                  {
+                    "child_id": 16131,
+                    "child_detail_desc": "0.5-1 mg IVP",
+                    "child_bullets": [
+                      {
+                        "title": "Onset:",
+                        "subtext": "5-15 min"
+                      },
+                      {
+                        "title": "Duration:",
+                        "subtext": "4-5 hrs"
+                      },
+                      {
+                        "title": "Sedation:",
+                        "subtext": "Yes"
+                      },
+                      {
+                        "title": "Analgesia",
+                        "subtext": "Yes"
+                      },
+                      {
+                        "title": "Amnesia",
+                        "subtext": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "child_id": 1614, 
+                "child_name"  : "Ketamine",
+                "children": [
+                  {
+                    "child_id": 16141,
+                    "child_detail_desc": "Analgesia: 0.1-0.3 mg/kg IVP\n\nDissociative: 1 mg/kg IVP or greater; 0.1 mg/kg/hr (Max 1 mg/kg/hr); 4-5mg/kg IM",
+                    "child_bullets": [
+                      {
+                        "title": "Onset:",
+                        "subtext": "30-40 sec"
+                      },
+                      {
+                        "title": "Duration:",
+                        "subtext": "5-10 mins"
+                      },
+                      {
+                        "title": "Sedation:",
+                        "subtext": "Yes"
+                      },
+                      {
+                        "title": "Analgesia",
+                        "subtext": "Yes"
+                      },
+                      {
+                        "title": "Amnesia",
+                        "subtext": "Yes"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "child_id": 1615, 
+                "child_name"  : "Midazolam",
+                "children": [
+                  {
+                    "child_id": 16151,
+                    "child_detail_desc": "1-2 mg IVP or 1-2 mg/hr",
+                    "child_bullets": [
+                      {
+                        "title": "Onset:",
+                        "subtext": "2-5 mins"
+                      },
+                      {
+                        "title": "Duration:",
+                        "subtext": "30-80 mins"
+                      },
+                      {
+                        "title": "Sedation:",
+                        "subtext": "Yes"
+                      },
+                      {
+                        "title": "Analgesia",
+                        "subtext": "No"
+                      },
+                      {
+                        "title": "Amnesia",
+                        "subtext": "Yes"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "child_id": 1616, 
+                "child_name"  : "Morphine",
+                "children": [
+                  {
+                    "child_id": 16161,
+                    "child_detail_desc": "2-4 mg IVP",
+                    "child_bullets": [
+                      {
+                        "title": "Onset:",
+                        "subtext": "5 mins"
+                      },
+                      {
+                        "title": "Duration:",
+                        "subtext": "2-4 hrs"
+                      },
+                      {
+                        "title": "Sedation:",
+                        "subtext": "Yes"
+                      },
+                      {
+                        "title": "Analgesia",
+                        "subtext": "Yes"
+                      },
+                      {
+                        "title": "Amnesia",
+                        "subtext": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "child_id": 1617, 
+                "child_name"  : "Propofol",
+                "children": [
+                  {
+                    "child_id": 16171,
+                    "child_detail_desc": "0.5 mg/kg IVP LD; 10-85 mcg/kg/min",
+                    "child_bullets": [
+                      {
+                        "title": "Onset:",
+                        "subtext": "1-2 mins"
+                      },
+                      {
+                        "title": "Duration:",
+                        "subtext": "3-10 mins"
+                      },
+                      {
+                        "title": "Sedation:",
+                        "subtext": "Yes"
+                      },
+                      {
+                        "title": "Analgesia",
+                        "subtext": "No"
+                      },
+                      {
+                        "title": "Amnesia",
+                        "subtext": "Yes"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
       ]
   },
   {
@@ -1564,6 +1884,63 @@
             "child_id": 1717, 
             "child_name"  : "DDAVP",
             "child_desc": "0.3 mcg/kg IVPB \n* For uremic bleed *"
+          }
+        ]
+      },
+      {
+        "section_id": 172, 
+        "section_name" : "Blood",
+        "section_hexvalue" :  "#ff6262",
+        "children" :[
+          {
+            "child_id": 1721, 
+            "child_name": "pRBC",
+            "child_desc": "1 unit = 220 mL = 1 gm/dL rise in Hgb"
+          },
+          {
+            "child_id": 1722, 
+            "child_name": "FFP",
+            "child_desc": "Coagulation factors and colloid proteins"
+          },
+          {
+            "child_id": 1723, 
+            "child_name": "Platelets (apheresis)",
+            "child_desc": "1 bag = ~6units = rise of 30-60 k /uL"
+          },
+          {
+            "child_id": 1724, 
+            "child_name": "Cryoprecipitate",
+            "child_desc": "Fibrinogen, Factor VIII and XIII, vWF\n1 unit = ↑7-10 mg/dL"
+          },
+          {
+            "child_id": 1725, 
+            "child_name": "MTP",
+            "child_desc": "1 pRBC: 1 Plt: 1 FFP\nConsider cryo, TXA, 4-PCC\nWatch for ↓Ca, ↓ temp"
+          }
+        ]
+      },
+      {
+        "section_id": 173, 
+        "section_name" : "Glascow",
+        "section_name1": "Coma",
+        "section_name2": "Scale",
+        "multiple_lines": true,
+        "section_hexvalue" :  "#EE1111",
+        "children" :[
+          {
+            "child_id": 1731, 
+            "child_name": "EYE opening",
+            "child_desc": "1 = None\n2 = To Pain\n3 = To Voice\n4 = Spontaneous"
+          },
+          {
+            "child_id": 1732, 
+            "child_name": "VERBAL response",
+            "child_desc": "1 = None\n2 = Incomprehensible\n3 = Inappropriate\n4 = Confused\n5 = Normal"
+          },
+          {
+            "child_id": 1733, 
+            "child_name": "MOTOR response",
+            "child_desc": "1 = None\n2 = Decerebrate\n3 = Decorticate\n4 = Withdraws\n5 = Localizes\n6 = Normal"
           }
         ]
       }

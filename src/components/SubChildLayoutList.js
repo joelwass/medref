@@ -161,6 +161,7 @@ export default function SubChildLayoutList (props) {
           obj.child_id = item.child_id,
           obj.child_name = item.child_name !== undefined ? item.child_name : null,
           obj.subchildren = item.subchildren !== undefined ? item.subchildren : null,
+          obj.child_warning = item.child_warning !== undefined ? item.child_warning : null,
           obj.child_bullets = item.child_bullets !== undefined ? item.child_bullets : null,
           obj.child_desc = item.child_desc !== undefined ? item.child_desc : null,
           obj.child_desc1 = item.child_desc1 !== undefined ? item.child_desc1 : null,
@@ -188,19 +189,24 @@ export default function SubChildLayoutList (props) {
       return (
         <View>
           {index === 0 &&
-        (<View style={styles.switchview}>
-          <View style={{ height: 30 }}>
-            <Text style={{ fontSize: 18 }}>* expand all</Text>
+        (<View>
+          <View style={styles.switchview}>
+            <View style={{ height: 30 }}>
+              <Text style={{ fontSize: 18 }}>* expand all</Text>
+            </View>
+            <View>
+              <Switch
+                trackColor={{ false: '#9dcddf', true: '#63a1b0' }}
+                thumbColor='#fbfbfb'
+                ios_backgroundColor='#3e3e3e'
+                style={{ transform: [{ scaleX: 1.0 }, { scaleY: 1.0 }] }}
+                onValueChange={toggleSwitch}
+                value={isEnabled}
+              />
+            </View>
           </View>
-          <View>
-            <Switch
-              trackColor={{ false: '#9dcddf', true: '#63a1b0' }}
-              thumbColor='#fbfbfb'
-              ios_backgroundColor='#3e3e3e'
-              style={{ transform: [{ scaleX: 1.0 }, { scaleY: 1.0 }] }}
-              onValueChange={toggleSwitch}
-              value={isEnabled}
-            />
+          <View style={{ height: 30, padding: 5, paddingTop: 10, width: '90%', height: 'auto' }}>
+            <Text style={{ fontSize: 18, display: 'inline-block' }}>{item.child_warning}</Text>
           </View>
         </View>
         )}

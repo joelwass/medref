@@ -52,9 +52,6 @@ class DataUtils {
     try {
       const jsonValue = await AsyncStorage.getItem('@bama_storage_Key')
       const temp = jsonValue != null ? JSON.parse(jsonValue) : null
-      if (temp != null) {
-        console.log() // check if the data is corrupted that is pinned since we have diff ids now?
-      }
       return temp
     } catch (e) {
       console.error(e)
@@ -86,13 +83,12 @@ class DataUtils {
     return resultArray
   }
 
-  static computeData (SettingIds) {
+  static computeData (pinnedIds) {
     try {
       const itemArrTemp = []
-      const ptArr = []
       let count = 1
       data.map((obj) => {
-        if (SettingIds != null && SettingIds.includes(obj.id) === true && count <= 9) {
+        if (pinnedIds != null && pinnedIds.includes(obj.id) === true && count <= 9) {
           let ptObj = {}
           ptObj = pointArr.find(pos => pos.id === count)
           if (count <= 9) {
