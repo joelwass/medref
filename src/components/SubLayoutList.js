@@ -82,9 +82,13 @@ export default function SubLayoutList (props) {
           let tempText = ''
           let tempText1 = ''
           if (item.multiple_lines) {
-            tempText = item.section_name1 ? item.section_name1 : '',
-            tempText1 = item.section_name2 ? item.section_name2 : ''
-            ob.section_name = item.section_name + ' ' + tempText + ' ' + tempText1
+            if (!item.full_section_name) {
+              tempText = item.section_name1 ? item.section_name1 : '',
+              tempText1 = item.section_name2 ? item.section_name2 : ''
+              ob.section_name = item.section_name + ' ' + tempText + ' ' + tempText1
+            } else {
+              ob.section_name = item.full_section_name
+            }
           }
           ob.section_hexvalue = obj.hexvalue
           ob.expanded = false
@@ -97,6 +101,7 @@ export default function SubLayoutList (props) {
               obChild.section_id = item.section_id,
               obChild.child_id = childItem.child_id,
               obChild.child_name = childItem.child_name,
+              obChild.child_warning = childItem.child_warning,
               obChild.backgroundColor = item.section_hexvalue,
               obChild.special_instruction_header = childItem.special_instruction_header,
               obChild.special_instruction_footer = childItem.special_instruction_footer
@@ -141,7 +146,7 @@ export default function SubLayoutList (props) {
     }
   }
 
-  const renderItem = ({ item }) => {
+  const renderItem = ({ item, index }) => {
     const backgroundColor = item.backgroundColor
     const borderColor = item.backgroundColor
     let color = item.backgroundColor
@@ -155,7 +160,9 @@ export default function SubLayoutList (props) {
         return (
           <View key={index} style={{ justifyContent: 'center' }}>
             {
-              index === 0 && <ItemDetailHeader headerText={item.special_instruction_header} />
+              index === 0 && (
+                <ItemDetailHeader headerText={item.special_instruction_header} />
+              )
             }
 
             {row.child_detail_name && (
@@ -191,6 +198,11 @@ export default function SubLayoutList (props) {
     color = '#fff'
     return (
       <View>
+        {index == 0 && item.child_warning && (
+          <View style={{ height: 30, padding: 5, paddingTop: 10, width: '90%', height: 'auto' }}>
+            <Text style={{ fontSize: 18 }}>{item.child_warning}</Text>
+          </View>
+        )}
         <ItemDetails
           item={item}
           onPress={() => expandItemDetails(item.child_id)}
@@ -277,7 +289,7 @@ export default function SubLayoutList (props) {
           </View>
           <FlatList
             data={selectedIdChildArr}
-            renderItem={({ item }) => renderItem({ item })}
+            renderItem={({ item, index }) => renderItem({ item, index })}
             keyExtractor={(item) => item.child_id.toString()}
             ListEmptyComponent={EmptyList}
           />

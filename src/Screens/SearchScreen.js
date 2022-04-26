@@ -49,7 +49,14 @@ export default function SearchScreen ({ route, navigation }) {
     debounce(newSearchText)
   }
 
-  const showSubDetails = (node) => { // navigate to sub details screen 
+  const showSubDetails = (node) => {
+    // if there is no section id or section hex value, we know this is a top level (top top level hexagon)
+    // item, so we need to navigate to Details instead.
+    if (!node.section_id || !node.section_hexvalue) {
+      navigation.navigate('Details', { value: node.id })
+      return
+    }
+    // or navigate to sub details screen 
     const parentId = parseInt(node.id.toString().substring(0, 1))
     navigation.navigate('SubDetails', { value: parentId, subvalue: node.id })
   }

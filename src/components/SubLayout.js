@@ -73,8 +73,9 @@ class SubLayout extends Component {
             itemSectionArr = obj.section;
             // if section details are not there then select the color accordingly
             itemSectionArr.map( (objTem) => { 
-                if(objTem.section_name !== undefined && objTem.section_name === "")
+                if (objTem.section_name !== undefined && objTem.section_name === "") {
                     ob.hexvalue = objTem.section_hexvalue    
+                }
             })            
 
             // filter out settings when adding to the item temp array since we dont want that to show

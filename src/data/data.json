@@ -10,6 +10,7 @@
           "section_name" : "Vaso-",
           "section_name1" : "pressors /",
           "section_name2" : "Inotropes",
+          "full_section_name": "Vasopressors/Intropes",
           "section_hexvalue" :  "#b6d377",
           "multiple_lines" : true,
           "children" :[
@@ -95,6 +96,11 @@
                   "child_id": 126,
                   "child_name": "Sotalol",
                   "child_desc": "1.5 mg/kg (100mg) IV over 10 min"
+                },
+                {
+                  "child_id": 127,
+                  "child_name": "Lidocaine",
+                  "child_desc": "First dose: 1.0 to 1.5 mg/kg IV/IO\nSecond dose: 0.5 to 0.75 mg/kg IV/IO"
                 }
                ]
           },
@@ -163,6 +169,7 @@
           "section_id" :15,
           "section_name" : "Arrhyth",
           "section_name1" : "mias",
+          "full_section_name": "Arrhythmias",
           "section_hexvalue" :  "#61a0af",
           "multiple_lines" : true,
           "children" :[
@@ -217,6 +224,7 @@
           "section_id" :16,
           "section_name" : "Vaso/",
           "section_name1": "dilators",
+          "full_section_name": "Vasodilators",
           "section_hexvalue" :  "#ff6262",
           "multiple_lines" : true,
           "children" :[
@@ -385,6 +393,7 @@
                "section_name" : "Post-",
                "section_name1" : "Intubation",
                "section_name2" : "Hypoxia",
+               "full_section_name": "Post-Intubation Hypoxia",
                "section_hexvalue" :  "#61a0af",
                "multiple_lines" : true,
                "children" :[
@@ -897,196 +906,197 @@
       ]
   },
   {
-      "id" :9,
-      "name" : "Intranasal",
-      "hexvalue": "#F5D491",
-      "selected" : false,
-      "section" :[
-        {
-          "section_id": 91, 
-          "section_name" : "",
-          "section_hexvalue" :  "#F5D491",
-          "multiple_lines" : false,
-          "children" :[
-              {
-                  "child_id": 911, 
-                  "child_name"  : "Midazolam (5 mg/mL)",
-                  "children": [
+    "id" :9,
+    "name" : "Intranasal",
+    "hexvalue": "#F5D491",
+    "selected" : false,
+    "section" :[{
+      "section_id": 91, 
+      "section_name" : "",
+      "section_hexvalue" :  "#F5D491",
+      "multiple_lines" : false,
+      "children" :[
+          {
+              "child_id": 911, 
+              "child_name"  : "Midazolam (5 mg/mL)",
+              "comment": "child_warning is just used to show the warning on the first child element even though the warning is for the entire section",
+              "child_warning": "** Do not exceed 1mL/nostril for all medications",
+              "children": [
+                {
+                  "child_id": 9111,
+                  "child_detail_desc": " Seizure: 0.1 – 0.4 mg/kg\n(usual range 2-5 mg with max of 10 mg)",
+                  "child_bullets": [
                     {
-                      "child_id": 9111,
-                      "child_detail_desc": " Seizure: 0.1 – 0.4 mg/kg\n(usual range 2-5 mg with max of 10 mg)",
-                      "child_bullets": [
-                        {
-                          "title": "Bioavailability:",
-                          "subtext": "50%"
-                        },
-                        {
-                          "title": "Time to peak effect",
-                          "subtext": "5 min"
-                        },
-                        {
-                          "title": "Duration",
-                          "subtext": "30 min"
-                        },
-                        {
-                          "title": "Volume Range",
-                          "subtext": "0.4 - 2mL"
-                        }
-                      ]
+                      "title": "Bioavailability:",
+                      "subtext": "50%"
+                    },
+                    {
+                      "title": "Time to peak effect",
+                      "subtext": "5 min"
+                    },
+                    {
+                      "title": "Duration",
+                      "subtext": "30 min"
+                    },
+                    {
+                      "title": "Volume Range",
+                      "subtext": "0.4 - 2mL"
                     }
                   ]
-              },
-              {
-                  "child_id": 912, 
-                  "child_name"  : "Lorazepam (2 mg/mL)",
-                  "children": [
+                }
+              ]
+          },
+          {
+              "child_id": 912, 
+              "child_name"  : "Lorazepam (2 mg/mL)",
+              "children": [
+                {
+                  "child_id": 9121,
+                  "child_detail_desc": "Seizure: 0.1 mg/kg\n(usual range of 1-2 mg with a max of 4 mg)",
+                  "child_bullets": [
                     {
-                      "child_id": 9121,
-                      "child_detail_desc": "Seizure: 0.1 mg/kg\n(usual range of 1-2 mg with a max of 4 mg)",
-                      "child_bullets": [
-                        {
-                          "title": "Time to peak effect",
-                          "subtext": "30 min"
-                        },
-                        {
-                          "title": "Volume Range",
-                          "subtext": "0.5 - 2mL"
-                        }
-                      ]
+                      "title": "Time to peak effect",
+                      "subtext": "30 min"
+                    },
+                    {
+                      "title": "Volume Range",
+                      "subtext": "0.5 - 2mL"
                     }
                   ]
-              },
+                }
+              ]
+          },
+          {
+            "child_id": 913 , 
+            "child_name"  : "Ketamine (100 mg/mL)",
+            "children": [
               {
-                "child_id": 913 , 
-                "child_name"  : "Ketamine (100 mg/mL)",
-                "children": [
+                "child_id": 9131,
+                "child_detail_desc": "Analgesia:0.5-1 mg/kg\n(limited by volume)",
+                "child_bullets": [
                   {
-                    "child_id": 9131,
-                    "child_detail_desc": "Analgesia:0.5-1 mg/kg\n(limited by volume)",
-                    "child_bullets": [
-                      {
-                        "title": "Bioavailability:",
-                        "subtext": "50%"
-                      },
-                      {
-                        "title": "Time to peak effect",
-                        "subtext": "5 min"
-                      },
-                      {
-                        "title": "Duration",
-                        "subtext": "72 min"
-                      },
-                      {
-                        "title": "Volume Range",
-                        "subtext": "2 - 4mL"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "child_id": 914, 
-                "child_name"  : "Fentanyl (50 mcg/mL)",
-                "children": [
+                    "title": "Bioavailability:",
+                    "subtext": "50%"
+                  },
                   {
-                    "child_id": 9141,
-                    "child_detail_desc": "Analgesia: 0.5 – 2 mcg/kg\n(limited by volume)",
-                    "child_bullets": [
-                      {
-                        "title": "Bioavailability:",
-                        "subtext": "89%"
-                      },
-                      {
-                        "title": "Time to peak effect",
-                        "subtext": "5 min"
-                      },
-                      {
-                        "title": "Duration",
-                        "subtext": "30-60 min"
-                      },
-                      {
-                        "title": "Volume Range",
-                        "subtext": "0.5 - 3mL"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "child_id": 915, 
-                "child_name"  : "Naloxone (1 mg/mL)",
-                "children": [
+                    "title": "Time to peak effect",
+                    "subtext": "5 min"
+                  },
                   {
-                    "child_id": 9151,
-                    "child_detail_desc": "0.1 mg/kg\n(usual range of 0.4 – 2 mg)",
-                    "child_bullets": [
-                      {
-                        "title": "Bioavailability:",
-                        "subtext": "30%"
-                      },
-                      {
-                        "title": "Time to peak effect",
-                        "subtext": "1 min"
-                      },
-                      {
-                        "title": "Volume Range",
-                        "subtext": "0.4 - 2mL"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "child_id": 916, 
-                "child_name"  : "Flumazenil (0.1 mg/mL)",
-                "children": [
+                    "title": "Duration",
+                    "subtext": "72 min"
+                  },
                   {
-                    "child_id": 9161,
-                    "child_detail_desc": "0.025 – 0.04 mg/kg\n(max of 0.1-0.2 mg)",
-                    "child_bullets": [
-                      {
-                        "title": "Time to peak effect",
-                        "subtext": "5 min"
-                      },
-                      {
-                        "title": "Volume Range",
-                        "subtext": "1 - 2mL"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "child_id": 917, 
-                "child_name"  : "Dexmedetomidine (100 mcg/mL)",
-                "children": [
-                  {
-                    "child_id": 9171,
-                    "child_detail_desc": "1-2 mcg/kg",
-                    "child_bullets": [
-                      {
-                        "title": "Bioavailability:",
-                        "subtext": "65%"
-                      },
-                      {
-                        "title": "Time to peak effect",
-                        "subtext": "20 min"
-                      },
-                      {
-                        "title": "Duration",
-                        "subtext": "100 min"
-                      },
-                      {
-                        "title": "Volume Range",
-                        "subtext": "0.7 - 1.5mL"
-                      }
-                    ]
+                    "title": "Volume Range",
+                    "subtext": "2 - 4mL"
                   }
                 ]
               }
-          ]
-        }
-      ]
+            ]
+          },
+          {
+            "child_id": 914, 
+            "child_name"  : "Fentanyl (50 mcg/mL)",
+            "children": [
+              {
+                "child_id": 9141,
+                "child_detail_desc": "Analgesia: 0.5 – 2 mcg/kg\n(limited by volume)",
+                "child_bullets": [
+                  {
+                    "title": "Bioavailability:",
+                    "subtext": "89%"
+                  },
+                  {
+                    "title": "Time to peak effect",
+                    "subtext": "5 min"
+                  },
+                  {
+                    "title": "Duration",
+                    "subtext": "30-60 min"
+                  },
+                  {
+                    "title": "Volume Range",
+                    "subtext": "0.5 - 3mL"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "child_id": 915, 
+            "child_name"  : "Naloxone (1 mg/mL)",
+            "children": [
+              {
+                "child_id": 9151,
+                "child_detail_desc": "0.1 mg/kg\n(usual range of 0.4 – 2 mg)",
+                "child_bullets": [
+                  {
+                    "title": "Bioavailability:",
+                    "subtext": "30%"
+                  },
+                  {
+                    "title": "Time to peak effect",
+                    "subtext": "1 min"
+                  },
+                  {
+                    "title": "Volume Range",
+                    "subtext": "0.4 - 2mL"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "child_id": 916, 
+            "child_name"  : "Flumazenil (0.1 mg/mL)",
+            "children": [
+              {
+                "child_id": 9161,
+                "child_detail_desc": "0.025 – 0.04 mg/kg\n(max of 0.1-0.2 mg)",
+                "child_bullets": [
+                  {
+                    "title": "Time to peak effect",
+                    "subtext": "5 min"
+                  },
+                  {
+                    "title": "Volume Range",
+                    "subtext": "1 - 2mL"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "child_id": 917, 
+            "child_name"  : "Dexmedetomidine (100 mcg/mL)",
+            "children": [
+              {
+                "child_id": 9171,
+                "child_detail_desc": "1-2 mcg/kg",
+                "child_bullets": [
+                  {
+                    "title": "Bioavailability:",
+                    "subtext": "65%"
+                  },
+                  {
+                    "title": "Time to peak effect",
+                    "subtext": "20 min"
+                  },
+                  {
+                    "title": "Duration",
+                    "subtext": "100 min"
+                  },
+                  {
+                    "title": "Volume Range",
+                    "subtext": "0.7 - 1.5mL"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
       "id" :10,
@@ -1436,6 +1446,7 @@
         "section_name" : "Factor",
         "section_name1" : "Xa-",
         "section_name2" :"Inhibitors",
+        "full_section_name": "Factor Xa-Inhibitors",
         "multiple_lines" : true,
         "section_hexvalue": "#EE1111",
         "children" :[

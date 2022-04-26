@@ -18,7 +18,6 @@ class SubChildLayout extends Component {
         super(props); 
         const {  flat, className, hexname, ...rest } = this.props;
         const orientation = (flat) ? SubChildLayout.LAYOUT_FLAT : SubChildLayout.LAYOUT_POINTY;
-        console.log('1', flat, orientation)
         const cornerCoords = this.calculateCoordinates(orientation);
         const points1 = cornerCoords.map(point => `${point.x},${point.y}`).join(' ');
         const layout = Object.assign({}, rest, { orientation }); 

@@ -154,7 +154,7 @@ export default function SubChildLayoutList (props) {
 
     data.map((item) => {
       if (item.id === props.selectedValue) {
-        const secDet = item.section.find(obj => obj.section_id === props.subSelectedValue)
+        let secDet = item.section.find(obj => obj.section_id === props.subSelectedValue)
         backgroundColor = secDet.section_hexvalue
         secDet.children.map((item) => {
           const obj = {}
@@ -205,9 +205,11 @@ export default function SubChildLayoutList (props) {
               />
             </View>
           </View>
-          <View style={{ height: 30, padding: 5, paddingTop: 10, width: '90%', height: 'auto' }}>
-            <Text style={{ fontSize: 18 }}>{item.child_warning}</Text>
-          </View>
+          { item.child_warning && (
+            <View style={{ height: 30, padding: 5, paddingTop: 10, width: '90%', height: 'auto' }}>
+              <Text style={{ fontSize: 18 }}>{item.child_warning}</Text>
+            </View>
+          )}
         </View>
         )}
           <Item
