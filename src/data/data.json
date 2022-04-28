@@ -17,47 +17,47 @@
               {
                   "child_id": 111 , 
                   "child_name" : "AngioTension II",
-                  "child_desc" :  "* Synthetic human angiotensin II, activates RAAS * \nStart: 20 nanogram/kg/min \nFirst 3hr MAX: 80 nanogram/kg/min \nMaintainance Max: 40 nanogram/kg/min"
+                  "child_desc" :  "Synthetic human angiotensin II, activates RAAS\nStart: 20 ng/kg/min \nFirst 3hr MAX: 80 ng/kg/min \nMaintainance MAX: 40 ng/kg/min"
               },
               {
                     "child_id": 112 , 
                     "child_name" : "Dobutamine",
-                    "child_desc" :  "* α1+, β1+++, β2++ * \nStart: 2.5 mcg/kg/min \nMAX: 20 mcg/kg/min"
+                    "child_desc" :  "α1+, β1+++, β2++\nStart: 2.5 mcg/kg/min \nMAX: 20 mcg/kg/min"
               },
               {
                     "child_id": 113 , 
                     "child_name" : "Dopamine",
-                    "child_desc" :  "* Pure β: 5-10 mcg/kg/min \nα>β: >10-20 mcg/kg/min * \nStart: 5mcg/kg/min \nMAX: 20 mcg/kg/min"
+                    "child_desc" :  "Pure β: 5-10 mcg/kg/min \nα>β: >10-20 mcg/kg/min\nStart: 5mcg/kg/min \nMAX: 20 mcg/kg/min"
               },
               {
                     "child_id": 114 , 
                     "child_name" : "Epinephrine",
-                    "child_desc" :  "* β: <3 mcg/min \nα: >6 mcg/min * \nStart: 1-2 mcg/min \nMAX:10 mcg/min"
+                    "child_desc" :  "β: <3 mcg/min \nα: >6 mcg/min\nStart: 1-2 mcg/min \nMAX:10 mcg/min"
               },
               {
                     "child_id": 115 , 
                     "child_name" : "Isoproterenol",
-                    "child_desc" :  "* β1 and β2 ++++* \nStart: 0.5 mcg/min \nMAX:30 mcg/min"
+                    "child_desc" :  "β1 and β2 ++++\nStart: 0.5 mcg/min \nMAX:30 mcg/min"
               },
               {
                     "child_id": 116 , 
                     "child_name" : "Milrinone",
-                    "child_desc" :  "* PDE inhibitor: +vasodilate, +inotropy * \nStart: 0.25 mcg/kg/min \nMAX: 0.75 mcg/kg/min"
+                    "child_desc" :  "PDE inhibitor: +vasodilate, +inotropy\nStart: 0.25 mcg/kg/min \nMAX: 0.75 mcg/kg/min"
               },
               {
                     "child_id": 117 , 
                     "child_name" : "Norepinephrine",
-                    "child_desc" :  "* α1 ++++,α2 ++++, β1+++ * \nStart: 2-12 mcg/min \nMAX: 30 mcg/min"
+                    "child_desc" :  "α1 ++++,α2 ++++, β1+++\nStart: 2-12 mcg/min \nMAX: 30 mcg/min"
               },
               {
                     "child_id": 118 , 
                     "child_name" : "Phenylephrine",
-                    "child_desc" :  "* α1+++ * \nStart: 100 mcg/min \nMAX: 240 mcg/min"                         
+                    "child_desc" :  "α1+++\nStart: 100 mcg/min \nMAX: 240 mcg/min"                         
               },
               {
                     "child_id": 119 , 
                     "child_name" : "Vasopressin",
-                    "child_desc" :  "* V1 * \nStart: 0.03 unit/min \nMAX: 0.03 unit/min"
+                    "child_desc" :  "V1 activation\nStart: 0.03 unit/min \nMAX: 0.03 unit/min"
               }
             ]
           },
@@ -70,7 +70,7 @@
                  {
                    "child_id": 121,
                    "child_name": "Adenosine",
-                   "child_desc": "6 mg IVP \nmay repeat q1-2 min \nmax 12 mg/dose"
+                   "child_desc": "6 mg IVP \nmay repeat q1-2 min \nMAX 12 mg/dose"
                  },
                  {
                   "child_id": 122,
@@ -80,17 +80,17 @@
                 {
                   "child_id": 123,
                   "child_name": "Atropine",
-                  "child_desc": "0.5 mg IVP q 3-5 minutes \nmax 3 mg"
+                  "child_desc": "0.5 mg IVP q 3-5 minutes \nMAX 3 mg"
                 },
                 {
                   "child_id": 124,
                   "child_name": "Epinephrine",
-                  "child_desc": "* 0.1mg/mL (1:10,000) * \n1 mg (10 mL) IVP q 3-5 min \nmax 3mg"
+                  "child_desc": "* 0.1mg/mL (1:10,000) * \n1 mg (10 mL) IVP q 3-5 min\nMAX 3mg"
                 },
                 {
                   "child_id": 125,
                   "child_name": "Procainamide",
-                  "child_desc": "20-50 mg/min infusion until arrithymia suppressed, hypotension, QRS increase > 50% \nmax 17 mg/kg \n** Avoid if prolonged QT or CHF **"
+                  "child_desc": "20-50 mg/min infusion until arrithymia suppressed, hypotension, QRS increase > 50% \nMAX 17 mg/kg \n** Avoid if prolonged QT or CHF **"
                 },
                 {
                   "child_id": 126,
@@ -134,17 +134,17 @@
             {
               "child_id": 141,
               "child_name": "Enalaprilat",
-              "child_desc": "1.25-5 mg IVP \nmax 5mg IV q6h"
+              "child_desc": "1.25-5 mg IVP \nMAX 5mg IV q6h"
             },
             {
               "child_id": 142,
               "child_name": "Hydralazine",
-              "child_desc": "10-20 mg IVP \nmax 300 mg/day"
+              "child_desc": "10-20 mg IVP \nMAX 300 mg/day"
             },
             {
               "child_id": 143,
               "child_name": "Nicardipine",
-              "child_desc": "5-15 mg/hr \nmax 15 mg/hr"
+              "child_desc": "5-15 mg/hr \nMAX 15 mg/hr"
             },
             {
               "child_id": 144,
@@ -159,7 +159,7 @@
                 {
                   "child_id": 1442,
                   "child_detail_name": "Lebatolol",
-                  "child_detail_desc": "* β1, β2, α * \n20-80 mg IVP or 0.5-2 mg/min \nmax 300 mg/day"
+                  "child_detail_desc": "*β1, β2, α* \n20-80 mg IVP or 0.5-2 mg/min \nMAX 300 mg/day"
                 }
               ]
             }
@@ -186,7 +186,7 @@
             {
               "child_id": 153,
               "child_name": "Atropine",
-              "child_desc": "0.5 mg IVP q3-5min NTE 3 mg"
+              "child_desc": "0.5 mg IVP q3-5min\nNTE 3 mg"
             },
             {
               "child_id": 154,
@@ -201,12 +201,12 @@
             {
               "child_id": 156,
               "child_name": "Diltiazem",
-              "child_desc": "Initial: 0.25 mg/kg ABW over 2 min;\nmay repeat 0.35 mg/kg 15 min post 1st dose; usual dose 15-20 mg"
+              "child_desc": "Initial: 0.25 mg/kg ABW over 2 min;\nmay repeat 0.35 mg/kg 15 min after 1st dose; usual dose 15-20 mg"
             },
             {
               "child_id": 157,
               "child_name": "Lidocaine",
-              "child_desc": "1-1.5 mg/kg (ACLS) IV/IO]\nmay repeat 0.5-0.75 mg/kg with max 3 mg/kg;\nintratrachael 2-3.75 mg/kg LD"
+              "child_desc": "1-1.5 mg/kg (ACLS) IV/IO\nmay repeat 0.5-0.75 mg/kg with max 3 mg/kg;\nintratrachael 2-3.75 mg/kg LD"
             },
             {
               "child_id": 158,
@@ -231,7 +231,7 @@
             {
                "child_id": 161,
                "child_name": "Nitroglycerin",
-               "child_desc": "5-200 mcg/min;\nacute pulmonary edema: 400 mcg/min x 2min then decrease to 100 mcg/min and titrate"
+               "child_desc": "5-200 mcg/min;\n\nCrashing pulmonary edema: 400 mcg/min x 2min then decrease to 100 mcg/min and titrate"
             },
             {
               "child_id": 162,
@@ -275,7 +275,7 @@
                       "child_id": 214, 
                       "child_name" : "RR",
                       "child_desc" : "Initially 16-18 - Adjust Based on CO2 and Vent Needs",
-                      "child_desc1": "Minute ventillation for normal CO2 when not intubated = 60 ml/kg/min. Double to 120 mL/kg/min when intubated 2/2 t dead space Mild hypercarbia is ok."
+                      "child_desc1": "Minute ventilation when not intubated = 60 ml/kg/min. Double to 120 mL/kg/min when intubated due to dead space\nMild hypercarbia is ok."
                       
                   },                    
                   {
@@ -284,15 +284,15 @@
                       "child_bullets": [
                         {
                           "title": "Goal: ",
-                          "subtext": "PaO2 55-80 mmHg or SpO2 99-95%"
+                          "subtext": "PaO2 55-80 mmHg or SpO2 88-95%"
                         },
                         {
-                          "title": "Start ",
-                          "subtext": "at 100% FiO2 and PEEP of 5"
+                          "title": "FiO2 ",
+                          "subtext": "Start at 100% FiO2 and titrate down"
                         },
                         {
-                          "title": "Start ",
-                          "subtext": "at higher peep for severe hypoxemia"
+                          "title": "PEEP ",
+                          "subtext": "Start at 5 or higher for severe hypoxemia"
                         },
                         {
                           "title": "Wait ",
@@ -309,7 +309,7 @@
                   {
                       "child_id": 216 , 
                       "child_name" : "Plateau Pressure",
-                      "child_desc" :  "Goal: <= 30cm H2O \nif > 30, reduce Vt by 1mL/kg IBW down to 4mL/kg IBW ",                    
+                      "child_desc" :  "Goal: <= 30cm H2O \nIf > 30, reduce Vt by 1mL/kg IBW down to 4mL/kg IBW ",                    
                       "button_img" : "PP"
                   }
              ]
@@ -324,7 +324,7 @@
                 {
                     "child_id": 221, 
                     "child_name" : "Mode",
-                    "child_desc" :  "Volume Control"
+                    "child_desc" :  "Volume control or pressure control"
                 },
                 {
                      "child_id": 222, 
@@ -335,13 +335,12 @@
                 {
                     "child_id": 223, 
                     "child_name" : "Flow Rate",
-                    "child_desc" :  "60 - 80 LPM"                    
+                    "child_desc" :  "80 - 100 LPM"                    
                 },                    
                 {
                     "child_id": 224, 
                     "child_name" : "RR",
-                    "child_desc" : "Initially 16-18 - Adjust Based on CO2 and Vent Needs",
-                    "child_desc1": "Minute ventillation for normal CO2 when not intubated = 60 ml/kg/min. Double to 120 mL/kg/min when intubated 2/2 t dead space Mild hypercarbia is ok."
+                    "child_desc" : "Start at 10-14"
                     
                 },                    
                 {
@@ -349,20 +348,20 @@
                     "child_name" : "Fi02 and PEEP",
                     "child_bullets": [
                       {
-                        "title": "Goal: ",
-                        "subtext": "PaO2 55-80 mmHg or SpO2 99-95%"
+                        "title": "PEEP ",
+                        "subtext": "5"
                       },
                       {
-                        "title": "Start ",
-                        "subtext": "at 100% FiO2 and PEEP of 5"
+                        "title": "FiO2 ",
+                        "subtext": "Start at 100% and titrate down quickly"
                       },
                       {
-                        "title": "Start ",
-                        "subtext": "at higher peep for severe hypoxemia"
+                        "title": "Tips ",
+                        "subtext": "Ok to allow for permissive hypercapnia (PaCO2 <90)\n\nAcidemia to pH >~7.1 is ok\n\nPlace as large an ETT as possible (aim for 8.0)"
                       },
                       {
-                        "title": "Wait ",
-                        "subtext": "15-20 min, then draw an ABG"
+                        "title": "Airtrapping ",
+                        "subtext": "Avoid!"
                       },
                       {
                         "title": "Titrate ",
@@ -472,17 +471,17 @@
                         {
                             "child_id" : 3131,
                             "child_detail_name"  : "Succinylcholine ",
-                            "child_detail_desc" : "* Onset: 30 sec  Duration: 6-10 min * \n1.5 mg/kg IVP \nContraindications  \nHx malignant hyperthermia \n>48hr old spinal cord injury or burns \nNMJ Dz \nSUSPECTED HyperK \nGBS \nCrush Injury \n* Can cause ↑IOP *"
+                            "child_detail_desc" : "Onset: 30 sec  Duration: 6-10 min \n1.5 mg/kg IVP \nContraindications  \nHx malignant hyperthermia \n>48hr old spinal cord injury or burns \nNMJ Dz \nSUSPECTED HyperK \nGBS \nCrush Injury \n* Can cause ↑IOP *"
                         },
                         {
                             "child_id" : 3132,
                             "child_detail_name"  : "Rocuronium",
-                            "child_detail_desc" : "* Onset: 75 sec  Duration: 20-90 min * \n0.6-1.2 mg/kg IVP"
+                            "child_detail_desc" : "Onset: 75 sec  Duration: 20-90 min \n0.6-1.2 mg/kg IVP"
                         },
                         {
                             "child_id" : 3133,
                             "child_detail_name"  : "Vecuronium",
-                            "child_detail_desc" : "* Onset: 60 sec  Duration: 30-40 min * \n0.08 - 1 mg/kg IVP"
+                            "child_detail_desc" : "Onset: 60 sec  Duration: 30-40 min \n0.08 - 1 mg/kg IVP"
                         }
                     ]
                 }
@@ -620,7 +619,7 @@
                   {
                       "child_id" : 4221,
                       "child_detail_name"  : "Dantrolene",
-                      "child_detail_desc" : "1 mg/kg IVP \nmax 10mg/kg"
+                      "child_detail_desc" : "1 mg/kg IVP \nMAX 10mg/kg"
                   }
               ]
             },
@@ -665,12 +664,12 @@
                   {
                       "child_id" : 4261,
                       "child_detail_name"  : "Phytonadione (VitK)",
-                      "child_detail_desc" : "10 mg IVPB over 1 hour"
+                      "child_detail_desc" : "10 mg IVPB over 1 hour\nDo not give if with concurrent clot OR caution with warfarin resistance\n*Onset is slow and duration can be long*"
                   },
                   {
                     "child_id" : 4262,
                     "child_detail_name"  : "Kcentra",
-                    "child_detail_desc" : "INR 2-4: 25 units/kg (max 2500 units) \nINR 4-6: 35 units/kg (max 3500 units)\nINR > 6: 50 units/kg (max 5000 units)\n**Must give w/VitK 10 mg ivpb**"
+                    "child_detail_desc" : "INR 2-4: 25 units/kg (max 2500 units) \nINR 4-6: 35 units/kg (max 3500 units)\nINR > 6: 50 units/kg (max 5000 units)\n**Typically given w/VitK 10 mg ivpb**"
                 }
               ]
             },
@@ -686,7 +685,7 @@
                   {
                     "child_id" : 4272,
                     "child_detail_name"  : "Kcentra",
-                    "child_detail_desc" : "INR 2-4: 25 units/kg (max 2500 units) \nINR 4-6: 35 units/kg (max 3500 units)\nINR > 6: 50 units/kg (max 5000 units)\n**Must give w/VitK 10 mg ivpb**"
+                    "child_detail_desc" : "INR 2-4: 25 units/kg (max 2500 units) \nINR 4-6: 35 units/kg (max 3500 units)\nINR > 6: 50 units/kg (max 5000 units)\n**Typically given w/VitK 10 mg ivpb**"
                 }
               ]
             }
@@ -788,7 +787,7 @@
                   "children": [
                     {
                       "child_id": 7121,
-                      "child_detail_desc": "4 mg slow IVP over 2 min or 0.1 mg/kg IVP \nmax 4 mg/dose"
+                      "child_detail_desc": "4 mg slow IVP over 2 min or 0.1 mg/kg IVP \nMAX 4 mg/dose"
                     }
                   ]
               },
@@ -808,7 +807,7 @@
                 "children": [
                   {
                     "child_id": 7141,
-                    "child_detail_desc": "10-15 mg/kg IVPB LD \nmay give 20 mg/kg"
+                    "child_detail_desc": "10-15 mg/kg IVPB LD \nMay give 20 mg/kg\nMAX rate 50mg/min"
                   }
                 ]
               },
@@ -860,7 +859,7 @@
                       {
                         "child_id" : 8114,
                         "child_detail_name"  : "Carboprost",
-                        "child_detail_desc" : "0.25 mg IM q15 - 90min PRN  \nmax 2 mg\n*Caution with asthma*"
+                        "child_detail_desc" : "0.25 mg IM q15 - 90min PRN  \nMAX 2 mg\n*Caution with asthma*"
                       },
                       {
                         "child_id" : 8115,
@@ -887,7 +886,7 @@
                       {
                         "child_id" : 8123,
                         "child_detail_name"  : "Labetalol",
-                        "child_detail_desc" : "20 mg IVP\nrepeat dose 40 mg\nrepeat dose 80 mg\n*Avoid with asthmatics*"
+                        "child_detail_desc" : "20 mg IVP\nRepeat dose 40 mg\nRepeat dose 80 mg\n*Avoid with asthmatics*"
                       },
                       {
                         "child_id" : 8124,
@@ -1864,12 +1863,12 @@
           {
             "child_id": 1711, 
             "child_name": "PCC (Kcentra)",
-            "child_desc": "* Factors 2, 7, 9, 10 * \n1000-1500 units (follow hospital MTP protocol) \nFor trauma patient with bleed associated with anticoagulation (warfarin) see Antidote section for dosing"
+            "child_desc": "* Factors 2, 7, 9, 10 *\n 25units/kg for coagulopathy due to trauma (NOT warfarin)\n\nFor trauma patient with bleed associated with anticoagulation (warfarin) see Antidote section for dosing"
           },
           {
             "child_id": 1712, 
             "child_name"  : "Tranexamic Acid (TXA)",
-            "child_desc": "1 g IVPB over 10 min then 1 g IVPB over 8 hours"
+            "child_desc": "If injury within 3 hours\n1 g IVPB over 10 min then 1 g IVPB over 8 hours"
           },
           {
             "child_id": 1713, 
@@ -1879,7 +1878,7 @@
           {
             "child_id": 1714, 
             "child_name"  : "Phenytoin",
-            "child_desc": "20 mg/kg IVPB not to exceed 50 mcg/min"
+            "child_desc": "20 mg/kg IVPB not to exceed 50 mg/min"
           },
           {
             "child_id": 1715, 
