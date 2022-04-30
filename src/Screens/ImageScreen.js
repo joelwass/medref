@@ -1,12 +1,12 @@
-import { StatusBar } from 'expo-status-bar'
 import React from 'react'
-import { StyleSheet, Text, View, Button, ImageBackground } from 'react-native'
+import { StyleSheet, View, ImageBackground } from 'react-native'
 
 const getImage = (image) => {
   switch (image) {
     case 'PP':
       return require('../assets/screenimages/pleateau.png')
     case 'Fi':
+    case 'Fi02Peep':
       return require('../assets/screenimages/FiO2Peep.png')
     case 'DOP':
       return require('../assets/screenimages/DOP.png')
@@ -16,8 +16,6 @@ const getImage = (image) => {
       return require('../assets/screenimages/Male.png')
     case 'AT':
       return require('../assets/screenimages/AT.png')
-    case 'AT':
-      return require('../assets/screenimages/ibw.png')
     default:
       return require('../assets/screenimages/nothing-found.png')
   }

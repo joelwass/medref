@@ -5,7 +5,7 @@ const LoadingIndicator = ({ isLoading }) => {
   const [animating, setAnimating] = useState(true)
 
   const closeActivityIndicator = () => {
-    setTimeout(() => setAnimating(false), 500)
+    setTimeout(() => setAnimating(false), 100)
   }
 
   useEffect(() => {

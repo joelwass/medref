@@ -30,6 +30,8 @@ const getImage = (image) => {
       return require('../assets/screenimages/HeaderIBW.png')
     case 'FooterIBW':
       return require('../assets/screenimages/FooterIBW.png')
+    case 'Fi02Peep':
+      return require('../assets/screenimages/FiO2Peep.png')
     default:
       return require('../assets/screenimages/nothing-found.png')
   }
@@ -161,9 +163,7 @@ export default function SubChildLayoutList (props) {
     })
 
     setSelectedIdArr(rawArr)
-    setTimeout(() => {
-      setLoading(false)
-    }, 1000)
+    setLoading(false)
   }, [props])
 
   const renderItem = ({ item, index }) => {
