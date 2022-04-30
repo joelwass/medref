@@ -6,28 +6,20 @@ const getImage = (image) => {
   switch (image) {
     case 'PP':
       return require('../assets/screenimages/pleateau.png')
-      break
     case 'Fi':
-      return require('../assets/screenimages/nothing-found.png')
-      break
+      return require('../assets/screenimages/FiO2Peep.png')
     case 'DOP':
       return require('../assets/screenimages/DOP.png')
-      break
     case 'Female':
       return require('../assets/screenimages/Female.png')
-      break
     case 'Male':
       return require('../assets/screenimages/Male.png')
-      break
     case 'AT':
       return require('../assets/screenimages/AT.png')
-      break
     case 'AT':
       return require('../assets/screenimages/ibw.png')
-      break
     default:
       return require('../assets/screenimages/nothing-found.png')
-      break
   }
 }
 
@@ -36,7 +28,7 @@ export default function ImageScreen ({ navigation, props, route }) {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={getImage(route.params.value)} style={{ height: '90%', width: '100%', marginTop: 30 }} />
+      <ImageBackground source={getImage(route.params.value)} style={{ height: '80%', width: '100%', marginTop: 30 }} />
     </View>
 
   )

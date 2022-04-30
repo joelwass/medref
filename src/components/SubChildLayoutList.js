@@ -14,94 +14,84 @@ const getImage = (image) => {
   switch (image) {
     case 'PP':
       return require('../assets/buttonimages/PP.png')
-      break
     case 'Fi':
       return require('../assets/buttonimages/Fi.png')
-      break
     case 'DOP':
       return require('../assets/screenimages/DOP.png')
-      break
     case 'Female':
       return require('../assets/buttonimages/FemaleBtn.png')
-      break
     case 'Male':
       return require('../assets/buttonimages/MaleBtn.png')
-      break
     case 'AT':
       return require('../assets/screenimages/AT.png')
-      break
     case 'IBW':
       return require('../assets/screenimages/ibw.png')
-      break
     case 'HeaderIBW':
       return require('../assets/screenimages/HeaderIBW.png')
-      break
     case 'FooterIBW':
       return require('../assets/screenimages/FooterIBW.png')
-      break
     default:
       return require('../assets/screenimages/nothing-found.png')
-      break
   }
 }
 
 const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick }) => {
   return (
-  <View style={{ flex: 1, alignItems: 'center' }}>
-    <TouchableOpacity onPress={onPress} style={[styles.SubmitButtonStyle, backgroundColor = backgroundColor]}>
-      <Text style={[styles.title, textColor]}>{item.child_name}</Text>
-      <MaterialIcons name={item.vis ? 'keyboard-arrow-up' : 'keyboard-arrow-down'} size={30} style={{ color: 'white' }} />
-    </TouchableOpacity>
+    <View style={{ flex: 1, alignItems: 'center' }}>
+      <TouchableOpacity onPress={onPress} style={[styles.SubmitButtonStyle, backgroundColor = backgroundColor]}>
+        <Text style={[styles.title, textColor]}>{item.child_name}</Text>
+        <MaterialIcons name={item.vis ? 'keyboard-arrow-up' : 'keyboard-arrow-down'} size={30} style={{ color: 'white' }} />
+      </TouchableOpacity>
 
-    {item.vis &&
-      <>
-        <View style={styles.TextComponentStyle}>
-          {item.child_desc && (
-            <Text style={[styles.TextComponentChildStyle, { fontSize: 20 }]}>
-              {item.child_desc}
-              {item.child_desc1 && <Text style={{ fontSize: 15 }}>{'\n'}{item.child_desc1}</Text>}
-            </Text>
-          )}
-          {item.child_bullets && (
-            <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: 5, marginTop: 10 }}>
-              {item.child_bullets.map((bullet, idx) => (
-                <View style={{ flexDirection: 'column', justifyContent: 'left' }} key={idx}>
-                  <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'left' }}>{bullet.title}</Text>
-                  <Text style={{ fontSize: 20, textAlign: 'left' }}>{bullet.subtext}</Text>
-                </View>
-              ))}
-            </View>
-          )}  
-          {image !== null &&
-            <TouchableOpacity onPress={onImageClick}>
-              <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <ImageBackground source={getImage(image)} style={{ height: 80, width: 85 }} />
+      {item.vis &&
+        <>
+          <View style={styles.TextComponentStyle}>
+            {item.child_desc && (
+              <Text style={[styles.TextComponentChildStyle, { fontSize: 20 }]}>
+                {item.child_desc}
+                {item.child_desc1 && <Text style={{ fontSize: 15 }}>{'\n'}{item.child_desc1}</Text>}
+              </Text>
+            )}
+            {item.child_bullets && (
+              <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: 5, marginTop: 10 }}>
+                {item.child_bullets.map((bullet, idx) => (
+                  <View style={{ flexDirection: 'column', justifyContent: 'left' }} key={idx}>
+                    <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'left' }}>{bullet.title}</Text>
+                    <Text style={{ fontSize: 20, textAlign: 'left' }}>{bullet.subtext}</Text>
+                  </View>
+                ))}
               </View>
-            </TouchableOpacity>
-          }
-        </View>
-        {item.subchildren && item.subchildren.map((subchild, idx) => (
-          <View style={styles.TextComponentStyle} key={idx}>
-            <Text 
-              style={{ 
-                fontWeight: 'bold', 
-                textAlign: 'center', 
-                fontSize: 23,
-                textDecorationLine: 'underline'
-              }}
-            >
-              {subchild.child_name}
-            </Text>
-            <Text style={[styles.TextComponentChildStyle, { fontSize: 20 }]}>
-              {subchild.child_desc}
-            </Text>
+            )}  
+            {image !== null &&
+              <TouchableOpacity onPress={onImageClick}>
+                <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                  <ImageBackground source={getImage(image)} style={{ height: 80, width: 85 }} />
+                </View>
+              </TouchableOpacity>
+            }
           </View>
-        ))}    
-      </>
-    }
-  </View>
-)
-        }
+          {item.subchildren && item.subchildren.map((subchild, idx) => (
+            <View style={styles.TextComponentStyle} key={idx}>
+              <Text 
+                style={{ 
+                  fontWeight: 'bold', 
+                  textAlign: 'center', 
+                  fontSize: 23,
+                  textDecorationLine: 'underline'
+                }}
+              >
+                {subchild.child_name}
+              </Text>
+              <Text style={[styles.TextComponentChildStyle, { fontSize: 20 }]}>
+                {subchild.child_desc}
+              </Text>
+            </View>
+          ))}    
+        </>
+      }
+    </View>
+  )
+}
 
 const DisplayImage = ({ image }) => {
   const { width, height } = Dimensions.get('window')
@@ -279,11 +269,6 @@ export default function SubChildLayoutList (props) {
     } else if (item === 2) {
       navigation.navigate('ImageScreen', { value: 'Female' })
     }
-  }
-
-  const callParentFunction = (value) => {
-    props.showSubDetails(value);
-    // this function is not called here.
   }
 
   const addToSelectedList = (child_id) => {

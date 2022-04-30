@@ -304,8 +304,7 @@
                         }
                       ],
                       "button_img" : "Fi"
-                  }
-                  ,                    
+                  },                    
                   {
                       "child_id": 216 , 
                       "child_name" : "Plateau Pressure",
@@ -385,7 +384,12 @@
                "section_name1" : "and",
                "section_name2" : "Peep Chart",
                "multiple_lines" : true,                
-               "children" :[]
+               "children" :[
+                  {
+                    "child_id": 231,                                          
+                    "display_img": "Fi02Peep" 
+                  }
+               ]
           },
           {
                "section_id": 24, 
