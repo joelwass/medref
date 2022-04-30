@@ -114,10 +114,6 @@ export default function SettingsScreen ({ route, navigation }) {
     }
   }
 
-  const clearAsyncStorage = async () => {
-    AsyncStorage.clear()
-  }
-
   const minimumNumberofSelectionAlert = (title, message) =>
     Alert.alert(
       title,

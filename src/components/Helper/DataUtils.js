@@ -131,6 +131,11 @@ class DataUtils {
         itemArrTemp.push(
           ob
         )
+      } else {
+        // If the count isn't 9, we fucked up! we need to clear local storage and reset to default
+        // otherwise the user will see some random number of hexagons on the home screen.
+        AsyncStorage.clear()
+        return this.computeData(this.getDefaultItems())
       }
       return itemArrTemp
     } catch (e) {

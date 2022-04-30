@@ -113,17 +113,6 @@ export default function PinnedItemsScreen ({ route, navigation }) {
     }
   }
 
-  const clearAsyncStorage = async () => {
-    AsyncStorage.clear()
-  }
-
-  const onClear = () => {
-    clearAsyncStorage().then(
-      (result) => {
-        setClearItem(false)
-      }
-    )
-  }
   const AlertMessage = (title, message) => {
     Alert.alert(
       title,

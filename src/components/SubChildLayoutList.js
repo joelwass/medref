@@ -45,7 +45,7 @@ const getImage = (image) => {
   }
 }
 
-const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick, display_img }) => {
+const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick }) => {
   return (
   <View style={{ flex: 1, alignItems: 'center' }}>
     <TouchableOpacity onPress={onPress} style={[styles.SubmitButtonStyle, backgroundColor = backgroundColor]}>
@@ -75,7 +75,7 @@ const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick, 
           {image !== null &&
             <TouchableOpacity onPress={onImageClick}>
               <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                <ImageBackground source={getImage(image)} style={{ height: 70, width: 80 }} />
+                <ImageBackground source={getImage(image)} style={{ height: 80, width: 85 }} />
               </View>
             </TouchableOpacity>
           }
@@ -103,27 +103,29 @@ const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick, 
 )
         }
 
-const DisplayImage = ({ image, backgroundColor }) => (
-  <View style={styles.imageView}>
-    <ImageBackground source={getImage(image)} style={styles.imageBackgroundView} resizeMode='contain' />
-  </View>
-)
+const DisplayImage = ({ image }) => {
+  const { width, height } = Dimensions.get('window')
+  return (
+    <View style={styles.imageView }>
+      <ImageBackground source={getImage(image)} style={{ width, height: height * .65 }} resizeMode='contain' />
+    </View>
+  )
+}
 
-const DisplayMaleFemaleImage = ({ image, backgroundColor, onFImageClick, onMImageClick, dataArray, hexagonSize, onUserClick }) => (
+const DisplayMaleFemaleImage = ({ dataArray, hexagonSize, onUserClick, viewHeight }) => (
+  <View style={{ height: viewHeight, display: 'flex', width: width, backgroundColor: '#fff' }}>
 
-  <View style={{ height: height, width: width, backgroundColor: '#fff' }}>
-
-    <View style={{ flex: 0.15, backgroundColor: '#f5d491', margin: 5, borderRadius: 20, alignItems: 'center', justifyContent: 'space-around' }}>
+    <View style={{ flex: 0.26, backgroundColor: '#f5d491', margin: 5, borderRadius: 20, alignItems: 'center', justifyContent: 'space-around' }}>
       <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#fff' }}>Ideal Body Weight ( IBW in Kg )</Text>
       <Text style={{ fontSize: 15, color: '#fff' }}>Male : 50 + 2.3 * (ht in inches - 60)</Text>
       <Text style={{ fontSize: 15, color: '#fff' }}>Female : 45.5 + 2.3 * (ht in inches - 60)</Text>
     </View>
 
-    <View style={{ flex: 0.3, backgroundColor: '#fff' }}>
+    <View style={{ flex: 0.42, backgroundColor: '#fff' }}>
       <MultipleHexagons size={hexagonSize} nameArray={dataArray} onPressHexagon={onUserClick} origin={{ x: 15, y: 15 }} spacing={1} />
     </View>
 
-    <View style={{ flex: 0.20, backgroundColor: '#f5d491', margin: 5, borderRadius: 20, alignItems: 'center', justifyContent: 'space-around' }}>
+    <View style={{ flex: 0.32, backgroundColor: '#f5d491', marginTop: 5, borderRadius: 20, alignItems: 'center', justifyContent: 'space-around' }}>
       <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#fff' }}>Oxygenation titration</Text>
       <Text style={{ fontSize: 15, color: '#fff' }}>Adjust FiO2 and PEEP</Text>
       <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#fff' }}>Ventiation titration</Text>
@@ -134,10 +136,8 @@ const DisplayMaleFemaleImage = ({ image, backgroundColor, onFImageClick, onMImag
 )
 
 export default function SubChildLayoutList (props) {
-  const [selectedId, setSelectedId] = useState(null)
   const [selectedIdArr, setSelectedIdArr] = useState([])
   const [isEnabled, setIsEnabled] = useState(false)
-  const [displaySwitch, setDisplaySwitch] = useState(true)
   const [loading, setLoading] = useState(true)
 
   const navigation = useNavigation()
@@ -146,11 +146,7 @@ export default function SubChildLayoutList (props) {
 
   useEffect(() => {
     const rawArr = []
-    const tempArr = []
     let backgroundColor = ''
-
-    const arrRaw = []
-    const arrTemp = []
 
     data.map((item) => {
       if (item.id === props.selectedValue) {
@@ -228,7 +224,6 @@ export default function SubChildLayoutList (props) {
         return (
           <DisplayImage
             image={image}
-            backgroundColor={{ backgroundColor }}
           />
         )
       } else if (item.display_img === 'MaleFemale') {
@@ -252,15 +247,13 @@ export default function SubChildLayoutList (props) {
             onUserClick: 'onUserClick("Female")'
           }
         ]
-        const viewHeight = height - 80
-        const hexagonSize = { x: 15, y: 15 }
+        const viewHeight = height * .6
+        const hexagonSize = { x: 14, y: 14 }
         return (
           <DisplayMaleFemaleImage
             image={image}
             backgroundColor={{ backgroundColor }}
-            height={{ viewHeight }}
-            onMImageClick={() => onMImageClick('Male')}
-            onFImageClick={() => onFImageClick('Female')}
+            viewHeight={viewHeight}
             onUserClick={onUserClick}
             dataArray={arr}
             hexagonSize={hexagonSize}
@@ -270,7 +263,6 @@ export default function SubChildLayoutList (props) {
         return (
           <DisplayImage
             image={image}
-            backgroundColor={{ backgroundColor }}
           />
         )
       }
@@ -278,14 +270,6 @@ export default function SubChildLayoutList (props) {
   }
 
   const onImageClick = (item) => {
-    navigation.navigate('ImageScreen', { value: item })
-  }
-
-  const onMImageClick = (item) => {
-    navigation.navigate('ImageScreen', { value: item })
-  }
-
-  const onFImageClick = (item) => {
     navigation.navigate('ImageScreen', { value: item })
   }
 
@@ -304,7 +288,6 @@ export default function SubChildLayoutList (props) {
 
   const addToSelectedList = (child_id) => {
     const selectedArray = [...selectedIdArr]
-    let obj
     let result = {}
     result = selectedIdArr.find(obj => obj.child_id === child_id)
     result.vis = !result.vis
@@ -395,7 +378,6 @@ const styles = StyleSheet.create({
     marginTop: 0
   },
   imageBackgroundView: {
-    height: Dimensions.get('window').height,
     width: Dimensions.get('window').width
   },
   title: {
