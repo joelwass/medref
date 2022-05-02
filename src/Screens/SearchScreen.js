@@ -14,39 +14,42 @@ import {
 import { MaterialIcons } from '@expo/vector-icons'
 import searchData from '../data/searchData'
 
+const searchDebounce = () => {
+  let timer = undefined
+  return async function(searchText) {
+    if (!searchText) {
+      return []
+    }
+    if (timer !== undefined) {
+      clearTimeout(timer)
+    }
+    const promise = new Promise((resolve) => {
+      timer = setTimeout(() => {
+        const results = searchData(searchText)
+        resolve(results)
+      }, 2000)
+    })
+    return promise
+  }
+}
+
+const debounce = searchDebounce()
+
+const kDefaultSearchResults = { loading: false, results: [] }
 
 export default function SearchScreen ({ route, navigation }) {
-  const [searchResults, setSearchResults] = useState([])
-  const [resultsLoading, setResultsLoading] = useState(false)
+  const [searchState, setSearchState] = useState(kDefaultSearchResults)
 
-  const searchDebounce = () => {
-    let timer = undefined
-    return function(searchText) {
-      if (!searchText) {
-        setResultsLoading(false)
-        return []
-      }
-      if (timer !== undefined) {
-        clearTimeout(timer)
-      }
-      timer = setTimeout(() => {
-        setResultsLoading(false)
-        const results = searchData(searchText)
-        setSearchResults(results)
-      }, 2000)
-    }
-  }
-
-  const debounce = searchDebounce()
-
-  const onSearchInputChanged = (newSearchText) => {
+  const onSearchInputChanged = async (newSearchText) => {
     if (!newSearchText) {
-      setResultsLoading(false)
-      setSearchResults([])
+      setSearchState(kDefaultSearchResults)
       return
     }
-    setResultsLoading(true)
-    debounce(newSearchText)
+    if (!searchState.loading) {
+      setSearchState({ loading: true, results: [] })
+    }
+    const results = await debounce(newSearchText)
+    setSearchState({ results, loading: false })
   }
 
   const showSubDetails = (node) => {
@@ -193,6 +196,7 @@ export default function SearchScreen ({ route, navigation }) {
     }
   }
 
+  console.log('rendering', searchState)
   return (
     <SafeAreaView style={styles.container}>
       <TextInput
@@ -213,9 +217,9 @@ export default function SearchScreen ({ route, navigation }) {
         onChangeText={onSearchInputChanged}
       />
       
-      {resultsLoading && (
+      {searchState.loading && (
         <ActivityIndicator
-          animating={resultsLoading}
+          animating={true}
           color='#96c9dc'
           size='large'
           style={{
@@ -227,10 +231,10 @@ export default function SearchScreen ({ route, navigation }) {
         />
       )}
 
-      {searchResults && searchResults.length > 0 && (
+      {searchState.results.length > 0 && !searchState.loading && (
         <View style={[styles.container, { flexDirection: 'column '}]}>
           <FlatList
-            data={searchResults}
+            data={searchState.results}
             renderItem={({ item, index }) => renderNodes({ item, index })}
             keyExtractor={(item) => item.id.toString()}
             ListEmptyComponent={EmptyList}

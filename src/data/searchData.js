@@ -38,9 +38,13 @@ export default (s) => {
             id: sectionNode.section_id
           }
           if (sectionNode.multiple_lines) {
-            let tempText = sectionNode.section_name1 ? sectionNode.section_name1 : ''
-            let tempText1 = sectionNode.section_name2 ? sectionNode.section_name2 : ''
-            sectionNodeCopy.section_name = sectionNode.section_name + ' ' + tempText + ' ' + tempText1
+            if (sectionNode.full_section_name) {
+              sectionNodeCopy.section_name = sectionNode.full_section_name
+            } else {
+              let tempText = sectionNode.section_name1 ? sectionNode.section_name1 : ''
+              let tempText1 = sectionNode.section_name2 ? sectionNode.section_name2 : ''
+              sectionNodeCopy.section_name = sectionNode.section_name + ' ' + tempText + ' ' + tempText1
+            }
           }
           delete sectionNodeCopy.children
           result.push(sectionNodeCopy)
