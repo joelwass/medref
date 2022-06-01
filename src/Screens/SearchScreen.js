@@ -65,7 +65,7 @@ export default function SearchScreen ({ route, navigation }) {
   }
 
   const expandItem = (value) => {
-    const updatedArr = searchResults.map((item) => {
+    const updatedArr = searchState.results.map((item) => {
       if (item.id === value) {
         return {
           ...item,
@@ -74,9 +74,7 @@ export default function SearchScreen ({ route, navigation }) {
       }
       return item
     })
-    setSearchResults(
-      updatedArr
-    )
+    setSearchState({ loading: false, results: updatedArr })
   }
 
   const ExpandedContent = ({ child, sectionColor, showName }) => (
