@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView } from 'react-native'
 import * as Linking from 'expo-linking'
 
 export default function AboutScreen ({ navigation, props, route }) {
@@ -20,29 +20,31 @@ export default function AboutScreen ({ navigation, props, route }) {
 
   return (
     <View style={styles.container}>
-      <Text style={{ textAlign: 'center', fontSize: 30, textDecorationLine: 'underline', margin: 10 }}>
-        About
-      </Text>
+      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+        <Text style={{ textAlign: 'center', fontSize: 30, textDecorationLine: 'underline', margin: 10 }}>
+          About
+        </Text>
 
-      <Text style={{ textAlign: 'center', fontSize: 16, margin: 10 }}>
-        Bedside Acute care Medication App (BAMA) was developed by Benjamin Mati, MD and Florence Jung, PharmD.
-      </Text>
+        <Text style={{ textAlign: 'center', fontSize: 16, margin: 10 }}>
+          Bedside Acute care Medication App (BAMA) was developed by Benjamin Mati, MD and Florence Jung, PharmD.
+        </Text>
 
-      <Text style={{ textAlign: 'center', fontSize: 16, margin: 10 }}>
-        Florence lives in the beautiful coastal town of Ventura, California where she started work as a critical care pharmacist.
-        She is passionate about the world of pharmacy and passing on the knowledge to next generation of clinicians.  Otherwise, being a mother to two sons and a wife is not that bad either ;)
-      </Text>
+        <Text style={{ textAlign: 'center', fontSize: 16, margin: 10 }}>
+          Florence lives in the beautiful coastal town of Ventura, California where she started work as a critical care pharmacist.
+          She is passionate about the world of pharmacy and passing on the knowledge to next generation of clinicians.  Otherwise, being a mother to two sons and a wife is not that bad either ;)
+        </Text>
 
-      <Text style={{ textAlign: 'center', fontSize: 16, margin: 10 }}>
-        Before graduating from Jefferson Medical College, Benjamin Mati studied anthropology at New York University and lived and traveled in Europe,
-        Asia and South and Central America. He completed his family medicine residency followed by an acute care and point of care ultrasound fellowship at Ventura County Medical Center (VCMC). He has been working in the emergency department and intensive care unit at VCMC since. While not working, he enjoys surfing, rock climbing, yoga, reading and cooking.
-      </Text>
+        <Text style={{ textAlign: 'center', fontSize: 16, margin: 10 }}>
+          Before graduating from Jefferson Medical College, Benjamin Mati studied anthropology at New York University and lived and traveled in Europe,
+          Asia and South and Central America. He completed his family medicine residency followed by an acute care and point of care ultrasound fellowship at Ventura County Medical Center (VCMC). He has been working in the emergency department and intensive care unit at VCMC since. While not working, he enjoys surfing, rock climbing, yoga, reading and cooking.
+        </Text>
 
-      <Text style={{ textAlign: 'center', fontSize: 16, margin: 10, color: 'blue', textDecorationLine: 'underline' }} onPress={_goToAboutPage}>
-        https://www.drbenmati.com/bedside-acute-care-medication-reference
-      </Text>
+        <Text style={{ textAlign: 'center', fontSize: 16, margin: 10, color: 'blue', textDecorationLine: 'underline' }} onPress={_goToAboutPage}>
+          https://www.drbenmati.com/bedside-acute-care-medication-reference
+        </Text>
 
-      <LogoImage />
+        <LogoImage />
+      </ScrollView>
     </View>
   )
 }
@@ -57,6 +59,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginLeft: 20,
     marginRight: 10
+  },
+  scrollView: {
+    marginHorizontal: 20
   },
   SubmitButtonStyle: {
     marginTop: 10,
