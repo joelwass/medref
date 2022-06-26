@@ -1,22 +1,22 @@
 import React, { useState } from 'react'
-import { 
-  View, 
-  StyleSheet, 
-  TextInput, 
+import {
+  View,
+  StyleSheet,
+  TextInput,
   TouchableOpacity,
-  Text, 
-  ActivityIndicator, 
+  Text,
+  ActivityIndicator,
   TouchableWithoutFeedback,
-  SafeAreaView, 
-  Dimensions, 
-  FlatList 
+  SafeAreaView,
+  Dimensions,
+  FlatList
 } from 'react-native'
 import { MaterialIcons } from '@expo/vector-icons'
 import searchData from '../data/searchData'
 
 const searchDebounce = () => {
-  let timer = undefined
-  return async function(searchText) {
+  let timer
+  return async function (searchText) {
     if (!searchText) {
       return []
     }
@@ -59,7 +59,7 @@ export default function SearchScreen ({ route, navigation }) {
       navigation.navigate('Details', { value: node.id })
       return
     }
-    // or navigate to sub details screen 
+    // or navigate to sub details screen
     const parentId = parseInt(node.id.toString().substring(0, 1))
     navigation.navigate('SubDetails', { value: parentId, subvalue: node.id })
   }
@@ -102,7 +102,7 @@ export default function SearchScreen ({ route, navigation }) {
             </View>
           ))}
         </View>
-      )}      
+      )}
 
       {child.special_instruction_footer && (
         <ItemDetailFooter footerText={child.special_instruction_footer} />
@@ -139,13 +139,13 @@ export default function SearchScreen ({ route, navigation }) {
       </View>
     </TouchableWithoutFeedback>
   )
-  
+
   const ItemDetailHeader = ({ headerText }) => (
-    <View style={{paddingLeft: 16, paddingRight: 8}}><Text>{headerText}</Text></View>
+    <View style={{ paddingLeft: 16, paddingRight: 8 }}><Text>{headerText}</Text></View>
   )
-  
+
   const ItemDetailFooter = ({ footerText }) => (
-    <View style={{paddingLeft: 16, paddingRight: 8}}><Text>{footerText}</Text></View>
+    <View style={{ paddingLeft: 16, paddingRight: 8 }}><Text>{footerText}</Text></View>
   )
 
   const renderNodes = ({ item, index }) => {
@@ -159,7 +159,7 @@ export default function SearchScreen ({ route, navigation }) {
       if (item.children) {
         expandableContents = item.children.map((child, index) => {
           return (
-            <ExpandedContent child={child} key={(child.child_id + index).toString()} sectionColor={backgroundColor} showName={true} />
+            <ExpandedContent child={child} key={(child.child_id + index).toString()} sectionColor={backgroundColor} showName />
           )
         })
       } else {
@@ -194,15 +194,14 @@ export default function SearchScreen ({ route, navigation }) {
     }
   }
 
-  console.log('rendering', searchState)
   return (
     <SafeAreaView style={styles.container}>
       <TextInput
         editable
-        style={{ 
+        style={{
           width: '100%',
-          borderRadius: 5, 
-          height: 70, 
+          borderRadius: 5,
+          height: 70,
           backgroundColor: 'white',
           paddingRight: 8,
           fontSize: 20,
@@ -211,13 +210,13 @@ export default function SearchScreen ({ route, navigation }) {
         placeholder='Search'
         maxLength={40}
         autoCorrect={false}
-        autoFocus={true}
+        autoFocus
         onChangeText={onSearchInputChanged}
       />
-      
+
       {searchState.loading && (
         <ActivityIndicator
-          animating={true}
+          animating
           color='#96c9dc'
           size='large'
           style={{
@@ -230,7 +229,7 @@ export default function SearchScreen ({ route, navigation }) {
       )}
 
       {searchState.results.length > 0 && !searchState.loading && (
-        <View style={[styles.container, { flexDirection: 'column '}]}>
+        <View style={[styles.container, { flexDirection: 'column ' }]}>
           <FlatList
             data={searchState.results}
             renderItem={({ item, index }) => renderNodes({ item, index })}

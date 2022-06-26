@@ -36,13 +36,15 @@ export default function SettingsScreen ({ route, navigation }) {
     setSettings(settingList)
     getData()
       .then((result) => {
-        result !== null ? (
+        result !== null
+          ? (
 
-          setIds(result)
-        ) : (
+              setIds(result)
+            )
+          : (
 
-          setIds([])
-        )
+              setIds([])
+            )
       })
   }, [navigation, hasUnsavedChanges])
 

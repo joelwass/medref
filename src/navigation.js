@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler'
 import * as React from 'react'
-import {TouchableOpacity, View, Text} from 'react-native'
+import { TouchableOpacity, View, Text } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import { createStackNavigator, HeaderBackButton } from '@react-navigation/stack'
@@ -72,31 +72,31 @@ function HomeStack () {
   )
 }
 
-function MyTabBar({ state, descriptors, navigation }) {
+function MyTabBar ({ state, descriptors, navigation }) {
   return (
     <View style={{ flexDirection: 'row' }}>
       {state.routes.map((route, index) => {
-        const { options } = descriptors[route.key];
+        const { options } = descriptors[route.key]
 
-        const isFocused = state.index === index;
+        const isFocused = state.index === index
 
         const onPress = () => {
           const event = navigation.emit({
             type: 'tabPress',
             target: route.key,
-            canPreventDefault: true,
-          });
+            canPreventDefault: true
+          })
 
           if (!isFocused && !event.defaultPrevented) {
             // The `merge: true` option makes sure that the params inside the tab screen are preserved
-            navigation.navigate({ name: route.name, merge: true });
+            navigation.navigate({ name: route.name, merge: true })
           }
-        };
+        }
 
         return (
           <TouchableOpacity
             key={index}
-            accessibilityRole="button"
+            accessibilityRole='button'
             accessibilityState={isFocused ? { selected: true } : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
             testID={options.tabBarTestID}
@@ -111,10 +111,10 @@ function MyTabBar({ state, descriptors, navigation }) {
               style={{ marginTop: 10, height: 'auto' }}
             />
           </TouchableOpacity>
-        );
+        )
       })}
     </View>
-  );
+  )
 }
 
 export default function NavigationComponent () {
@@ -122,13 +122,13 @@ export default function NavigationComponent () {
     <SafeAreaProvider>
       <NavigationContainer>
         <Tab.Navigator
-          style={{flex: 1}}
+          style={{ flex: 1 }}
           initialRouteName='Home'
           tabBarOptions={{
-            activeBackgroundColor: 'black',
+            activeBackgroundColor: 'black'
           }}
           screenOptions={{
-            tabBarStyle:{ height: '100'},
+            tabBarStyle: { height: '100' }
           }}
           tabBar={props => <MyTabBar {...props} />}
         >

@@ -63,21 +63,20 @@ const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick }
                   </View>
                 ))}
               </View>
-            )}  
+            )}
             {image !== null &&
               <TouchableOpacity onPress={onImageClick}>
                 <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                   <ImageBackground source={getImage(image)} style={{ height: 80, width: 85 }} />
                 </View>
-              </TouchableOpacity>
-            }
+              </TouchableOpacity>}
           </View>
           {item.subchildren && item.subchildren.map((subchild, idx) => (
             <View style={styles.TextComponentStyle} key={idx}>
-              <Text 
-                style={{ 
-                  fontWeight: 'bold', 
-                  textAlign: 'center', 
+              <Text
+                style={{
+                  fontWeight: 'bold',
+                  textAlign: 'center',
                   fontSize: 23,
                   textDecorationLine: 'underline'
                 }}
@@ -88,9 +87,8 @@ const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick }
                 {subchild.child_desc}
               </Text>
             </View>
-          ))}    
-        </>
-      }
+          ))}
+        </>}
     </View>
   )
 }
@@ -98,14 +96,14 @@ const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick }
 const DisplayImage = ({ image }) => {
   const { width, height } = Dimensions.get('window')
   return (
-    <View style={styles.imageView }>
-      <ImageBackground source={getImage(image)} style={{ width, height: height * .65 }} resizeMode='contain' />
+    <View style={styles.imageView}>
+      <ImageBackground source={getImage(image)} style={{ width, height: height * 0.65 }} resizeMode='contain' />
     </View>
   )
 }
 
 const DisplayMaleFemaleImage = ({ dataArray, hexagonSize, onUserClick, viewHeight }) => (
-  <View style={{ height: viewHeight, display: 'flex', width: width, backgroundColor: '#fff' }}>
+  <View style={{ height: viewHeight, display: 'flex', width, backgroundColor: '#fff' }}>
 
     <View style={{ flex: 0.26, backgroundColor: '#f5d491', margin: 5, borderRadius: 20, alignItems: 'center', justifyContent: 'space-around' }}>
       <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#fff' }}>Ideal Body Weight ( IBW in Kg )</Text>
@@ -142,7 +140,7 @@ export default function SubChildLayoutList (props) {
 
     data.map((item) => {
       if (item.id === props.selectedValue) {
-        let secDet = item.section.find(obj => obj.section_id === props.subSelectedValue)
+        const secDet = item.section.find(obj => obj.section_id === props.subSelectedValue)
         backgroundColor = secDet.section_hexvalue
         secDet.children.map((item) => {
           const obj = {}
@@ -191,7 +189,7 @@ export default function SubChildLayoutList (props) {
               />
             </View>
           </View>
-          { item.child_warning && (
+          {item.child_warning && (
             <View style={{ height: 30, padding: 5, paddingTop: 10, width: '90%', height: 'auto' }}>
               <Text style={{ fontSize: 18 }}>{item.child_warning}</Text>
             </View>
@@ -237,7 +235,7 @@ export default function SubChildLayoutList (props) {
             onUserClick: 'onUserClick("Female")'
           }
         ]
-        const viewHeight = height * .6
+        const viewHeight = height * 0.6
         const hexagonSize = { x: 14, y: 14 }
         return (
           <DisplayMaleFemaleImage

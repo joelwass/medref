@@ -32,14 +32,14 @@ export default class TestScreen2 extends Component {
                 <Svg>
                   <G>
                     <Rect
-                            x={15}
-                            y={15}
-                            width={80}
-                            height={70}
-                            strokeWidth={2}
-                            stroke='#9b59b6'
-                            fill='#3498db'
-                          />
+                      x={15}
+                      y={15}
+                      width={80}
+                      height={70}
+                      strokeWidth={2}
+                      stroke='#9b59b6'
+                      fill='#3498db'
+                    />
                   </G>
                 </Svg>
               </View>

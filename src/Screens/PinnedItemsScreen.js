@@ -25,11 +25,13 @@ export default function PinnedItemsScreen ({ route, navigation }) {
 
     getCachedPinnedTopics()
       .then((result) => {
-        result !== null ? (
-          setIds(result)
-        ) : (
-          setIds([])
-        )
+        result !== null
+          ? (
+              setIds(result)
+            )
+          : (
+              setIds([])
+            )
       })
   }, [navigation, hasUnsavedChanges])
 

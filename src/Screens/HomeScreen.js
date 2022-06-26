@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import {StyleSheet} from 'react-native'
+import { StyleSheet } from 'react-native'
 import HomeLayout from '../Components/HomeLayout'
 import DataUtils from '../Components/Helper/DataUtils'
-import {SafeAreaView} from 'react-native-safe-area-context'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function HomeScreen ({ navigation, route }) {
   const hexagonSize = { x: 15, y: 15 }
@@ -56,9 +56,9 @@ export default function HomeScreen ({ navigation, route }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
-    justifyContent:'center',
-    alignItems :'center',
-    paddingTop: 0,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 0
   }
 })

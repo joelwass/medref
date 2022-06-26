@@ -5,13 +5,13 @@ import { MaterialIcons } from '@expo/vector-icons'
 import data from '../data/data.json'
 
 /**
- * 
+ *
  * sublayout list will go to render all the sections within a top level node
- * within each section, if there are children and there is NO section name 
+ * within each section, if there are children and there is NO section name
  * then we make an array (selectedChildArr) of all the children for that section
  * if there is no section_name then children / children of children will all be rendered WITHIN this page
  * meaning subdetails page will never be nav'd to even if we have a section with children and sub children!
- * 
+ *
  * otherwise, if we do have a section_name, then just push the section object onto the list (selected Id Arr)
  * and clicking on one of the list items will actually navigate you to the sub details page !!!
  */
@@ -41,11 +41,11 @@ const ItemDetailsDesc = ({ childDetailDesc, borderColor, textColor }) => (
 )
 
 const ItemDetailHeader = ({ headerText }) => (
-  <View style={{paddingLeft: 16, paddingRight: 8}}><Text>{headerText}</Text></View>
+  <View style={{ paddingLeft: 16, paddingRight: 8 }}><Text>{headerText}</Text></View>
 )
 
 const ItemDetailFooter = ({ footerText }) => (
-  <View style={{paddingLeft: 16, paddingRight: 8}}><Text>{footerText}</Text></View>
+  <View style={{ paddingLeft: 16, paddingRight: 8 }}><Text>{footerText}</Text></View>
 )
 
 export default function SubLayoutList (props) {
@@ -173,7 +173,7 @@ export default function SubLayoutList (props) {
               <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                 <Text style={{ fontSize: 20, justifyContent: 'center', marginTop: 5 }}>{row.child_detail_desc}</Text>
               </View>
-            )}    
+            )}
 
             {row.child_bullets && (
               <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: 5, marginTop: 10 }}>
@@ -184,7 +184,7 @@ export default function SubLayoutList (props) {
                   </View>
                 ))}
               </View>
-            )}      
+            )}
 
             {index === childArrLength && (
               <ItemDetailFooter footerText={item.special_instruction_footer} />

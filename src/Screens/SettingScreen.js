@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native'
 import { MaterialIcons } from '@expo/vector-icons'
 
 export default function SettingScreen ({ navigation, props, route }) {
-
   const goToAboutPage = () => {
     navigation.navigate('About')
   }
@@ -30,7 +29,7 @@ export default function SettingScreen ({ navigation, props, route }) {
   )
 
   const HR = () => (
-    <View style={{flexDirection: 'column', alignItems: 'center'}}>
+    <View style={{ flexDirection: 'column', alignItems: 'center' }}>
       <View
         style={{
           borderBottomColor: 'grey',
@@ -49,24 +48,25 @@ export default function SettingScreen ({ navigation, props, route }) {
       marginTop: -140,
       marginLeft: -55,
       zIndex: -1
-    }}>
+    }}
+    >
       <Image source={require('../assets/Logo.png')} style={{}} />
     </View>
   )
 
   return (
     <View style={styles.container}>
-      <Text style={{textAlign: 'center', fontSize: 30, textDecorationLine: 'underline', margin: 10}}>
+      <Text style={{ textAlign: 'center', fontSize: 30, textDecorationLine: 'underline', margin: 10 }}>
         Settings
       </Text>
 
-      <NavButton text={'About'} onPress={() => goToAboutPage()} />
+      <NavButton text='About' onPress={() => goToAboutPage()} />
       <HR />
-      <NavButton text={'Contact'} onPress={() => goToContactPage()} />
+      <NavButton text='Contact' onPress={() => goToContactPage()} />
       <HR />
-      <NavButton text={'Configure Pinned Topics'} onPress={() => goToPinnedItemsPage()} />
+      <NavButton text='Configure Pinned Topics' onPress={() => goToPinnedItemsPage()} />
       <HR />
-      <NavButton text={'Terms Of Use'} onPress={() => goToTermsOfUsePage()} />
+      <NavButton text='Terms Of Use' onPress={() => goToTermsOfUsePage()} />
       <LogoImage />
     </View>
   )

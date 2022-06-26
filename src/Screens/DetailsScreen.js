@@ -24,22 +24,23 @@ export default function DetailsScreen ({ navigation, route, props }) {
 
   const showSubDetails = (props) => { // navigate to sub details screen
     navigation.navigate('SubDetails', { value: selectedValue, subvalue: props })
-  } 
+  }
 
   const renderItems = () => {
     if (selectedValue === undefined) {
       return (
-        <View 
+        <View
           style={[styles.container, {
             flexDirection: 'column'
-          }]} 
+          }]}
         />
       )
     } else {
       return (
         <View style={[styles.container, {
           flexDirection: 'column'
-        }]}>
+        }]}
+        >
           <View style={{ flex: 1, backgroundColor: '#e5e5e5' }}>
             <SubLayout size={hexagonSize} flat={false} spacing={1.12} origin={{ x: 120, y: 125 }} showText={selectedValue} showDetails={showDetails} height={upperViewHeight} />
           </View>

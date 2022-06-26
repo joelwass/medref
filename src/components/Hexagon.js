@@ -5,7 +5,6 @@ import HexUtils from './HexUtils'
 import { G, Polygon } from 'react-native-svg'
 
 export default function Hexagon (props) {
-
   const [state, setState] = useState({
     pixel: undefined
   })
@@ -14,7 +13,7 @@ export default function Hexagon (props) {
     reCalculateState(props)
   }, [props])
 
-  function reCalculateState(p) {
+  function reCalculateState (p) {
     const { q, r, s, fill, stroke } = p
     const hex = new Hex(q, r, s)
     const pixel = HexUtils.hexToPixel(hex, p.layout)
@@ -29,13 +28,13 @@ export default function Hexagon (props) {
     })
   }
 
-  function goToHexagonTarget() {
+  function goToHexagonTarget () {
     props.showDetails(props.showText)
   }
 
   if (!state.pixel) {
     return (
-      <G></G>
+      <G />
     )
   }
 

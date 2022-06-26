@@ -1,15 +1,14 @@
 const data = require('./data.json')
 
 /**
- * 
- * The data is structured as 
+ *
+ * The data is structured as
  * top level nodes (id) -> sections (section_id) -> children (?) (child_id) -> children (?) (child_id) -> child bullets (?)
  * the question mark signifies it is optional.
- * 
+ *
  * If the section has a name, then the children will sub link to childDetails (i think)
  * If the section does NOT have a name, then the children will just be an expandable child
  */
-
 
 export default (s) => {
   s = s.toLowerCase()
@@ -20,7 +19,7 @@ export default (s) => {
       const topLevelNodeCopy = {
         ...topLevelNode
       }
-      delete topLevelNodeCopy.section 
+      delete topLevelNodeCopy.section
       result.push(topLevelNodeCopy)
     }
 
@@ -41,8 +40,8 @@ export default (s) => {
             if (sectionNode.full_section_name) {
               sectionNodeCopy.section_name = sectionNode.full_section_name
             } else {
-              let tempText = sectionNode.section_name1 ? sectionNode.section_name1 : ''
-              let tempText1 = sectionNode.section_name2 ? sectionNode.section_name2 : ''
+              const tempText = sectionNode.section_name1 ? sectionNode.section_name1 : ''
+              const tempText1 = sectionNode.section_name2 ? sectionNode.section_name2 : ''
               sectionNodeCopy.section_name = sectionNode.section_name + ' ' + tempText + ' ' + tempText1
             }
           }
@@ -88,11 +87,11 @@ export default (s) => {
     }
   })
 
-  // before we return the results, we want to dedupe on the Id's 
+  // before we return the results, we want to dedupe on the Id's
   const hashTableOfIds = new Map()
   const resultsDeDuped = []
   for (let i = 0; i < result.length; i++) {
-    let curr = result[i]
+    const curr = result[i]
     // If the hash table of id's already has the id, continue
     if (hashTableOfIds.has(curr.id)) continue
     else {
@@ -102,5 +101,3 @@ export default (s) => {
   }
   return resultsDeDuped
 }
-
-
