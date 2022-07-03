@@ -55,7 +55,7 @@ const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick }
               </Text>
             )}
             {item.child_bullets && (
-              <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: 5, marginTop: 10 }}>
+              <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: 10, paddingBottom: 10, marginTop: 10 }}>
                 {item.child_bullets.map((bullet, idx) => (
                   <View style={{ flexDirection: 'column', justifyContent: 'left' }} key={idx}>
                     <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'left' }}>{bullet.title}</Text>
@@ -175,8 +175,8 @@ export default function SubChildLayoutList (props) {
           {index === 0 &&
         (<View>
           <View style={styles.switchview}>
-            <View style={{ height: 30 }}>
-              <Text style={{ fontSize: 18 }}>* expand all</Text>
+            <View style={{ height: 30, paddingTop: 3 }}>
+              <Text style={{ fontSize: 20 }}>* expand all</Text>
             </View>
             <View>
               <Switch
@@ -315,7 +315,7 @@ export default function SubChildLayoutList (props) {
     } else if (!loading) {
       return (
         <SafeAreaView style={styles.container}>
-          <View style={{ flex: 1, paddingTop: 5 }}>
+          <View style={{ flex: 1 }}>
             <FlatList
               data={selectedIdArr}
               renderItem={({ item, index }) => renderItem({ item, index })}
@@ -346,9 +346,12 @@ const styles = StyleSheet.create({
     width: 300
   },
   switchview: {
-    height: 20,
-    padding: 5,
-    marginBottom: 5,
+    height: 40,
+    paddingBottom: 5,
+    paddingLeft: 5,
+    paddingRight: 5,
+    paddingTop: 15,
+    marginBottom: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start'

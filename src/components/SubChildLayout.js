@@ -59,15 +59,6 @@ class SubChildLayout extends Component {
       reqArr.splice(2, 0, reqArr.splice(oldIndex, 1)[0])
     }
     return reqArr
-    // this.setState({itemArray : reqArr});
-
-    // const requiredItemArry = [];
-    // const requiredItems = itemlist.find( obj => obj.id === this.props.selectedValue);
-    // const det = requiredItems.section;
-    // det.map( (obj) => {
-    //    requiredItemArry.push(obj);
-    // })
-    // this.setState({itemArray : requiredItemArry});
   }
 
   getPointOffset (corner, orientation, size) {
@@ -117,19 +108,19 @@ class SubChildLayout extends Component {
                   ? (
                     <Svg>
                       <Hexagon q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={item.section_hexvalue} stroke='#fff' showText={item.section_name} showDetails={() => this.callParentFunction(item.section_id)} strokeWidth='2'>
-                            <HexText x={this.state.x} y={item.multiple_lines ? this.state.y - 10 : this.state.y} fontSize='13' fill='#fff' isStroke showDetails={() => this.callParentFunction(item.section_id)}>{item.section_name}</HexText>
-                            <HexText x={this.state.x} y={this.state.y + 5} fontSize='13' fill='#fff' isStroke showDetails={() => this.callParentFunction(item.section_id)}>{item.section_name1}</HexText>
-                            <HexText x={this.state.x} y={this.state.y + 20} fontSize='13' fill='#fff' isStroke showDetails={() => this.callParentFunction(item.section_id)}>{item.section_name2}</HexText>
-                          </Hexagon>
+                        <HexText x={this.state.x} y={item.multiple_lines ? this.state.y - 10 : this.state.y} fontSize='13' fill='#fff' isStroke showDetails={() => this.callParentFunction(item.section_id)}>{item.section_name}</HexText>
+                        <HexText x={this.state.x} y={this.state.y + 5} fontSize='13' fill='#fff' isStroke showDetails={() => this.callParentFunction(item.section_id)}>{item.section_name1}</HexText>
+                        <HexText x={this.state.x} y={this.state.y + 20} fontSize='13' fill='#fff' isStroke showDetails={() => this.callParentFunction(item.section_id)}>{item.section_name2}</HexText>
+                      </Hexagon>
                     </Svg>
                     )
                   : (
                     <Svg>
                       <Hexagon q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill='#fff' stroke={item.section_hexvalue} showText={item.section_name} showDetails={() => this.callParentFunction(item.section_id)} strokeWidth='2'>
-                            <HexText x={this.state.x} y={item.multiple_lines ? this.state.y - 10 : this.state.y} fontSize='13' fill={item.section_hexvalue} isStroke showDetails={() => this.callParentFunction(item.section_id)}>{item.section_name}</HexText>
-                            <HexText x={this.state.x} y={this.state.y + 5} fontSize='13' fill={item.section_hexvalue} isStroke showDetails={() => this.callParentFunction(item.section_id)}>{item.section_name1}</HexText>
-                            <HexText x={this.state.x} y={this.state.y + 20} fontSize='13' fill={item.section_hexvalue} isStroke showDetails={() => this.callParentFunction(item.section_id)}>{item.section_name2}</HexText>
-                          </Hexagon>
+                        <HexText x={this.state.x} y={item.multiple_lines ? this.state.y - 10 : this.state.y} fontSize='13' fill={item.section_hexvalue} isStroke showDetails={() => this.callParentFunction(item.section_id)}>{item.section_name}</HexText>
+                        <HexText x={this.state.x} y={this.state.y + 5} fontSize='13' fill={item.section_hexvalue} isStroke showDetails={() => this.callParentFunction(item.section_id)}>{item.section_name1}</HexText>
+                        <HexText x={this.state.x} y={this.state.y + 20} fontSize='13' fill={item.section_hexvalue} isStroke showDetails={() => this.callParentFunction(item.section_id)}>{item.section_name2}</HexText>
+                      </Hexagon>
                     </Svg>
                     )}
               </View>

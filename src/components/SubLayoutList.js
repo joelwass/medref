@@ -273,7 +273,7 @@ export default function SubLayoutList (props) {
       return (
         <View>
           <View style={styles.switchview}>
-            <View style={{ height: 25 }}>
+            <View style={{ height: 20 }}>
               <Text style={{ fontSize: 20 }}>* expand all</Text>
             </View>
             <View>
@@ -393,8 +393,10 @@ const styles = StyleSheet.create({
   },
   switchview: {
     marginBottom: 5,
-    height: 20,
-    paddingBottom: 5,
+    height: 35,
+    paddingBottom: 10,
+    paddingRight: 5,
+    paddingLeft: 5,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start'

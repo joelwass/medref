@@ -1,6 +1,7 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image } from 'react-native'
 import { MaterialIcons } from '@expo/vector-icons'
+import * as Linking from 'expo-linking'
 
 export default function SettingScreen ({ navigation, props, route }) {
   const goToAboutPage = () => {
@@ -17,6 +18,10 @@ export default function SettingScreen ({ navigation, props, route }) {
 
   const goToPinnedItemsPage = () => {
     navigation.navigate('PinnedItems')
+  }
+
+  const _goToPurchaseCardPage = () => {
+    Linking.openURL('https://www.drbenmati.com/bedside-acute-care-medication-reference')
   }
 
   const NavButton = ({ text, onPress }) => (
@@ -56,18 +61,22 @@ export default function SettingScreen ({ navigation, props, route }) {
 
   return (
     <View style={styles.container}>
-      <Text style={{ textAlign: 'center', fontSize: 30, textDecorationLine: 'underline', margin: 10 }}>
-        Settings
-      </Text>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Text style={{ textAlign: 'center', fontSize: 30, textDecorationLine: 'underline', margin: 10 }}>
+          Settings
+        </Text>
 
-      <NavButton text='About' onPress={() => goToAboutPage()} />
-      <HR />
-      <NavButton text='Contact' onPress={() => goToContactPage()} />
-      <HR />
-      <NavButton text='Configure Pinned Topics' onPress={() => goToPinnedItemsPage()} />
-      <HR />
-      <NavButton text='Terms Of Use' onPress={() => goToTermsOfUsePage()} />
-      <LogoImage />
+        <NavButton text='About' onPress={() => goToAboutPage()} />
+        <HR />
+        <NavButton text='Contact' onPress={() => goToContactPage()} />
+        <HR />
+        <NavButton text='Configure Pinned Topics' onPress={() => goToPinnedItemsPage()} />
+        <HR />
+        <NavButton text='Purchase Reference Card' onPress={() => _goToPurchaseCardPage()} />
+        <HR />
+        <NavButton text='Terms Of Use' onPress={() => goToTermsOfUsePage()} />
+        <LogoImage />
+      </ScrollView>
     </View>
   )
 }

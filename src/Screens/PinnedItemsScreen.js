@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { View, StyleSheet, Text, FlatList, SafeAreaView, CheckBox, TouchableHighlight, Button, Alert, Dimensions } from 'react-native'
-import AsyncStorage from '@react-native-async-storage/async-storage'
+import { View, StyleSheet, Text, FlatList, SafeAreaView, TouchableHighlight, Alert, Dimensions } from 'react-native'
 import { ListItem } from 'react-native-elements'
 import DataUtils from '../Components/Helper/DataUtils'
 
@@ -12,7 +11,7 @@ export default function PinnedItemsScreen ({ route, navigation }) {
   const [ids, setIds] = useState([])
   const hasUnsavedChanges = Boolean(ids)
   const [saveItem, setSaveItem] = useState(false)
-  const [clearItem, setClearItem] = useState(false)
+  const [numberSelected, setNumberSelected] = useState(8)
 
   const {
     settingsState: { appSettingsUpdate, itemArray },
@@ -53,9 +52,11 @@ export default function PinnedItemsScreen ({ route, navigation }) {
     if (isChecked(itemId)) {
       const newids = [...ids, itemId]
       const tempIds = newids.filter((id) => id !== itemId)
+      setNumberSelected(numberSelected-1)
       setIds([...tempIds])
     } else {
       const newids = [...ids, itemId]
+      setNumberSelected(numberSelected+1)
       setIds([...newids])
     }
   }
@@ -128,7 +129,7 @@ export default function PinnedItemsScreen ({ route, navigation }) {
     <SafeAreaView style={styles.container} forceInset={{ top: 'always' }}>
 
       <View style={{ justifyContent: 'flex-start' }}>
-        <Text style={{ fontSize: 22, color: '#3f3f3f', paddingLeft: 10, margin: 2 }}> Pinned home screen topics: </Text>
+        <Text style={{ fontSize: 22, color: '#3f3f3f', paddingLeft: 10, margin: 2 }}> Pinned topics: ({numberSelected} selected)</Text>
       </View>
 
       <FlatList

@@ -863,7 +863,7 @@
           "children" :[
               {
                   "child_id": 811, 
-                  "child_name"  : "Post Partum Hemorrhage",
+                  "child_name"  : "Postpartum Hemorrhage",
                   "children" :[
                       {
                           "child_id" : 8111,
@@ -895,40 +895,40 @@
               },
               {
                 "child_id": 812, 
-                "child_name"  : "Pre-Eclampsia/Eclampsia",
+                "child_name"  : "Pre-Eclampsia",
                 "special_instruction_header":"** If SBP >= 160 or DBP >= 110, give anti-HTN meds",
                 "children" :[
                   {
                     "child_id" : 8121,
                     "child_detail_name"  : "Hydralazine",
-                    "child_detail_desc" : "Start: 5 mg IV\nThen: 5-10 mg IV q20-40min\nMAX: 20mg"
+                    "child_detail_desc" : "Start: 5 mg IV push over 2 mins\nThen: 5-10 mg IV push over 2 mins q20-40min up to 20mg total (if goal SBP or DBP not met, use lebatolo)"
                   },
                   {
                     "child_id" : 8122,
                     "child_detail_name"  : "Labetalol",
-                    "child_detail_desc" : "Start: 20 mg IV\nThen: 20-80 mg q10-30min\nMAX: 300mg\nInfusion: 1-2 mg/min IV\nAvoid in: asthma heart disease, heart block, bradycardia"
+                    "child_detail_desc" : "Start: 20 mg IV push over 2 mins\nThen: 20-80 mg IV push over 2 mins q10-30min\nMAX: 300mg/day\nInfusion: 1-2 mg/min IV\nAvoid in: asthma heart disease, heart block, bradycardia"
                   },
                   {
                     "child_id" : 8123,
                     "child_detail_name"  : "Nicardipine",
-                    "child_detail_desc" : "Infusion: 5mg/hr IV"
+                    "child_detail_desc" : "Infusion: 5mg/hr IV (max 15 mg/hr)"
                   },
                   {
                     "child_id" : 8124,
                     "child_detail_name"  : "Nifedipine",
-                    "child_detail_desc" : "Start: 10-20mg PO\nThen: Repeat in 20min\nThen: 10-20mg PO q2-6 hours\nMAX: 180mg in 24hr"
+                    "child_detail_desc" : "Immediate release. Usually not first line due to potentil for precipitous drop in BP\n\nStart: 10-20mg PO\nThen: Repeat in 20min\nThen: 10-20mg PO q2-6 hours\nMAX: 180mg in 24hr"
                   }
                 ]
               },
               {
                 "child_id": 813, 
-                "child_name"  : "Pre-Eclampsia with Severe Features",
+                "child_name"  : "Pre-Eclampsia with Severe Features/Eclampsia",
                 "special_instruction_header":"(i.e. platelets < 100,000, AKI, serum transaminases doubled, pulm edema, HA, visual distrubances, abd pain)",
                 "children" :[
                   {
                       "child_id" : 8131,
                       "child_detail_name"  : "Delivery is definitive treatment",
-                      "child_detail_desc" : "Call OB, anti-HTN as in pre-eclampsia\n\nGive magnesium sulfate:\nLoad: 4-6mg IV over 15-20 min\nThen: 2g/hr Infusion\n\nIf with seizure despite above:\n- Give another magnesium sulfate 2gm IV bolus\n\nMonitor for magnesium toxicity:\n- Loss of patellar reflexes\n- Respiratory depression\n- Decreased UOP\n- Cardiac arrest, bradycardia, heart block\n\nAntidote for magnesium toxicity:\n- Calcium gluconate 10%: 1.5-3gm IV push over 3 mins"
+                      "child_detail_desc" : "Call OB, anti-HTN as in pre-eclampsia\n\nGive magnesium sulfate:\nLoad: 4-6mg IV over 20-30 min\nThen: 2g/hr Infusion (Therapeutic level range from 4-7 mEq/L)\n\nIf with seizure despite above:\n- Give another magnesium sulfate 2gm IV bolus\n\nMonitor for magnesium toxicity:\n- Loss of patellar reflexes\n- Respiratory depression\n- Decreased UOP\n- Cardiac arrest, bradycardia, heart block\n\nTreatment for magnesium toxicity (severe cardiac toxicity or cardiac arrest):\n- Calcium gluconate 10%: 1.5-3gm IV push over 3 mins"
                   }
                 ]
               }
@@ -1942,7 +1942,7 @@
           {
             "child_id": 1722, 
             "child_name": "FFP",
-            "child_desc": "All coagulation factors (except platelets), fibronigen, albumin, protein C, protein S, antithrombin, tissue factor pathway inhibitor\n\n* Will raise factor levels by ~20%\n* Usually in units of 250 mL"
+            "child_desc": "All coagulation factors (except platelets), fibrinogen, albumin, protein C, protein S, antithrombin, tissue factor pathway inhibitor\n\n* Will raise factor levels by ~20%\n* Usually in units of 250 mL"
           },
           {
             "child_id": 1723, 

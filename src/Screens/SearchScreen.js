@@ -84,17 +84,17 @@ export default function SearchScreen ({ route, navigation }) {
       )}
 
       {showName && (child.child_detail_name || child.child_name) && (
-        <ItemDetailsDesc childDetailDesc={child.child_detail_name || child.child_name} borderColor={{ borderColor: sectionColor }} textColor={{ color: sectionColor }} />
+        <ItemDetailsName childDetailName={child.child_detail_name || child.child_name} borderColor={{ borderColor: sectionColor }} textColor={{ color: sectionColor }} />
       )}
 
       {(child.child_detail_desc || child.child_desc) && (
-        <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-          <Text style={{ fontSize: 20, justifyContent: 'center', marginTop: 5 }}>{child.child_detail_desc || child.child_desc}</Text>
+        <View style={{ textAlign: 'left', paddingLeft: 10, paddingBottom: 10, marginTop: 5 }}>
+          <Text style={{ fontSize: 20 }}>{child.child_detail_desc || child.child_desc}</Text>
         </View>
       )}
 
       {child.child_bullets && (
-        <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: 5, marginTop: 10 }}>
+        <View style={{ textAlign: 'left', paddingLeft: 10, paddingBottom: 10, marginTop: 5 }}>
           {child.child_bullets.map((bullet, idx) => (
             <View style={{ flexDirection: 'column', justifyContent: 'left' }} key={idx.toString()}>
               <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'left' }}>{bullet.title}</Text>
@@ -132,10 +132,10 @@ export default function SearchScreen ({ route, navigation }) {
     )
   }
 
-  const ItemDetailsDesc = ({ childDetailDesc, borderColor, textColor }) => (
+  const ItemDetailsName = ({ childDetailName, borderColor, textColor }) => (
     <TouchableWithoutFeedback>
       <View style={[styles.ChildButtonStyle, borderColor = borderColor]}>
-        <Text style={[styles.title, textColor]}>{childDetailDesc}</Text>
+        <Text style={[styles.title, textColor]}>{childDetailName}</Text>
       </View>
     </TouchableWithoutFeedback>
   )
@@ -274,12 +274,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     margin: 5
   },
-  oddItem: {
-    backgroundColor: '#A0A0A0'
-  },
-  evenItem: {
-    backgroundColor: '#D3D3D3'
-  },
   item: {
     padding: 10,
     marginVertical: 8,
@@ -344,6 +338,7 @@ const styles = StyleSheet.create({
     fontWeight: '200',
     borderWidth: 3,
     width: 250,
+    textAlign: 'left',
     alignItems: 'center',
     justifyContent: 'center'
   },
