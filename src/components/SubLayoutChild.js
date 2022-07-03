@@ -65,10 +65,6 @@ class SubLayoutChild extends Component {
     const innerViewHeight = this.props.height
     const innerViewWidth = Dimensions.get('window').width / 5
 
-    let fillcolor
-    let strokecolor
-    const arr = []
-
     return (
       <View style={styles.container}>
         <ScrollView contentContainerStyle={{ justifyContent: 'center', alignItems: 'center' }} horizontal>
@@ -98,12 +94,8 @@ class SubLayoutChild extends Component {
                        </Svg>)
                     )}
               </View>
-
-            ) // return ends
-          }
-
-          ) // map ends
-            }
+            )
+          })}
         </ScrollView>
       </View>
     )

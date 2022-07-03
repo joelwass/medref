@@ -291,7 +291,8 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     borderWidth: 2,
     borderColor: '#fff',
-    width: 300,
+    maxWidth: 400,
+    width: 'auto',
     // Set border Hex Color Code Here.
     borderTopColor: '#fff',
     borderBottomColor: '#fff',
@@ -319,7 +320,8 @@ const styles = StyleSheet.create({
     borderColor: '#fff',
     borderRadius: 25,
     borderWidth: 1,
-    width: 300,
+    width: 'auto',
+    maxWidth: 400,
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between'
@@ -337,7 +339,8 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     fontWeight: '200',
     borderWidth: 3,
-    width: 250,
+    maxWidth: 350,
+    width: 'auto',
     textAlign: 'left',
     alignItems: 'center',
     justifyContent: 'center'
@@ -351,13 +354,5 @@ const styles = StyleSheet.create({
   TextStyle: {
     color: '#000',
     textAlign: 'center'
-  },
-  switchview: {
-    marginBottom: 5,
-    height: 20,
-    paddingBottom: 5,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start'
   }
 })

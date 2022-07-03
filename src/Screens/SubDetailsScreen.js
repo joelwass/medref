@@ -1,10 +1,9 @@
-import { StatusBar } from 'expo-status-bar'
 import React, { useState, useEffect } from 'react'
-import { StyleSheet, Text, View, Button, Dimensions } from 'react-native'
+import { StyleSheet, View, Dimensions } from 'react-native'
 import SubChildLayout from '../Components/SubChildLayout'
 import SubChildLayoutList from '../Components/SubChildLayoutList'
 
-export default function SubDetailsScreen ({ navigation, route, props }) {
+export default function SubDetailsScreen ({ route, props }) {
   const { value, subValue } = route.params
   const hexagonSize = { x: 45, y: 45 }
   const [selectedValue, setSelectedValue] = useState()
@@ -30,10 +29,10 @@ export default function SubDetailsScreen ({ navigation, route, props }) {
           flexDirection: 'column'
         }]}
         >
-          <View style={{ flex: 1, backgroundColor: '#e5e5e5' }}>
+          <View style={{ flex: 1, backgroundColor: '#e5e5e5', width: '100%' }}>
             <SubChildLayout size={hexagonSize} flat={false} spacing={1.2} origin={{ x: 127, y: 120 }} showText={selectedValue} showChildDetails={showChildDetails} height={upperViewHeight} selectedValue={route.params.value} subSelectedValue={route.params.subvalue} />
           </View>
-          <View style={{ flex: 5, justifyContent: 'space-around', alignItems: 'center' }}>
+          <View style={{ flex: 5, justifyContent: 'space-around', alignItems: 'center', width: '100%' }}>
             <SubChildLayoutList selectedValue={route.params.value} subSelectedValue={route.params.subvalue} />
           </View>
         </View>
@@ -44,10 +43,10 @@ export default function SubDetailsScreen ({ navigation, route, props }) {
           flexDirection: 'column'
         }]}
         >
-          <View style={{ flex: 1, backgroundColor: '#e5e5e5' }}>
+          <View style={{ flex: 1, backgroundColor: '#e5e5e5', width: '100%' }}>
             <SubChildLayout size={hexagonSize} flat={false} spacing={1.2} origin={{ x: 120, y: 130 }} showText={selectedValue} showChildDetails={showChildDetails} height={upperViewHeight} selectedValue={selectedValue} subSelectedValue={subSelectedValue} />
           </View>
-          <View style={{ flex: 5 }}>
+          <View style={{ flex: 5, width: '100%', alignItems: 'center' }}>
             <SubChildLayoutList selectedValue={selectedValue} subSelectedValue={subSelectedValue} />
           </View>
         </View>
@@ -63,6 +62,7 @@ export default function SubDetailsScreen ({ navigation, route, props }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: '100%',
     backgroundColor: '#fff'
   }
 })

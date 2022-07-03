@@ -294,7 +294,7 @@
                   {
                       "child_id": 214, 
                       "child_name" : "RR",
-                      "child_desc" : "Initially 16-18 - Adjust Based on CO2 and Vent Needs",
+                      "child_desc" : "Initially 8-12 - Adjust Based on CO2 and Vent Needs",
                       "child_desc1": "Minute ventilation when not intubated = 60 ml/kg/min. Double to 120 mL/kg/min when intubated due to dead space\nMild hypercarbia is ok."
                       
                   },                    
@@ -328,7 +328,7 @@
                   {
                       "child_id": 216 , 
                       "child_name" : "Plateau Pressure",
-                      "child_desc" :  "Goal: <= 30cm H2O \nIf > 30, reduce Vt by 1mL/kg IBW down to 4mL/kg IBW ",                    
+                      "child_desc" :  "Goal: ≤ 30cm H2O \nIf > 30, reduce Vt by 1mL/kg IBW down to 4mL/kg IBW ",                    
                       "button_img" : "PP"
                   }
              ]
@@ -392,7 +392,7 @@
                 {
                     "child_id": 216 , 
                     "child_name" : "Plateau Pressure",
-                    "child_desc" :  "Goal: <= 30cm H2O \nif > 30, reduce Vt by 1mL/kg IBW down to 4mL/kg IBW ",                    
+                    "child_desc" :  "Goal: ≤ 30cm H2O \nif > 30, reduce Vt by 1mL/kg IBW down to 4mL/kg IBW ",                    
                     "button_img" : "PP"
                 }
             ]
@@ -901,7 +901,7 @@
                   {
                     "child_id" : 8121,
                     "child_detail_name"  : "Hydralazine",
-                    "child_detail_desc" : "Start: 5 mg IV push over 2 mins\nThen: 5-10 mg IV push over 2 mins q20-40min up to 20mg total (if goal SBP or DBP not met, use lebatolo)"
+                    "child_detail_desc" : "Start: 5 mg IV push over 2 mins\nThen: 5-10 mg IV push over 2 mins q20-40min up to 20mg total (if goal SBP or DBP not met, use Labetalol)"
                   },
                   {
                     "child_id" : 8122,
@@ -916,7 +916,7 @@
                   {
                     "child_id" : 8124,
                     "child_detail_name"  : "Nifedipine",
-                    "child_detail_desc" : "Immediate release. Usually not first line due to potentil for precipitous drop in BP\n\nStart: 10-20mg PO\nThen: Repeat in 20min\nThen: 10-20mg PO q2-6 hours\nMAX: 180mg in 24hr"
+                    "child_detail_desc" : "Immediate release. Usually not first line due to potential for precipitous drop in BP\n\nStart: 10-20mg PO\nThen: Repeat in 20min\nThen: 10-20mg PO q2-6 hours\nMAX: 180mg in 24hr"
                   }
                 ]
               },
@@ -1547,7 +1547,7 @@
                 },
                 {
                   "title": "Preferred lab:",
-                  "subtext": "Anti-X*"
+                  "subtext": "Anti-Xa"
                 },
                 {
                   "title": "Antidote:",
@@ -1585,7 +1585,7 @@
               },
               {
                 "title": "Preferred lab:",
-                "subtext": "Anti-X^"
+                "subtext": "Anti-Xa"
               },
               {
                 "title": "Antidote:",
@@ -1623,7 +1623,7 @@
               },
               {
                 "title": "Preferred lab:",
-                "subtext": "Anti-X*"
+                "subtext": "Anti-Xa"
               },
               {
                 "title": "Antidote:",

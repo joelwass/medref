@@ -1,7 +1,5 @@
-import { isEmergencyLaunch } from 'expo-updates'
 import React, { useState, useEffect } from 'react'
 import { Text, View, StyleSheet, TouchableOpacity, SafeAreaView, FlatList, Switch, ImageBackground, Dimensions, TouchableHighlight } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
 import { MaterialIcons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
 import MultipleHexagons from './Common/MultipleHexagon'
@@ -39,7 +37,7 @@ const getImage = (image) => {
 
 const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick }) => {
   return (
-    <View style={{ flex: 1, alignItems: 'center' }}>
+    <View style={{ flex: 1, width: '100%', flexGrow: 1, alignItems: 'center' }}>
       <TouchableOpacity onPress={onPress} style={[styles.SubmitButtonStyle, backgroundColor = backgroundColor]}>
         <Text style={[styles.title, textColor]}>{item.child_name}</Text>
         <MaterialIcons name={item.vis ? 'keyboard-arrow-up' : 'keyboard-arrow-down'} size={30} style={{ color: 'white' }} />
@@ -172,30 +170,30 @@ export default function SubChildLayoutList (props) {
     if (item.child_desc !== null || item.child_bullets !== null) {
       return (
         <View>
-          {index === 0 &&
-        (<View>
-          <View style={styles.switchview}>
-            <View style={{ height: 30, paddingTop: 3 }}>
-              <Text style={{ fontSize: 20 }}>* expand all</Text>
-            </View>
-            <View>
-              <Switch
-                trackColor={{ false: '#9dcddf', true: '#63a1b0' }}
-                thumbColor='#fbfbfb'
-                ios_backgroundColor='#3e3e3e'
-                style={{ transform: [{ scaleX: 1.0 }, { scaleY: 1.0 }] }}
-                onValueChange={toggleSwitch}
-                value={isEnabled}
-              />
-            </View>
-          </View>
-          {item.child_warning && (
-            <View style={{ height: 30, padding: 5, paddingTop: 10, width: '90%', height: 'auto' }}>
-              <Text style={{ fontSize: 18 }}>{item.child_warning}</Text>
+          {index === 0 && (
+            <View style={{alignItems:'center'}}>
+              <View style={styles.switchview}>
+                <View style={{ height: 30, paddingTop: 3 }}>
+                  <Text style={{ fontSize: 20 }}>* expand all</Text>
+                </View>
+                <View>
+                  <Switch
+                    trackColor={{ false: '#9dcddf', true: '#63a1b0' }}
+                    thumbColor='#fbfbfb'
+                    ios_backgroundColor='#3e3e3e'
+                    style={{ transform: [{ scaleX: 1.0 }, { scaleY: 1.0 }] }}
+                    onValueChange={toggleSwitch}
+                    value={isEnabled}
+                  />
+                </View>
+              </View>
+              {item.child_warning && (
+                <View style={{ height: 30, padding: 5, paddingTop: 10, width: '90%', height: 'auto' }}>
+                  <Text style={{ fontSize: 18 }}>{item.child_warning}</Text>
+                </View>
+              )}
             </View>
           )}
-        </View>
-        )}
           <Item
             item={item}
             onPress={() => addToSelectedList(item.child_id)}
@@ -235,7 +233,7 @@ export default function SubChildLayoutList (props) {
             onUserClick: 'onUserClick("Female")'
           }
         ]
-        const viewHeight = height * 0.6
+        const viewHeight = height * 0.63
         const hexagonSize = { x: 14, y: 14 }
         return (
           <DisplayMaleFemaleImage
@@ -315,7 +313,7 @@ export default function SubChildLayoutList (props) {
     } else if (!loading) {
       return (
         <SafeAreaView style={styles.container}>
-          <View style={{ flex: 1 }}>
+          <View style={{ flex: 1, width: '100%' }}>
             <FlatList
               data={selectedIdArr}
               renderItem={({ item, index }) => renderItem({ item, index })}
@@ -343,20 +341,21 @@ const styles = StyleSheet.create({
     padding: 10,
     marginVertical: 8,
     marginHorizontal: 16,
-    width: 300
+    maxWidth: 400,
+    width: '90%'
   },
   switchview: {
     height: 40,
     paddingBottom: 5,
-    paddingLeft: 5,
-    paddingRight: 5,
+    paddingLeft: 20,
+    paddingRight: 20,
+    width: '90%',
     paddingTop: 15,
     marginBottom: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start'
   },
-
   imageView: {
     flex: 1,
     flexDirection: 'column',
@@ -367,33 +366,29 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width
   },
   title: {
-    fontSize: 25,
+    fontSize: 23,
     paddingLeft: 10,
     margin: 'auto',
     textAlign: 'center',
     justifyContent: 'center'
   },
   TextComponentStyle: {
-    marginLeft: 30,
-    marginRight: 30,
+    marginLeft: '5%',
+    marginRight: '5%',
     borderRadius: 25,
     borderWidth: 2,
     borderColor: '#fff',
-    width: 300,
-    // Set border Hex Color Code Here.
+    maxWidth: 400,
+    width: '90%',
     borderTopColor: '#fff',
     borderBottomColor: '#fff',
     borderLeftColor: '#000',
     borderRightColor: '#000',
-    // Setting up Text Font Color.
     color: '#000',
-    // Setting Up Background Color of Text component.
     backgroundColor: '#fff',
-    // Adding padding on Text component.
     fontSize: 20,
-    textAlign: 'center',
+    textAlign: 'left',
     elevation: 50,
-
     shadowColor: '#A9A9A9',
     shadowOffset: {
       width: 0,
@@ -409,12 +404,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
     paddingTop: 15,
     paddingBottom: 15,
-    marginLeft: 30,
-    marginRight: 30,
+    marginLeft: '5%',
+    marginRight: '5%',
     borderRadius: 25,
     borderWidth: 1,
     borderColor: '#fff',
-    width: 300,
+    maxWidth: 400,
+    width: '90%',
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between'

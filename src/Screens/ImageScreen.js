@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View, ImageBackground } from 'react-native'
+import { StyleSheet, View, Image } from 'react-native'
 
 const getImage = (image) => {
   switch (image) {
@@ -21,14 +21,11 @@ const getImage = (image) => {
   }
 }
 
-export default function ImageScreen ({ navigation, props, route }) {
-  const { value } = route.params
-
+export default function ImageScreen ({ route }) {
   return (
     <View style={styles.container}>
-      <ImageBackground source={getImage(route.params.value)} style={{ height: '80%', width: '100%', marginTop: 30 }} />
+      <Image source={getImage(route.params.value)} style={{ width: '100%', height: '100%', resizeMode: 'contain' }} />
     </View>
-
   )
 }
 
@@ -36,6 +33,8 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: 0,
     marginTop: 0,
-    flex: 1
+    flex: 1,
+    width: '100%',
+    height: '100%'
   }
 })

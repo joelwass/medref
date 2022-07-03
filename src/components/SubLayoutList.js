@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Text, View, StyleSheet, TouchableOpacity, SafeAreaView, FlatList, TouchableWithoutFeedback, Switch } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
 import { MaterialIcons } from '@expo/vector-icons'
 import data from '../data/data.json'
 
@@ -199,7 +198,7 @@ export default function SubLayoutList (props) {
     return (
       <View>
         {index == 0 && item.child_warning && (
-          <View style={{ height: 30, padding: 5, paddingTop: 10, width: '90%', height: 'auto' }}>
+          <View style={{ height: 30, padding: 5, paddingTop: 10, height: 'auto' }}>
             <Text style={{ fontSize: 18 }}>{item.child_warning}</Text>
           </View>
         )}
@@ -300,25 +299,28 @@ export default function SubLayoutList (props) {
 
   return (
     <SafeAreaView style={styles.container}>
-      {renderFlatList()}
+      <View style={{ flex: 1, width: '100%' }}>
+        {renderFlatList()}
+      </View>
     </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
-
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#fff',
-    marginTop: 25
+    marginTop: 25,
+    width: '100%'
   },
   item: {
     padding: 10,
     marginVertical: 8,
     marginHorizontal: 16,
-    width: 300
+    maxWidth: 400,
+    width: '90%'
   },
   title: {
     fontSize: 20,
@@ -326,27 +328,23 @@ const styles = StyleSheet.create({
     marginRight: 10
   },
   TextComponentStyle: {
-    marginLeft: 30,
-    marginRight: 30,
+    marginLeft: '5%',
+    marginRight: '5%',
     borderRadius: 25,
     padding: 5,
     borderWidth: 2,
     borderColor: '#fff',
-    width: 300,
-    // Set border Hex Color Code Here.
+    maxWidth: 400,
+    width: '90%',
     borderTopColor: '#fff',
     borderBottomColor: '#fff',
     borderLeftColor: '#000',
     borderRightColor: '#000',
-    // Setting up Text Font Color.
     color: '#000',
-    // Setting Up Background Color of Text component.
     backgroundColor: '#fff',
-    // Adding padding on Text component.
     fontSize: 20,
     textAlign: 'center',
     elevation: 50,
-
     shadowColor: '#A9A9A9',
     shadowRadius: 10,
     shadowOpacity: 1
@@ -355,12 +353,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
     paddingTop: 15,
     paddingBottom: 15,
-    marginLeft: 30,
-    marginRight: 30,
+    marginLeft: '5%',
+    marginRight: '5%',
     borderColor: '#fff',
     borderRadius: 25,
     borderWidth: 1,
-    width: 300,
+    maxWidth: 400,
+    width: '90%',
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between'
@@ -378,7 +377,8 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     fontWeight: '200',
     borderWidth: 3,
-    width: 250,
+    maxWidth: 400,
+    width: '90%',
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -395,11 +395,10 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     height: 35,
     paddingBottom: 10,
-    paddingRight: 5,
-    paddingLeft: 5,
+    paddingRight: 20,
+    paddingLeft: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start'
   }
-
 })
