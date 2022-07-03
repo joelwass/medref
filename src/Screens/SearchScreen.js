@@ -286,8 +286,9 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    marginLeft: 10,
-    marginRight: 10
+    paddingLeft: 10,
+    paddingRight: 10,
+    maxWidth: '90%'
   },
   TextComponentStyle: {
     marginLeft: 30,
@@ -314,12 +315,12 @@ const styles = StyleSheet.create({
     marginTop: 10,
     paddingTop: 15,
     paddingBottom: 15,
-    marginLeft: 30,
-    marginRight: 30,
+    marginLeft: '5%',
+    marginRight: '5%',
     borderColor: '#fff',
     borderRadius: 25,
     borderWidth: 1,
-    width: 'auto',
+    width: '90%',
     maxWidth: 400,
     alignItems: 'center',
     flexDirection: 'row',
