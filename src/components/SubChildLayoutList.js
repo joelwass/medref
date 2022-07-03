@@ -4,7 +4,6 @@ import { MaterialIcons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
 import MultipleHexagons from './Common/MultipleHexagon'
 import data from '../data/data.json'
-import LoadingIndicator from './Common/LoadingIndicator'
 
 const { width, height } = Dimensions.get('window')
 
@@ -305,29 +304,18 @@ export default function SubChildLayoutList (props) {
     setIsEnabled(previousState => !previousState)
   }
 
-  const renderFlatList = () => {
-    if (loading) {
-      return (
-        <LoadingIndicator />
-      )
-    } else if (!loading) {
-      return (
-        <SafeAreaView style={styles.container}>
-          <View style={{ flex: 1, width: '100%' }}>
-            <FlatList
-              data={selectedIdArr}
-              renderItem={({ item, index }) => renderItem({ item, index })}
-              keyExtractor={(item, index) => item.child_id.toString()}
-              ListEmptyComponent={EmptyList}
-              extraData={selectedIdArr}
-            />
-          </View>
-        </SafeAreaView>
-      )
-    }
-  }
   return (
-    renderFlatList()
+    <SafeAreaView style={styles.container}>
+      <View style={{ flex: 1, width: '100%' }}>
+        <FlatList
+          data={selectedIdArr}
+          renderItem={({ item, index }) => renderItem({ item, index })}
+          keyExtractor={(item, index) => item.child_id.toString()}
+          ListEmptyComponent={EmptyList}
+          extraData={selectedIdArr}
+        />
+      </View>
+    </SafeAreaView>
   )
 }
 

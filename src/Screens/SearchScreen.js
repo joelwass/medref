@@ -293,20 +293,15 @@ const styles = StyleSheet.create({
     borderColor: '#fff',
     maxWidth: 400,
     width: 'auto',
-    // Set border Hex Color Code Here.
     borderTopColor: '#fff',
     borderBottomColor: '#fff',
     borderLeftColor: '#000',
     borderRightColor: '#000',
-    // Setting up Text Font Color.
     color: '#000',
-    // Setting Up Background Color of Text component.
     backgroundColor: '#fff',
-    // Adding padding on Text component.
     fontSize: 20,
     textAlign: 'center',
     elevation: 50,
-
     shadowColor: '#A9A9A9',
     shadowRadius: 10,
     shadowOpacity: 1

@@ -5,7 +5,6 @@ import Orientation from '../Orientation'
 import Point from '../Point'
 import Hexagon from '../Hexagon'
 import HexText from '../HexText'
-import LoadingIndicator from './LoadingIndicator'
 
 const MultipleHexagons = ({
   nameArray,
@@ -15,13 +14,8 @@ const MultipleHexagons = ({
   onPressHexagon
 }) => {
   const [itemArr, setItemArr] = useState([])
-  const [corners, setCorners] = useState([])
   const [points, setPoints] = useState({})
   const [layout, setLayout] = useState({})
-  const LAYOUT_FLAT = new Orientation(3.0 / 2.0, 0.0, Math.sqrt(3.0) / 2.0, Math.sqrt)
-  const LAYOUT_POINTY = new Orientation(Math.sqrt(3.0), Math.sqrt(3.0) / 2.0, 0.0, 3.0 / 2.0, Math.sqrt(3.0) / 3.0, -1.0 / 3.0, 0.0, 2.0 / 3.0, 0.5)
-
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const orientation = new Orientation(Math.sqrt(3.0), Math.sqrt(3.0) / 2.0, 0.0, 3.0 / 2.0, Math.sqrt(3.0) / 3.0, -1.0 / 3.0, 0.0, 2.0 / 3.0, 0.5)
@@ -69,28 +63,18 @@ const MultipleHexagons = ({
     onPressHexagon(item)
   }
 
-  const renderHexagons = () => {
-    if (loading) {
-      setLoading(false)
-      return (<LoadingIndicator />)
-    } else {
-      return (
-        <View style={[styles.container]}>
-          <Svg height='100%' width='100%' viewBox='10 0 70 50'>
-            {itemArr.map((item) => {
-              return (
-                <Hexagon key={item.id} q={item.q} r={item.r} s={item.s} points={points} layout={layout} showDetails={onHexagonClick} fill='#fff' stroke={item.hexvalue} showText={item.id} strokeWidth='2'>
-                  <HexText x={0} y={0} fill={item.hexvalue} showDetails={onHexagonClick} showText={item.id}>{item.name} </HexText>
-                </Hexagon>
-              )
-            })}
-          </Svg>
-        </View>
-      )
-    }
-  }
   return (
-    renderHexagons()
+    <View style={[styles.container]}>
+      <Svg height='100%' width='100%' viewBox='10 0 70 50'>
+        {itemArr.map((item) => {
+          return (
+            <Hexagon key={item.id} q={item.q} r={item.r} s={item.s} points={points} layout={layout} showDetails={onHexagonClick} fill='#fff' stroke={item.hexvalue} showText={item.id} strokeWidth='2'>
+              <HexText x={0} y={0} fill={item.hexvalue} showDetails={onHexagonClick} showText={item.id}>{item.name} </HexText>
+            </Hexagon>
+          )
+        })}
+      </Svg>
+    </View>
   )
 }
 
