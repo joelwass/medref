@@ -84,7 +84,11 @@ export default function SearchScreen ({ route, navigation }) {
       )}
 
       {showName && (child.child_detail_name || child.child_name) && (
-        <ItemDetailsName childDetailName={child.child_detail_name || child.child_name} borderColor={{ borderColor: sectionColor }} textColor={{ color: sectionColor }} />
+        <ItemDetailsName 
+          childDetailName={child.child_detail_name || child.child_name} 
+          borderColor={{ borderColor: sectionColor }} 
+          textColor={{ color: sectionColor }} 
+        />
       )}
 
       {(child.child_detail_desc || child.child_desc) && (
@@ -112,7 +116,7 @@ export default function SearchScreen ({ route, navigation }) {
 
   const ItemDetails = ({ item, backgroundColor, onPress, textColor }) => (
     <TouchableOpacity onPress={onPress} style={[styles.SubmitButtonStyle, backgroundColor = backgroundColor]}>
-      <Text style={[styles.title, textColor]}>{item.child_name}</Text>
+      <Text style={[styles.title, textColor]}>{`${item.sectionName}: ${item.child_name}`}</Text>
       <MaterialIcons name={item.expanded ? 'keyboard-arrow-up' : 'keyboard-arrow-down'} size={30} style={{ color: 'white' }} />
     </TouchableOpacity>
   )

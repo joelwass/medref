@@ -10,6 +10,19 @@ const data = require('./data.json')
  * If the section does NOT have a name, then the children will just be an expandable child
  */
 
+ const grabFullSectionName = (sectionNode, topLevelNodeName) => {
+  if (sectionNode.multiple_lines) {
+    if (sectionNode.full_section_name) {
+      return sectionNode.full_section_name
+    } else {
+      const tempText = sectionNode.section_name1 ? sectionNode.section_name1 : ''
+      const tempText1 = sectionNode.section_name2 ? sectionNode.section_name2 : ''
+      return sectionNode.section_name + ' ' + tempText + ' ' + tempText1
+    }
+  }
+  return sectionNode.section_name || topLevelNodeName
+}
+
 export default (s) => {
   s = s.toLowerCase()
   const result = []
@@ -36,14 +49,9 @@ export default (s) => {
             ...sectionNode,
             id: sectionNode.section_id
           }
+
           if (sectionNode.multiple_lines) {
-            if (sectionNode.full_section_name) {
-              sectionNodeCopy.section_name = sectionNode.full_section_name
-            } else {
-              const tempText = sectionNode.section_name1 ? sectionNode.section_name1 : ''
-              const tempText1 = sectionNode.section_name2 ? sectionNode.section_name2 : ''
-              sectionNodeCopy.section_name = sectionNode.section_name + ' ' + tempText + ' ' + tempText1
-            }
+            sectionNodeCopy.section_name = grabFullSectionName(sectionNode, topLevelNode.name)
           }
           delete sectionNodeCopy.children
           result.push(sectionNodeCopy)
@@ -78,7 +86,8 @@ export default (s) => {
               result.push({
                 ...childNode,
                 id: childNode.child_id,
-                hexvalue: sectionNode.section_hexvalue
+                hexvalue: sectionNode.section_hexvalue,
+                sectionName: grabFullSectionName(sectionNode, topLevelNode.name)
               })
             }
           })
