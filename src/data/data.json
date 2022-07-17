@@ -159,7 +159,7 @@
               {
                 "child_id": 146,
                 "child_name": "Labetalol",
-                "child_desc": "10-40 mg IV bolus\nTHEN: 2-8 mg/min"
+                "child_desc": "10-40 mg IV bolus\nTHEN: 2-8 mg/min\nMAX: 300mg/day"
               },
               {
                 "child_id": 147,
@@ -361,40 +361,46 @@
                     "child_name" : "RR",
                     "child_desc" : "Start at 10-14"
                     
-                },                    
+                },
                 {
-                    "child_id": 225, 
-                    "child_name" : "Fi02 and PEEP",
-                    "child_bullets": [
-                      {
-                        "title": "PEEP ",
-                        "subtext": "5"
-                      },
-                      {
-                        "title": "FiO2 ",
-                        "subtext": "Start at 100% and titrate down quickly"
-                      },
-                      {
-                        "title": "Tips ",
-                        "subtext": "Ok to allow for permissive hypercapnia (PaCO2 <90)\n\nAcidemia to pH >~7.1 is ok\n\nPlace as large an ETT as possible (aim for 8.0)"
-                      },
-                      {
-                        "title": "Airtrapping ",
-                        "subtext": "Avoid!"
-                      },
-                      {
-                        "title": "Titrate ",
-                        "subtext": "FiO2 and PEEP based on chart every 5-10 min; quicker if low sat"
-                      }
-                    ],
-                    "button_img" : "Fi"
-                },                    
-                {
-                    "child_id": 216 , 
-                    "child_name" : "Plateau Pressure",
-                    "child_desc" :  "Goal: ≤ 30cm H2O \nif > 30, reduce Vt by 1mL/kg IBW down to 4mL/kg IBW ",                    
-                    "button_img" : "PP"
-                }
+                  "child_id": 225, 
+                  "child_name" : "I:E",
+                  "child_desc" : "1:4 - 1:5"
+                  
+              },                    
+              {
+                  "child_id": 226, 
+                  "child_name" : "Fi02 and PEEP",
+                  "child_bullets": [
+                    {
+                      "title": "PEEP ",
+                      "subtext": "5"
+                    },
+                    {
+                      "title": "FiO2 ",
+                      "subtext": "Start at 100% and titrate down quickly"
+                    },
+                    {
+                      "title": "Tips ",
+                      "subtext": "Ok to allow for permissive hypercapnia (PaCO2 <90)\n\nAcidemia to pH >~7.1 is ok\n\nPlace as large an ETT as possible (aim for 8.0)"
+                    },
+                    {
+                      "title": "Airtrapping ",
+                      "subtext": "Avoid!"
+                    },
+                    {
+                      "title": "Titrate ",
+                      "subtext": "FiO2 and PEEP based on chart every 5-10 min; quicker if low sat"
+                    }
+                  ],
+                  "button_img" : "Fi"
+              },                    
+              {
+                  "child_id": 227 , 
+                  "child_name" : "Plateau Pressure",
+                  "child_desc" :  "Goal: ≤ 30cm H2O \nif > 30, reduce Vt by 1mL/kg IBW down to 4mL/kg IBW ",                    
+                  "button_img" : "PP"
+              }
             ]
           },
           {
@@ -696,22 +702,6 @@
                     "child_detail_desc" : "INR 2-4: 25 units/kg (max 2500 units) \nINR 4-6: 35 units/kg (max 3500 units)\nINR > 6: 50 units/kg (max 5000 units)\n**Typically given w/VitK 10 mg ivpb**"
                 }
               ]
-            },
-            {
-              "child_id": 427, 
-              "child_name"  : "Direct Thombin Inhibitor",
-              "children" :[                                
-                  {
-                      "child_id" : 4271,
-                      "child_detail_name"  : "Bivalirudin",
-                      "child_detail_desc" : "10 mg IVPB over 1 hour"
-                  },
-                  {
-                    "child_id" : 4272,
-                    "child_detail_name"  : "Kcentra",
-                    "child_detail_desc" : "INR 2-4: 25 units/kg (max 2500 units) \nINR 4-6: 35 units/kg (max 3500 units)\nINR > 6: 50 units/kg (max 5000 units)\n**Typically given w/VitK 10 mg ivpb**"
-                }
-              ]
             }
           ]
         }
@@ -928,7 +918,7 @@
                   {
                       "child_id" : 8131,
                       "child_detail_name"  : "Delivery is definitive treatment",
-                      "child_detail_desc" : "Call OB, anti-HTN as in pre-eclampsia\n\nGive magnesium sulfate:\nLoad: 4-6mg IV over 20-30 min\nThen: 2g/hr Infusion (Therapeutic level range from 4-7 mEq/L)\n\nIf with seizure despite above:\n- Give another magnesium sulfate 2gm IV bolus\n\nMonitor for magnesium toxicity:\n- Loss of patellar reflexes\n- Respiratory depression\n- Decreased UOP\n- Cardiac arrest, bradycardia, heart block\n\nTreatment for magnesium toxicity (severe cardiac toxicity or cardiac arrest):\n- Calcium gluconate 10%: 1.5-3gm IV push over 3 mins"
+                      "child_detail_desc" : "Call OB, anti-HTN as in pre-eclampsia\n\nGive magnesium sulfate:\nLoad: 4-6g IV over 20-30 min\nThen: 2g/hr Infusion (Therapeutic level range from 4-7 mEq/L)\n\nIf with seizure despite above:\n- Give another magnesium sulfate 2g IV bolus\n\nMonitor for magnesium toxicity:\n- Loss of patellar reflexes\n- Respiratory depression\n- Decreased UOP\n- Cardiac arrest, bradycardia, heart block\n\nTreatment for magnesium toxicity (severe cardiac toxicity or cardiac arrest):\n- Calcium gluconate 10%: 1.5-3gm IV push over 3 mins"
                   }
                 ]
               }
@@ -1327,11 +1317,11 @@
               },
               {
                 "child_id": 1314 , 
-                "child_name"  : "Ranitidine",
+                "child_name"  : "Famotidine",
                 "children": [
                   {
                     "child_id": 13141,
-                    "child_detail_desc": "50 mg IV over 5 min"
+                    "child_detail_desc": "20-40mg IVP"
                   }
                 ]
               },

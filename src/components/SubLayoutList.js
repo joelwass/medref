@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Text, View, StyleSheet, TouchableOpacity, SafeAreaView, FlatList, TouchableWithoutFeedback, Switch } from 'react-native'
+import { Text, View, StyleSheet, TouchableOpacity, SafeAreaView, FlatList, TouchableWithoutFeedback, Switch, Dimensions } from 'react-native'
 import { MaterialIcons } from '@expo/vector-icons'
 import data from '../data/data.json'
 
@@ -209,8 +209,9 @@ export default function SubLayoutList (props) {
           textColor={{ color }}
         />
 
-        {item.expanded &&
-          <View style={styles.TextComponentStyle}>{items}</View>}
+        {item.expanded && (
+          <View style={styles.TextComponentStyle}>{items}</View>
+        )}
 
       </View>
 
@@ -262,15 +263,15 @@ export default function SubLayoutList (props) {
       return (
         <FlatList
           data={selectedIdArr}
-          renderItem={({ item, index }) => renderItem1({ item })}
-          keyExtractor={(item, index) => item.section_id.toString()}
+          renderItem={({ item }) => renderItem1({ item })}
+          keyExtractor={(item) => item.section_id.toString()}
           ListEmptyComponent={EmptyList}
           extraData={selectedIdArr}
         />
       )
     } else {
       return (
-        <View>
+        <View style={{ height: '100%' }}>
           <View style={styles.switchview}>
             <View style={{ height: 20 }}>
               <Text style={{ fontSize: 20 }}>* expand all</Text>
@@ -287,6 +288,7 @@ export default function SubLayoutList (props) {
             </View>
           </View>
           <FlatList
+            contentContainerStyle={{ paddingBottom: 20 }}
             data={selectedIdChildArr}
             renderItem={({ item, index }) => renderItem({ item, index })}
             keyExtractor={(item) => item.child_id.toString()}

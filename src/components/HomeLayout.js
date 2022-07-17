@@ -1,26 +1,12 @@
-import React, { Component, useEffect, useState, useContext } from 'react'
-import { View, Text, StyleSheet, Dimensions, FlatList } from 'react-native'
-import Svg, { G, Circle, Path, Polygon, Text as SvgText } from 'react-native-svg'
-import AsyncStorage from '@react-native-async-storage/async-storage'
+import React, { useEffect, useState, useContext } from 'react'
+import { StyleSheet } from 'react-native'
+import Svg from 'react-native-svg'
 import Constants from 'expo-constants'
 import Orientation from './Orientation'
 import Point from './Point'
 import Hexagon from './Hexagon'
 import HexText from './HexText'
 import { GlobalContext } from '../context/provider'
-import { SafeAreaView } from 'react-native-safe-area-context'
-
-const pointArr = [
-  { id: 1, q: 1.2, r: -1, s: 1 },
-  { id: 2, q: 1.2, r: 0, s: 0 },
-  { id: 3, q: 2.2, r: -1, s: -1 },
-  { id: 4, q: 2.8, r: 1, s: 1 },
-  { id: 5, q: 2.8, r: 0, s: 0 },
-  { id: 6, q: 1.8, r: 1, s: -1 },
-  { id: 7, q: 1.2, r: 3.5, s: 1 },
-  { id: 8, q: 1.2, r: 2.5, s: 0 },
-  { id: 9, q: 2.2, r: 2.5, s: 1 }
-]
 
 export default function HomeLayout (props) {
   const LAYOUT_FLAT = new Orientation(3.0 / 2.0, 0.0, Math.sqrt(3.0) / 2.0, Math.sqrt(3.0), 2.0 / 3.0, 0.0, -1.0 / 3.0, Math.sqrt(3.0) / 3.0, 0.0)
