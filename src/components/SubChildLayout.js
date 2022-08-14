@@ -88,7 +88,7 @@ class SubChildLayout extends Component {
   }
 
   render () {
-    const innerViewHeight = this.props.height
+    const innerViewHeight = this.props.height 
     const innerViewWidth = Dimensions.get('window').width / 4.5
 
     return (
@@ -98,7 +98,7 @@ class SubChildLayout extends Component {
             return (
               <View
                 key={item.section_id} style={{
-                  height: innerViewHeight,
+                  height: 'auto',
                   width: innerViewWidth,
                   justifyContent: 'center',
                   alignItems: 'center'
@@ -106,7 +106,7 @@ class SubChildLayout extends Component {
               >
                 {item.section_id === this.state.subSelectedValue
                   ? (
-                    <Svg>
+                    <Svg style={{maxHeight: 100, maxWidth: 100}}>
                       <Hexagon q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={item.section_hexvalue} stroke='#fff' showText={item.section_name} showDetails={() => this.callParentFunction(item.section_id)} strokeWidth='2'>
                         <HexText x={this.state.x} y={item.multiple_lines ? this.state.y - 10 : this.state.y} fontSize='13' fill='#fff' isStroke showDetails={() => this.callParentFunction(item.section_id)}>{item.section_name}</HexText>
                         <HexText x={this.state.x} y={this.state.y + 5} fontSize='13' fill='#fff' isStroke showDetails={() => this.callParentFunction(item.section_id)}>{item.section_name1}</HexText>
@@ -115,7 +115,7 @@ class SubChildLayout extends Component {
                     </Svg>
                     )
                   : (
-                    <Svg>
+                    <Svg style={{maxHeight: 100, maxWidth: 100}}>
                       <Hexagon q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill='#fff' stroke={item.section_hexvalue} showText={item.section_name} showDetails={() => this.callParentFunction(item.section_id)} strokeWidth='2'>
                         <HexText x={this.state.x} y={item.multiple_lines ? this.state.y - 10 : this.state.y} fontSize='13' fill={item.section_hexvalue} isStroke showDetails={() => this.callParentFunction(item.section_id)}>{item.section_name}</HexText>
                         <HexText x={this.state.x} y={this.state.y + 5} fontSize='13' fill={item.section_hexvalue} isStroke showDetails={() => this.callParentFunction(item.section_id)}>{item.section_name1}</HexText>

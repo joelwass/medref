@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { View, StyleSheet, TouchableOpacity, Text, Dimensions } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import AsyncStorage from '@react-native-async-storage/async-storage'
-import Svg, { G, Rect, Polygon } from 'react-native-svg'
-import Constants from 'expo-constants'
+import Svg from 'react-native-svg'
 import data from '../data/data.json'
 import Orientation from './Orientation'
 import Point from './Point'
@@ -12,7 +10,7 @@ import HexText from './HexText'
 
 class SubLayout extends Component {
   static LAYOUT_FLAT = new Orientation(3.0 / 2.0, 0.0, Math.sqrt(3.0) / 2.0, Math.sqrt(3.0), 2.0 / 3.0, 0.0, -1.0 / 3.0, Math.sqrt(3.0) / 3.0, 0.0)
-  static LAYOUT_POINTY = new Orientation(Math.sqrt(2.3), Math.sqrt(3.0) / 2.0, -0.35, 1.5, Math.sqrt(3.0) / 3.0, -1.0 / 3.0, 0.0, 2.0 / 3.0, 0.5)
+  static LAYOUT_POINTY = new Orientation(Math.sqrt(2.3), Math.sqrt(3.0) / 2.0, 0, 0, Math.sqrt(3.0) / 3.0, -1.0 / 3.0, 0.0, 2.0 / 3.0, 0.5)
 
   static width = Dimensions.get('window').width
 
@@ -100,7 +98,6 @@ class SubLayout extends Component {
   }
 
   render () {
-    const innerViewHeight = this.props.height
     // THIS ADJUSTS THE WIDTH OF THE HEXAGON SUB LIST RENDER VIEW
     const innerViewWidth = Dimensions.get('window').width / 4.5
 
@@ -111,7 +108,7 @@ class SubLayout extends Component {
             return (
               <View
                 key={item.id} style={{
-                  height: innerViewHeight,
+                  height: 'auto',
                   width: innerViewWidth,
                   justifyContent: 'center',
                   alignItems: 'center'
@@ -119,14 +116,14 @@ class SubLayout extends Component {
               >
                 {item.id === this.state.selectedValue
                   ? (
-                      (<Svg>
+                      (<Svg style={{maxHeight: 100, maxWidth: 100}}>
                         <Hexagon key={item.id} q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill={item.hexvalue} stroke='#fff' showText={item.name} showDetails={() => this.callParentFunction(item.id)} strokeWidth='2'>
                           <HexText x={this.state.x} y={this.state.y} fontSize='14' fill='#fff' isStroke showDetails={() => this.callParentFunction(item.id)}>{item.name}</HexText>
                         </Hexagon>
                       </Svg>)
                     )
                   : (
-                      (<Svg>
+                      (<Svg style={{maxHeight: 100, maxWidth: 100}}>
                         <Hexagon key={item.id} q={-1} r={-1} s={1} points={this.state.points} layout={this.state.layout} fill='#fff' stroke={item.hexvalue} showText={item.name} showDetails={() => this.callParentFunction(item.id)} strokeWidth='2'>
                           <HexText x={this.state.x} y={this.state.y} fill={item.hexvalue} fontSize='13' isStroke showDetails={() => this.callParentFunction(item.id)}>{item.name}</HexText>
                         </Hexagon>

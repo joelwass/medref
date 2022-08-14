@@ -29,7 +29,7 @@ export default function SubDetailsScreen ({ route, props }) {
           flexDirection: 'column'
         }]}
         >
-          <View style={{ flex: 1, backgroundColor: '#e5e5e5', width: '100%' }}>
+          <View style={{ flex: 1, minHeight: 0, backgroundColor: '#e5e5e5', width: '100%' }}>
             <SubChildLayout size={hexagonSize} flat={false} spacing={1.2} origin={{ x: 127, y: 120 }} showText={selectedValue} showChildDetails={showChildDetails} height={upperViewHeight} selectedValue={route.params.value} subSelectedValue={route.params.subvalue} />
           </View>
           <View style={{ flex: 5, justifyContent: 'space-around', alignItems: 'center', width: '100%' }}>
@@ -43,7 +43,7 @@ export default function SubDetailsScreen ({ route, props }) {
           flexDirection: 'column'
         }]}
         >
-          <View style={{ flex: 1, backgroundColor: '#e5e5e5', width: '100%' }}>
+          <View style={{ flex: 1, minHeight: 0, backgroundColor: '#e5e5e5', width: '100%' }}>
             <SubChildLayout size={hexagonSize} flat={false} spacing={1.2} origin={{ x: 120, y: 130 }} showText={selectedValue} showChildDetails={showChildDetails} height={upperViewHeight} selectedValue={selectedValue} subSelectedValue={subSelectedValue} />
           </View>
           <View style={{ flex: 5, width: '100%', alignItems: 'center' }}>
