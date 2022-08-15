@@ -235,6 +235,7 @@ export default function SearchScreen ({ route, navigation }) {
       {searchState.results.length > 0 && !searchState.loading && (
         <View style={[styles.container, { flexDirection: 'column ' }]}>
           <FlatList
+            contentContainerStyle={{ paddingBottom: 20 }}
             data={searchState.results}
             renderItem={({ item, index }) => renderNodes({ item, index })}
             keyExtractor={(item) => item.id.toString()}

@@ -288,7 +288,7 @@ export default function SubLayoutList (props) {
             </View>
           </View>
           <FlatList
-            contentContainerStyle={{ paddingBottom: 20 }}
+            contentContainerStyle={{ paddingBottom: 120 }}
             data={selectedIdChildArr}
             renderItem={({ item, index }) => renderItem({ item, index })}
             keyExtractor={(item) => item.child_id.toString()}
@@ -314,7 +314,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#fff',
-    marginTop: 25,
     width: '100%'
   },
   item: {
@@ -396,6 +395,7 @@ const styles = StyleSheet.create({
   switchview: {
     marginBottom: 5,
     height: 35,
+    marginTop: 25,
     paddingBottom: 10,
     paddingRight: 20,
     paddingLeft: 20,

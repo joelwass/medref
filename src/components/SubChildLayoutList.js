@@ -129,8 +129,6 @@ export default function SubChildLayoutList (props) {
 
   const navigation = useNavigation()
 
-  const arr = []
-
   useEffect(() => {
     const rawArr = []
     let backgroundColor = ''
@@ -171,21 +169,6 @@ export default function SubChildLayoutList (props) {
         <View>
           {index === 0 && (
             <View style={{alignItems:'center'}}>
-              <View style={styles.switchview}>
-                <View style={{ height: 30, paddingTop: 3 }}>
-                  <Text style={{ fontSize: 20 }}>* expand all</Text>
-                </View>
-                <View>
-                  <Switch
-                    trackColor={{ false: '#9dcddf', true: '#63a1b0' }}
-                    thumbColor='#fbfbfb'
-                    ios_backgroundColor='#3e3e3e'
-                    style={{ transform: [{ scaleX: 1.0 }, { scaleY: 1.0 }] }}
-                    onValueChange={toggleSwitch}
-                    value={isEnabled}
-                  />
-                </View>
-              </View>
               {item.child_warning && (
                 <View style={{ height: 30, padding: 5, paddingTop: 10, width: '90%', height: 'auto' }}>
                   <Text style={{ fontSize: 18 }}>{item.child_warning}</Text>
@@ -306,8 +289,26 @@ export default function SubChildLayoutList (props) {
 
   return (
     <SafeAreaView style={styles.container}>
+      {(selectedIdArr.length > 0 && (selectedIdArr[0].child_desc !== null || selectedIdArr[0].child_bullets !== null)) && (
+        <View style={styles.switchview}>
+          <View style={{ height: 30, paddingTop: 3 }}>
+            <Text style={{ fontSize: 20 }}>* expand all</Text>
+          </View>
+          <View>
+            <Switch
+              trackColor={{ false: '#9dcddf', true: '#63a1b0' }}
+              thumbColor='#fbfbfb'
+              ios_backgroundColor='#3e3e3e'
+              style={{ transform: [{ scaleX: 1.0 }, { scaleY: 1.0 }] }}
+              onValueChange={toggleSwitch}
+              value={isEnabled}
+            />
+          </View>
+        </View>
+      )}
       <View style={{ flex: 1, width: '100%' }}>
         <FlatList
+          contentContainerStyle={{ paddingBottom: 120 }}
           data={selectedIdArr}
           renderItem={({ item, index }) => renderItem({ item, index })}
           keyExtractor={(item, index) => item.child_id.toString()}
@@ -320,10 +321,12 @@ export default function SubChildLayoutList (props) {
 }
 
 const styles = StyleSheet.create({
-
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#fff',
+    width: '100%'
   },
   item: {
     padding: 10,
@@ -333,13 +336,13 @@ const styles = StyleSheet.create({
     width: '90%'
   },
   switchview: {
-    height: 40,
-    paddingBottom: 5,
-    paddingLeft: 20,
-    paddingRight: 20,
+    marginBottom: 5,
+    height: 35,
+    marginTop: 25,
     width: '90%',
-    paddingTop: 15,
-    marginBottom: 10,
+    paddingBottom: 10,
+    paddingRight: 20,
+    paddingLeft: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start'

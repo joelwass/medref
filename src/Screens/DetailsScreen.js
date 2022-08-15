@@ -41,10 +41,10 @@ export default function DetailsScreen ({ navigation, route, props }) {
           flexDirection: 'column'
         }]}
         >
-          <View style={{ flex: 1, backgroundColor: '#e5e5e5' }}>
+          <View style={{ height: 100 }}>
             <SubLayout size={hexagonSize} flat={false} spacing={1.12} origin={{ x: 121, y: 45 }} showText={selectedValue} showDetails={showDetails} height={upperViewHeight} />
           </View>
-          <View style={{ flex: 5, alignItems: 'center', width: '100%' }}>
+          <View style={{ height: '100%', alignItems: 'center', width: '100%' }}>
             <SubLayoutList selectedValue={selectedValue} showSubDetails={showSubDetails} />
           </View>
         </View>

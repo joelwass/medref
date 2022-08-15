@@ -135,6 +135,8 @@ class SubChildLayout extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    minHeight: 100,
+    backgroundColor: '#e5e5e5',
     width: Dimensions.get('window').width,
     justifyContent: 'center',
     alignItems: 'center'
