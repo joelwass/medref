@@ -16,6 +16,8 @@ import TermsOfUseScreen from './Screens/TermsOfUseScreen'
 import ContactScreen from './Screens/ContactScreen'
 import SearchScreen from './Screens/SearchScreen'
 import ImageScreen from './Screens/ImageScreen'
+import CitationsScreen from './Screens/CitationsScreen'
+import DisclaimerScreen from './Screens/DisclaimerScreen'
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -66,6 +68,12 @@ function HomeStack () {
       />
       <Stack.Screen
         name='ImageScreen' component={ImageScreen}
+      />
+      <Stack.Screen
+        name='Citations' component={CitationsScreen}
+      />
+      <Stack.Screen
+        name='Disclaimer' component={DisclaimerScreen}
       />
 
     </Stack.Navigator>

@@ -4,20 +4,8 @@ import { MaterialIcons } from '@expo/vector-icons'
 import * as Linking from 'expo-linking'
 
 export default function SettingScreen ({ navigation, props, route }) {
-  const goToAboutPage = () => {
-    navigation.navigate('About')
-  }
-
-  const goToTermsOfUsePage = () => {
-    navigation.navigate('TermsOfUse')
-  }
-
-  const goToContactPage = () => {
-    navigation.navigate('Contact')
-  }
-
-  const goToPinnedItemsPage = () => {
-    navigation.navigate('PinnedItems')
+  const goToPage = (page) => {
+    navigation.navigate(page)
   }
 
   const _goToPurchaseCardPage = () => {
@@ -66,15 +54,19 @@ export default function SettingScreen ({ navigation, props, route }) {
           Settings
         </Text>
 
-        <NavButton text='About' onPress={() => goToAboutPage()} />
+        <NavButton text='About' onPress={() => goToPage('About')} />
         <HR />
-        <NavButton text='Contact' onPress={() => goToContactPage()} />
+        <NavButton text='Contact' onPress={() => goToPage('Contact')} />
         <HR />
-        <NavButton text='Configure Pinned Topics' onPress={() => goToPinnedItemsPage()} />
+        <NavButton text='Configure Pinned Topics' onPress={() => goToPage('PinnedItems')} />
+        <HR />
+        <NavButton text='Citations' onPress={() => goToPage('Citations')} />
+        <HR />
+        <NavButton text='Disclaimer' onPress={() => goToPage('Disclaimer')} />
         <HR />
         <NavButton text='Purchase Reference Card' onPress={() => _goToPurchaseCardPage()} />
         <HR />
-        <NavButton text='Terms Of Use' onPress={() => goToTermsOfUsePage()} />
+        <NavButton text='Terms Of Use' onPress={() => goToPage('TermsOfUse')} />
         <LogoImage />
       </ScrollView>
     </View>
