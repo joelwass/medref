@@ -15,11 +15,11 @@
       "resizeMode": "contain"
     },
     "ios": {
-      "bundleIdentifier": "com.flossbank.bama",
-      "buildNumber": "1.0.1"
+      "bundleIdentifier": "com.benjaminmati.bama",
+      "buildNumber": "1.0.3"
     },
     "android": {
-      "package": "com.flossbank.bama",
+      "package": "com.benjaminmati.bama",
       "versionCode": 1
     },
     "icon": "./src/assets/icon.png"
