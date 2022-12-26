@@ -175,9 +175,9 @@ export default function SubLayoutList (props) {
             )}
 
             {row.child_bullets && (
-              <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: 5, marginTop: 10 }}>
+              <View style={{ paddingLeft: 5, marginTop: 10 }}>
                 {row.child_bullets.map((bullet, idx) => (
-                  <View style={{ flexDirection: 'column', justifyContent: 'left' }} key={idx}>
+                  <View style={{ flexDirection: 'column' }} key={idx}>
                     <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'left' }}>{bullet.title}</Text>
                     <Text style={{ fontSize: 20, textAlign: 'left' }}>{bullet.subtext}</Text>
                   </View>
@@ -273,7 +273,7 @@ export default function SubLayoutList (props) {
       return (
         <View style={{ height: '100%' }}>
           <View style={styles.switchview}>
-            <View style={{ height: 20 }}>
+            <View style={{ height: 25 }}>
               <Text style={{ fontSize: 20 }}>* expand all</Text>
             </View>
             <View>

@@ -32,14 +32,14 @@ export default function AboutScreen ({ navigation, props, route }) {
         If any medical information seems incorrect please reach out to 1benjamin.mati @ gmail.com
       </Text>
 
-      <View style={{ textAlign: 'center', margin: 10, display: 'inline' }}>
+      <View style={{ justifyContent: 'center', margin: 10, flexDirection:'row', flexWrap:'wrap' }}>
         <Text style={{ textAlign: 'center', fontSize: 16 }}>or open a GitHub issue at: </Text>
         <Text style={{ textAlign: 'center', color: 'blue', fontSize: 16, textDecorationLine: 'underline' }} onPress={_goToGitHub}>
           https://github.com/joelwass/medref/issues
         </Text>
       </View>
 
-      <View style={{ textAlign: 'center', margin: 10, display: 'inline' }}>
+      <View style={{ justifyContent: 'center', margin: 10, flexDirection:'row', flexWrap:'wrap' }}>
         <Text style={{ textAlign: 'center', fontSize: 16 }}>More info can be found at </Text>
         <Text style={{ textAlign: 'center', color: 'blue', fontSize: 16, textDecorationLine: 'underline' }} onPress={_goToAboutPage}>
           https://www.drbenmati.com/bedside-acute-care-medication-reference

@@ -52,9 +52,9 @@ const Item = ({ item, backgroundColor, onPress, textColor, image, onImageClick }
               </Text>
             )}
             {item.child_bullets && (
-              <View style={{ alignItems: 'left', justifyContent: 'left', paddingLeft: 10, paddingBottom: 10, marginTop: 10 }}>
+              <View style={{ paddingLeft: 10, paddingBottom: 10, marginTop: 10 }}>
                 {item.child_bullets.map((bullet, idx) => (
-                  <View style={{ flexDirection: 'column', justifyContent: 'left' }} key={idx}>
+                  <View style={{ flexDirection: 'column' }} key={idx}>
                     <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'left' }}>{bullet.title}</Text>
                     <Text style={{ fontSize: 20, textAlign: 'left' }}>{bullet.subtext}</Text>
                   </View>

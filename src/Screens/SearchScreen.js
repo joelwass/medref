@@ -100,7 +100,7 @@ export default function SearchScreen ({ route, navigation }) {
       {child.child_bullets && (
         <View style={{ textAlign: 'left', paddingLeft: 10, paddingBottom: 10, marginTop: 5 }}>
           {child.child_bullets.map((bullet, idx) => (
-            <View style={{ flexDirection: 'column', justifyContent: 'left' }} key={idx.toString()}>
+            <View style={{ flexDirection: 'column' }} key={idx.toString()}>
               <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'left' }}>{bullet.title}</Text>
               <Text style={{ fontSize: 20, textAlign: 'left' }}>{bullet.subtext}</Text>
             </View>
