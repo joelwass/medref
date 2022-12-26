@@ -16,7 +16,7 @@
     },
     "ios": {
       "bundleIdentifier": "com.benjaminmati.bama",
-      "buildNumber": "1.0.3"
+      "buildNumber": "1.0.4"
     },
     "android": {
       "package": "com.benjaminmati.bama",
