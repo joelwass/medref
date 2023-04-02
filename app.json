@@ -17,11 +17,11 @@
     },
     "ios": {
       "bundleIdentifier": "com.benjaminmati.bama",
-      "buildNumber": "1.0.5"
+      "buildNumber": "1.0.6"
     },
     "android": {
       "package": "com.benjaminmati.bama",
-      "versionCode": 3
+      "versionCode": 4
     },
     "icon": "./src/assets/icon.png",
     "extra": {
