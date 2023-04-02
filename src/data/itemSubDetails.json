@@ -8,7 +8,7 @@
         "children" :[
            {
                "child_id": 111 , 
-               "child_name" : "AngioTension II",
+               "child_name" : "Angiotension II",
                "child_desc" :  "20 nanogram/kg/min First 3hr MAX: 80 nanogram/kg/min Maintainance Max: 40 nanogram/kg/min"
            },
            {

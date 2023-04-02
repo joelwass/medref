@@ -16,7 +16,7 @@
           "children" :[
               {
                   "child_id": 111 , 
-                  "child_name" : "AngioTension II",
+                  "child_name" : "Angiotension II",
                   "child_desc" :  "Synthetic human angiotensin II, activates RAAS\nStart: 20 ng/kg/min \nFirst 3hr MAX: 80 ng/kg/min \nMaintainance MAX: 40 ng/kg/min"
               },
               {
@@ -511,7 +511,7 @@
                         {
                             "child_id" : 3133,
                             "child_detail_name"  : "Vecuronium",
-                            "child_detail_desc" : "Onset: 60 sec  Duration: 30-40 min \n0.08 - 1 mg/kg IVP"
+                            "child_detail_desc" : "Onset: 60 sec  Duration: 30-40 min \n0.08 - 0.1 mg/kg IV Bolus"
                         }
                     ]
                 }
@@ -616,7 +616,7 @@
                   {
                       "child_id" : 4191,
                       "child_detail_name"  : "Protamine",
-                      "child_detail_desc" : "1 mg for every 1 mg given in the previous 8 hours 60% reversal"
+                      "child_detail_desc" : "1 mg for every 1 mg given in the previous 8 hours. 60% reversal"
                   }
               ]
             },
@@ -649,7 +649,7 @@
                   {
                       "child_id" : 4221,
                       "child_detail_name"  : "Dantrolene",
-                      "child_detail_desc" : "1 mg/kg IVP \nMAX 10mg/kg"
+                      "child_detail_desc" : "2-3 mg/kg IVP \nTHEN 1mg/kg over 5 min\nMAX 10mg/kg"
                   }
               ]
             },
