@@ -126,6 +126,7 @@ export default function SubLayoutList (props) {
       }
     })
     setSelectedChildArr(childArr)
+    setIsEnabled(false)
     setSelectedIdArr(temp)
   }, [props])
 

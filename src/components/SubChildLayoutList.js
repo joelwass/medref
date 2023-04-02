@@ -156,6 +156,7 @@ export default function SubChildLayoutList (props) {
     })
 
     setSelectedIdArr(rawArr)
+    setIsEnabled(false)
     setLoading(false)
   }, [props])
 

@@ -5,7 +5,7 @@
     "name": "bama",
     "slug": "bama",
     "owner": "bama-rn",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "assetBundlePatterns": [
       "**/*"
@@ -21,8 +21,13 @@
     },
     "android": {
       "package": "com.benjaminmati.bama",
-      "versionCode": 2
+      "versionCode": 3
     },
-    "icon": "./src/assets/icon.png"
+    "icon": "./src/assets/icon.png",
+    "extra": {
+      "eas": {
+        "projectId": "b0c31c62-613c-44c1-8134-ba97787029ce"
+      }
+    }
   }
 }
